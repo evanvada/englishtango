@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style/base.css">
+		<link rel="stylesheet" href="style/play.css">
+		<link rel="icon" href="favicon.png" type="image/png">
+		<title>EnglishTango</title>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<input type="range" min="1" max="100" value="100" id="general_volume_range">
+		<section id="game">
+			<div id="game__big_display" style="display: none;"></div>
+			<div id="game__small_display" style="display: none;"></div>
+
+				<input type="text" id="game__answer_input" style="display: none;">
+				<input id="game__checkAnswer_button" type="button" class="button1" value="Vérifier" onclick="checkAnswer();">
+
+				<div id="game__correction_output" style="display: none;"></div>
+				<input id="game__nextQuestion_button" type="button" class="button1" value="D'accord" onclick="nextQuestion();">
+
+		</section>
+
+		<script src="scripts/base/utils.js"></script>
+		<script src="scripts/base/banks.js"></script>
+		<script src="scripts/base/interface.js"></script>
+		<script src="scripts/play/match.js"></script>
+		<script src="scripts/play/particles.js"></script>
+		<script src="scripts/play/interface.js"></script>
+		<script src="scripts/play/main.js"></script>
+
+	</body>
+</html>
