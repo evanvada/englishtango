@@ -1,0 +1,61 @@
+
+
+aside {
+    position: absolute;
+    height: 100%;
+    width: 256px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: white;
+    border-right: solid 2px #eeee;
+
+    nav {
+        display: flex;
+
+        padding: 12px;
+        width: 100%;
+        gap: 12px;
+
+        ul {
+            width: 100%;
+            
+            a {
+                height: 48px;
+        
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+        
+                border-radius: 12px;
+
+                &.logo {
+                    margin: 0 18px;
+                }
+                
+                &:not(.logo) {
+                    > .icon {
+                        margin: 0 18px;
+                    }
+            
+                    > span {
+                        flex: 1;
+                    }
+            
+                    &:hover {
+                        background: #eee;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

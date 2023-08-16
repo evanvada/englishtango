@@ -8,13 +8,17 @@
     width: 32px;
     height: 32px;
 
-    // &.icon-1 {
-    //     background-image: url(../images/icon-1.png);
-    // }
+    &.practice {
+        background-image: url(../media/practice.png);
+    }
 
-    // &.icon-2 {
-    //     background-image: url(../images/icon-2.png);
-    // }
+    &.study {
+        background-image: url(../media/study.png);
+    }
+
+    &.settings {
+        background-image: url(../media/settings.png);
+    }
 }
 
 
