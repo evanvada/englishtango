@@ -1,4 +1,6 @@
+@import "./base/vars";
 @import "./base/base";
+@import "./base/fonts";
 @import "./components/icons";
 @import "./components/buttons";
 @import "./layouts/navigation";
@@ -36,7 +38,7 @@ main {
     align-items: center;
 
     &__title {
-        background: cadetblue;
+        background: #777777;
         width: 100%;
         padding: 24px;
         border-radius: 12px;
@@ -56,6 +58,7 @@ main {
     }
 
     &__content {
+        width: 100%;
         padding: 24px;
 
         display: flex;
@@ -69,10 +72,6 @@ main {
         }
     }
 
-    &__half {
-        flex: 0.5;
-    }
-
     &__bank {
         width: fit-content;
 
@@ -83,9 +82,43 @@ main {
         flex-direction: column;
         gap: 6px;
     }
+
 }
 
 
+
+.color1 {
+    .course__title {
+        background: var(--color-1);
+    }
+    .small-button > * {
+        background: var(--color-1);
+        border: solid 2px var(--color-1B);
+    }
+    .small-button::before { background: var(--color-1B); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.half-flex {
+    flex: 0.5;
+}
 
 
 

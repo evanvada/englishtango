@@ -6,6 +6,7 @@ $button-side: 4px;
     position: relative;
     overflow: hidden;
     border-radius: $border-radius;
+    color: var(--color-light);
 
     &::before {
         content: "";
@@ -17,7 +18,7 @@ $button-side: 4px;
 
         display: flex;
         align-items: start;
-        background: green;
+        background: #000;
     }
 
     > * {
@@ -31,13 +32,17 @@ $button-side: 4px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: lightgreen;
+        background: #777;
 
-        transition: top 0.1s ease;
+        transition: top 0.04s ease;
     }
 
-    &:hover > * {
+    &:active > * {
         top: calc($button-side * 2);
+    }
+    
+    &:hover > *, &:hover::before {
+        filter: brightness(1.2);
     }
 }
 
@@ -58,17 +63,19 @@ $button-side: 4px;
     @include button-style(12px);
     width: 120px;
     height: 48px;
-    
-    > * {
-        border: solid 2px green;
-    }
 }
 
 
 
+.primary {
+    > * { background: var(--color-2); }
+    &::before { background: var(--color-2B); }
+}
 
-
-
+.secondary {
+    > * { background: var(--color-1); }
+    &::before { background: var(--color-1B); }
+}
 
 
 

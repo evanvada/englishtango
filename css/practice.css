@@ -1,4 +1,15 @@
 :root {
+  --color-light: #ffffff;
+  --color-dark: #626262;
+  --color-1: #0878d4;
+  --color-1B: #004db1;
+  --color-2: #ee451b;
+  --color-2B: #bd170b;
+  --color-text: var(--color-dark);
+  --color-bg: var(--color-light);
+}
+
+:root {
   --bg: #000;
   --bg2: #000;
   --text: #000;
@@ -24,15 +35,34 @@
   border: none;
   box-sizing: border-box;
   word-wrap: break-word;
-  font-family: Calibri, sans-serif;
-  font-size: 16px;
 }
 
 html, body {
   width: 100%;
   height: 100%;
-  color: #000;
-  background-color: #fff;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+@font-face {
+  font-family: "FiraSans";
+  src: url("../fonts/FiraSans-Regular.ttf");
+}
+@font-face {
+  font-family: "FiraSansBold";
+  src: url("../fonts/FiraSans-Bold.ttf");
+}
+body {
+  font-family: FiraSans, sans-serif;
+  font-size: 16px;
+  line-height: 1.25em;
+}
+
+* {
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.25em;
+  font-family: inherit;
 }
 
 .icon {
@@ -65,11 +95,21 @@ html, body {
 .icon.gem {
   background-image: url(../media/gem.png);
 }
+.icon.inf {
+  background-image: url(../media/inf.png);
+}
+.icon.ps {
+  background-image: url(../media/ps.png);
+}
+.icon.pp {
+  background-image: url(../media/pp.png);
+}
 
 .large-button {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  color: var(--color-light);
   width: 100%;
   height: 48px;
 }
@@ -82,7 +122,7 @@ html, body {
   top: 4px;
   display: flex;
   align-items: start;
-  background: green;
+  background: #000;
 }
 .large-button > * {
   overflow: hidden;
@@ -94,17 +134,21 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: lightgreen;
-  transition: top 0.1s ease;
+  background: #777;
+  transition: top 0.04s ease;
 }
-.large-button:hover > * {
+.large-button:active > * {
   top: 8px;
+}
+.large-button:hover > *, .large-button:hover::before {
+  filter: brightness(1.2);
 }
 
 .round-button {
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+  color: var(--color-light);
   width: 64px;
   height: 64px;
   border-radius: 50%/calc(50% - 2px);
@@ -118,7 +162,7 @@ html, body {
   top: 4px;
   display: flex;
   align-items: start;
-  background: green;
+  background: #000;
 }
 .round-button > * {
   overflow: hidden;
@@ -130,17 +174,21 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: lightgreen;
-  transition: top 0.1s ease;
+  background: #777;
+  transition: top 0.04s ease;
 }
-.round-button:hover > * {
+.round-button:active > * {
   top: 8px;
+}
+.round-button:hover > *, .round-button:hover::before {
+  filter: brightness(1.2);
 }
 
 .small-button {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  color: var(--color-light);
   width: 120px;
   height: 48px;
 }
@@ -153,7 +201,7 @@ html, body {
   top: 4px;
   display: flex;
   align-items: start;
-  background: green;
+  background: #000;
 }
 .small-button > * {
   overflow: hidden;
@@ -165,14 +213,28 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: lightgreen;
-  transition: top 0.1s ease;
+  background: #777;
+  transition: top 0.04s ease;
 }
-.small-button:hover > * {
+.small-button:active > * {
   top: 8px;
 }
-.small-button > * {
-  border: solid 2px green;
+.small-button:hover > *, .small-button:hover::before {
+  filter: brightness(1.2);
+}
+
+.primary > * {
+  background: var(--color-2);
+}
+.primary::before {
+  background: var(--color-2B);
+}
+
+.secondary > * {
+  background: var(--color-1);
+}
+.secondary::before {
+  background: var(--color-1B);
 }
 
 aside {
@@ -232,7 +294,7 @@ main {
   align-items: center;
 }
 .course__title {
-  background: cadetblue;
+  background: #777777;
   width: 100%;
   padding: 24px;
   border-radius: 12px;
@@ -246,6 +308,7 @@ main {
   flex-direction: column;
 }
 .course__content {
+  width: 100%;
   padding: 24px;
   display: flex;
   align-items: center;
@@ -256,9 +319,6 @@ main {
   display: flex;
   align-items: center;
 }
-.course__half {
-  flex: 0.5;
-}
 .course__bank {
   width: fit-content;
   flex: 1;
@@ -266,6 +326,21 @@ main {
   align-items: center;
   flex-direction: column;
   gap: 6px;
+}
+
+.color1 .course__title {
+  background: var(--color-1);
+}
+.color1 .small-button > * {
+  background: var(--color-1);
+  border: solid 2px var(--color-1B);
+}
+.color1 .small-button::before {
+  background: var(--color-1B);
+}
+
+.half-flex {
+  flex: 0.5;
 }
 
 .menu {
