@@ -6,7 +6,7 @@
 
 @font-face {
 	font-family: "FiraSansBold";
-	src: url("../fonts/FiraSans-Bold.ttf");
+	src: url("../fonts/FiraSans-Medium.ttf");
 }
 
 body {
@@ -18,6 +18,20 @@ body {
 * {
 	font-size: 1em;
 	font-weight: normal;
-	line-height: 1.25em;
-	font-family: inherit
+	line-height: inherit;
+	font-family: inherit;
+}
+
+h1 {
+    font-family: FiraSansBold, sans-serif;
+	font-size: 1.5rem;
+}
+
+h2 {
+    font-family: FiraSansBold, sans-serif;
+	font-size: 1.25rem;
+}
+
+button {
+	font-family: FiraSansBold, sans-serif;
 }

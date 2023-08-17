@@ -2,10 +2,10 @@
 
 $button-side: 4px;
 
-@mixin button-style($border-radius) {
+.button {
     position: relative;
     overflow: hidden;
-    border-radius: $border-radius;
+    border-radius: 12px;
     color: var(--color-light);
 
     &::before {
@@ -13,7 +13,7 @@ $button-side: 4px;
         position: absolute;
         width: 100%;
         height: calc(100% - $button-side);
-        border-radius: $border-radius;
+        border-radius: 12px;
         top: $button-side;
 
         display: flex;
@@ -26,7 +26,7 @@ $button-side: 4px;
         position: absolute;
         width: 100%;
         height: calc(100% - $button-side);
-        border-radius: $border-radius;
+        border-radius: 12px;
         top: 0;
 
         display: flex;
@@ -46,36 +46,68 @@ $button-side: 4px;
     }
 }
 
-.large-button {
-    @include button-style(12px);
+.large.button {
     width: 100%;
     height: 48px;
 }
 
-.round-button {
-    @include button-style(50%);
+.round.button {
     width: 64px;
     height: 64px;
-    border-radius: 50% / calc(50% - $button-side / 2);
+
+
+    border-radius: 50% / calc(50% - $button-side * 2 / 2);
+    &::before {
+        border-radius: 50%;
+        height: calc(100% - $button-side * 2);
+        top: calc($button-side * 2);
+    }
+    > * {
+        border-radius: 50%;
+        height: calc(100% - $button-side * 2);
+    }
+    &:active > * {
+        top: calc($button-side * 3);
+    }
 }
 
-.small-button {
-    @include button-style(12px);
+.small.button {
     width: 120px;
     height: 48px;
+    > * { border: 2px solid #000; }
 }
 
 
 
-.primary {
+.primary.button {
     > * { background: var(--color-2); }
     &::before { background: var(--color-2B); }
 }
 
-.secondary {
+.secondary.button {
     > * { background: var(--color-1); }
     &::before { background: var(--color-1B); }
 }
+
+
+
+.color1 .button {
+    > * {
+        background: var(--color-1);
+        border-color: var(--color-1B);
+    }
+    &::before { 
+        background: var(--color-1B);
+    }
+}
+
+
+
+
+
+
+
+
 
 
 

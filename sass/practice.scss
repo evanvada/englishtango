@@ -91,11 +91,6 @@ main {
     .course__title {
         background: var(--color-1);
     }
-    .small-button > * {
-        background: var(--color-1);
-        border: solid 2px var(--color-1B);
-    }
-    .small-button::before { background: var(--color-1B); }
 }
 
 
