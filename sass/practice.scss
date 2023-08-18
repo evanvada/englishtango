@@ -42,7 +42,7 @@ main {
         background: #777777;
         width: 100%;
         padding: 30px 18px;
-        border-radius: 12px;
+        border-radius: 14px;
         color: white;
 
         display: flex;
@@ -134,12 +134,12 @@ main {
 @mixin sub-menu-styling() {
     margin: 12px 0;
     border: solid 2px var(--color-gray);
-    border-radius: 12px;
-    padding: 12px;
+    border-radius: 14px;
+    padding: 18px;
 
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .menu {
@@ -148,14 +148,70 @@ main {
     top: 24px;
 
     &__stats-info {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
 
-        &__element {
+        ul {
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: space-between;
+
+            li {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 6px 12px;
+                border-radius: 10px;
+                gap: 6px;
+                font-family: FiraSansBold, sans-serif;
+    
+                &.streak { color: var(--color-3B); }
+                &.exp { color: var(--color-3B); }
+                &.gems { color: var(--color-2); }
+
+                &:hover {
+                    background: var(--color-gray);
+                    .dropdown { display: block; }
+                    img { display: block; }
+                }
+
+                .dropdown {
+                    display: none;
+                    z-index: 10;
+                    position: absolute;
+                    margin-top: calc(38px);
+
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    section {
+                        border-radius: 12px;
+                        padding: 18px;
+                        margin-top: 14px;
+
+                        background-color: var(--color-bg);
+                        border: solid 2px var(--color-gray);
+
+                        color: var(--color-text);
+                        white-space: nowrap;
+                    }
+                }
+
+                img {
+                    display: none;
+                    z-index: 10;
+                    position: absolute;
+                    margin-top: calc(44px);
+
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                
+                    width: 20px;
+                    height: 10px;
+                    fill: var(--color-bg);
+                    color: var(--color-gray);
+                }
+            }
         }
     }
 
@@ -167,5 +223,7 @@ main {
         @include sub-menu-styling;
     }
 }
+
+
 
 

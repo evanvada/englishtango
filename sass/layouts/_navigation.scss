@@ -50,12 +50,12 @@ aside {
                     }
             
                     &:not(.active):hover {
-                        background: #eee;
+                        background: var(--color-gray);
                     }
 
                     &.active {
                         border: solid 2px var(--color-2);
-                        background: #ffe6d0;
+                        background: rgba($color: #ffac5e, $alpha: 0.2);
                         color: var(--color-2);
                         padding: 0 16px;
                     }

@@ -6,7 +6,7 @@ $button-side-2: 6px;
 .button {
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 14px;
     color: var(--color-light);
 
     &::before {
@@ -14,7 +14,7 @@ $button-side-2: 6px;
         position: absolute;
         width: 100%;
         height: calc(100% - $button-side);
-        border-radius: 12px;
+        border-radius: 14px;
         top: $button-side;
 
         display: flex;
@@ -27,7 +27,7 @@ $button-side-2: 6px;
         position: absolute;
         width: 100%;
         height: calc(100% - $button-side);
-        border-radius: 12px;
+        border-radius: 14px;
         top: 0;
 
         display: flex;
@@ -74,7 +74,7 @@ $button-side-2: 6px;
 
 .small.button {
     width: 120px;
-    height: 48px;
+    height: 54px;
     > * { border: 2px solid #000; }
 }
 

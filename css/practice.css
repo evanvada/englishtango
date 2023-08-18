@@ -120,15 +120,15 @@ a {
   background-image: url(../media/english.png);
 }
 .icon.fire {
-  background-size: 24px;
+  background-size: 28px;
   background-image: url(../media/fire.png);
 }
 .icon.bolt {
-  background-size: 26px;
+  background-size: 30px;
   background-image: url(../media/bolt.png);
 }
 .icon.gem {
-  background-size: 26px;
+  background-size: 30px;
   background-image: url(../media/gem.png);
 }
 .icon.inf {
@@ -144,7 +144,7 @@ a {
 .button {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   color: var(--color-light);
 }
 .button::before {
@@ -152,7 +152,7 @@ a {
   position: absolute;
   width: 100%;
   height: calc(100% - 4px);
-  border-radius: 12px;
+  border-radius: 14px;
   top: 4px;
   display: flex;
   align-items: start;
@@ -163,7 +163,7 @@ a {
   position: absolute;
   width: 100%;
   height: calc(100% - 4px);
-  border-radius: 12px;
+  border-radius: 14px;
   top: 0;
   display: flex;
   justify-content: center;
@@ -203,7 +203,7 @@ a {
 
 .small.button {
   width: 120px;
-  height: 48px;
+  height: 54px;
 }
 .small.button > * {
   border: 2px solid #000;
@@ -298,11 +298,11 @@ aside nav ul a:not(.logo) > span {
   flex: 1;
 }
 aside nav ul a:not(.logo):not(.active):hover {
-  background: #eee;
+  background: var(--color-gray);
 }
 aside nav ul a:not(.logo).active {
   border: solid 2px var(--color-2);
-  background: #ffe6d0;
+  background: rgba(255, 172, 94, 0.2);
   color: var(--color-2);
   padding: 0 16px;
 }
@@ -330,7 +330,7 @@ main {
   background: #777777;
   width: 100%;
   padding: 30px 18px;
-  border-radius: 12px;
+  border-radius: 14px;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -381,31 +381,84 @@ main {
   width: 360px;
   top: 24px;
 }
-.menu__stats-info {
+.menu__stats-info ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.menu__stats-info__element {
+.menu__stats-info ul li {
+  position: relative;
   display: flex;
   align-items: center;
+  padding: 6px 12px;
+  border-radius: 10px;
   gap: 6px;
+  font-family: FiraSansBold, sans-serif;
+}
+.menu__stats-info ul li.streak {
+  color: var(--color-3B);
+}
+.menu__stats-info ul li.exp {
+  color: var(--color-3B);
+}
+.menu__stats-info ul li.gems {
+  color: var(--color-2);
+}
+.menu__stats-info ul li:hover {
+  background: var(--color-gray);
+}
+.menu__stats-info ul li:hover .dropdown {
+  display: block;
+}
+.menu__stats-info ul li:hover img {
+  display: block;
+}
+.menu__stats-info ul li .dropdown {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  margin-top: 38px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu__stats-info ul li .dropdown section {
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 14px;
+  background-color: var(--color-bg);
+  border: solid 2px var(--color-gray);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+.menu__stats-info ul li img {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  margin-top: 44px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 10px;
+  fill: var(--color-bg);
+  color: var(--color-gray);
 }
 .menu__exercise-info {
   margin: 12px 0;
   border: solid 2px var(--color-gray);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 14px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 .menu__match-info {
   margin: 12px 0;
   border: solid 2px var(--color-gray);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 14px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
