@@ -3,8 +3,9 @@
 
 
 .icon {
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 32px;
     width: 32px;
     height: 32px;
 
@@ -24,9 +25,6 @@
 
 
 
-    &.bolt {
-        background-image: url(../media/bolt.png);
-    }
 
     &.chest {
         background-image: url(../media/chest.png);
@@ -37,10 +35,17 @@
     }
 
     &.fire {
+        background-size: 24px;
         background-image: url(../media/fire.png);
     }
 
+    &.bolt {
+        background-size: 26px;
+        background-image: url(../media/bolt.png);
+    }
+    
     &.gem {
+        background-size: 26px;
         background-image: url(../media/gem.png);
     }
 

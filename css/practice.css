@@ -1,10 +1,15 @@
 :root {
   --color-light: #ffffff;
-  --color-dark: #626262;
+  --color-gray: #eeeeee;
+  --color-dark: #555555;
   --color-1: #1184e2;
   --color-1B: #004db1;
   --color-2: #ee451b;
   --color-2B: #a71409;
+  --color-3: #ffac5e;
+  --color-3B: #f17c4e;
+  --color-4: #07e3e3;
+  --color-4B: #0097d3;
   --color-text: var(--color-dark);
   --color-bg: var(--color-light);
 }
@@ -75,13 +80,27 @@ h2 {
   font-size: 1.25rem;
 }
 
+h3, h4, h5, h6 {
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1rem;
+}
+
 button {
   font-family: FiraSansBold, sans-serif;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+a {
+  font-family: FiraSansBold, sans-serif;
+  text-transform: uppercase;
+  user-select: none;
 }
 
 .icon {
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 32px;
   width: 32px;
   height: 32px;
 }
@@ -94,9 +113,6 @@ button {
 .icon.settings {
   background-image: url(../media/settings.png);
 }
-.icon.bolt {
-  background-image: url(../media/bolt.png);
-}
 .icon.chest {
   background-image: url(../media/chest.png);
 }
@@ -104,9 +120,15 @@ button {
   background-image: url(../media/english.png);
 }
 .icon.fire {
+  background-size: 24px;
   background-image: url(../media/fire.png);
 }
+.icon.bolt {
+  background-size: 26px;
+  background-image: url(../media/bolt.png);
+}
 .icon.gem {
+  background-size: 26px;
   background-image: url(../media/gem.png);
 }
 .icon.inf {
@@ -134,7 +156,7 @@ button {
   top: 4px;
   display: flex;
   align-items: start;
-  background: #000;
+  background-color: #000;
 }
 .button > * {
   overflow: hidden;
@@ -146,7 +168,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #777;
+  background-color: #777;
   transition: top 0.04s ease;
 }
 .button:active > * {
@@ -164,16 +186,16 @@ button {
 .round.button {
   width: 64px;
   height: 64px;
-  border-radius: 50%/calc(50% - 4px);
+  border-radius: 50%/calc(50% - 3px);
 }
 .round.button::before {
   border-radius: 50%;
-  height: calc(100% - 8px);
-  top: 8px;
+  height: calc(100% - 6px);
+  top: 6px;
 }
 .round.button > * {
   border-radius: 50%;
-  height: calc(100% - 8px);
+  height: calc(100% - 6px);
 }
 .round.button:active > * {
   top: 12px;
@@ -188,47 +210,72 @@ button {
 }
 
 .primary.button > * {
-  background: var(--color-2);
+  background-color: var(--color-2);
 }
 .primary.button::before {
-  background: var(--color-2B);
+  background-color: var(--color-2B);
 }
 
 .secondary.button > * {
-  background: var(--color-1);
+  background-color: var(--color-1);
 }
 .secondary.button::before {
-  background: var(--color-1B);
+  background-color: var(--color-1B);
 }
 
 .color1 .button > * {
-  background: var(--color-1);
+  background-color: var(--color-1);
   border-color: var(--color-1B);
 }
 .color1 .button::before {
-  background: var(--color-1B);
+  background-color: var(--color-1B);
+}
+
+.color2 .button > * {
+  background-color: var(--color-2);
+  border-color: var(--color-2B);
+}
+.color2 .button::before {
+  background-color: var(--color-2B);
+}
+
+.color3 .button > * {
+  background-color: var(--color-3);
+  border-color: var(--color-3B);
+}
+.color3 .button::before {
+  background-color: var(--color-3B);
+}
+
+.color4 .button > * {
+  background-color: var(--color-4);
+  border-color: var(--color-4B);
+}
+.color4 .button::before {
+  background-color: var(--color-4B);
 }
 
 aside {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 256px;
   display: flex;
   flex-direction: column;
   background: white;
-  border-right: solid 2px rgba(238, 238, 238, 0.9333333333);
+  border-right: solid 2px var(--color-gray);
 }
 aside nav {
-  display: flex;
-  padding: 12px;
+  padding: 14px;
   width: 100%;
-  gap: 12px;
 }
 aside nav ul {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 aside nav ul a {
-  height: 48px;
+  height: 52px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -237,20 +284,33 @@ aside nav ul a {
 aside nav ul a.logo {
   margin: 0 18px;
   color: var(--color-1);
+  text-transform: none;
+  height: 60px;
+}
+aside nav ul a:not(.logo) {
+  padding: 0 18px;
+  gap: 18px;
 }
 aside nav ul a:not(.logo) > .icon {
-  margin: 0 18px;
+  background-size: 28px;
 }
 aside nav ul a:not(.logo) > span {
   flex: 1;
 }
-aside nav ul a:not(.logo):hover {
+aside nav ul a:not(.logo):not(.active):hover {
   background: #eee;
+}
+aside nav ul a:not(.logo).active {
+  border: solid 2px var(--color-2);
+  background: #ffe6d0;
+  color: var(--color-2);
+  padding: 0 16px;
 }
 
 main {
   margin-left: 256px;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   padding: 24px;
   gap: 48px;
@@ -269,7 +329,7 @@ main {
 .course__title {
   background: #777777;
   width: 100%;
-  padding: 24px;
+  padding: 30px 18px;
   border-radius: 12px;
   color: white;
   display: flex;
@@ -279,38 +339,47 @@ main {
 .course__title__left {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 .course__content {
-  width: 100%;
-  padding: 24px;
+  padding: 30px 18px;
+  gap: 40px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .course__content__line {
-  width: 100%;
+  gap: 50px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 .course__bank {
-  width: fit-content;
-  flex: 1;
+  width: 64px;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 6px;
+}
+.course__bank span {
+  font-family: FiraSansBold, sans-serif;
+  white-space: nowrap;
+  text-align: center;
+}
+.course__bank .icon {
+  background-size: 24px;
+}
+.course .half-flex {
+  width: 32px;
 }
 
 .color1 .course__title {
   background: var(--color-1);
 }
 
-.half-flex {
-  flex: 0.5;
-}
-
 .menu {
+  position: sticky;
   width: 360px;
+  top: 24px;
 }
 .menu__stats-info {
   display: flex;
@@ -324,7 +393,7 @@ main {
 }
 .menu__exercise-info {
   margin: 12px 0;
-  border: solid 2px black;
+  border: solid 2px var(--color-gray);
   border-radius: 12px;
   padding: 12px;
   display: flex;
@@ -333,7 +402,7 @@ main {
 }
 .menu__match-info {
   margin: 12px 0;
-  border: solid 2px black;
+  border: solid 2px var(--color-gray);
   border-radius: 12px;
   padding: 12px;
   display: flex;

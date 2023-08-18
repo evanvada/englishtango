@@ -1,7 +1,7 @@
 
 
 aside {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 256px;
 
@@ -9,20 +9,20 @@ aside {
     flex-direction: column;
 
     background: white;
-    border-right: solid 2px #eeee;
+    border-right: solid 2px var(--color-gray);
 
     nav {
-        display: flex;
-
-        padding: 12px;
+        padding: 14px;
         width: 100%;
-        gap: 12px;
 
         ul {
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             
             a {
-                height: 48px;
+                height: 52px;
         
                 display: flex;
                 align-items: center;
@@ -33,19 +33,31 @@ aside {
                 &.logo {
                     margin: 0 18px;
                     color: var(--color-1);
+                    text-transform: none;
+                    height: 60px;
                 }
                 
                 &:not(.logo) {
+                    padding: 0 18px;
+                    gap: 18px;
+
                     > .icon {
-                        margin: 0 18px;
+                        background-size: 28px;
                     }
             
                     > span {
                         flex: 1;
                     }
             
-                    &:hover {
+                    &:not(.active):hover {
                         background: #eee;
+                    }
+
+                    &.active {
+                        border: solid 2px var(--color-2);
+                        background: #ffe6d0;
+                        color: var(--color-2);
+                        padding: 0 16px;
                     }
                 }
             }

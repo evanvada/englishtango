@@ -1,6 +1,7 @@
 
 
 $button-side: 4px;
+$button-side-2: 6px;
 
 .button {
     position: relative;
@@ -18,7 +19,7 @@ $button-side: 4px;
 
         display: flex;
         align-items: start;
-        background: #000;
+        background-color: #000;
     }
 
     > * {
@@ -32,7 +33,7 @@ $button-side: 4px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #777;
+        background-color: #777;
 
         transition: top 0.04s ease;
     }
@@ -56,18 +57,18 @@ $button-side: 4px;
     height: 64px;
 
 
-    border-radius: 50% / calc(50% - $button-side * 2 / 2);
+    border-radius: 50% / calc(50% - $button-side-2 / 2);
     &::before {
         border-radius: 50%;
-        height: calc(100% - $button-side * 2);
-        top: calc($button-side * 2);
+        height: calc(100% - $button-side-2);
+        top: calc($button-side-2);
     }
     > * {
         border-radius: 50%;
-        height: calc(100% - $button-side * 2);
+        height: calc(100% - $button-side-2);
     }
     &:active > * {
-        top: calc($button-side * 3);
+        top: calc($button-side-2 * 2);
     }
 }
 
@@ -80,29 +81,75 @@ $button-side: 4px;
 
 
 .primary.button {
-    > * { background: var(--color-2); }
-    &::before { background: var(--color-2B); }
+    > * { background-color: var(--color-2); }
+    &::before { background-color: var(--color-2B); }
 }
 
 .secondary.button {
-    > * { background: var(--color-1); }
-    &::before { background: var(--color-1B); }
+    > * { background-color: var(--color-1); }
+    &::before { background-color: var(--color-1B); }
 }
 
 
 
 .color1 .button {
     > * {
-        background: var(--color-1);
+        background-color: var(--color-1);
         border-color: var(--color-1B);
     }
-    &::before { 
-        background: var(--color-1B);
+    &::before {
+        background-color: var(--color-1B);
+    }
+}
+
+.color2 .button {
+    > * {
+        background-color: var(--color-2);
+        border-color: var(--color-2B);
+    }
+    &::before {
+        background-color: var(--color-2B);
+    }
+}
+
+.color3 .button {
+    > * {
+        background-color: var(--color-3);
+        border-color: var(--color-3B);
+    }
+    &::before {
+        background-color: var(--color-3B);
+    }
+}
+
+.color4 .button {
+    > * {
+        background-color: var(--color-4);
+        border-color: var(--color-4B);
+    }
+    &::before {
+        background-color: var(--color-4B);
     }
 }
 
 
 
+
+
+// .rainbow3 .button {
+//     > * { background-color: #41E307; }
+//     &::before { background-color: #000000; }
+// }
+
+// .rainbow4 .button {
+//     > * { background-color: #c7e329; }
+//     &::before { background-color: #000000; }
+// }
+
+// .rainbow7 .button {
+//     > * { background-color: #E329CC; }
+//     &::before { background-color: #000000; }
+// }
 
 
 
