@@ -40,16 +40,12 @@ aside {
                 &:not(.logo) {
                     padding: 0 18px;
                     gap: 18px;
-
-                    > .icon {
-                        background-size: 28px;
-                    }
             
                     > span {
                         flex: 1;
                     }
             
-                    &:not(.active):hover {
+                    &:hover {
                         background: var(--color-gray);
                     }
 

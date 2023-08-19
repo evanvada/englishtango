@@ -9,6 +9,10 @@ $button-side-2: 6px;
     border-radius: 14px;
     color: var(--color-light);
 
+	font-family: FiraSansBold, sans-serif;
+	text-transform: uppercase;
+	user-select: none;
+
     &::before {
         content: "";
         position: absolute;
@@ -37,13 +41,22 @@ $button-side-2: 6px;
 
         transition: top 0.04s ease;
     }
+    
+    &:not(:disabled):hover > *, &:hover::before {
+        filter: brightness(1.2);
+        cursor: pointer;
+    }
 
-    &:active > * {
+    &:not(:disabled).checked > *, &:not(:disabled).checked::before {
+        filter: brightness(0.8);
+    }
+
+    &:not(:disabled).checked > * {
         top: calc($button-side * 2);
     }
-    
-    &:hover > *, &:hover::before {
-        filter: brightness(1.2);
+
+    &:not(:disabled):active > * {
+        top: calc($button-side * 3);
     }
 }
 
@@ -55,9 +68,8 @@ $button-side-2: 6px;
 .round.button {
     width: 64px;
     height: 64px;
-
-
     border-radius: 50% / calc(50% - $button-side-2 / 2);
+
     &::before {
         border-radius: 50%;
         height: calc(100% - $button-side-2);
@@ -66,9 +78,37 @@ $button-side-2: 6px;
     > * {
         border-radius: 50%;
         height: calc(100% - $button-side-2);
+        font-size: 1.75rem;
     }
-    &:active > * {
+    &:not(:disabled).checked > * {
         top: calc($button-side-2 * 2);
+    }
+    &:not(:disabled):active > * {
+        top: calc($button-side-2 * 3);
+    }
+}
+
+.square.button {
+    width: 64px;
+    height: 64px;
+    
+    border-radius: 24px;
+    &::before {
+        border-radius: 24px;
+        height: calc(100% - $button-side-2);
+        top: calc($button-side-2);
+    }
+    > * {
+        border-radius: 24px;
+        height: calc(100% - $button-side-2);
+        font-size: 1.75rem;
+    }
+
+    &:not(:disabled).checked > * {
+        top: calc($button-side-2 * 2);
+    }
+    &:not(:disabled):active > * {
+        top: calc($button-side-2 * 3);
     }
 }
 
@@ -92,7 +132,7 @@ $button-side-2: 6px;
 
 
 
-.color1 .button {
+.color1.button {
     > * {
         background-color: var(--color-1);
         border-color: var(--color-1B);
@@ -102,7 +142,7 @@ $button-side-2: 6px;
     }
 }
 
-.color2 .button {
+.color2.button {
     > * {
         background-color: var(--color-2);
         border-color: var(--color-2B);
@@ -112,7 +152,7 @@ $button-side-2: 6px;
     }
 }
 
-.color3 .button {
+.color3.button {
     > * {
         background-color: var(--color-3);
         border-color: var(--color-3B);
@@ -122,7 +162,7 @@ $button-side-2: 6px;
     }
 }
 
-.color4 .button {
+.color4.button {
     > * {
         background-color: var(--color-4);
         border-color: var(--color-4B);
@@ -134,27 +174,11 @@ $button-side-2: 6px;
 
 
 
-
-
-// .rainbow3 .button {
-//     > * { background-color: #41E307; }
-//     &::before { background-color: #000000; }
-// }
-
-// .rainbow4 .button {
-//     > * { background-color: #c7e329; }
-//     &::before { background-color: #000000; }
-// }
-
-// .rainbow7 .button {
-//     > * { background-color: #E329CC; }
-//     &::before { background-color: #000000; }
-// }
-
-
-
-
-
-
-
-
+.button:disabled {
+    > * {
+        background-color: var(--color-gray);
+    }
+    &::before {
+        background-color: var(--color-grayer);
+    }
+}

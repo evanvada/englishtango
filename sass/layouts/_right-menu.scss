@@ -1,0 +1,101 @@
+
+
+
+@mixin sub-menu-styling() {
+    margin: 12px 0;
+    border: solid 2px var(--color-gray);
+    border-radius: 14px;
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu {
+    position: sticky;
+    width: 360px;
+    top: 24px;
+
+    &__stats-info {
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            cursor: default;
+
+            li {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 6px 12px;
+                border-radius: 10px;
+                gap: 6px;
+                font-family: FiraSansBold, sans-serif;
+    
+                &.streak { color: var(--color-3B); }
+                &.exp { color: var(--color-3B); }
+                &.gems { color: var(--color-2); }
+
+                &:hover {
+                    background: var(--color-gray);
+                    .dropdown { display: block; }
+                    img { display: block; }
+                }
+
+                .dropdown {
+                    display: none;
+                    z-index: 10;
+                    position: absolute;
+                    margin-top: calc(38px);
+
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    section {
+                        border-radius: 12px;
+                        padding: 18px;
+                        margin-top: 14px;
+
+                        background-color: var(--color-bg);
+                        border: solid 2px var(--color-gray);
+
+                        color: var(--color-text);
+                        white-space: nowrap;
+                    }
+                }
+
+                img {
+                    display: none;
+                    z-index: 10;
+                    position: absolute;
+                    margin-top: calc(44px);
+
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                
+                    width: 20px;
+                    height: 10px;
+                    fill: var(--color-bg);
+                    color: var(--color-gray);
+                }
+            }
+        }
+    }
+
+    &__exercise-info {
+        @include sub-menu-styling;
+    }
+
+    &__match-info {
+        @include sub-menu-styling;
+    }
+}
+
+
+
+

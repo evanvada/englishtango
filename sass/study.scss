@@ -1,9 +1,9 @@
+@import "./base/vars";
 @import "./base/base";
-
-
-.nav {
-    color: green;
-}
-
-
+@import "./base/fonts";
+@import "./components/icons";
+@import "./components/buttons";
+@import "./layouts/course";
+@import "./layouts/right-menu";
+@import "./layouts/navigation";
 

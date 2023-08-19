@@ -2,7 +2,8 @@
 :root {
     
 	--color-light: #ffffff;
-	--color-gray: #eeeeee;
+	--color-gray: #dddddd;
+	--color-grayer: #aaaaaa;
 	--color-dark: #555555;
 
 	--color-1: #1184e2;
@@ -13,16 +14,7 @@
 	--color-3B: #f17c4e;
 	--color-4: #07e3e3;
 	--color-4B: #0097d3;
-	// --color-4: #4fdd1b;
-	// --color-4B: #07b14e;
-
-	// --color-3: none;
-	// --color-3B: none;
-	// --color-4: none;
-	// --color-4B: none;
-	// --color-5: none;
-	// --color-5B: none;
-
+	
 	--color-text: var(--color-dark);
 	--color-bg: var(--color-light);
 }

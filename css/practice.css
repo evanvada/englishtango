@@ -1,6 +1,7 @@
 :root {
   --color-light: #ffffff;
-  --color-gray: #eeeeee;
+  --color-gray: #dddddd;
+  --color-grayer: #aaaaaa;
   --color-dark: #555555;
   --color-1: #1184e2;
   --color-1B: #004db1;
@@ -85,12 +86,6 @@ h3, h4, h5, h6 {
   font-size: 1rem;
 }
 
-button {
-  font-family: FiraSansBold, sans-serif;
-  text-transform: uppercase;
-  user-select: none;
-}
-
 a {
   font-family: FiraSansBold, sans-serif;
   text-transform: uppercase;
@@ -109,6 +104,12 @@ a {
 }
 .icon.study {
   background-image: url(../media/study.png);
+}
+.icon.vocabulary {
+  background-image: url(../media/vocabulary.png);
+}
+.icon.experience {
+  background-image: url(../media/experience.png);
 }
 .icon.settings {
   background-image: url(../media/settings.png);
@@ -146,6 +147,9 @@ a {
   overflow: hidden;
   border-radius: 14px;
   color: var(--color-light);
+  font-family: FiraSansBold, sans-serif;
+  text-transform: uppercase;
+  user-select: none;
 }
 .button::before {
   content: "";
@@ -171,11 +175,18 @@ a {
   background-color: #777;
   transition: top 0.04s ease;
 }
-.button:active > * {
+.button:not(:disabled):hover > *, .button:hover::before {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+.button:not(:disabled).checked > *, .button:not(:disabled).checked::before {
+  filter: brightness(0.8);
+}
+.button:not(:disabled).checked > * {
   top: 8px;
 }
-.button:hover > *, .button:hover::before {
-  filter: brightness(1.2);
+.button:not(:disabled):active > * {
+  top: 12px;
 }
 
 .large.button {
@@ -196,9 +207,35 @@ a {
 .round.button > * {
   border-radius: 50%;
   height: calc(100% - 6px);
+  font-size: 1.75rem;
 }
-.round.button:active > * {
+.round.button:not(:disabled).checked > * {
   top: 12px;
+}
+.round.button:not(:disabled):active > * {
+  top: 18px;
+}
+
+.square.button {
+  width: 64px;
+  height: 64px;
+  border-radius: 24px;
+}
+.square.button::before {
+  border-radius: 24px;
+  height: calc(100% - 6px);
+  top: 6px;
+}
+.square.button > * {
+  border-radius: 24px;
+  height: calc(100% - 6px);
+  font-size: 1.75rem;
+}
+.square.button:not(:disabled).checked > * {
+  top: 12px;
+}
+.square.button:not(:disabled):active > * {
+  top: 18px;
 }
 
 .small.button {
@@ -223,88 +260,43 @@ a {
   background-color: var(--color-1B);
 }
 
-.color1 .button > * {
+.color1.button > * {
   background-color: var(--color-1);
   border-color: var(--color-1B);
 }
-.color1 .button::before {
+.color1.button::before {
   background-color: var(--color-1B);
 }
 
-.color2 .button > * {
+.color2.button > * {
   background-color: var(--color-2);
   border-color: var(--color-2B);
 }
-.color2 .button::before {
+.color2.button::before {
   background-color: var(--color-2B);
 }
 
-.color3 .button > * {
+.color3.button > * {
   background-color: var(--color-3);
   border-color: var(--color-3B);
 }
-.color3 .button::before {
+.color3.button::before {
   background-color: var(--color-3B);
 }
 
-.color4 .button > * {
+.color4.button > * {
   background-color: var(--color-4);
   border-color: var(--color-4B);
 }
-.color4 .button::before {
+.color4.button::before {
   background-color: var(--color-4B);
 }
 
-aside {
-  position: fixed;
-  height: 100%;
-  width: 256px;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  border-right: solid 2px var(--color-gray);
+.button:disabled > * {
+  background-color: var(--color-gray);
 }
-aside nav {
-  padding: 14px;
-  width: 100%;
-}
-aside nav ul {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-aside nav ul a {
-  height: 52px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  border-radius: 12px;
-}
-aside nav ul a.logo {
-  margin: 0 18px;
-  color: var(--color-1);
-  text-transform: none;
-  height: 60px;
-}
-aside nav ul a:not(.logo) {
-  padding: 0 18px;
-  gap: 18px;
-}
-aside nav ul a:not(.logo) > .icon {
-  background-size: 28px;
-}
-aside nav ul a:not(.logo) > span {
-  flex: 1;
-}
-aside nav ul a:not(.logo):not(.active):hover {
-  background: var(--color-gray);
-}
-aside nav ul a:not(.logo).active {
-  border: solid 2px var(--color-2);
-  background: rgba(255, 172, 94, 0.2);
-  color: var(--color-2);
-  padding: 0 16px;
+.button:disabled::before {
+  background-color: var(--color-grayer);
 }
 
 main {
@@ -318,13 +310,16 @@ main {
 
 .wall {
   width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 .course {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 12px;
 }
 .course__title {
   background: #777777;
@@ -353,6 +348,9 @@ main {
   display: flex;
   align-items: stretch;
 }
+.course__content__line.wide {
+  gap: 80px;
+}
 .course__bank {
   width: 64px;
   display: flex;
@@ -371,9 +369,24 @@ main {
 .course .half-flex {
   width: 32px;
 }
+.course .one-flex {
+  width: 64px;
+}
 
-.color1 .course__title {
+.color1.course__title {
   background: var(--color-1);
+}
+
+.color2.course__title {
+  background: var(--color-2);
+}
+
+.color3.course__title {
+  background: var(--color-3);
+}
+
+.color4.course__title {
+  background: var(--color-4);
 }
 
 .menu {
@@ -385,6 +398,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: default;
 }
 .menu__stats-info ul li {
   position: relative;
@@ -461,4 +475,53 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+aside {
+  position: fixed;
+  height: 100%;
+  width: 256px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-right: solid 2px var(--color-gray);
+}
+aside nav {
+  padding: 14px;
+  width: 100%;
+}
+aside nav ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+aside nav ul a {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 12px;
+}
+aside nav ul a.logo {
+  margin: 0 18px;
+  color: var(--color-1);
+  text-transform: none;
+  height: 60px;
+}
+aside nav ul a:not(.logo) {
+  padding: 0 18px;
+  gap: 18px;
+}
+aside nav ul a:not(.logo) > span {
+  flex: 1;
+}
+aside nav ul a:not(.logo):hover {
+  background: var(--color-gray);
+}
+aside nav ul a:not(.logo).active {
+  border: solid 2px var(--color-2);
+  background: rgba(255, 172, 94, 0.2);
+  color: var(--color-2);
+  padding: 0 16px;
 }

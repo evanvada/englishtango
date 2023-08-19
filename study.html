@@ -8,17 +8,125 @@
 	</head>
 	<body>
 
-		<section class="nav">
-            Hello
-		</section>
+		<aside>
+			<nav>
+				<ul>
+					<li><a href="index.html" class="logo"><h1>English Tango</h1></a></li>
+					<li><a href="practice.html"><div class="practice icon"></div><span>Pratiquer</span></a></li>
+					<li><a class="active" href="study.html"><div class="study icon"></div><span>Étudier</span></a></li>
+					<li><a href="vocabulary.html"><div class="vocabulary icon"></div><span>Vocabulaire</span></a></li>
+					<li><a href="experience.html"><div class="experience icon"></div><span>Expérience</span></a></li>
+					<li><a href="settings.html"><div class="settings icon"></div><span>Options</span></a></li>
+				</ul>
+			</nav>
+		</aside>
 
-		<section class="course">
+		<main>
+			<section class="wall">
 
-		</section>
+				<section class="course">
+					<div class="course__title color1">
+						<div class="course__title__left">
+							<h2>Les verbes irréguliers</h2>
+							<span>Les verbes les plus utilisés en anglais</span>
+						</div>
+						<a href="practice.html" class="small button color1"><span>EXERCICES</span></a>
+					</div>
+					<section class="course__content">
+						<div class="course__content__line">
+							<div class="course__bank"><button class="square button color1" onclick="toggleBank(this, 'iverbs1_inf')"><div>1</div></button><span>Verbes n°1</span></div>
+							<div class="course__bank"><button class="square button color1" onclick="toggleBank(this, 'iverbs2_inf')"><div>2</div></button><span>Verbes n°2</span></div>
+						</div>
+						<div class="course__content__line">
+							<div class="course__bank"><button class="square button color3" onclick="toggleBank(this, 'iverbs3_inf')"><div>3</div></button><span>Verbes n°3</span></div>
+							<div class="course__bank"><button class="square button color3" onclick="toggleBank(this, 'iverbs4_inf')"><div>4</div></button><span>Verbes n°4</span></div>
+							<div class="course__bank"><button class="square button color3" onclick="toggleBank(this, 'iverbs5_inf')"><div>5</div></button><span>Verbes n°5</span></div>
+						</div>
+						<div class="course__content__line">
+							<div class="half-flex"></div>
+							<div class="course__bank"><button class="square button color2" onclick="toggleBank(this, 'iverbs6_inf')"><div>6</div></button><span>Verbes n°6</span></div>
+							<div class="course__bank"><button class="square button color2" onclick="toggleBank(this, 'iverbs7_inf')"><div>7</div></button><span>Verbes n°7</span></div>
+							<div class="half-flex"></div>
+						</div>
+					</section>
+				</section>
 
-		<section class="menu">
+				<section class="course">
+					<div class="course__title color3">
+						<div class="course__title__left">
+							<h2>Conjugaisons</h2>
+							<span>Prendre des petits mots et les assembler ensemble</span>
+						</div>
+						<a href="practice.html" class="small button color3"><span>EXERCICES</span></a>
+					</div>
+					<section class="course__content">
+						<div class="course__content__line wide">
+							<div class="course__bank"><button class="square button color3"><div>✖</div></button><span>Présent</span></div>
+							<div class="course__bank"><button class="square button color4"><div>←</div></button><span>Passé</span></div>
+							<div class="course__bank"><button class="square button color1"><div>→</div></button><span>Futur</span></div>
+						</div>
+						
+						<div class="course__content__line wide">
+							<div class="course__bank"><button class="square button color3"><div>✖</div></button><span>Présent parfait</span></div>
+							<div class="course__bank"><button class="square button color4"><div>←</div></button><span>Passé parfait</span></div>
+							<div class="course__bank"><button class="square button color1"><div>→</div></button><span>Futur parfait</span></div>
+						</div>
+						
+						<div class="course__content__line wide">
+							<div class="course__bank"><button class="square button color2"><div>P</div></button><span>Conditionnel<br>présent</span></div>
+							<div class="course__bank"><button class="square button color2"><div>P</div></button><span>Conditionnel<br>parfait</span></div>
+						</div>
 
-		</section>
+					</section>
+				</section>
+
+			</section>
+
+			<section class="menu">
+
+				<nav class="menu__stats-info">
+					<ul>
+						<li class="language">
+							<div class="english icon"></div>
+							<div class="dropdown">
+								<section>
+									Vous étudiez l'anglais
+								</section>
+							</div>
+							<img src="media/arrow.svg">
+						</li>
+						<li class="streak">
+							<div class="fire icon"></div><span>1</span>
+							<div class="dropdown">
+								<section>
+									série
+								</section>
+							</div>
+							<img src="media/arrow.svg">
+						</li>
+						<li class="exp">
+							<div class="bolt icon"></div><span>350</span>
+							<div class="dropdown">
+								<section>
+									expérience
+								</section>
+							</div>
+							<img src="media/arrow.svg">
+						</li>
+						<li class="gems">
+							<div class="gem icon"></div><span>50</span>
+							<div class="dropdown">
+								<section>
+									gemmes
+								</section>
+							</div>
+							<img src="media/arrow.svg">
+						</li>
+					</ul>
+				</nav>
+
+			</section>
+		</main>
 
 	</body>
 </html>
