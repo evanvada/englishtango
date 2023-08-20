@@ -7,3 +7,6 @@
 @import "./layouts/right-menu";
 @import "./layouts/navigation";
 
+body {
+    overflow-y: scroll;
+}

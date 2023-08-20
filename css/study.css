@@ -538,3 +538,7 @@ aside nav ul a:not(.logo).active {
   color: var(--color-2);
   padding: 0 16px;
 }
+
+body {
+  overflow-y: scroll;
+}
