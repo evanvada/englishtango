@@ -1,6 +1,6 @@
-word_banks = []
+irregular_verbs_vocabulary = []
 
-word_banks.push({name: "verbs_a", fr: "Verbes niv 1", items: [
+irregular_verbs_vocabulary.push({name: "irregular_verbs_1", fr: "Verbes niv 1", items: [
 	{fr: "être", inf: "be", ps: "was", pp: "been"},
 	{fr: "acheter", inf: "buy", ps: "bought", pp: "bought"},
 	{fr: "faire", inf: "do", ps: "did", pp: "done"},
@@ -21,7 +21,7 @@ word_banks.push({name: "verbs_a", fr: "Verbes niv 1", items: [
 	{fr: "devenir", inf: "become", ps: "became", pp: "becom"},
 ]})
 
-word_banks.push({name: "verbs_b", fr: "Verbes niv 2", items: [
+irregular_verbs_vocabulary.push({name: "irregular_verbs_2", fr: "Verbes niv 2", items: [
 	{fr: "commencer", inf: "begin", ps: "began", pp: "begun"},
 	{fr: "tenir", inf: "hold", ps: "held", pp: "held"},
 	{fr: "venir", inf: "come", ps: "came", pp: "come"},
@@ -40,7 +40,7 @@ word_banks.push({name: "verbs_b", fr: "Verbes niv 2", items: [
 	{fr: "rêver", inf: "dream", ps: "dreamt", pp: "dreamt"},
 ]})
 
-word_banks.push({name: "verbs_c", fr: "Verbes niv 3", items: [
+irregular_verbs_vocabulary.push({name: "irregular_verbs_3", fr: "Verbes niv 3", items: [
 	{fr: "savoir", inf: "know", ps: "knew", pp: "known"},
 	{fr: "apprendre", inf: "learn", ps: "learnt", pp: "learnt"},
 	{fr: "éclairer", inf: "light", ps: "lit", pp: "lit"},
@@ -61,7 +61,7 @@ word_banks.push({name: "verbs_c", fr: "Verbes niv 3", items: [
 	{fr: "briller", inf: "shine", ps: "shone", pp: "shone"},
 ]})
 
-word_banks.push({name: "verbs_d", fr: "Verbes niv 4", items: [
+irregular_verbs_vocabulary.push({name: "irregular_verbs_4", fr: "Verbes niv 4", items: [
 	{fr: "souffler", inf: "blow", ps: "blew", pp: "blown"},
 	{fr: "apporter", inf: "bring", ps: "brought", pp: "brought"},
 	{fr: "attrapper", inf: "catch", ps: "caught", pp: "caught"},
@@ -86,7 +86,7 @@ word_banks.push({name: "verbs_d", fr: "Verbes niv 4", items: [
 	{fr: "partir", inf: "leave", ps: "left", pp: "left"},
 ]})
 
-word_banks.push({name: "verbs_e", fr: "Verbes niv 5", items: [
+irregular_verbs_vocabulary.push({name: "irregular_verbs_5", fr: "Verbes niv 5", items: [
 	{fr: "réveiller", inf: "wake", ps: "woke", pp: "woken"},
 	{fr: "envoyer", inf: "send", ps: "sent", pp: "sent"},
 	{fr: "dire", inf: "say", ps: "said", pp: "said"},
@@ -109,7 +109,7 @@ word_banks.push({name: "verbs_e", fr: "Verbes niv 5", items: [
 	{fr: "gagner", inf: "win", ps: "won", pp: "won"},
 ]})
 
-word_banks.push({name: "verbs_f", fr: "Verbes niv 6", items: [
+irregular_verbs_vocabulary.push({name: "irregular_verbs_6", fr: "Verbes niv 6", items: [
 	{fr: "éveiller", inf: "awake", ps: "awoke", pp: "awaken"},
 	{fr: "plier", inf: "bend", ps: "bent", pp: "bent"},
 	{fr: "parier", inf: "bet", ps: "bet", pp: "bet"},
@@ -134,7 +134,7 @@ word_banks.push({name: "verbs_f", fr: "Verbes niv 6", items: [
 	{fr: "s'élever", inf: "rise", ps: "rose", pp: "risen"},
 ]})
 
-word_banks.push({name: "verbs_g", fr: "Verbes niv 7", items: [
+irregular_verbs_vocabulary.push({name: "irregular_verbs_7", fr: "Verbes niv 7", items: [
 	{fr: "survenir", inf: "arise", ps: "arose", pp: "arisen"},
 	{fr: "diffuser", inf: "broadcast", ps: "broadcast", pp: "broadcast"},
 	{fr: "s'accrocher", inf: "cling", ps: "clung", pp: "clung"},
@@ -166,8 +166,64 @@ word_banks.push({name: "verbs_g", fr: "Verbes niv 7", items: [
 
 
 
+var start_match_button = document.querySelector("#start_match");
+var question_count_span = document.querySelector("#question_count");
 
 
+
+
+
+function getBundleSize(bundle) {
+	if (bundle.includes("irregular_verbs")) {
+		vocab = bundle.substring(0, bundle.lastIndexOf("_"));
+		return irregular_verbs_vocabulary.find(v => v.name == vocab).items.length;
+	} else {
+		return 20;
+	}
+}
+
+
+
+
+
+
+
+selected_bundles = []
+
+function generateBundle() {
+
+}
+
+
+function toggleBundle(element, bundle) {
+    if (!element.classList.contains("checked")) {
+        element.classList.add("checked");
+		selected_bundles.push(bundle)
+    } else {
+        element.classList.remove("checked");
+		selected_bundles = selected_bundles.filter(b => b != bundle);
+    }
+
+	if (selected_bundles.length > 0) {
+		start_match_button.removeAttribute('disabled');
+		question_count_span.classList.add("highlight");
+
+		let total = 0
+		for (let i = 0; i < selected_bundles.length; i++) {
+			total += getBundleSize(selected_bundles[i])
+		}
+
+		question_count_span.textContent = "Questions : " + total;
+	} else {
+		start_match_button.setAttribute('disabled', true);
+		question_count_span.classList.remove("highlight");
+		question_count_span.textContent = "Pas de collection selectionnée";
+	}
+
+	question_count_span.classList.remove("pop");
+	void question_count_span.offsetWidth;
+	question_count_span.classList.add("pop");
+}
 
 
 

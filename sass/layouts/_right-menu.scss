@@ -93,6 +93,13 @@
 
     &__match-info {
         @include sub-menu-styling;
+
+        align-items: flex-start;
+        
+        .highlight {
+            color: var(--color-2);
+            font-family: FiraSansBold, sans-serif;
+        }
     }
 }
 

@@ -1,15 +1,5 @@
 
 
-function toggleBank(element, bank) {
-    if (!element.classList.contains("checked")) {
-        element.classList.add("checked");
-    } else {
-        element.classList.remove("checked");
-    }
-}
-
-
-
 
 
 var repetition_options = [
@@ -17,7 +7,7 @@ var repetition_options = [
 	{name: "one_chance", fr: "Une seule chance"},
 ]
 
-var exercice_options = [
+var question_options = [
 	{name: "read_en_write_fr", fr: "Traduire en français"},
 	{name: "read_fr_write_en", fr: "Traduire en anglais"},
 	{name: "read_fr_choose_en", fr: "Choisir la réponse en anglais"},
@@ -25,7 +15,11 @@ var exercice_options = [
 ]
 
 selected_repetition_option ="repeat_question"
-selected_exercice_option = "read_en_write_fr"
+selected_question_option = "read_en_write_fr"
+
+
+
+
 
 function switchOption(element, options, option) {
 	// switch to the next index

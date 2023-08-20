@@ -42,22 +42,34 @@ $button-side-2: 6px;
         transition: top 0.04s ease;
     }
     
-    &:not(:disabled):hover > *, &:hover::before {
+    &:not(:disabled):hover > *, &:not(:disabled):hover::before {
         filter: brightness(1.2);
+    }
+
+    &:hover > *, &:hover::before {
         cursor: pointer;
     }
 
-    &:not(:disabled).checked > *, &:not(:disabled).checked::before {
+    &.checked > *, &.checked::before {
         filter: brightness(0.8);
     }
 
-    &:not(:disabled).checked > * {
+    &:disabled > * {
+        top: calc($button-side);
+    }
+
+    &.checked > * {
         top: calc($button-side * 2);
     }
 
-    &:not(:disabled):active > * {
+    &:active > * {
         top: calc($button-side * 3);
     }
+
+    &:disabled:active > * {
+        top: calc($button-side * 2);
+    }
+
 }
 
 .large.button {
@@ -80,10 +92,10 @@ $button-side-2: 6px;
         height: calc(100% - $button-side-2);
         font-size: 1.75rem;
     }
-    &:not(:disabled).checked > * {
+    &.checked > * {
         top: calc($button-side-2 * 2);
     }
-    &:not(:disabled):active > * {
+    &:active > * {
         top: calc($button-side-2 * 3);
     }
 }
@@ -104,10 +116,10 @@ $button-side-2: 6px;
         font-size: 1.75rem;
     }
 
-    &:not(:disabled).checked > * {
+    &.checked > * {
         top: calc($button-side-2 * 2);
     }
-    &:not(:disabled):active > * {
+    &:active > * {
         top: calc($button-side-2 * 3);
     }
 }

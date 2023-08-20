@@ -175,18 +175,26 @@ a {
   background-color: #777;
   transition: top 0.04s ease;
 }
-.button:not(:disabled):hover > *, .button:hover::before {
+.button:not(:disabled):hover > *, .button:not(:disabled):hover::before {
   filter: brightness(1.2);
+}
+.button:hover > *, .button:hover::before {
   cursor: pointer;
 }
-.button:not(:disabled).checked > *, .button:not(:disabled).checked::before {
+.button.checked > *, .button.checked::before {
   filter: brightness(0.8);
 }
-.button:not(:disabled).checked > * {
+.button:disabled > * {
+  top: 4px;
+}
+.button.checked > * {
   top: 8px;
 }
-.button:not(:disabled):active > * {
+.button:active > * {
   top: 12px;
+}
+.button:disabled:active > * {
+  top: 8px;
 }
 
 .large.button {
@@ -209,10 +217,10 @@ a {
   height: calc(100% - 6px);
   font-size: 1.75rem;
 }
-.round.button:not(:disabled).checked > * {
+.round.button.checked > * {
   top: 12px;
 }
-.round.button:not(:disabled):active > * {
+.round.button:active > * {
   top: 18px;
 }
 
@@ -231,10 +239,10 @@ a {
   height: calc(100% - 6px);
   font-size: 1.75rem;
 }
-.square.button:not(:disabled).checked > * {
+.square.button.checked > * {
   top: 12px;
 }
-.square.button:not(:disabled):active > * {
+.square.button:active > * {
   top: 18px;
 }
 
@@ -351,19 +359,19 @@ main {
 .course__content__line.wide {
   gap: 80px;
 }
-.course__bank {
+.course__bundle {
   width: 64px;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 6px;
 }
-.course__bank span {
+.course__bundle span {
   font-family: FiraSansBold, sans-serif;
   white-space: nowrap;
   text-align: center;
 }
-.course__bank .icon {
+.course__bundle .icon {
   background-size: 24px;
 }
 .course .half-flex {
@@ -475,6 +483,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: flex-start;
+}
+.menu__match-info .highlight {
+  color: var(--color-2);
+  font-family: FiraSansBold, sans-serif;
 }
 
 aside {
