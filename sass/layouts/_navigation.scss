@@ -11,6 +11,8 @@ aside {
     background: white;
     border-right: solid 2px var(--color-gray);
 
+    z-index: 20;
+
     nav {
         padding: 14px;
         width: 100%;

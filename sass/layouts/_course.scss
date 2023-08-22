@@ -38,6 +38,11 @@ main {
             flex-direction: column;
             gap: 12px;
         }
+
+        .flat-button { 
+            width: 120px;
+            height: 54px;
+        }
     }
 
     &__content {

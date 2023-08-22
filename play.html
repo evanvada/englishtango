@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="favicon.png" type="image/png">
+		<link rel="stylesheet" href="css/play.css">
+		<title>English Tango</title>
+	</head>
+	<body>
+
+        <main>
+            <section class="progress">
+                <div href="practice.html" class="cross icon"></div>
+                <div class="progress__bar"><div class="progress__bar__fill"><div class="progress__bar__fill__highlight"></div></div></div>
+                <div class="icon"></div>
+            </section>
+
+            <section class="exercice">
+                <h3>Complétez l'espace manquant en anglais</h3>
+                <div class="exercice__display">
+                    Maintenant, je mange une pomme.
+                    <br>
+                    → I <span class="unknown"></span> an apple.
+                </div>
+                <input class="exercice__answer" type="text">
+            </section>
+
+            <section class="response">
+                <div class="response__container">
+                    <button class="border gray flat-button"><span>Passer</span></button>
+                    <button class="color1 flat-button"><span>Valider</span></button>
+                </div>
+            </section>
+            
+            <section class="response--wrong hidden">
+                <div class="response__container">
+                    <div class="response__symbol"><div class="wrong icon"></div></div>
+                    <div class="response__correction">
+                        <h3>Faux !</h3>
+                        I am eating an apple.
+                    </div>
+                    <button class="color2 flat-button"><span>Continuer</span></button>
+                </div>
+            </section>
+
+            <section class="response--correct hidden">
+                <div class="response__container">
+                    <div class="response__symbol"><div class="correct icon"></div></div>
+                    <div class="response__correction">
+                        <h3>Bravo !</h3>
+                        I am eating an apple.
+                    </div>
+                    <button class="color1 flat-button"><span>Continuer</span></button>
+                </div>
+            </section>
+        </main>
+
+	</body>
+</html>

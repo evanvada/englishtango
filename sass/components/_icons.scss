@@ -34,6 +34,8 @@
 
 
 
+
+
     &.chest {
         background-image: url(../media/chest.png);
     }
@@ -58,6 +60,15 @@
     }
 
 
+
+
+
+
+
+
+
+
+
     &.inf {
         background-image: url(../media/inf.png);
     }
@@ -68,6 +79,24 @@
 
     &.pp {
         background-image: url(../media/pp.png);
+    }
+
+    &.cross {
+        background-image: url(../media/cross.svg);
+    }
+
+    &.correct {
+        background-image: url(../media/correct.svg);
+        background-size: 48px;
+        width: 48px;
+        height: 48px;
+    }
+
+    &.wrong {
+        background-image: url(../media/wrong.svg);
+        background-size: 48px;
+        width: 48px;
+        height: 48px;
     }
 }
 

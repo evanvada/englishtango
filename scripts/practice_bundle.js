@@ -217,7 +217,7 @@ function toggleBundle(element, bundle) {
 	} else {
 		start_match_button.setAttribute('disabled', true);
 		question_count_span.classList.remove("highlight");
-		question_count_span.textContent = "Pas de collection selectionnée";
+		question_count_span.textContent = "Pas de questions selectionnées";
 	}
 
 	question_count_span.classList.remove("pop");

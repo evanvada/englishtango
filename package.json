@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch sass/practice.scss:css/practice.css sass/study.scss:css/study.css --no-source-map"
+    "sass": "sass --watch sass/practice.scss:css/practice.css sass/study.scss:css/study.css sass/play.scss:css/play.css --no-source-map"
   },
   "author": "",
   "license": "ISC",

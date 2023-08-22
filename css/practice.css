@@ -50,6 +50,10 @@ html, body {
   background: var(--color-bg);
 }
 
+.hidden {
+  display: none;
+}
+
 @font-face {
   font-family: "FiraSans";
   src: url("../fonts/FiraSans-Regular.ttf");
@@ -67,7 +71,6 @@ body {
 * {
   font-size: 1em;
   font-weight: normal;
-  line-height: inherit;
   font-family: inherit;
 }
 
@@ -141,17 +144,34 @@ a {
 .icon.pp {
   background-image: url(../media/pp.png);
 }
+.icon.cross {
+  background-image: url(../media/cross.svg);
+}
+.icon.correct {
+  background-image: url(../media/correct.svg);
+  background-size: 48px;
+  width: 48px;
+  height: 48px;
+}
+.icon.wrong {
+  background-image: url(../media/wrong.svg);
+  background-size: 48px;
+  width: 48px;
+  height: 48px;
+}
 
-.button {
+.flat-button {
   position: relative;
   overflow: hidden;
   border-radius: 14px;
   color: var(--color-light);
+  height: 48px;
+  width: 100%;
   font-family: FiraSansBold, sans-serif;
   text-transform: uppercase;
   user-select: none;
 }
-.button::before {
+.flat-button::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -160,9 +180,9 @@ a {
   top: 4px;
   display: flex;
   align-items: start;
-  background-color: #000;
+  background-color: var(--color-dark);
 }
-.button > * {
+.flat-button > * {
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -175,135 +195,118 @@ a {
   background-color: #777;
   transition: top 0.04s ease;
 }
-.button:not(:disabled):hover > *, .button:not(:disabled):hover::before {
-  filter: brightness(1.2);
-}
-.button:hover > *, .button:hover::before {
+.flat-button:hover > *, .flat-button:hover::before {
   cursor: pointer;
 }
-.button.checked > *, .button.checked::before {
+.flat-button.checked > *, .flat-button.checked::before {
   filter: brightness(0.8);
 }
-.button:disabled > * {
+.flat-button:disabled > * {
   top: 4px;
 }
-.button.checked > * {
+.flat-button.checked > * {
   top: 8px;
 }
-.button:active > * {
+.flat-button:active > * {
   top: 12px;
 }
-.button:disabled:active > * {
+.flat-button:disabled:active > * {
   top: 8px;
 }
 
-.large.button {
-  width: 100%;
-  height: 48px;
-}
-
-.round.button {
+.round.flat-button {
   width: 64px;
   height: 64px;
   border-radius: 50%/calc(50% - 3px);
 }
-.round.button::before {
+.round.flat-button::before {
   border-radius: 50%;
   height: calc(100% - 6px);
   top: 6px;
 }
-.round.button > * {
+.round.flat-button > * {
   border-radius: 50%;
   height: calc(100% - 6px);
   font-size: 1.75rem;
 }
-.round.button.checked > * {
+.round.flat-button.checked > * {
   top: 12px;
 }
-.round.button:active > * {
+.round.flat-button:active > * {
   top: 18px;
 }
 
-.square.button {
+.square.flat-button {
   width: 64px;
   height: 64px;
   border-radius: 24px;
 }
-.square.button::before {
+.square.flat-button::before {
   border-radius: 24px;
   height: calc(100% - 6px);
   top: 6px;
 }
-.square.button > * {
+.square.flat-button > * {
   border-radius: 24px;
   height: calc(100% - 6px);
   font-size: 1.75rem;
 }
-.square.button.checked > * {
+.square.flat-button.checked > * {
   top: 12px;
 }
-.square.button:active > * {
+.square.flat-button:active > * {
   top: 18px;
 }
 
-.small.button {
-  width: 120px;
-  height: 54px;
-}
-.small.button > * {
-  border: 2px solid #000;
+.flat-button.border > * {
+  border: 2px solid var(--color-dark);
 }
 
-.primary.button > * {
-  background-color: var(--color-2);
-}
-.primary.button::before {
-  background-color: var(--color-2B);
-}
-
-.secondary.button > * {
-  background-color: var(--color-1);
-}
-.secondary.button::before {
-  background-color: var(--color-1B);
-}
-
-.color1.button > * {
+.color1.flat-button > * {
   background-color: var(--color-1);
   border-color: var(--color-1B);
 }
-.color1.button::before {
+.color1.flat-button::before {
   background-color: var(--color-1B);
 }
 
-.color2.button > * {
+.color2.flat-button > * {
   background-color: var(--color-2);
   border-color: var(--color-2B);
 }
-.color2.button::before {
+.color2.flat-button::before {
   background-color: var(--color-2B);
 }
 
-.color3.button > * {
+.color3.flat-button > * {
   background-color: var(--color-3);
   border-color: var(--color-3B);
 }
-.color3.button::before {
+.color3.flat-button::before {
   background-color: var(--color-3B);
 }
 
-.color4.button > * {
+.color4.flat-button > * {
   background-color: var(--color-4);
   border-color: var(--color-4B);
 }
-.color4.button::before {
+.color4.flat-button::before {
   background-color: var(--color-4B);
 }
 
-.button:disabled > * {
+.gray.flat-button > * {
+  background-color: var(--color-light);
+  border-color: var(--color-gray);
+  color: var(--color-grayer);
+}
+.gray.flat-button::before {
   background-color: var(--color-gray);
 }
-.button:disabled::before {
+
+.flat-button:disabled > * {
+  background-color: var(--color-gray);
+}
+.flat-button:disabled::before {
   background-color: var(--color-grayer);
 }
 
@@ -358,6 +361,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+.course__title .flat-button {
+  width: 120px;
+  height: 54px;
 }
 .course__content {
   padding: 30px 18px;
@@ -416,6 +423,16 @@ main {
   position: sticky;
   width: 360px;
   top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.menu h3 {
+  font-family: FiraSansBold, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  text-align: center;
+  width: fit-content;
 }
 .menu__stats-info ul {
   display: flex;
@@ -482,7 +499,6 @@ main {
   color: var(--color-gray);
 }
 .menu__exercise-info {
-  margin: 12px 0;
   border: solid 2px var(--color-gray);
   border-radius: 14px;
   padding: 18px;
@@ -491,7 +507,6 @@ main {
   gap: 10px;
 }
 .menu__match-info {
-  margin: 12px 0;
   border: solid 2px var(--color-gray);
   border-radius: 14px;
   padding: 18px;
@@ -513,6 +528,7 @@ aside {
   flex-direction: column;
   background: white;
   border-right: solid 2px var(--color-gray);
+  z-index: 20;
 }
 aside nav {
   padding: 14px;
