@@ -185,15 +185,16 @@ class GameQuery {
 
 
 
-
-
-
 class GameIrregularVerbQuery extends GameQuery {
-    
+    constructor() {
+        super();
+    }
 }
 
 
 class GameConjugationQuery extends GameQuery {
-    
+    constructor() {
+        super();
+    }
 }
 
