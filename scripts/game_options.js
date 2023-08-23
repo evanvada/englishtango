@@ -2,20 +2,20 @@
 
 
 
-var repetition_options = [
+var repetitionOptions = [
 	{name: "repeat_question", fr: "Répéter les question ratées"},
 	{name: "one_chance", fr: "Une seule chance"},
 ]
 
-var question_options = [
+var questionOptions = [
 	{name: "read_en_write_fr", fr: "Traduire en français"},
 	{name: "read_fr_write_en", fr: "Traduire en anglais"},
 	{name: "read_fr_choose_en", fr: "Choisir la réponse en anglais"},
 	{name: "read_en_choose_fr", fr: "Choisir la réponse en français"},
 ]
 
-selected_repetition_option ="repeat_question"
-selected_question_option = "read_en_write_fr"
+selectedRepetitionOption ="repeat_question"
+selectedQuestionOption = "read_en_write_fr"
 
 
 

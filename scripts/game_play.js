@@ -132,9 +132,9 @@ class Game {
 
             // update game : repeat wrong question if option is selected
             game.queries[0].wrongs += 1
-            if (selected_repetition_option == "repeat_question") {
+            if (selectedRepetitionOption == "repeat_question") {
                 game.queries.splice(randomInt(0, game.queries.length-1), 0, game.queries.shift())
-            } else if (selected_repetition_option == "one_chance") {
+            } else if (selectedRepetitionOption == "one_chance") {
                 game.archived_queries.push(game.queries.shift());
             }
         }
