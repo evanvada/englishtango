@@ -14,6 +14,14 @@
 	--color-3B: #f17c4e;
 	--color-4: #07e3e3;
 	--color-4B: #0097d3;
+
+	--color-right-1: var(--color-1);
+	--color-right-2: var(--color-1B);
+	--color-right-3: rgba(17, 132, 226, 0.4);
+
+	--color-wrong-1: var(--color-2);
+	--color-wrong-2: var(--color-2B);
+	--color-wrong-3: rgba(238, 69, 27, 0.4);
 	
 	--color-text: var(--color-dark);
 	--color-bg: var(--color-light);

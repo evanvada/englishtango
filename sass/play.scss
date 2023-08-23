@@ -104,7 +104,9 @@ main {
         }
     }
 
-    &__answer {
+    &__answer,
+    &__answer--wrong,
+    &__answer--right {
         border-radius: 8px;
         padding: 8px;
         border: 2px solid var(--color-gray);
@@ -113,6 +115,17 @@ main {
         text-align: center;
 
         font-size: 1.25rem;
+        height: calc(1.5rem + 16px + 4px);
+    }
+
+    &__answer--wrong {
+        border-color: var(--color-wrong-1);
+        color: var(--color-wrong-1);
+    }
+
+    &__answer--right {
+        border-color: var(--color-right-1);
+        color: var(--color-right-1);
     }
 }
 
@@ -164,10 +177,10 @@ main {
         flex: 1;
     }
 
-    &--correct {
+    &--right {
         height: 140px;
-        background: rgba($color: #1184e2, $alpha: 0.4);
-        color: #004db1;
+        background: var(--color-right-3);
+        color: var(--color-right-2);
 
         .flat-button {
             flex: 1;
@@ -176,8 +189,8 @@ main {
 
     &--wrong {
         height: 140px;
-        background: rgba($color: #ee451b, $alpha: 0.4);
-        color: #a71409;
+        background: var(--color-wrong-3);
+        color: var(--color-wrong-2);
 
         .flat-button {
             flex: 1;
