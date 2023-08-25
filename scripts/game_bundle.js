@@ -16,7 +16,7 @@ irregularVerbsVocabulary.push({name: "irregular_verbs_1", fr: "Verbes niv 1", it
 	{fr: "dormir", inf: "sleep", ps: "slept", pp: "slept"},
 	{fr: "parler", inf: "speak", ps: "spoke", pp: "spoken"},
 	{fr: "prendre", inf: "take", ps: "took", pp: "taken"},
-	{fr: "porter (vêtement)", inf: "wear", ps: "wore", pp: "worn"},
+	{fr: "porter (un vêtement)", inf: "wear", ps: "wore", pp: "worn"},
 	{fr: "écrire", inf: "write", ps: "wrote", pp: "written"},
 	{fr: "devenir", inf: "become", ps: "became", pp: "becom"},
 ]})
@@ -46,7 +46,7 @@ irregularVerbsVocabulary.push({name: "irregular_verbs_3", fr: "Verbes niv 3", it
 	{fr: "éclairer", inf: "light", ps: "lit", pp: "lit"},
 	{fr: "rencontrer", inf: "meet", ps: "met", pp: "met"},
 	{fr: "payer", inf: "pay", ps: "paid", pp: "paid"},
-	{fr: "monter (cheval, vélo)", inf: "ride", ps: "rode", pp: "ridden"},
+	{fr: "monter (sur un cheval)", inf: "ride", ps: "rode", pp: "ridden"},
 	{fr: "sonner", inf: "ring", ps: "rang", pp: "rung"},
 	{fr: "courir", inf: "run", ps: "ran", pp: "run"},
 	{fr: "vendre", inf: "sell", ps: "sold", pp: "sold"},
@@ -141,7 +141,7 @@ irregularVerbsVocabulary.push({name: "irregular_verbs_7", fr: "Verbes niv 7", it
 	{fr: "ramper", inf: "creep", ps: "crept", pp: "crept"},
 	{fr: "s'enfuir", inf: "flee", ps: "fled", pp: "fled"},
 	{fr: "prévoir", inf: "forecast", ps: "forecast", pp: "forecast"},
-	{fr: "prévoir (présager)", inf: "foresee", ps: "foresaw", pp: "foreseen"},
+	{fr: "prévoir / présager", inf: "foresee", ps: "foresaw", pp: "foreseen"},
 	{fr: "geler", inf: "freeze", ps: "froze", pp: "frozen"},
 	{fr: "moudre", inf: "grind", ps: "ground", pp: "ground"},
 	{fr: "bondir / sauter", inf: "leap", ps: "leapt", pp: "leapt"},
@@ -188,7 +188,7 @@ function getBundleSize(bundle) {
 
 
 
-selected_bundles = []
+selectedBundles = []
 
 function generateBundle() {
 
@@ -196,21 +196,21 @@ function generateBundle() {
 
 
 function toggleBundle(element, bundle) {
-    if (!element.classList.contains("checked")) {
-        element.classList.add("checked");
-		selected_bundles.push(bundle)
-    } else {
-        element.classList.remove("checked");
-		selected_bundles = selected_bundles.filter(b => b != bundle);
-    }
+	if (!element.classList.contains("checked")) {
+		element.classList.add("checked");
+		selectedBundles.push(bundle)
+	} else {
+		element.classList.remove("checked");
+		selectedBundles = selectedBundles.filter(b => b != bundle);
+	}
 
-	if (selected_bundles.length > 0) {
+	if (selectedBundles.length > 0) {
 		startMatchButton.removeAttribute('disabled');
 		questionCountSpan.classList.add("highlight");
 
 		let total = 0
-		for (let i = 0; i < selected_bundles.length; i++) {
-			total += getBundleSize(selected_bundles[i])
+		for (let i = 0; i < selectedBundles.length; i++) {
+			total += getBundleSize(selectedBundles[i])
 		}
 
 		questionCountSpan.textContent = "Questions : " + total;

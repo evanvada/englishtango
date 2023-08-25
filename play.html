@@ -21,8 +21,8 @@
                 <h3></h3>
                 <div class="exercice__display"></div>
                 <input class="exercice__answer" type="text">
-                <div class="exercice__answer--wrong hidden"></div>
-                <div class="exercice__answer--right hidden"></div>
+                <div class="exercice__answer--wrong"></div>
+                <div class="exercice__answer--right"></div>
             </section>
 
             <section class="response">
@@ -32,25 +32,29 @@
                 </div>
             </section>
             
-            <section class="response--wrong hidden">
+            <section class="response--wrong">
                 <div class="response__container">
-                    <div class="response__symbol"><div class="wrong icon"></div></div>
-                    <div class="response__correction">
-                        <h3>Faux !</h3>
-                        <span></span>
+                    <div class="response__flex">
+                        <div class="response__symbol"><div class="wrong icon"></div></div>
+                        <div class="response__correction">
+                            <h3>Faux !</h3>
+                            <span></span>
+                        </div>
                     </div>
-                    <button class="color2 flat-button" onclick="nextQuestion()"><span>Continuer</span></button>
+                    <button class="color2 flat-button" onclick="continueGame()"><span>Continuer</span></button>
                 </div>
             </section>
 
-            <section class="response--right hidden">
+            <section class="response--right">
                 <div class="response__container">
-                    <div class="response__symbol"><div class="right icon"></div></div>
-                    <div class="response__correction">
-                        <h3>Bravo !</h3>
-                        <span></span>
+                    <div class="response__flex">
+                        <div class="response__symbol"><div class="right icon"></div></div>
+                        <div class="response__correction">
+                            <h3>Bravo !</h3>
+                            <span></span>
+                        </div>
                     </div>
-                    <button class="color1 flat-button" onclick="nextQuestion()"><span>Continuer</span></button>
+                    <button class="color1 flat-button" onclick="continueGame()"><span>Continuer</span></button>
                 </div>
             </section>
         </main>

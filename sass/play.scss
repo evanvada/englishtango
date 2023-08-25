@@ -112,10 +112,21 @@ main {
         border: 2px solid var(--color-gray);
 
         background-color: #F7F7F7;
-        text-align: center;
 
         font-size: 1.25rem;
         height: calc(1.5rem + 16px + 4px);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        text-align: center;
+
+        // * {
+        //     height: 100%;
+        //     vertical-align: middle;
+        //     text-align: center;
+        // }
     }
 
     &__answer--wrong {
@@ -154,6 +165,16 @@ main {
 
     .flat-button {
         flex: 1;
+    }
+
+    &__flex {
+        flex: 1;
+
+        gap: 0 24px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__symbol {
