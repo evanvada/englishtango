@@ -1,0 +1,16 @@
+[
+	{"id": "conjugation_of_the_present_simple"},
+	{"id": "conjugation_of_the_present_continous"},
+	{"id": "conjugation_of_the_past_simple"},
+	{"id": "conjugation_of_the_past_continous"},
+	{"id": "conjugation_of_the_future_simple"},
+	{"id": "conjugation_of_the_future_continous"},
+	{"id": "conjugation_of_the_present_perfect_simple"},
+	{"id": "conjugation_of_the_present_perfect_continous"},
+	{"id": "conjugation_of_the_past_perfect_simple"},
+	{"id": "conjugation_of_the_past_perfect_continous"},
+	{"id": "conjugation_of_the_future_perfect_simple"},
+	{"id": "conjugation_of_the_future_perfect_continous"},
+	{"id": "conjugation_of_the_conditional_present"},
+	{"id": "conjugation_of_the_conditional_perfect"}
+]
