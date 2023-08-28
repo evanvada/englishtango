@@ -65,7 +65,7 @@ class GameIrregularVerbsBundle extends GameBundle {
             }
             question.title = "Traduisez ce terme en anglais"
             question.prompt = "Le verbe " + tags[i].fr + " " + tempsFrancais;
-            question.solutions = lexemes[i]
+            question.solutions = lexemes[i].map(lexemes => lexemes.en);
             // return the lexeme with the least amount of tags
             question.conceptID = "lexeme " + lexemes[i][0].id
 

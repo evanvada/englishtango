@@ -11,9 +11,7 @@ class GameQuestion {
         this.title = "";
         this.prompt = "";
         this.solutions = [];
-
         this.answers = [];
-        this.normalizedAnswers = [];
 
         this.wrongs = 0;
         this.rights = 0;
@@ -21,48 +19,35 @@ class GameQuestion {
         this.conceptID = "";
     }
 
-    normalizeAnswer() {
-        let answer = this.answers[this.answers.length-1];
+    addAnswer(text) {
+        let answer = []
 
-        answer = answer.toLowerCase();
-        // only letters
-        answer = answer.replace(/[^\p{L}\s'-]+/gu, "")
-        // remove unecessary spaces
-        answer = answer.replace(/\s+/g, " ").trim();
+        // normalize and save input
+        let input = text;
+        input = input.replace(/[^\p{L}\s'-]+/gu, "")
+        input = input.replace(/\s+/g, " ").trim();
+        answer.input = input;
 
-        // TODO: now check for typos... 2 maximum, depending on the length
-        // except if the misstyped word is in the vocabulary (eg: men & man & main & many & manly, spin & span & spun, very similar but different meaning)
+        // check if the answer is exact and save the result
+        let lower = input.toLowerCase();
+        let correct = this.solutions.includes(lower);
+        answer.correct = correct;
+        answer.perfect = correct;
 
-        this.normalizeAnswer[this.answers.length-1] = answer;
-    }
+        // TODO: check if the answer is close and save the result
 
-    isRight() {
-        this.normalizeAnswer();
-        return this.solutions.includes(this.normalizedAnswers[this.answers.length-1]);
-    }
+        // TODO: create and save the correction showing the errors inside the near perfect answer
 
-    getCorrection() {
-        if (this.isRight()) {
-            // return the difference between the answer and the normalized answer
-            let correction = "";
-            let answer = this.answers[this.answers.length - 1];
-            let normalizedAnswer = this.normalizedAnswers[this.normalizedAnswers.length - 1];
-            for (let i = 0; i < answer.length; i++) {
-                if (answer[i] === normalizedAnswer[i]) {
-                    correction += answer[i];
-                } else {
-                    correction += "<u>" + answer[i] + "</u>";
-                }
-            }
-            return correction;
-        } else {
-            // return all possible solutions
-            let correction = "";
-            for (let i = 0; i < this.solutions.length; i++) {
-                correction += this.solutions[i] + " / ";
-            }
-            return correction.substring(0, correction.length-3);
+        // save all the possible solutions
+        let solutionStr = "";
+        for (let i = 0; i < this.solutions.length; i++) {
+            solutionStr += this.solutions[i] + " / ";
         }
+        answer.solution = solutionStr.substring(0, solutionStr.length-3)
+
+        // return
+        this.answers.unshift(answer);
+        return correct;
     }
 }
 

@@ -143,9 +143,9 @@
     {"id": "verb_ps_learn", "en": "learnt", "tags": ["verb_base_learn", "verb_ps", "verb_irregular"]},
     {"id": "verb_pp_learn", "en": "learnt", "tags": ["verb_base_learn", "verb_pp", "verb_irregular"]},
 	
-    {"id": "verb_inf_light", "en": "light", "tags": ["verb_base_ligh", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_light", "en": "lit", "tags": ["verb_base_ligh", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_light", "en": "lit", "tags": ["verb_base_ligh", "verb_pp", "verb_irregular"]},
+    {"id": "verb_inf_light", "en": "light", "tags": ["verb_base_light", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_light", "en": "lit", "tags": ["verb_base_light", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_light", "en": "lit", "tags": ["verb_base_light", "verb_pp", "verb_irregular"]},
 	
     {"id": "verb_inf_meet", "en": "meet", "tags": ["verb_base_meet", "verb_inf", "verb_irregular"]},
     {"id": "verb_ps_meet", "en": "met", "tags": ["verb_base_meet", "verb_ps", "verb_irregular"]},

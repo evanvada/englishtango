@@ -41,12 +41,15 @@
   color: inherit;
   list-style: none;
   background: none;
-  text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   outline: none;
   border: none;
   box-sizing: border-box;
   word-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
 }
 
 html, body {

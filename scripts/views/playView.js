@@ -7,6 +7,7 @@
 
 
 
+const mainE = document.querySelector('main');
 
 const exerciceDisplayE = document.querySelector('.exercice__display');
 const exerciceTitleE = document.querySelector('.exercice h3');
@@ -26,8 +27,8 @@ const responseRightCorrectionSpanE = document.querySelector('.response--right .r
 
 
 function showRightFeedback() {
-    exerciceAnswerRightE.innerHTML = exerciceAnswerE.value
-    responseRightCorrectionSpanE.innerHTML = Game.questions[0].getCorrection()
+    exerciceAnswerRightE.innerHTML = Game.questions[0].answers[0].input
+    responseRightCorrectionSpanE.innerHTML = Game.questions[0].answers[0].solution
     
     exerciceAnswerE.classList.add("hidden")
     exerciceAnswerWrongE.classList.add("hidden")
@@ -39,8 +40,8 @@ function showRightFeedback() {
 }
 
 function showWrongFeedback() {
-    exerciceAnswerWrongE.innerHTML = exerciceAnswerE.value
-    responseWrongCorrectionSpanE.innerHTML = Game.questions[0].getCorrection()
+    exerciceAnswerWrongE.innerHTML = Game.questions[0].answers[0].input
+    responseWrongCorrectionSpanE.innerHTML = Game.questions[0].answers[0].solution
 
     exerciceAnswerE.classList.add("hidden")
     exerciceAnswerWrongE.classList.remove("hidden")
@@ -80,7 +81,7 @@ function showGameOver() {
 
 function noAnswer() {
     exerciceAnswerE.value = "";
-    Game.wrongUpdate();
+    Game.checkAnswer();
 }
 
 function checkAnswer() {
@@ -90,5 +91,24 @@ function checkAnswer() {
 function continueGame() {
     Game.continueGame();
 }
+
+
+
+
+
+
+DataInterface.fetchAll().then(() => {
+
+    GameOptions.loadFromLocalStorage();
+    GameOptions.selectedBundles = ["irregular_verbs_1_inf"]
+    Game.generateQuestions();
+    Game.continueGame();
+
+    mainE.classList.remove("hidden");
+})
+
+
+
+
 
 

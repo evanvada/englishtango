@@ -7,8 +7,7 @@ class Game {
     static score = 0;
 
     static checkAnswer() {
-        this.questions[0].answers.push(exerciceAnswerE.value)
-        if (this.questions[0].isRight()) {
+        if (this.questions[0].addAnswer(exerciceAnswerE.value)) {
             this.rightUpdate()
         } else {
             this.wrongUpdate()
@@ -18,17 +17,15 @@ class Game {
     static rightUpdate() {
         showRightFeedback()
         // update game : archive the question
-        this.questions[0].rights += 1
         this.archivedQuestions.push(this.questions.shift());
     }
 
     static wrongUpdate() {
         showWrongFeedback()
         // update game : repeat wrong question if option is selected
-        this.questions[0].wrongs += 1
-        if (selectedRepetitionOption == "repeat_question") {
+        if (GameOptions.selectedRepetitionOption == "repeat_question") {
             this.questions.splice(randomInt(0, this.questions.length-1), 0, this.questions.shift())
-        } else if (selectedRepetitionOption == "one_chance") {
+        } else if (GameOptions.selectedRepetitionOption == "one_chance") {
             this.archivedQuestions.push(this.questions.shift());
         }
     }
@@ -42,7 +39,11 @@ class Game {
     }
     
     static generateQuestions() {
-
+        for (let i in GameOptions.selectedBundles) {
+            if (GameBundle.bundles[GameOptions.selectedBundles[i]] != null) {
+                GameBundle.bundles[GameOptions.selectedBundles[i]].generateQuestions(this.questions)
+            }
+        }
         shuffleArray(this.questions)
     }
 }

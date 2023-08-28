@@ -25,8 +25,8 @@ class DataInterface {
         })
     }
 
-    static fetchAll() {
-        Promise.all([
+    static async fetchAll() {
+        return await Promise.all([
             this.fetchFile("scripts/data/enGrammar.json"),
             this.fetchFile("scripts/data/enLexicon.json"),
             this.fetchFile("scripts/data/enLexiconTags.json")
@@ -76,4 +76,3 @@ class DataInterface {
     }
 }
 
-DataInterface.fetchAll()
