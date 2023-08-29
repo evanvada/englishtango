@@ -12,7 +12,7 @@
 
         <main class="hidden">
             <section class="progress">
-                <div href="practice.html" class="cross icon"></div>
+                <button href="practice.html" class="cross icon" onclick="showSureQuit()"></button>
                 <div class="progress__bar"><div class="progress__bar__fill"><div class="progress__bar__fill__highlight"></div></div></div>
                 <div class="icon"></div>
             </section>
@@ -21,22 +21,22 @@
                 <h3></h3>
                 <div class="exercice__display"></div>
                 <input class="exercice__answer" type="text">
-                <div class="exercice__answer--wrong"></div>
-                <div class="exercice__answer--right"></div>
+                <div class="exercice__answer wrong"></div>
+                <div class="exercice__answer right"></div>
             </section>
 
-            <section class="response">
-                <div class="response__container">
+            <section class="banner user-input">
+                <div class="banner__container">
                     <button class="border gray flat-button" onclick="noAnswer()"><span>Passer</span></button>
                     <button class="color1 flat-button" onclick="checkAnswer()"><span>Valider</span></button>
                 </div>
             </section>
             
-            <section class="response--wrong">
-                <div class="response__container">
-                    <div class="response__flex">
-                        <div class="response__symbol"><div class="wrong icon"></div></div>
-                        <div class="response__correction">
+            <section class="banner wrong">
+                <div class="banner__container">
+                    <div class="banner__side">
+                        <div class="banner__symbol"><div class="wrong icon"></div></div>
+                        <div>
                             <h3>Faux !</h3>
                             <span></span>
                         </div>
@@ -45,11 +45,11 @@
                 </div>
             </section>
 
-            <section class="response--right">
-                <div class="response__container">
-                    <div class="response__flex">
-                        <div class="response__symbol"><div class="right icon"></div></div>
-                        <div class="response__correction">
+            <section class="banner right">
+                <div class="banner__container">
+                    <div class="banner__side">
+                        <div class="banner__symbol"><div class="right icon"></div></div>
+                        <div class="banner__correction">
                             <h3>Bravo !</h3>
                             <span></span>
                         </div>
@@ -58,6 +58,22 @@
                 </div>
             </section>
         </main>
+
+        <section class="black-overlay hidden" onclick="hideSureQuit()"></section>
+        <section class="banner overlay hidden">
+            <div class="banner__container">
+                <div class="banner__side">
+                    <div class="banner__correction">
+                        <h3>Tu veux vraiment t'arrêter là ?</h3>
+                        <span>Tous tes progrès dans cette session seront perdus.</span>
+                    </div>
+                </div>
+                <div class="banner__side">
+                    <button class="border gray flat-button" onclick="hideSureQuit()"><span>Rester</span></button>
+                    <a class="color1 flat-button" href="practice.html"><span>Quitter</span></a>
+                </div>
+            </div>
+        </section>
 
 		<script src="scripts/utils.js"></script>
 		<script src="scripts/data/dataInterface.js"></script>

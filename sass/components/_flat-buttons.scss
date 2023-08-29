@@ -48,9 +48,9 @@ $button-side-2: 6px;
     //     filter: brightness(1.2);
     // }
 
-    &:hover > *, &:hover::before {
-        cursor: pointer;
-    }
+    // &:hover > *, &:hover::before {
+    //     cursor: pointer;
+    // }
 
     &.checked > *, &.checked::before {
         filter: brightness(0.8);

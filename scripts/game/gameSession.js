@@ -32,8 +32,10 @@ class GameSession {
     static continueGame() {
         if (this.questions.length > 0) {
             showUserInput()
-        } else {
+        } else if (this.archivedQuestions.length > 0) {
             showGameOver()
+        } else {
+            throw new Error("No bundle selected");
         }
     }
     

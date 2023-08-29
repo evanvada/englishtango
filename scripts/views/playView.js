@@ -50,23 +50,23 @@ sounds.simple_lost = new Audio('media/lost1.mp3');
 
 
 
-const mainE = document.querySelector('main');
+
 
 const exerciceDisplayE = document.querySelector('.exercice__display');
 const exerciceTitleE = document.querySelector('.exercice h3');
 
 const exerciceAnswerE = document.querySelector('.exercice__answer');
-const exerciceAnswerWrongE = document.querySelector('.exercice__answer--wrong');
-const exerciceAnswerRightE = document.querySelector('.exercice__answer--right');
+const exerciceAnswerWrongE = document.querySelector('.exercice__answer.wrong');
+const exerciceAnswerRightE = document.querySelector('.exercice__answer.right');
 
-const responseE = document.querySelector('.response');
-const responseWrongE = document.querySelector('.response--wrong');
-const responseRightE = document.querySelector('.response--right');
+const bannerE = document.querySelector('.banner');
+const bannerWrongE = document.querySelector('.banner.wrong');
+const bannerRightE = document.querySelector('.banner.right');
 
-const responseWrongCorrectionSpanE = document.querySelector('.response--wrong .response__correction span');
-const responseRightCorrectionSpanE = document.querySelector('.response--right .response__correction span');
-const responseWrongSymbolE = document.querySelector('.response--wrong .response__symbol');
-const responseRightSymbolE = document.querySelector('.response--right .response__symbol');
+const bannerWrongCorrectionSpanE = document.querySelector('.banner.wrong span');
+const bannerRightCorrectionSpanE = document.querySelector('.banner.right span');
+const bannerWrongSymbolE = document.querySelector('.banner.wrong .banner__symbol');
+const bannerRightSymbolE = document.querySelector('.banner.right .banner__symbol');
 
 const progressBarFillE = document.querySelector('.progress__bar__fill');
 
@@ -87,15 +87,15 @@ function showRightFeedback() {
     playSound(sounds.ding, general_volume)
 
     exerciceAnswerRightE.innerHTML = GameSession.questions[0].answers[0].input
-    responseRightCorrectionSpanE.innerHTML = GameSession.questions[0].answers[0].solution
+    bannerRightCorrectionSpanE.innerHTML = GameSession.questions[0].answers[0].solution
     
     exerciceAnswerE.classList.add("hidden")
     exerciceAnswerWrongE.classList.add("hidden")
     exerciceAnswerRightE.classList.remove("hidden")
 
-    responseE.classList.add("hidden")
-    responseWrongE.classList.add("hidden")
-    responseRightE.classList.remove("hidden")
+    bannerE.classList.add("hidden")
+    bannerWrongE.classList.add("hidden")
+    bannerRightE.classList.remove("hidden")
 
     const rect = exerciceAnswerRightE.getBoundingClientRect();
     const pos_x = rect.left + rect.width / 2;
@@ -104,9 +104,9 @@ function showRightFeedback() {
         glitters.push(new Glitter(pos_x, pos_y));
     }
 
-	responseRightSymbolE.classList.remove("pop");
-	void responseRightSymbolE.offsetWidth;
-	responseRightSymbolE.classList.add("pop");
+	bannerRightSymbolE.classList.remove("pop");
+	void bannerRightSymbolE.offsetWidth;
+	bannerRightSymbolE.classList.add("pop");
 
     const progress = (GameSession.archivedQuestions.length+1) / (GameSession.questions.length + GameSession.archivedQuestions.length)
     progressBarFillE.style.width = (progress*100)+"%"
@@ -121,19 +121,19 @@ function showWrongFeedback() {
     shake = 10;
 
     exerciceAnswerWrongE.innerHTML = GameSession.questions[0].answers[0].input
-    responseWrongCorrectionSpanE.innerHTML = GameSession.questions[0].answers[0].solution
+    bannerWrongCorrectionSpanE.innerHTML = GameSession.questions[0].answers[0].solution
 
     exerciceAnswerE.classList.add("hidden")
     exerciceAnswerWrongE.classList.remove("hidden")
     exerciceAnswerRightE.classList.add("hidden")
 
-    responseE.classList.add("hidden")
-    responseWrongE.classList.remove("hidden")
-    responseRightE.classList.add("hidden")
+    bannerE.classList.add("hidden")
+    bannerWrongE.classList.remove("hidden")
+    bannerRightE.classList.add("hidden")
 
-	responseWrongSymbolE.classList.remove("pop");
-	void responseWrongSymbolE.offsetWidth;
-	responseWrongSymbolE.classList.add("pop");
+	bannerWrongSymbolE.classList.remove("pop");
+	void bannerWrongSymbolE.offsetWidth;
+	bannerWrongSymbolE.classList.add("pop");
 }
 
 
@@ -149,9 +149,9 @@ function showUserInput() {
     exerciceAnswerWrongE.classList.add("hidden")
     exerciceAnswerRightE.classList.add("hidden")
 
-    responseE.classList.remove("hidden")
-    responseWrongE.classList.add("hidden")
-    responseRightE.classList.add("hidden")
+    bannerE.classList.remove("hidden")
+    bannerWrongE.classList.add("hidden")
+    bannerRightE.classList.add("hidden")
 
     exerciceAnswerE.value = ""
     exerciceAnswerE.focus()
@@ -214,7 +214,7 @@ DataInterface.fetchAll().then(() => {
 
     startLoop();
 
-    mainE.classList.remove("hidden");
+    document.querySelector('main').classList.remove("hidden");
 })
 
 
@@ -239,6 +239,31 @@ function update() {
 }
 
 
+
+
+
+
+
+
+let blackOverlayE = document.querySelector('.black-overlay');
+let bannerOverlayE = document.querySelector('.banner.overlay');
+
+function showSureQuit() {
+    blackOverlayE.classList.remove("hidden")
+    bannerOverlayE.classList.remove("hidden")
+    void blackOverlayE.offsetWidth;
+    void bannerOverlayE.offsetWidth;
+    blackOverlayE.classList.add("show-transition")
+    bannerOverlayE.classList.add("show-transition")
+}
+
+function hideSureQuit() {
+    blackOverlayE.classList.remove("show-transition")
+    bannerOverlayE.classList.remove("show-transition")
+
+    setTimeout(function(){blackOverlayE.classList.add("hidden")}, 200);
+    setTimeout(function(){bannerOverlayE.classList.add("hidden")}, 200);
+}
 
 
 
