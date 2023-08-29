@@ -1,11 +1,10 @@
 
 
-class Game {
-    // static state = "none";
+class GameSession {
     static questions = [];
     static archivedQuestions = [];
     static score = 0;
-
+    
     static checkAnswer() {
         if (this.questions[0].addAnswer(exerciceAnswerE.value)) {
             this.rightUpdate()
@@ -40,9 +39,7 @@ class Game {
     
     static generateQuestions() {
         for (let i in GameOptions.selectedBundles) {
-            if (GameBundle.bundles[GameOptions.selectedBundles[i]] != null) {
-                GameBundle.bundles[GameOptions.selectedBundles[i]].generateQuestions(this.questions)
-            }
+            GameBundle.getBundleByName(GameOptions.selectedBundles[i]).generateQuestions(this.questions)
         }
         shuffleArray(this.questions)
     }

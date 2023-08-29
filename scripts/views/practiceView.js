@@ -1,46 +1,104 @@
 
 
+
+
+
+const questionCountSpanE = document.querySelector('#question_count');
+const startMatchButtonE = document.querySelector('#start_match');
+
+startMatchButtonE.addEventListener('click', () => {
+	window.location.href = 'play.html';
+});
+
+
+
+
+GameOptions.loadAllFromLocalStorage()
+
+
+// update bundle buttons
+let bundleButtonsE = document.querySelectorAll('.course__bundle button');
+for (let button of bundleButtonsE) {
+	button.setAttribute("onclick", "toggleBundle(this, '" + button.id + "')")
+	// if checked then check
+	if (GameOptions.selectedBundles.includes(button.id)) {
+		button.classList.add("checked");
+	}
+	// if anything was checked then enable start button
+	if (GameOptions.selectedBundles.length > 0) {
+		let total = 0
+		for (let i in GameOptions.selectedBundles) {
+			total += GameBundle.getBundleByName(GameOptions.selectedBundles[i]).size
+		}
+		startMatchButtonE.removeAttribute('disabled');
+		questionCountSpanE.classList.add("highlight");
+		questionCountSpanE.textContent = "Questions : " + total;
+	}
+}
+
+
+// update option buttons
+let switchRepetitionButtonE = document.querySelector("#switch_repetition_option")
+switchRepetitionButtonE.setAttribute("onclick", "switchOption(this, 'repetitionOptions', 'selectedRepetitionOption')")
+switchRepetitionButtonE.innerHTML = "<span>" + GameOptions.repetitionOptions.find(item => item.name == GameOptions.selectedRepetitionOption).fr + "</span>"
+let switchQuestionButtonE = document.querySelector("#switch_question_option")
+switchQuestionButtonE.setAttribute("onclick", "switchOption(this, 'questionOptions', 'selectedQuestionOption')")
+switchQuestionButtonE.innerHTML = "<span>" + GameOptions.questionOptions.find(item => item.name == GameOptions.selectedQuestionOption).fr + "</span>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function switchOption(element, options, option) {
 	// switch to the next index
-	let i = window[options].findIndex(item => item.name == window[option])
-	i = (i+1)%window[options].length
+	let i = GameOptions[options].findIndex(item => item.name == GameOptions[option])
+	i = (i+1)%GameOptions[options].length
 
 	// update js variables
-    element.querySelector('span').textContent = window[options][i].fr
-	window[option] = window[options][i].name
-	// localStorage.setItem(option, window[option]);
+    element.querySelector('span').textContent = GameOptions[options][i].fr
+	GameOptions[option] = GameOptions[options][i].name
+	GameOptions.saveAllToLocalStorage()
 }
 
 
 
 function toggleBundle(element, bundle) {
-	if (!element.classList.contains("checked")) {
+	
+	if (!element.classList.contains("checked") && GameBundle.getBundleByName(bundle)) {
 		element.classList.add("checked");
-		selectedBundles.push(bundle)
+		GameOptions.selectedBundles.push(bundle)
 	} else {
 		element.classList.remove("checked");
-		selectedBundles = selectedBundles.filter(b => b != bundle);
+		GameOptions.selectedBundles = GameOptions.selectedBundles.filter(b => b != bundle);
 	}
 
-	if (selectedBundles.length > 0) {
-		startMatchButton.removeAttribute('disabled');
-		questionCountSpan.classList.add("highlight");
-
+	if (GameOptions.selectedBundles.length > 0) {
 		let total = 0
-		for (let i = 0; i < selectedBundles.length; i++) {
-			total += getBundleSize(selectedBundles[i])
+		for (let i in GameOptions.selectedBundles) {
+			total += GameBundle.getBundleByName(GameOptions.selectedBundles[i]).size
 		}
-
-		questionCountSpan.textContent = "Questions : " + total;
+		startMatchButtonE.removeAttribute('disabled');
+		questionCountSpanE.classList.add("highlight");
+		questionCountSpanE.textContent = "Questions : " + total;
 	} else {
-		startMatchButton.setAttribute('disabled', true);
-		questionCountSpan.classList.remove("highlight");
-		questionCountSpan.textContent = "Pas de questions selectionnées";
+		startMatchButtonE.setAttribute('disabled', true);
+		questionCountSpanE.classList.remove("highlight");
+		questionCountSpanE.textContent = "Pas de questions selectionnées";
 	}
 
-	questionCountSpan.classList.remove("pop");
-	void questionCountSpan.offsetWidth;
-	questionCountSpan.classList.add("pop");
+	GameOptions.saveAllToLocalStorage()
+	questionCountSpanE.classList.remove("pop");
+	void questionCountSpanE.offsetWidth;
+	questionCountSpanE.classList.add("pop");
 }
 
 

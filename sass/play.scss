@@ -3,6 +3,7 @@
 @import "./base/fonts";
 @import "./components/icons";
 @import "./components/flat-buttons";
+@import "./components/popping";
 
 
 :root {
@@ -46,6 +47,7 @@ main {
             border-radius: 8px;
             overflow: hidden;
             background: var(--color-1);
+            transition: width 0.15s ease-in-out;
 
             &__highlight {
                 height: 4px;

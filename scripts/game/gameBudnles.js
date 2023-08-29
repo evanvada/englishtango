@@ -9,6 +9,12 @@ class GameBundle {
         GameBundle.bundles[this.name] = this
     }
 
+    static getBundleByName(bundleName) {
+        const bundle = GameBundle.bundles[bundleName]
+        if (bundle == null) { throw new Error('Bundle "' + bundleName + '" does not exit') }
+        return bundle
+    }
+
     // generate questions into the given array
     generateQuestions(questions) {
         throw new Error("generateQuestions() not implemented")
