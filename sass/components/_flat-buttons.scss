@@ -39,39 +39,19 @@ $button-side-2: 6px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #777;
+        background-color: var(--color-grayer);
 
         transition: top 0.04s ease;
     }
-    
-    // &:not(:disabled):hover > *, &:not(:disabled):hover::before {
-    //     filter: brightness(1.2);
-    // }
 
-    // &:hover > *, &:hover::before {
-    //     cursor: pointer;
-    // }
-
-    &.checked > *, &.checked::before {
-        filter: brightness(0.8);
-    }
-
-    &:disabled > * {
+    &.checked > * {
+        background-color: var(--color-dark);
         top: calc($button-side);
     }
 
-    &.checked > * {
-        top: calc($button-side * 2);
-    }
-
     &:active > * {
-        top: calc($button-side * 3);
-    }
-
-    &:disabled:active > * {
         top: calc($button-side * 2);
     }
-
 }
 
 .round.flat-button {
@@ -90,10 +70,10 @@ $button-side-2: 6px;
         font-size: 1.75rem;
     }
     &.checked > * {
-        top: calc($button-side-2 * 2);
+        top: calc($button-side-2);
     }
     &:active > * {
-        top: calc($button-side-2 * 3);
+        top: calc($button-side-2 * 2);
     }
 }
 
@@ -114,10 +94,10 @@ $button-side-2: 6px;
     }
 
     &.checked > * {
-        top: calc($button-side-2 * 2);
+        top: calc($button-side-2);
     }
     &:active > * {
-        top: calc($button-side-2 * 3);
+        top: calc($button-side-2 * 2);
     }
 }
 
@@ -146,7 +126,7 @@ $button-side-2: 6px;
         background-color: var(--color-1);
         border-color: var(--color-1B);
     }
-    &::before {
+    &::before, &.checked > * {
         background-color: var(--color-1B);
     }
 }
@@ -156,7 +136,7 @@ $button-side-2: 6px;
         background-color: var(--color-2);
         border-color: var(--color-2B);
     }
-    &::before {
+    &::before, &.checked > * {
         background-color: var(--color-2B);
     }
 }
@@ -166,7 +146,7 @@ $button-side-2: 6px;
         background-color: var(--color-3);
         border-color: var(--color-3B);
     }
-    &::before {
+    &::before, &.checked > * {
         background-color: var(--color-3B);
     }
 }
@@ -176,7 +156,7 @@ $button-side-2: 6px;
         background-color: var(--color-4);
         border-color: var(--color-4B);
     }
-    &::before {
+    &::before, &.checked > * {
         background-color: var(--color-4B);
     }
 }
@@ -187,7 +167,7 @@ $button-side-2: 6px;
         border-color: var(--color-gray);
         color: var(--color-grayer);
     }
-    &::before {
+    &::before, &.checked > * {
         background-color: var(--color-gray);
     }
 }
@@ -208,4 +188,19 @@ $button-side-2: 6px;
     &::before {
         background-color: var(--color-grayer);
     }
+    &:disabled > * {
+        top: calc($button-side);
+        cursor: default;
+    }
+    &:disabled.checked > * {
+        background-color: var(--color-grayer);
+    }
 }
+
+.round.flat-button,
+.square.flat-button {
+    &:disabled > * {
+        top: calc($button-side-2);
+    }
+}
+

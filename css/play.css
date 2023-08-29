@@ -200,22 +200,14 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #777;
+  background-color: var(--color-grayer);
   transition: top 0.04s ease;
 }
-.flat-button.checked > *, .flat-button.checked::before {
-  filter: brightness(0.8);
-}
-.flat-button:disabled > * {
+.flat-button.checked > * {
+  background-color: var(--color-dark);
   top: 4px;
 }
-.flat-button.checked > * {
-  top: 8px;
-}
 .flat-button:active > * {
-  top: 12px;
-}
-.flat-button:disabled:active > * {
   top: 8px;
 }
 
@@ -235,10 +227,10 @@ a {
   font-size: 1.75rem;
 }
 .round.flat-button.checked > * {
-  top: 12px;
+  top: 6px;
 }
 .round.flat-button:active > * {
-  top: 18px;
+  top: 12px;
 }
 
 .square.flat-button {
@@ -257,10 +249,10 @@ a {
   font-size: 1.75rem;
 }
 .square.flat-button.checked > * {
-  top: 12px;
+  top: 6px;
 }
 .square.flat-button:active > * {
-  top: 18px;
+  top: 12px;
 }
 
 .flat-button.border > * {
@@ -271,7 +263,7 @@ a {
   background-color: var(--color-1);
   border-color: var(--color-1B);
 }
-.color1.flat-button::before {
+.color1.flat-button::before, .color1.flat-button.checked > * {
   background-color: var(--color-1B);
 }
 
@@ -279,7 +271,7 @@ a {
   background-color: var(--color-2);
   border-color: var(--color-2B);
 }
-.color2.flat-button::before {
+.color2.flat-button::before, .color2.flat-button.checked > * {
   background-color: var(--color-2B);
 }
 
@@ -287,7 +279,7 @@ a {
   background-color: var(--color-3);
   border-color: var(--color-3B);
 }
-.color3.flat-button::before {
+.color3.flat-button::before, .color3.flat-button.checked > * {
   background-color: var(--color-3B);
 }
 
@@ -295,7 +287,7 @@ a {
   background-color: var(--color-4);
   border-color: var(--color-4B);
 }
-.color4.flat-button::before {
+.color4.flat-button::before, .color4.flat-button.checked > * {
   background-color: var(--color-4B);
 }
 
@@ -304,7 +296,7 @@ a {
   border-color: var(--color-gray);
   color: var(--color-grayer);
 }
-.gray.flat-button::before {
+.gray.flat-button::before, .gray.flat-button.checked > * {
   background-color: var(--color-gray);
 }
 
@@ -313,6 +305,18 @@ a {
 }
 .flat-button:disabled::before {
   background-color: var(--color-grayer);
+}
+.flat-button:disabled:disabled > * {
+  top: 4px;
+  cursor: default;
+}
+.flat-button:disabled:disabled.checked > * {
+  background-color: var(--color-grayer);
+}
+
+.round.flat-button:disabled > *,
+.square.flat-button:disabled > * {
+  top: 6px;
 }
 
 span.pop {

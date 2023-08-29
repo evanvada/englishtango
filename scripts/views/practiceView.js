@@ -26,22 +26,19 @@ for (let button of bundleButtonsE) {
 	}
 	// if anything was checked then enable start button
 	if (GameOptions.selectedBundles.length > 0) {
-		let total = 0
-		for (let i in GameOptions.selectedBundles) {
-			total += GameBundle.getBundleByName(GameOptions.selectedBundles[i]).size
-		}
 		startMatchButtonE.removeAttribute('disabled');
 		questionCountSpanE.classList.add("highlight");
-		questionCountSpanE.textContent = "Questions : " + total;
+		questionCountSpanE.textContent = "Selectionné : " + GameOptions.selectedBundles.length;
+		startMatchButtonE.innerHTML = "<span>" + "Commencer " + GameOptions.selectedBundles.length + " exercices" + "</span>"
 	}
 }
 
 
 // update option buttons
-let switchRepetitionButtonE = document.querySelector("#switch_repetition_option")
+const switchRepetitionButtonE = document.querySelector("#switch_repetition_option")
 switchRepetitionButtonE.setAttribute("onclick", "switchOption(this, 'repetitionOptions', 'selectedRepetitionOption')")
 switchRepetitionButtonE.innerHTML = "<span>" + GameOptions.repetitionOptions.find(item => item.name == GameOptions.selectedRepetitionOption).fr + "</span>"
-let switchQuestionButtonE = document.querySelector("#switch_question_option")
+const switchQuestionButtonE = document.querySelector("#switch_question_option")
 switchQuestionButtonE.setAttribute("onclick", "switchOption(this, 'questionOptions', 'selectedQuestionOption')")
 switchQuestionButtonE.innerHTML = "<span>" + GameOptions.questionOptions.find(item => item.name == GameOptions.selectedQuestionOption).fr + "</span>"
 
@@ -82,17 +79,15 @@ function toggleBundle(element, bundle) {
 	}
 
 	if (GameOptions.selectedBundles.length > 0) {
-		let total = 0
-		for (let i in GameOptions.selectedBundles) {
-			total += GameBundle.getBundleByName(GameOptions.selectedBundles[i]).size
-		}
 		startMatchButtonE.removeAttribute('disabled');
 		questionCountSpanE.classList.add("highlight");
-		questionCountSpanE.textContent = "Questions : " + total;
+		questionCountSpanE.textContent = "Selectionné : " + GameOptions.selectedBundles.length;
+		startMatchButtonE.innerHTML = "<span>" + "Commencer " + GameOptions.selectedBundles.length + " exercices" + "</span>"
 	} else {
 		startMatchButtonE.setAttribute('disabled', true);
 		questionCountSpanE.classList.remove("highlight");
-		questionCountSpanE.textContent = "Pas de questions selectionnées";
+		questionCountSpanE.textContent = "Pas d'exercices selectionnées";
+		startMatchButtonE.innerHTML = "<span>Commencer</span>"
 	}
 
 	GameOptions.saveAllToLocalStorage()
