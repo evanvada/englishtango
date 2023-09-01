@@ -320,16 +320,28 @@ a {
 }
 
 main {
-  margin-left: 256px;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  margin: auto;
   padding: 24px;
+}
+
+.main-flex {
+  padding-left: 280px;
+  display: flex;
+  align-items: flex-start;
   gap: 48px;
+}
+.main-flex > * {
+  flex: 1;
 }
 
 .wall {
-  width: 600px;
+  flex-basis: 600px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -350,14 +362,18 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
 .course__title__left {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+}
+.course__title__left h2 {
+  padding-bottom: 12px;
 }
 .course__title .flat-button {
   width: 120px;
+  min-width: 120px;
   height: 54px;
 }
 .course__content {
@@ -419,6 +435,8 @@ main {
 .menu {
   position: sticky;
   width: 360px;
+  min-width: 360px;
+  max-width: 360px;
   top: 24px;
   display: flex;
   flex-direction: column;
