@@ -1,6 +1,6 @@
 
 
-aside {
+.nav-aside {
     position: fixed;
     height: 100%;
     width: 256px;
@@ -66,6 +66,71 @@ aside {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-footer {
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    bottom: 0;
+
+    z-index: 20;
+
+    background: white;
+    border-top: 2px solid var(--color-gray);
+
+    nav {
+        height: 100%;
+        width: 100%;
+        padding: 0 6px;
+    }
+
+    ul {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    li {
+        height: 100%;
+        min-width: 0;
+    }
+
+    a {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .icon {
+        background-size: 48px;
+        width: 68px;
+        height: 60px;
+    }
+
+    .active .icon {
+        border-radius: 12px;
+        border: solid 2px var(--color-2);
+        background-color: rgba($color: #ffac5e, $alpha: 0.2);
+        color: var(--color-2);
+    }
+}
 
 
 

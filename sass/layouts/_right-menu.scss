@@ -11,11 +11,9 @@
     gap: 10px;
 }
 
-.menu {
+.stats-aside {
     position: sticky;
     width: 360px;
-    min-width: 360px;
-    max-width: 360px;
     top: 24px;
 
     display: flex;
@@ -115,6 +113,103 @@
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.stats-header {
+    position: fixed;
+    height: 58px;
+    width: 100%;
+    top: 0;
+
+    z-index: 10;
+
+    background: var(--color-1);
+    border-bottom: 2px solid var(--color-1B);
+
+    nav {
+        height: 100%;
+        width: 100%;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    li {
+        min-width: 0;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        overflow: hidden;
+
+        padding: 12px;
+
+        color: var(--color-light);
+        font-family: FiraSansBold, sans-serif;
+    }
+
+    &__dropdown {
+        display: block;
+        z-index: 10;
+        position: absolute;
+        margin-top: 58px;
+
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        background: rgba(0,0,0,0.3);
+
+        section {
+            width: 100vw;
+            background: var(--color-light);
+            color: var(--color-text);
+            padding: 18px;
+        }
+    }
+
+    .header-stats__dropdown-pointer {
+        display: block;
+        z-index: 10;
+        position: absolute;
+        margin-top: 48px;
+
+        top: 0;
+        width: 20px;
+        height: 10px;
+        transform: translateX(6px);
+
+        fill: var(--color-bg);
+        color: var(--color-gray);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

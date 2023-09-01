@@ -9,7 +9,7 @@
 	</head>
 	<body>
 
-		<aside>
+		<!-- <aside class="nav-aside">
 			<nav>
 				<ul>
 					<li><a href="index.html" class="logo"><h1>English Tango</h1></a></li>
@@ -20,13 +20,52 @@
 					<li><a href="settings.html"><div class="settings icon"></div><span>Options</span></a></li>
 				</ul>
 			</nav>
-		</aside>
+		</aside> -->
 
-		<header>
-			
+		<header class="stats-header">
+			<nav>
+				<ul>
+					<li>
+						<div class="english icon"></div>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Vous étudiez l'anglais
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<div class="fire icon"></div><span>1</span>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								série
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<div class="bolt icon"></div><span>350</span>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								expérience
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<div class="gem icon"></div><span>50</span>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								gemmes
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+				</ul>
+			</nav>
 		</header>
 
-		<main><section class="main-flex">
+		<main>
 			<section class="wall">
 
 				<section class="course">
@@ -34,7 +73,6 @@
 						<div class="course__title__left">
 							<h2>Les verbes irréguliers</h2>
 							<span>Les verbes les plus utilisés en anglais</span>
-							<span style="height: 0; opacity: 0; user-select: none; word-break: break-all;">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
 						</div>
 						<a href="study.html" class="border flat-button color1"><span>COURS</span></a>
 					</div>
@@ -136,9 +174,9 @@
 
 			</section>
 
-			<section class="menu">
+			<section class="stats-aside">
 
-				<nav class="menu__stats-info">
+				<nav class="stats-aside__stats-info">
 					<ul>
 						<li class="language">
 							<div class="english icon"></div>
@@ -178,21 +216,34 @@
 						</li>
 					</ul>
 				</nav>
-				<!-- <div class="menu__exercise-info">
+				<!-- <div class="stats-aside__exercise-info">
 					<h3>Options sur les exercices</h3>
 					<span>Mode de répétion</span>
 					<button class="color1 flat-button" id="switch_repetition_option"><span></span></button>
 					<span>Type de question</span>
 					<button class="color1 flat-button" id="switch_question_option"><span></span></button>
 				</div> -->
-				<div class="menu__match-info">
+				<div class="stats-aside__match-info">
 					<span id="question_count">Pas d'exercices selectionnées</span>
 					<button class="color2 flat-button" id="start_match" disabled><span>COMMENCER</span></button>
 					<!-- <span>Vous pouvez sélectionner plusieurs groupes</span> -->
 				</div>
 
 			</section>
-		</section></main>
+		</main>
+
+		
+		<footer class="nav-footer">
+			<nav>
+				<ul>
+					<li><a class="active" href="practice.html"><div class="practice icon"></div></a></li>
+					<li><a href="study.html"><div class="study icon"></div></a></li>
+					<li><a href="vocabulary.html"><div class="vocabulary icon"></div></a></li>
+					<li><a href="experience.html"><div class="experience icon"></div></a></li>
+					<li><a href="settings.html"><div class="settings icon"></div></a></li>
+				</ul>
+			</nav>
+		</footer>
 
 
 		<script src="scripts/utils.js"></script>
