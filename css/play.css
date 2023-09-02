@@ -110,6 +110,9 @@ a {
   width: 32px;
   height: 32px;
 }
+.icon.englishtango {
+  background-image: url(../media/englishtango.png);
+}
 .icon.practice {
   background-image: url(../media/practice.png);
 }

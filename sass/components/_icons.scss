@@ -9,6 +9,11 @@
     width: 32px;
     height: 32px;
 
+
+    &.englishtango {
+        background-image: url(../media/englishtango.png);
+    }
+
     &.practice {
         background-image: url(../media/practice.png);
     }

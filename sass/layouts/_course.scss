@@ -18,10 +18,12 @@ main {
 }
 
 .wall {
-    width: 600px;
     display: flex;
     flex-direction: column;
     gap: 48px;
+    width: 600px;
+    max-width: 600px;
+    min-width: 400px;
 }
 
 .course {
@@ -126,3 +128,14 @@ main {
 }
 
 
+
+
+
+
+@media (max-width: 1280px) {
+    
+    main {
+        padding: 24px;
+        padding-left: calc(88px + 24px);
+    }
+}
