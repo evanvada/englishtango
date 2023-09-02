@@ -11,7 +11,14 @@
     background: white;
     border-right: solid 2px var(--color-gray);
 
-    z-index: 20;
+    z-index: 10;
+    
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     nav {
         padding: 0 14px;
@@ -104,7 +111,7 @@
     width: 100%;
     bottom: 0;
 
-    z-index: 20;
+    z-index: 30;
 
     background: white;
     border-top: 2px solid var(--color-gray);
@@ -172,6 +179,12 @@
     }
     .nav-aside .logo {
         display: none;
+    }
+}
+
+@media (max-width: 960px) {
+    .nav-aside {
+        padding-top: 58px;
     }
 }
 

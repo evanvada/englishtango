@@ -3,12 +3,13 @@
 
 
 
-const questionCountSpanE = document.querySelector('#question_count');
-const startMatchButtonE = document.querySelector('#start_match');
+const questionCountSpansE = document.querySelectorAll('.question_count');
+const startMatchButtonsE = document.querySelectorAll('.start_match');
 
-startMatchButtonE.addEventListener('click', () => {
+
+startMatchButtonsE.forEach(btn => {btn.addEventListener('click', () => {
 	window.location.href = 'play.html';
-});
+})});
 
 
 
@@ -26,21 +27,30 @@ for (let button of bundleButtonsE) {
 	}
 	// if anything was checked then enable start button
 	if (GameOptions.selectedBundles.length > 0) {
-		startMatchButtonE.removeAttribute('disabled');
-		questionCountSpanE.classList.add("highlight");
-		questionCountSpanE.textContent = "Selectionné : " + GameOptions.selectedBundles.length;
-		startMatchButtonE.innerHTML = "<span>" + "Commencer " + GameOptions.selectedBundles.length + " exercices" + "</span>"
+		startMatchButtonsE.forEach(btn => { btn.removeAttribute('disabled') });
+		questionCountSpansE.forEach(btn => { btn.classList.add("highlight") });
+		questionCountSpansE.forEach(btn => { btn.textContent = "Selectionné : " + GameOptions.selectedBundles.length });
+		startMatchButtonsE.forEach(btn => {btn.innerHTML = "<span>" + "Commencer " + GameOptions.selectedBundles.length + " exercices" + "</span>"})
 	}
 }
 
 
-// update option buttons
-const switchRepetitionButtonE = document.querySelector("#switch_repetition_option")
-switchRepetitionButtonE.setAttribute("onclick", "switchOption(this, 'repetitionOptions', 'selectedRepetitionOption')")
-switchRepetitionButtonE.innerHTML = "<span>" + GameOptions.repetitionOptions.find(item => item.name == GameOptions.selectedRepetitionOption).fr + "</span>"
-const switchQuestionButtonE = document.querySelector("#switch_question_option")
-switchQuestionButtonE.setAttribute("onclick", "switchOption(this, 'questionOptions', 'selectedQuestionOption')")
-switchQuestionButtonE.innerHTML = "<span>" + GameOptions.questionOptions.find(item => item.name == GameOptions.selectedQuestionOption).fr + "</span>"
+
+
+
+
+
+
+
+
+
+// // update option buttons
+// const switchRepetitionButtonE = document.querySelector("#switch_repetition_option")
+// switchRepetitionButtonE.setAttribute("onclick", "switchOption(this, 'repetitionOptions', 'selectedRepetitionOption')")
+// switchRepetitionButtonE.innerHTML = "<span>" + GameOptions.repetitionOptions.find(item => item.name == GameOptions.selectedRepetitionOption).fr + "</span>"
+// const switchQuestionButtonE = document.querySelector("#switch_question_option")
+// switchQuestionButtonE.setAttribute("onclick", "switchOption(this, 'questionOptions', 'selectedQuestionOption')")
+// switchQuestionButtonE.innerHTML = "<span>" + GameOptions.questionOptions.find(item => item.name == GameOptions.selectedQuestionOption).fr + "</span>"
 
 
 
@@ -79,21 +89,34 @@ function toggleBundle(element, bundle) {
 	}
 
 	if (GameOptions.selectedBundles.length > 0) {
-		startMatchButtonE.removeAttribute('disabled');
-		questionCountSpanE.classList.add("highlight");
-		questionCountSpanE.textContent = "Selectionné : " + GameOptions.selectedBundles.length;
-		startMatchButtonE.innerHTML = "<span>" + "Commencer " + GameOptions.selectedBundles.length + " exercices" + "</span>"
+		startMatchButtonsE.forEach(btn => { btn.removeAttribute('disabled') });
+		questionCountSpansE.forEach(btn => { btn.classList.add("highlight") });
+		questionCountSpansE.forEach(btn => { btn.textContent = "Selectionné : " + GameOptions.selectedBundles.length });
+		startMatchButtonsE.forEach(btn => {btn.innerHTML = "<span>" + "Commencer " + GameOptions.selectedBundles.length + " exercices" + "</span>"})
 	} else {
-		startMatchButtonE.setAttribute('disabled', true);
-		questionCountSpanE.classList.remove("highlight");
-		questionCountSpanE.textContent = "Pas d'exercices selectionnées";
-		startMatchButtonE.innerHTML = "<span>Commencer</span>"
+		startMatchButtonsE.forEach(btn => { btn.setAttribute('disabled', true) });
+		questionCountSpansE.forEach(btn => { btn.classList.remove("highlight") });
+		questionCountSpansE.forEach(btn => { btn.textContent = "Pas d'exercices selectionnées" });
+		startMatchButtonsE.forEach(btn => {btn.innerHTML = "<span>Commencer</span>"})
 	}
 
 	GameOptions.saveAllToLocalStorage()
-	questionCountSpanE.classList.remove("pop");
-	void questionCountSpanE.offsetWidth;
-	questionCountSpanE.classList.add("pop");
+	questionCountSpansE.forEach(btn => { btn.classList.remove("pop") });
+	void questionCountSpansE.forEach(btn  => {btn.offsetWidth });
+	questionCountSpansE.forEach(btn => { btn.classList.add("pop") });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

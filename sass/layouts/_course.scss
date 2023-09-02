@@ -12,12 +12,17 @@ main {
     align-items: flex-start;
     gap: 48px;
 
-    // center
-    width: fit-content;
-    margin: auto;
+    // // center
+    // width: fit-content;
+    // margin: auto;
+
+    justify-content: center;
+
 }
 
 .wall {
+    flex: 1;
+
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -132,10 +137,45 @@ main {
 
 
 
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1280px) {
     
     main {
         padding: 24px;
         padding-left: calc(88px + 24px);
+    }
+}
+
+@media (max-width: 960px) {
+    main {
+        padding-top: calc(58px + 24px);
+    }
+}
+
+@media (max-width: 640px) {
+    
+    main {
+        padding: 0;
+        padding-top: 58px;
+    }
+
+    .course__title {
+        border-radius: 0;
+    }
+
+    .wall {
+        // shrink 
+        width: 100%;
+        max-width: unset;
+        min-width: unset;
     }
 }

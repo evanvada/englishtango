@@ -27,7 +27,7 @@
 			<nav>
 				<ul>
 					<li>
-						<div class="english icon"></div>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Vous étudiez l'anglais
@@ -36,28 +36,28 @@
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
 					<li>
-						<div class="fire icon"></div><span>1</span>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="fire icon"></div><span>1</span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
-								série
+								Série
 							</section>
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
 					<li>
-						<div class="bolt icon"></div><span>350</span>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span>350</span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
-								expérience
+								Expérience
 							</section>
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
 					<li>
-						<div class="gem icon"></div><span>50</span>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="gem icon"></div><span>50</span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
-								gemmes
+								Gemmes
 							</section>
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
@@ -66,9 +66,31 @@
 			</nav>
 		</header>
 
+		<footer class="play-footer">
+			<span class="question_count">Pas d'exercices selectionnées</span>
+			<button class="color2 flat-button start_match" disabled><span>COMMENCER</span></button>
+		</footer>
+
+		<footer class="nav-footer">
+			<nav>
+				<ul>
+					<li><a class="active" href="practice.html"><div class="practice icon"></div></a></li>
+					<li><a href="study.html"><div class="study icon"></div></a></li>
+					<li><a href="vocabulary.html"><div class="vocabulary icon"></div></a></li>
+					<li><a href="experience.html"><div class="experience icon"></div></a></li>
+					<li><a href="settings.html"><div class="settings icon"></div></a></li>
+				</ul>
+			</nav>
+		</footer>
+
+
+
+
+
+
+
 		<main>
 			<section class="wall">
-
 				<section class="course">
 					<div class="course__title color1">
 						<div class="course__title__left">
@@ -122,17 +144,8 @@
 						</div>
 					</section>
 				</section>
-
 			</section>
-
-
-
-
-
-
-
-
-			<section class="infos-aside">
+			<aside class="infos-aside">
 				<div class="stats-aside">
 					<nav>
 						<ul>
@@ -147,7 +160,7 @@
 								<div class="fire icon"></div><span>1</span>
 								<div class="stats-aside__dropdown">
 									<section>
-										série
+										Série
 									</section>
 								</div>
 								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
@@ -156,7 +169,7 @@
 								<div class="bolt icon"></div><span>350</span>
 								<div class="stats-aside__dropdown">
 									<section>
-										expérience
+										Expérience
 									</section>
 								</div>
 								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
@@ -165,7 +178,7 @@
 								<div class="gem icon"></div><span>50</span>
 								<div class="stats-aside__dropdown">
 									<section>
-										gemmes
+										Gemmes
 									</section>
 								</div>
 								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
@@ -174,31 +187,17 @@
 					</nav>
 				</div>
 				<div class="infos-aside__sub-menu">
-					<span id="question_count">Pas d'exercices selectionnées</span>
-					<button class="color2 flat-button" id="start_match" disabled><span>COMMENCER</span></button>
+					<span class="question_count">Pas d'exercices selectionnées</span>
+					<button class="color2 flat-button start_match" disabled><span>COMMENCER</span></button>
 				</div>
-
-			</section>
+			</aside>
 		</main>
-
-		
-		<footer class="nav-footer">
-			<nav>
-				<ul>
-					<li><a class="active" href="practice.html"><div class="practice icon"></div></a></li>
-					<li><a href="study.html"><div class="study icon"></div></a></li>
-					<li><a href="vocabulary.html"><div class="vocabulary icon"></div></a></li>
-					<li><a href="experience.html"><div class="experience icon"></div></a></li>
-					<li><a href="settings.html"><div class="settings icon"></div></a></li>
-				</ul>
-			</nav>
-		</footer>
-
 
 		<script src="scripts/utils.js"></script>
         <script src="scripts/game/gameOptions.js"></script>
         <script src="scripts/game/gameBudnles.js"></script>
         <script src="scripts/views/practiceView.js"></script>
+        <script src="scripts/views/statsHeaderView.js"></script>
 
 	</body>
 </html>
