@@ -21,20 +21,11 @@ GameOptions.loadAllFromLocalStorage()
 let bundleButtonsE = document.querySelectorAll('.course__bundle button');
 for (let button of bundleButtonsE) {
 	button.setAttribute("onclick", "toggleBundle(this, '" + button.id + "')")
-	// if checked then check
-	if (GameOptions.selectedBundles.includes(button.id)) {
-		button.classList.add("checked");
-	}
-	// if anything was checked then enable start button
-	if (GameOptions.selectedBundles.length > 0) {
-		startMatchButtonsE.forEach(btn => { btn.removeAttribute('disabled') });
-		questionCountSpansE.forEach(btn => { btn.classList.add("highlight") });
-		questionCountSpansE.forEach(btn => { btn.textContent = "Selectionné : " + GameOptions.selectedBundles.length });
-		startMatchButtonsE.forEach(btn => {btn.innerHTML = "<span>" + "Commencer " + GameOptions.selectedBundles.length + " exercices" + "</span>"})
-	}
+	startMatchButtonsE.forEach(btn => { btn.disabled = true });
 }
 
-
+let previousInnerHTML = bundleButtonsE[0].parentElement.innerHTML
+bundleButtonsE[0].parentElement.innerHTML += "<div class='floating-bubble'>Sélectionnez un exercice</div><img class='floating-bubble-pointer' src='media/arrow.svg'>"
 
 
 
@@ -77,8 +68,13 @@ function switchOption(element, options, option) {
 }
 
 
-
+let toggleBundlePressed = false
 function toggleBundle(element, bundle) {
+
+	if (!toggleBundlePressed) {
+		GameOptions.selectedBundles = []
+		toggleBundlePressed = true
+	}
 	
 	if (!element.classList.contains("checked") && GameBundle.getBundleByName(bundle)) {
 		element.classList.add("checked");
@@ -90,12 +86,10 @@ function toggleBundle(element, bundle) {
 
 	if (GameOptions.selectedBundles.length > 0) {
 		startMatchButtonsE.forEach(btn => { btn.removeAttribute('disabled') });
-		questionCountSpansE.forEach(btn => { btn.classList.add("highlight") });
 		questionCountSpansE.forEach(btn => { btn.textContent = "Selectionné : " + GameOptions.selectedBundles.length });
 		startMatchButtonsE.forEach(btn => {btn.innerHTML = "<span>" + "Commencer " + GameOptions.selectedBundles.length + " exercices" + "</span>"})
 	} else {
 		startMatchButtonsE.forEach(btn => { btn.setAttribute('disabled', true) });
-		questionCountSpansE.forEach(btn => { btn.classList.remove("highlight") });
 		questionCountSpansE.forEach(btn => { btn.textContent = "Pas d'exercices selectionnées" });
 		startMatchButtonsE.forEach(btn => {btn.innerHTML = "<span>Commencer</span>"})
 	}

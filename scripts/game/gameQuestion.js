@@ -13,9 +13,6 @@ class GameQuestion {
         this.solutions = [];
         this.answers = [];
 
-        this.wrongs = 0;
-        this.rights = 0;
-
         this.conceptID = "";
     }
 

@@ -37,11 +37,6 @@ sounds.ding = [
     new Audio('media/dingB2.mp3'),
     new Audio('media/dingB1.mp3'),
 ];
-sounds.click = [
-    new Audio('media/clickB3.mp3'),
-    new Audio('media/clickB2.mp3'),
-    new Audio('media/clickB1.mp3'),
-];
 sounds.dont = new Audio('media/dont.mp3');
 sounds.cheers = new Audio('media/cheers1.mp3');
 sounds.simple_win = new Audio('media/win1.mp3');
@@ -249,12 +244,16 @@ let blackOverlayE = document.querySelector('.black-overlay');
 let bannerOverlayE = document.querySelector('.banner.overlay');
 
 function showSureQuit() {
-    blackOverlayE.classList.remove("hidden")
-    bannerOverlayE.classList.remove("hidden")
-    void blackOverlayE.offsetWidth;
-    void bannerOverlayE.offsetWidth;
-    blackOverlayE.classList.add("show-transition")
-    bannerOverlayE.classList.add("show-transition")
+    if (GameSession.rights > 0) {
+        blackOverlayE.classList.remove("hidden")
+        bannerOverlayE.classList.remove("hidden")
+        void blackOverlayE.offsetWidth;
+        void bannerOverlayE.offsetWidth;
+        blackOverlayE.classList.add("show-transition")
+        bannerOverlayE.classList.add("show-transition")
+    } else {
+        quitGame()
+    }
 }
 
 function hideSureQuit() {
@@ -265,7 +264,49 @@ function hideSureQuit() {
     setTimeout(function(){bannerOverlayE.classList.add("hidden")}, 200);
 }
 
+function quitGame() {
+    window.removeEventListener("beforeunload", beforeUnloadListener);
+    window.location.href = 'practice.html';
+    window.history.go(-1);
+}
 
+function beforeUnloadListener(e) {
+    if (GameSession.rights > 0) {
+        e.preventDefault();
+        e.returnValue = '';
+    }
+}
+
+window.addEventListener("beforeunload", beforeUnloadListener);
+
+
+
+
+
+// switch to next state on enter key press
+let wasEnterUp = false;
+document.addEventListener('keyup', (event) => { wasEnterUp = event.key == "Enter" });
+document.addEventListener('keydown', (event) => {
+    if (wasEnterUp) {
+        switch (GameSession.state) {
+            case "question":
+                checkAnswer()
+                break;
+            case "right":
+                continueGame()
+                break;
+            case "wrong":
+                continueGame()
+                break;
+            case "gameover":
+                quitGame()
+                break;
+            default:
+                break;
+        }
+        wasEnterUp = false;
+    }
+});
 
 
 

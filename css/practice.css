@@ -416,6 +416,7 @@ main {
   gap: 80px;
 }
 .course__bundle {
+  position: relative;
   width: 64px;
   display: flex;
   align-items: center;
@@ -685,6 +686,51 @@ main {
 @media (max-width: 640px) {
   .play-footer {
     bottom: 90px;
+  }
+}
+.floating-bubble {
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%) translateY(-8px);
+  border-radius: 12px;
+  padding: 12px;
+  white-space: nowrap;
+  background-color: var(--color-bg);
+  border: solid 2px var(--color-gray);
+  font-family: FiraSansBold, sans-serif;
+  text-transform: uppercase;
+  color: var(--color-1);
+  text-align: center;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  user-select: none;
+  animation: floatingAnimation 1.5s ease-in-out infinite;
+}
+.floating-bubble-pointer {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%) rotate(180deg);
+  width: 20px;
+  height: 10px;
+  fill: var(--color-bg);
+  color: var(--color-gray);
+  animation: floatingAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes floatingAnimation {
+  0% {
+    top: 6px;
+  }
+  50% {
+    top: -6px;
+  }
+  100% {
+    top: 6px;
   }
 }
 .nav-aside {
