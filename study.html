@@ -5,13 +5,15 @@
 		<link rel="icon" href="favicon.png" type="image/png">
 		<link rel="stylesheet" href="css/practice.css">
 		<title>English Tango</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	</head>
 	<body>
 
-		<aside>
+		<aside class="nav-aside">
+			<a href="index.html" class="logo"><h1>English Tango</h1></a>
+			<a href="index.html" class="logo-small"><h1>EnTa</h1></a>
 			<nav>
 				<ul>
-					<li><a href="index.html" class="logo"><h1>English Tango</h1></a></li>
 					<li><a href="practice.html"><div class="practice icon"></div><span>Pratiquer</span></a></li>
 					<li><a class="active" href="study.html"><div class="study icon"></div><span>Étudier</span></a></li>
 					<li><a href="vocabulary.html"><div class="vocabulary icon"></div><span>Vocabulaire</span></a></li>
@@ -21,9 +23,72 @@
 			</nav>
 		</aside>
 
+		<header class="stats-header">
+			<nav>
+				<ul>
+					<li>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Vous étudiez l'anglais
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="fire icon"></div><span>1</span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Série
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span>350</span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Expérience
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="gem icon"></div><span>50</span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Gemmes
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<footer class="nav-footer">
+			<nav>
+				<ul>
+					<li><a href="practice.html"><div class="practice icon"></div></a></li>
+					<li><a class="active" href="study.html"><div class="study icon"></div></a></li>
+					<li><a href="vocabulary.html"><div class="vocabulary icon"></div></a></li>
+					<li><a href="experience.html"><div class="experience icon"></div></a></li>
+					<li><a href="settings.html"><div class="settings icon"></div></a></li>
+				</ul>
+			</nav>
+		</footer>
+
+
+
+
+
+
+
+
+
+
 		<main>
 			<section class="wall">
-
 				<section class="course">
 					<div class="course__title color1">
 						<div class="course__title__left">
@@ -34,99 +99,68 @@
 					</div>
 					<section class="course__content">
 						<div class="course__content__line">
-							<div class="course__bundle"><a href="lesson/irregular-verbs/1.html" class="square flat-button color1"><div>1</div></a><span>Verbes n°1</span></div>
-							<div class="course__bundle"><a href="lesson/irregular-verbs/2.html" class="square flat-button color1"><div>2</div></a><span>Verbes n°2</span></div>
+							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/1.html'" class="square flat-button color1"><div>1</div></button><span>Verbes n°1</span></div>
+							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/2.html'" class="square flat-button color1" disabled><div>2</div></button><span>Verbes n°2</span></div>
 						</div>
 						<div class="course__content__line">
-							<div class="course__bundle"><a href="lesson/irregular-verbs/3.html" class="square flat-button color3"><div>3</div></a><span>Verbes n°3</span></div>
-							<div class="course__bundle"><a href="lesson/irregular-verbs/4.html" class="square flat-button color3"><div>4</div></a><span>Verbes n°4</span></div>
-							<div class="course__bundle"><a href="lesson/irregular-verbs/5.html" class="square flat-button color3"><div>5</div></a><span>Verbes n°5</span></div>
+							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/3.html'" class="square flat-button color3" disabled><div>3</div></button><span>Verbes n°3</span></div>
+							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/4.html'" class="square flat-button color3" disabled><div>4</div></button><span>Verbes n°4</span></div>
+							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/5.html'" class="square flat-button color3" disabled><div>5</div></button><span>Verbes n°5</span></div>
 						</div>
 						<div class="course__content__line">
 							<div class="half-flex"></div>
-							<div class="course__bundle"><a href="lesson/irregular-verbs/6.html" class="square flat-button color2"><div>6</div></a><span>Verbes n°6</span></div>
-							<div class="course__bundle"><a href="lesson/irregular-verbs/7.html" class="square flat-button color2"><div>7</div></a><span>Verbes n°7</span></div>
+							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/6.html'" class="square flat-button color2" disabled><div>6</div></button><span>Verbes n°6</span></div>
+							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/7.html'" class="square flat-button color2" disabled><div>7</div></button><span>Verbes n°7</span></div>
 							<div class="half-flex"></div>
 						</div>
 					</section>
 				</section>
-
-				<!-- <section class="course">
-					<div class="course__title color3">
-						<div class="course__title__left">
-							<h2>Conjugaisons</h2>
-							<span>Prendre des petits mots et les assembler ensemble</span>
-						</div>
-						<a href="practice.html" class="border flat-button color3"><span>EXERCICES</span></a>
-					</div>
-					<section class="course__content">
-						<div class="course__content__line wide">
-							<div class="course__bundle"><a href="lesson/tense/present.html" class="square flat-button color3"><div>✖</div></a><span>Présent</span></div>
-							<div class="course__bundle"><a href="lesson/tense/past.html" class="square flat-button color4"><div>←</div></a><span>Passé</span></div>
-							<div class="course__bundle"><a href="lesson/tense/future.html" class="square flat-button color1"><div>→</div></a><span>Futur</span></div>
-						</div>
-						
-						<div class="course__content__line wide">
-							<div class="course__bundle"><a href="lesson/tense/present_perfect.html" class="square flat-button color3"><div>✖</div></a><span>Présent parfait</span></div>
-							<div class="course__bundle"><a href="lesson/tense/past_perfect.html" class="square flat-button color4"><div>←</div></a><span>Passé parfait</span></div>
-							<div class="course__bundle"><a href="lesson/tense/future_perfect.html" class="square flat-button color1"><div>→</div></a><span>Futur parfait</span></div>
-						</div>
-						
-						<div class="course__content__line wide">
-							<div class="course__bundle"><a href="lesson/tense/conditional_present.html" class="square flat-button color2"><div>P</div></a><span>Conditionnel<br>présent</span></div>
-							<div class="course__bundle"><a href="lesson/tense/conditional_perfect.html" class="square flat-button color2"><div>P</div></a><span>Conditionnel<br>parfait</span></div>
-						</div>
-
-					</section>
-				</section> -->
-
 			</section>
-
-			<section class="menu">
-
-				<nav class="menu__stats-info">
-					<ul>
-						<li class="language">
-							<div class="english icon"></div>
-							<div class="dropdown">
-								<section>
-									Vous étudiez l'anglais
-								</section>
-							</div>
-							<img src="media/arrow.svg">
-						</li>
-						<li class="streak">
-							<div class="fire icon"></div><span>1</span>
-							<div class="dropdown">
-								<section>
-									série
-								</section>
-							</div>
-							<img src="media/arrow.svg">
-						</li>
-						<li class="exp">
-							<div class="bolt icon"></div><span>350</span>
-							<div class="dropdown">
-								<section>
-									expérience
-								</section>
-							</div>
-							<img src="media/arrow.svg">
-						</li>
-						<li class="gems">
-							<div class="gem icon"></div><span>50</span>
-							<div class="dropdown">
-								<section>
-									gemmes
-								</section>
-							</div>
-							<img src="media/arrow.svg">
-						</li>
-					</ul>
-				</nav>
-
-			</section>
+			<aside class="infos-aside">
+				<div class="stats-aside">
+					<nav>
+						<ul>
+							<li class="language">
+								<div class="english icon"></div><div class="stats-aside__dropdown">
+									<section>
+										Vous étudiez l'anglais
+									</section>
+								</div><img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
+							</li>
+							<li class="streak">
+								<div class="fire icon"></div><span>1</span>
+								<div class="stats-aside__dropdown">
+									<section>
+										Série
+									</section>
+								</div>
+								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
+							</li>
+							<li class="exp">
+								<div class="bolt icon"></div><span>350</span>
+								<div class="stats-aside__dropdown">
+									<section>
+										Expérience
+									</section>
+								</div>
+								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
+							</li>
+							<li class="gems">
+								<div class="gem icon"></div><span>50</span>
+								<div class="stats-aside__dropdown">
+									<section>
+										Gemmes
+									</section>
+								</div>
+								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</aside>
 		</main>
+
+        <script src="scripts/views/statsHeaderView.js"></script>
 
 	</body>
 </html>
