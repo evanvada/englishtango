@@ -13,10 +13,10 @@
   --color-4B: #0097d3;
   --color-right-1: var(--color-1);
   --color-right-2: var(--color-1B);
-  --color-right-3: rgba(17, 132, 226, 0.4);
+  --color-right-3: #ccd9f4;
   --color-wrong-1: var(--color-2);
   --color-wrong-2: var(--color-2B);
-  --color-wrong-3: rgba(238, 69, 27, 0.4);
+  --color-wrong-3: #f8cfcc;
   --color-text: var(--color-dark);
   --color-bg: var(--color-light);
 }
@@ -506,6 +506,7 @@ main {
   padding: 18px;
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 10px;
 }
 
@@ -712,14 +713,18 @@ main {
 .floating-bubble-pointer {
   position: absolute;
   z-index: 9;
-  top: 0;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(-100%) rotate(180deg);
+  transform: translateX(-50%) translateY(100%) rotate(180deg);
   width: 20px;
   height: 10px;
   fill: var(--color-bg);
   color: var(--color-gray);
-  animation: floatingAnimation 1.5s ease-in-out infinite;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes floatingAnimation {

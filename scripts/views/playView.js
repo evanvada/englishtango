@@ -284,27 +284,33 @@ window.addEventListener("beforeunload", beforeUnloadListener);
 
 
 // switch to next state on enter key press
-let wasEnterUp = false;
-document.addEventListener('keyup', (event) => { wasEnterUp = event.key == "Enter" });
+let wasEnterDown = true;
+document.addEventListener('keyup', (event) => {
+    if (event.key == "Enter") {
+        wasEnterDown = true;
+    }
+});
 document.addEventListener('keydown', (event) => {
-    if (wasEnterUp) {
-        switch (GameSession.state) {
-            case "question":
-                checkAnswer()
-                break;
-            case "right":
-                continueGame()
-                break;
-            case "wrong":
-                continueGame()
-                break;
-            case "gameover":
-                quitGame()
-                break;
-            default:
-                break;
+    if (event.key == "Enter") {
+        if (wasEnterDown) {
+            switch (GameSession.state) {
+                case "question":
+                    checkAnswer()
+                    break;
+                case "right":
+                    continueGame()
+                    break;
+                case "wrong":
+                    continueGame()
+                    break;
+                case "gameover":
+                    quitGame()
+                    break;
+                default:
+                    break;
+            }
         }
-        wasEnterUp = false;
+        wasEnterDown = false;
     }
 });
 

@@ -24,15 +24,29 @@ for (let button of bundleButtonsE) {
 	startMatchButtonsE.forEach(btn => { btn.disabled = true });
 }
 
-let previousInnerHTML = bundleButtonsE[0].parentElement.innerHTML
-bundleButtonsE[0].parentElement.innerHTML += "<div class='floating-bubble'>Sélectionnez un exercice</div><img class='floating-bubble-pointer' src='media/arrow.svg'>"
+
+// change floating bubble position
+let previousBubble = null;
+function setBubble(query, text) {
+	element = document.querySelector(query)
+	if (previousBubble?.parentNode != null) {
+		previousBubble.parentNode.removeChild(previousBubble);
+	}
+	if (element != null) {
+		let bubble = document.createElement('div')
+		bubble.classList.add('floating-bubble');
+		bubble.textContent = text;
+		let pointer = document.createElement('img')
+		pointer.classList.add('floating-bubble-pointer');
+		pointer.src = 'media/arrow.svg';
+		bubble.appendChild(pointer);
+		element.appendChild(bubble);
+		previousBubble = bubble;
+	}
+}
 
 
-
-
-
-
-
+setBubble('.course__bundle:nth-of-type(1)', "Sélectionnez un exercice")
 
 
 // // update option buttons
@@ -74,6 +88,7 @@ function toggleBundle(element, bundle) {
 	if (!toggleBundlePressed) {
 		GameOptions.selectedBundles = []
 		toggleBundlePressed = true
+		setBubble()
 	}
 	
 	if (!element.classList.contains("checked") && GameBundle.getBundleByName(bundle)) {

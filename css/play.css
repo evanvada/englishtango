@@ -13,10 +13,10 @@
   --color-4B: #0097d3;
   --color-right-1: var(--color-1);
   --color-right-2: var(--color-1B);
-  --color-right-3: rgba(17, 132, 226, 0.4);
+  --color-right-3: #ccd9f4;
   --color-wrong-1: var(--color-2);
   --color-wrong-2: var(--color-2B);
-  --color-wrong-3: rgba(238, 69, 27, 0.4);
+  --color-wrong-3: #f8cfcc;
   --color-text: var(--color-dark);
   --color-bg: var(--color-light);
 }
@@ -356,30 +356,33 @@ span.pop {
   }
 }
 :root {
-  --width-1: 920px;
-  --width-2: 600px;
-  --lateral-margin: auto;
+  --width-1: min(100vw, 920px);
+  --width-2: min(100vw, 600px);
+  --lateral-padding: 40px;
+  --top-padding: 50px;
 }
 
 main {
   display: flex;
+  align-items: center;
   flex-direction: column;
   height: 100%;
   width: 100%;
+  padding-top: var(--top-padding);
+  padding-bottom: 140px;
 }
 
 .progress {
-  margin: 0 var(--lateral-margin);
-  padding-top: 54px;
-  width: 100%;
+  padding: 0 var(--lateral-padding);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
+  width: calc(var(--width-1));
 }
 .progress__bar {
   height: 16px;
-  width: var(--width-1);
+  flex: 1 0 0;
   border-radius: 8px;
   overflow: hidden;
   background: var(--color-gray);
@@ -401,17 +404,16 @@ main {
   filter: brightness(1.4);
 }
 .progress .icon {
-  background-size: 24px;
-  min-width: 24px;
-  min-height: 24px;
-  width: unset;
-  height: unset;
+  background-size: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .exercice {
+  padding: 40px var(--lateral-padding);
   width: var(--width-2);
-  margin: var(--lateral-margin);
-  padding: 40px 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -457,13 +459,18 @@ main {
 }
 
 .banner {
+  padding: 0 var(--lateral-padding);
+  width: 100%;
   height: 140px;
   background: white;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
 }
 .banner__container {
   width: var(--width-1);
   height: 100%;
-  margin: 0 var(--lateral-margin);
   margin: 0 auto;
   gap: 0 24px;
   display: flex;
@@ -479,10 +486,11 @@ main {
   padding-bottom: 12px;
 }
 .banner__side {
-  gap: 0 24px;
+  gap: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.25rem;
 }
 .banner__symbol {
   flex: none;
@@ -526,4 +534,33 @@ main {
 }
 .black-overlay.show-transition {
   opacity: 1;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --lateral-padding: 16px;
+    --top-padding: 24px;
+  }
+  .banner {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    height: fit-content;
+  }
+  .banner__container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .banner__container > * {
+    flex: none;
+  }
+  .banner__symbol {
+    display: none;
+  }
+  .banner.user-input {
+    border-top: none;
+  }
+  .banner.user-input .gray {
+    display: none;
+  }
 }
