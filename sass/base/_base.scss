@@ -26,6 +26,10 @@ html, body {
 	background: var(--color-bg);
 }
 
+html {
+    overflow-y: scroll;
+}
+
 .hidden {
     display: none !important;
 }

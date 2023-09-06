@@ -45,6 +45,10 @@ html, body {
   background: var(--color-bg);
 }
 
+html {
+  overflow-y: scroll;
+}
+
 .hidden {
   display: none !important;
 }
@@ -128,9 +132,6 @@ a {
 .icon.settings {
   background-image: url(../media/settings.png);
 }
-.icon.chest {
-  background-image: url(../media/chest.png);
-}
 .icon.english {
   background-image: url(../media/english.png);
 }
@@ -145,6 +146,18 @@ a {
 .icon.gem {
   background-size: 30px;
   background-image: url(../media/gem.png);
+}
+.icon.chest {
+  background-image: url(../media/chest.png);
+}
+.icon.quest-exercise {
+  background-image: url(../media/quest_exercise.png);
+}
+.icon.quest-locked {
+  background-image: url(../media/quest_locked.png);
+}
+.icon.quest-bolt {
+  background-image: url(../media/quest_bolt.png);
 }
 .icon.inf {
   background-image: url(../media/inf.png);

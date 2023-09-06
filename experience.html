@@ -22,7 +22,48 @@
 				</ul>
 			</nav>
 		</aside>
-
+		<header class="stats-header">
+			<nav>
+				<ul>
+					<li>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Vous étudiez l'anglais
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="fire icon"></div><span>1</span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Série
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span>350</span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Expérience
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li>
+						<button onclick="showStatsHeaderDropdown(this)"><div class="gem icon"></div><span>50</span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Gemmes
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+				</ul>
+			</nav>
+		</header>
 		<footer class="nav-footer">
 			<nav>
 				<ul>
@@ -44,8 +85,46 @@
 
 
 
+
+
 		<main>
 			<section class="wall">
+				<section class="wall__section experience">
+					<div class="wall__title color1">
+						<div class="wall__title__left">
+							<h2>Quêtes</h2>
+							<span>Termine de nouvelles quêtes tous les jours pour gagner des récompenses !</span>
+						</div>
+					</div>
+					<section class="wall__subsection">
+						<h1>Quêtes du jour</h1>
+						<div class="experience__quest">
+							<div class="quest-bolt icon"></div>
+							<div class="experience__side">
+								<span>Gagne 400 XP</span>
+								<div class="experience__progress">
+									<div class="experience__progress__bar"><div class="experience__progress__bar__fill"><div class="experience__progress__bar__fill__highlight"></div></div></div>
+									<div class="chest icon"></div>
+								</div>
+							</div>
+						</div>
+						<div class="experience__quest">
+							<div class="quest-exercise icon"></div>
+							<div class="experience__side">
+								<span>Joue à ton premier exercice</span>
+								<div class="experience__progress">
+									<div class="experience__progress__bar"><div class="experience__progress__bar__fill"><div class="experience__progress__bar__fill__highlight"></div></div></div>
+									<div class="chest icon"></div>
+								</div>
+							</div>
+						</div>
+						<h1>Quêtes de la semaine</h1>
+						<div class="locked experience__quest">
+							<div class="quest-locked icon"></div>
+							Nouvelles quêtes bientôt
+						</div>
+					</section>
+				</section>
 			</section>
 			<aside class="infos-aside">
 				<div class="stats-aside">
@@ -91,6 +170,12 @@
 			</aside>
 		</main>
 
+
+
+
+
+
+		<script src="scripts/utils.js"></script>
         <script src="scripts/views/statsHeaderView.js"></script>
 		
 	</body>

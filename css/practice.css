@@ -45,6 +45,10 @@ html, body {
   background: var(--color-bg);
 }
 
+html {
+  overflow-y: scroll;
+}
+
 .hidden {
   display: none !important;
 }
@@ -128,9 +132,6 @@ a {
 .icon.settings {
   background-image: url(../media/settings.png);
 }
-.icon.chest {
-  background-image: url(../media/chest.png);
-}
 .icon.english {
   background-image: url(../media/english.png);
 }
@@ -145,6 +146,18 @@ a {
 .icon.gem {
   background-size: 30px;
   background-image: url(../media/gem.png);
+}
+.icon.chest {
+  background-image: url(../media/chest.png);
+}
+.icon.quest-exercise {
+  background-image: url(../media/quest_exercise.png);
+}
+.icon.quest-locked {
+  background-image: url(../media/quest_locked.png);
+}
+.icon.quest-bolt {
+  background-image: url(../media/quest_bolt.png);
 }
 .icon.inf {
   background-image: url(../media/inf.png);
@@ -373,14 +386,7 @@ main {
   max-width: 600px;
   min-width: 400px;
 }
-
-.course {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-.course__title {
+.wall__title {
   background: #777777;
   width: 100%;
   padding: 30px 18px;
@@ -391,31 +397,113 @@ main {
   align-items: center;
   gap: 12px;
 }
-.course__title__left {
+.wall__title__left {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.course__title .flat-button {
+.wall__title .flat-button {
   width: 120px;
   height: 54px;
 }
-.course__content {
+.wall__section {
   padding: 30px 18px;
-  gap: 40px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.course__content__line {
-  gap: 50px;
+  gap: 24px;
   display: flex;
   align-items: stretch;
+  flex-direction: column;
 }
-.course__content__line.wide {
-  gap: 80px;
+.wall__subsection {
+  gap: 16px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
 }
-.course__bundle {
+
+.color1.wall__title {
+  background: var(--color-1);
+}
+
+.color2.wall__title {
+  background: var(--color-2);
+}
+
+.color3.wall__title {
+  background: var(--color-3);
+}
+
+.color4.wall__title {
+  background: var(--color-4);
+}
+
+.wall__section.experience h1 {
+  padding-top: 16px;
+}
+.wall__section.experience .experience__quest {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid var(--color-gray);
+  border-radius: 14px;
+  padding: 16px;
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1.25rem;
+}
+.wall__section.experience .experience__quest > .icon {
+  background-size: 48px;
+  width: 64px;
+  height: 64px;
+}
+.wall__section.experience .experience__quest.locked {
+  background: #f7f7f7;
+  color: var(--color-grayer);
+}
+.wall__section.experience .experience__side {
+  height: 100%;
+  flex: 1;
+  gap: 6px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
+}
+.wall__section.experience .experience__progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+.wall__section.experience .experience__progress__bar {
+  height: 16px;
+  flex: 1;
+  border-radius: 8px 0 0 8px;
+  overflow: hidden;
+  background: var(--color-gray);
+}
+.wall__section.experience .experience__progress__bar__fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-3);
+  transition: width 0.15s ease-in-out;
+}
+.wall__section.experience .experience__progress__bar__fill__highlight {
+  height: 4px;
+  margin: 0 8px;
+  margin-top: 4px;
+  border-radius: 8px;
+  background: var(--color-3);
+  filter: brightness(1.4);
+}
+
+.wall__section.course .course__line {
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+}
+.wall__section.course .course__bundle {
   position: relative;
   width: 64px;
   display: flex;
@@ -423,38 +511,16 @@ main {
   flex-direction: column;
   gap: 6px;
 }
-.course__bundle span {
+.wall__section.course .course__bundle span {
   font-family: FiraSansBold, sans-serif;
   white-space: nowrap;
   text-align: center;
 }
-.course__bundle .icon {
+.wall__section.course .course__bundle .icon {
   background-size: 24px;
 }
-.course__bundle button:disabled ~ span {
+.wall__section.course .course__bundle button:disabled ~ span {
   color: var(--color-gray);
-}
-.course .half-flex {
-  width: 32px;
-}
-.course .one-flex {
-  width: 64px;
-}
-
-.color1.course__title {
-  background: var(--color-1);
-}
-
-.color2.course__title {
-  background: var(--color-2);
-}
-
-.color3.course__title {
-  background: var(--color-3);
-}
-
-.color4.course__title {
-  background: var(--color-4);
 }
 
 @media (max-width: 1280px) {
@@ -472,6 +538,7 @@ main {
   main {
     padding: 0;
     padding-top: 58px;
+    padding-bottom: 90px;
   }
   .course__title {
     border-radius: 0;
@@ -500,7 +567,7 @@ main {
   text-align: center;
   width: fit-content;
 }
-.infos-aside__sub-menu {
+.infos-aside__submenu {
   border: solid 2px var(--color-gray);
   border-radius: 14px;
   padding: 18px;
@@ -838,7 +905,7 @@ main {
 }
 .nav-footer .icon {
   background-size: 48px;
-  width: 68px;
+  width: 60px;
   height: 60px;
 }
 .nav-footer .active .icon {

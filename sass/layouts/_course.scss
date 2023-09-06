@@ -29,13 +29,6 @@ main {
     width: 600px;
     max-width: 600px;
     min-width: 400px;
-}
-
-.course {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
 
     &__title {
         background: #777777;
@@ -61,77 +54,187 @@ main {
         }
     }
 
-    &__content {
+    &__section {
         padding: 30px 18px;
 
-        gap: 40px;
+        gap: 24px;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         flex-direction: column;
+    }
 
+    &__subsection {
+        gap: 16px;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+
+
+
+.color1.wall__title {
+    background: var(--color-1);
+}
+
+.color2.wall__title {
+    background: var(--color-2);
+}
+
+.color3.wall__title {
+    background: var(--color-3);
+}
+
+.color4.wall__title {
+    background: var(--color-4);
+}
+
+
+
+
+
+
+
+
+
+
+.wall__section.experience {
+
+    h1 {
+        padding-top: 16px;
+    }
+
+    .experience {
+        &__quest {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            border: 2px solid var(--color-gray);
+            border-radius: 14px;
+            padding: 16px;
+
+            > .icon {
+                background-size: 48px;
+                width: 64px;
+                height: 64px;
+            }
+
+            font-family: FiraSansBold, sans-serif;
+            font-size: 1.25rem;
+
+            &.locked {
+                background: #f7f7f7;
+                color: var(--color-grayer);
+            }
+        }
+        
+        &__side {
+            height: 100%;
+            flex: 1;
+            gap: 6px;
+
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__progress {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2px;
+
+            &__bar {
+                height: 16px;
+                flex: 1;
+                border-radius: 8px 0 0 8px;
+                overflow: hidden;
+                background: var(--color-gray);
+        
+                &__fill {
+                    height: 100%;
+                    width: 0%;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    background: var(--color-3);
+                    transition: width 0.15s ease-in-out;
+        
+                    &__highlight {
+                        height: 4px;
+                        margin: 0 8px;
+                        margin-top: 4px;
+                        border-radius: 8px;
+                        background: var(--color-3);
+                        filter: brightness(1.4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+.wall__section.course {
+
+
+    .course {
         &__line {
             gap: 50px;
             display: flex;
-            align-items: stretch;
+            justify-content: center;
+        }
 
-            &.wide {
-                gap: 80px;
+        &__bundle {
+            position: relative;
+            width: 64px;
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 6px;
+
+            span {
+                font-family: FiraSansBold, sans-serif;
+                white-space: nowrap;
+                text-align: center;
+            }
+            
+            .icon {
+                background-size: 24px;
+            }
+        
+            button:disabled ~ span {
+                color: var(--color-gray);
             }
         }
     }
 
-    &__bundle {
-        position: relative;
-        width: 64px;
-
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 6px;
-
-        span {
-            font-family: FiraSansBold, sans-serif;
-            white-space: nowrap;
-            text-align: center;
-        }
-        
-        .icon {
-            background-size: 24px;
-        }
-    
-        button:disabled ~ span {
-            color: var(--color-gray);
-        }
-    }
-
-    .half-flex {
-        width: 32px;
-    }
-
-    .one-flex {
-        width: 64px;
-    }
-
 }
 
 
 
 
-.color1.course__title {
-    background: var(--color-1);
-}
 
-.color2.course__title {
-    background: var(--color-2);
-}
 
-.color3.course__title {
-    background: var(--color-3);
-}
 
-.color4.course__title {
-    background: var(--color-4);
-}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -167,6 +270,7 @@ main {
     main {
         padding: 0;
         padding-top: 58px;
+        padding-bottom: 90px;
     }
 
     .course__title {
@@ -180,3 +284,23 @@ main {
         min-width: unset;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

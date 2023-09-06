@@ -41,10 +41,6 @@
 
 
 
-    &.chest {
-        background-image: url(../media/chest.png);
-    }
-
     &.english {
         background-image: url(../media/english.png);
     }
@@ -62,6 +58,22 @@
     &.gem {
         background-size: 30px;
         background-image: url(../media/gem.png);
+    }
+
+    &.chest {
+        background-image: url(../media/chest.png);
+    }
+
+    &.quest-exercise {
+        background-image: url(../media/quest_exercise.png);
+    }
+
+    &.quest-locked {
+        background-image: url(../media/quest_locked.png);
+    }
+
+    &.quest-bolt {
+        background-image: url(../media/quest_bolt.png);
     }
 
 
