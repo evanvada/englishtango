@@ -206,7 +206,7 @@ DataInterface.fetchAll().then(() => {
     GameSession.generateQuestions();
     GameSession.continueGame();
 
-    showGameOver()
+    // showGameOver()
 
 
     startLoop();
