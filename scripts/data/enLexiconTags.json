@@ -141,6 +141,9 @@
 	{"id": "verb_base_undertake", "fr": "se charger de / entreprendre"},
 	{"id": "verb_base_swing", "fr": "balancer"},
 	{"id": "verb_base_overcome", "fr": "surmonter"},
+	{"id": "verb_base_spin", "fr": "tourner (rapidement)"},
+	{"id": "verb_base_sew", "fr": "coudre"},
+	{"id": "verb_base_tread", "fr": "sautiller"},
 
 	{"id": "verb", "fr": "verbe"},
 	{"id": "verb_irregular", "fr": "irrégulier"},

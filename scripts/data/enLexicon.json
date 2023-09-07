@@ -567,6 +567,20 @@
     {"id": "verb_ps_overcome", "en": "overcame", "tags": ["verb_base_overcome", "verb_ps", "verb_irregular"]},
     {"id": "verb_pp_overcome", "en": "overcome", "tags": ["verb_base_overcome", "verb_pp", "verb_irregular"]},
 
+    {"id": "verb_inf_spin", "en": "spin", "tags": ["verb_base_spin", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spin", "en": "span", "tags": ["verb_base_spin", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spin", "en": "spun", "tags": ["verb_base_spin", "verb_pp", "verb_irregular"]},
+
+    {"id": "verb_inf_sew", "en": "sew", "tags": ["verb_base_sew", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sew", "en": "sewed", "tags": ["verb_base_sew", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sew", "en": "sewn", "tags": ["verb_base_sew", "verb_pp", "verb_irregular"]},
+
+    {"id": "verb_inf_tread", "en": "tread", "tags": ["verb_base_tread", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_tread", "en": "trod", "tags": ["verb_base_tread", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_tread", "en": "trodden", "tags": ["verb_base_tread", "verb_pp", "verb_irregular"]},
+
+
+
 
     {"id": "verb_be_1p_singular", "en": "am", "tags": ["verb_base_be", "tense_present_simple", "1p", "singular"]},
 	{"id": "verb_be_1p_plural", "en": "are", "tags": ["verb_base_be", "tense_present_simple", "1p", "plural"]},
