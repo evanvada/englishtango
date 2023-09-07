@@ -7,8 +7,8 @@ class GameSession {
     static wrongs = 0;
     static state = "loading";
     
-    static checkAnswer() {
-        if (this.questions[0].addAnswer(exerciceAnswerE.value)) {
+    static checkAnswer(input) {
+        if (this.questions[0].addAnswer(input)) {
             this.rightUpdate()
         } else {
             this.wrongUpdate()

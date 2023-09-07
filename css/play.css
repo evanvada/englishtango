@@ -126,8 +126,8 @@ a {
 .icon.vocabulary {
   background-image: url(../media/vocabulary.png);
 }
-.icon.experience {
-  background-image: url(../media/experience.png);
+.icon.quests {
+  background-image: url(../media/quests.png);
 }
 .icon.settings {
   background-image: url(../media/settings.png);
@@ -159,6 +159,12 @@ a {
 .icon.quest-bolt {
   background-image: url(../media/quest_bolt.png);
 }
+.icon.quest-fire {
+  background-image: url(../media/quest_fire.png);
+}
+.icon.quest-gem {
+  background-image: url(../media/quest_gem.png);
+}
 .icon.inf {
   background-image: url(../media/inf.png);
 }
@@ -182,6 +188,12 @@ a {
   background-size: 48px;
   width: 48px;
   height: 48px;
+}
+.icon.win {
+  background-image: url(../media/win.png);
+  background-size: 128px;
+  width: 128px;
+  height: 128px;
 }
 
 .flat-button {
@@ -391,7 +403,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: calc(var(--width-1));
+  width: var(--width-1);
 }
 .progress__bar {
   height: 16px;
@@ -505,6 +517,9 @@ main {
   align-items: center;
   font-size: 1.25rem;
 }
+.banner .flat-button {
+  font-size: 1rem;
+}
 .banner__symbol {
   flex: none;
   width: 80px;
@@ -515,7 +530,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-.banner.user-input {
+.banner.over, .banner.user-input {
   border-top: 2px solid var(--color-gray);
 }
 .banner.right {
@@ -549,6 +564,150 @@ main {
   opacity: 1;
 }
 
+.gameover {
+  width: min(100vw, 500px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 var(--lateral-padding);
+  gap: 20px;
+}
+.gameover__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.gameover__header > span {
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1.5rem;
+  color: var(--color-2);
+}
+.gameover__progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+}
+.gameover__progress__level {
+  height: 28px;
+  font-family: FiraSansBold, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0 6px;
+  background: linear-gradient(to bottom, var(--color-3B), var(--color-3));
+  border-radius: 10px;
+}
+.gameover__progress__bar {
+  height: 16px;
+  flex: 1;
+  border-radius: 8px 0 0 8px;
+  overflow: hidden;
+  background: var(--color-gray);
+}
+.gameover__progress__bar__fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-3);
+  transition: width 0.15s ease-in-out;
+}
+.gameover__progress__bar__fill__highlight {
+  height: 4px;
+  margin: 0 8px;
+  margin-top: 4px;
+  border-radius: 8px;
+  background: var(--color-3);
+  filter: brightness(1.4);
+}
+
+.advancement {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid var(--color-gray);
+  border-radius: 14px;
+  padding: 16px;
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1.25rem;
+}
+.advancement h1 {
+  padding-top: 16px;
+}
+.advancement > .icon {
+  background-size: 48px;
+  width: 64px;
+  height: 64px;
+}
+.advancement.locked {
+  background: #f7f7f7;
+  color: var(--color-grayer);
+}
+.advancement__side {
+  height: 100%;
+  flex: 1;
+  gap: 6px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
+}
+.advancement .quest-fire.icon {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  color: white;
+  background-size: 48px 48px;
+  background-position: center top;
+}
+.advancement .quest-fire.icon span {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: FiraSansBold, sans-serif;
+  width: 100%;
+  text-align: center;
+  background: #f77e54;
+  -webkit-text-stroke: 8px;
+  -webkit-text-stroke-color: transparent;
+  background-clip: text;
+}
+.advancement__progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+.advancement__progress__bar {
+  height: 16px;
+  flex: 1;
+  border-radius: 8px 0 0 8px;
+  overflow: hidden;
+  background: var(--color-gray);
+}
+.advancement__progress__bar__fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-3);
+  transition: width 0.15s ease-in-out;
+}
+.advancement__progress__bar__fill__highlight {
+  height: 4px;
+  margin: 0 8px;
+  margin-top: 4px;
+  border-radius: 8px;
+  background: var(--color-3);
+  filter: brightness(1.4);
+}
+
 @media (max-width: 640px) {
   :root {
     --lateral-padding: 16px;
@@ -574,6 +733,9 @@ main {
     border-top: none;
   }
   .banner.user-input .gray {
+    display: none;
+  }
+  .banner.over .banner__side {
     display: none;
   }
 }

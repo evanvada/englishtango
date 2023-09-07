@@ -26,8 +26,8 @@
         background-image: url(../media/vocabulary.png);
     }
 
-    &.experience {
-        background-image: url(../media/experience.png);
+    &.quests {
+        background-image: url(../media/quests.png);
     }
 
     &.settings {
@@ -76,9 +76,13 @@
         background-image: url(../media/quest_bolt.png);
     }
 
+    &.quest-fire {
+        background-image: url(../media/quest_fire.png);
+    }
 
-
-
+    &.quest-gem {
+        background-image: url(../media/quest_gem.png);
+    }
 
 
 
@@ -114,6 +118,13 @@
         background-size: 48px;
         width: 48px;
         height: 48px;
+    }
+
+    &.win {
+        background-image: url(../media/win.png);
+        background-size: 128px;
+        width: 128px;
+        height: 128px;
     }
 }
 

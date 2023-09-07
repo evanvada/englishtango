@@ -126,8 +126,8 @@ a {
 .icon.vocabulary {
   background-image: url(../media/vocabulary.png);
 }
-.icon.experience {
-  background-image: url(../media/experience.png);
+.icon.quests {
+  background-image: url(../media/quests.png);
 }
 .icon.settings {
   background-image: url(../media/settings.png);
@@ -159,6 +159,12 @@ a {
 .icon.quest-bolt {
   background-image: url(../media/quest_bolt.png);
 }
+.icon.quest-fire {
+  background-image: url(../media/quest_fire.png);
+}
+.icon.quest-gem {
+  background-image: url(../media/quest_gem.png);
+}
 .icon.inf {
   background-image: url(../media/inf.png);
 }
@@ -182,6 +188,12 @@ a {
   background-size: 48px;
   width: 48px;
   height: 48px;
+}
+.icon.win {
+  background-image: url(../media/win.png);
+  background-size: 128px;
+  width: 128px;
+  height: 128px;
 }
 
 .flat-button {
@@ -407,7 +419,6 @@ main {
   height: 54px;
 }
 .wall__section {
-  padding: 30px 18px;
   gap: 24px;
   display: flex;
   align-items: stretch;
@@ -436,10 +447,10 @@ main {
   background: var(--color-4);
 }
 
-.wall__section.experience h1 {
+.wall__section.quests h1 {
   padding-top: 16px;
 }
-.wall__section.experience .experience__quest {
+.wall__section.quests .quests__quest {
   min-height: 100px;
   display: flex;
   align-items: center;
@@ -450,16 +461,16 @@ main {
   font-family: FiraSansBold, sans-serif;
   font-size: 1.25rem;
 }
-.wall__section.experience .experience__quest > .icon {
+.wall__section.quests .quests__quest > .icon {
   background-size: 48px;
   width: 64px;
   height: 64px;
 }
-.wall__section.experience .experience__quest.locked {
+.wall__section.quests .quests__quest.locked {
   background: #f7f7f7;
   color: var(--color-grayer);
 }
-.wall__section.experience .experience__side {
+.wall__section.quests .quests__side {
   height: 100%;
   flex: 1;
   gap: 6px;
@@ -468,20 +479,20 @@ main {
   flex-direction: column;
   justify-content: center;
 }
-.wall__section.experience .experience__progress {
+.wall__section.quests .quests__progress {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2px;
 }
-.wall__section.experience .experience__progress__bar {
+.wall__section.quests .quests__progress__bar {
   height: 16px;
   flex: 1;
   border-radius: 8px 0 0 8px;
   overflow: hidden;
   background: var(--color-gray);
 }
-.wall__section.experience .experience__progress__bar__fill {
+.wall__section.quests .quests__progress__bar__fill {
   height: 100%;
   width: 0%;
   border-radius: 8px;
@@ -489,7 +500,7 @@ main {
   background: var(--color-3);
   transition: width 0.15s ease-in-out;
 }
-.wall__section.experience .experience__progress__bar__fill__highlight {
+.wall__section.quests .quests__progress__bar__fill__highlight {
   height: 4px;
   margin: 0 8px;
   margin-top: 4px;
@@ -540,7 +551,7 @@ main {
     padding-top: 58px;
     padding-bottom: 90px;
   }
-  .course__title {
+  .wall__title {
     border-radius: 0;
   }
   .wall {

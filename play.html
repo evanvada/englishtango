@@ -5,6 +5,7 @@
 		<link rel="icon" href="favicon.png" type="image/png">
 		<link rel="stylesheet" href="css/play.css">
 		<title>English Tango</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	</head>
 	<body>
 
@@ -27,7 +28,7 @@
             <section class="banner user-input">
                 <div class="banner__container">
                     <button class="border gray flat-button" onclick="noAnswer()"><span>Passer</span></button>
-                    <button class="color1 flat-button" onclick="checkAnswer()"><span>Valider</span></button>
+                    <button class="color1 flat-button" onclick="checkAnswer()" disabled><span>Valider</span></button>
                 </div>
             </section>
             
@@ -55,6 +56,63 @@
                     </div>
                     <button class="color1 flat-button" onclick="continueGame()"><span>Continuer</span></button>
                 </div>
+            </section>
+
+            <section class="banner over hidden">
+                <div class="banner__container">
+                    <button class="banner__side"></button>
+                    <button class="color1 flat-button" onclick="checkAnswer()"><span>Continuer</span></button>
+                </div>
+            </section>
+
+            <section class="gameover hidden">
+
+                <div class="gameover__header">
+                    <div class="win icon"></div>
+                    <span>Leçon terminée !</span>
+                    <section class="gameover__progress">
+                        <button class="bolt icon"></button>
+                        <div class="gameover__progress__bar"><div class="gameover__progress__bar__fill"><div class="gameover__progress__bar__fill__highlight"></div></div></div>
+                        <div class="gameover__progress__level">LVL 1</div>
+                    </section>
+                </div>
+
+                <div class="advancement">
+                    <div class="quest-fire icon"><span>1</span></div>
+                    <div class="advancement__side">
+                        <span>L M W J V S D</span>
+                    </div>
+                </div>
+
+                <div class="advancement">
+                    <div class="quest-exercise icon"></div>
+                    <div class="advancement__side">
+                        <span>Joue à ton premier exercice</span>
+                        <div class="advancement__progress">
+                            <div class="advancement__progress__bar"><div class="advancement__progress__bar__fill"><div class="advancement__progress__bar__fill__highlight"></div></div></div>
+                            <div class="chest icon"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="advancement">
+                    <div class="quest-bolt icon"></div>
+                    <div class="advancement__side">
+                        <span>Gagne 400 XP</span>
+                        <div class="advancement__progress">
+                            <div class="advancement__progress__bar"><div class="advancement__progress__bar__fill"><div class="advancement__progress__bar__fill__highlight"></div></div></div>
+                            <div class="chest icon"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advancement">
+                    <div class="quest-gem icon"></div>
+                    <div class="advancement__side">
+                        <span>+80 gemmes</span>
+                    </div>
+                </div>
+
             </section>
         </main>
 

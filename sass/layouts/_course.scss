@@ -55,7 +55,6 @@ main {
     }
 
     &__section {
-        padding: 30px 18px;
 
         gap: 24px;
         display: flex;
@@ -99,13 +98,13 @@ main {
 
 
 
-.wall__section.experience {
+.wall__section.quests {
 
     h1 {
         padding-top: 16px;
     }
 
-    .experience {
+    .quests {
         &__quest {
             min-height: 100px;
             display: flex;
@@ -273,7 +272,7 @@ main {
         padding-bottom: 90px;
     }
 
-    .course__title {
+    .wall__title {
         border-radius: 0;
     }
 
