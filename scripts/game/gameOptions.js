@@ -9,7 +9,7 @@ class GameOptions {
     static selectedQuestionOption;
     static selectedBundles;
 
-    static gameVersion = "0.1"
+    static version = "0.1"
 
     static repetitionOptions = [
         {name: "repeat_question", fr: "Répéter les question ratées"},
@@ -24,20 +24,20 @@ class GameOptions {
     ]
 
     static loadAllFromLocalStorage() {
-        const loaded = JSON.parse(localStorage.getItem("game_" + GameOptions.gameVersion)) || {}
+        const loaded = JSON.parse(localStorage.getItem("game_" + GameOptions.version)) || {}
 
-        this.selectedRepetitionOption = loaded.selectedRepetitionOption || "repeat_question"
-        this.selectedQuestionOption = loaded.selectedQuestionOption || "read_en_write_fr"
-        this.selectedBundles = loaded.selectedBundles || []
+        GameOptions.selectedRepetitionOption = loaded.selectedRepetitionOption || "repeat_question"
+        GameOptions.selectedQuestionOption = loaded.selectedQuestionOption || "read_en_write_fr"
+        GameOptions.selectedBundles = loaded.selectedBundles || []
     }
 
     static saveAllToLocalStorage() {
         const loading = {
-            selectedRepetitionOption: this.selectedRepetitionOption,
-            selectedQuestionOption: this.selectedQuestionOption,
-            selectedBundles: this.selectedBundles,
+            selectedRepetitionOption: GameOptions.selectedRepetitionOption,
+            selectedQuestionOption: GameOptions.selectedQuestionOption,
+            selectedBundles: GameOptions.selectedBundles,
         }
-        localStorage.setItem("game_" + GameOptions.gameVersion, JSON.stringify(loading))
+        localStorage.setItem("game_" + GameOptions.version, JSON.stringify(loading))
     }
 }
 

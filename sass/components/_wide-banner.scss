@@ -1,0 +1,89 @@
+
+.banner {
+    padding: 0 var(--lateral-padding);
+    width: 100%;
+    height: 140px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+
+    &__container {
+        width: var(--width-1);
+        height: 100%;
+        margin: 0 auto;
+
+        gap: 0 24px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        * {
+            flex: 1;
+        }
+    }
+    
+    h3 {
+        font-family: FiraSansBold, sans-serif;
+        font-size: 1.5rem;
+        padding-bottom: 12px;
+    }
+
+    &__side {
+        gap: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.25rem;
+    }
+
+    .flat-button {
+        font-size: 1rem;
+    }
+
+    &__symbol {
+        flex: none;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--color-light);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.over,
+    &.user-input {
+        border-top: 2px solid var(--color-gray);
+    }
+
+    &.right {
+        background: var(--color-right-3);
+        color: var(--color-right-2);
+    }
+
+    &.wrong {
+        background: var(--color-wrong-3);
+        color: var(--color-wrong-2);
+    }
+
+    &.overlay {
+        position: fixed;
+        bottom: -140px;
+        width: 100%;
+        transition: bottom 0.2s ease-in-out;
+        &.show-transition {
+            bottom: 0;
+        }
+    }
+}
+
+
+
+
+

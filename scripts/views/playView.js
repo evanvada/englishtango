@@ -64,7 +64,7 @@ const bannerRightCorrectionSpanE = document.querySelector('.banner.right span');
 const bannerWrongSymbolE = document.querySelector('.banner.wrong .banner__symbol');
 const bannerRightSymbolE = document.querySelector('.banner.right .banner__symbol');
 
-const progressBarFillE = document.querySelector('.progress__bar__fill');
+const progressBarFillE = document.querySelector('.progress .progress-bar__fill');
 
 const progressE = document.querySelector('.progress');
 const exerciceE = document.querySelector('.exercice');
@@ -146,6 +146,7 @@ function showUserInput() {
 }
 
 function showGameOver() {
+    console.log(GameSession.advancements)
     progressE.classList.add("hidden")
     exerciceE.classList.add("hidden")
     bannerE.classList.add("hidden")
@@ -202,6 +203,7 @@ function continueGame() {
 
 DataInterface.fetchAll().then(() => {
 
+    GameProgression.loadAllFromLocalStorage();
     GameOptions.loadAllFromLocalStorage();
     GameSession.generateQuestions();
     GameSession.continueGame();
@@ -291,7 +293,6 @@ document.addEventListener('keyup', (event) => {
         wasEnterDown = true;
     }
     // enable/disable the check button (useful when accidental double click)
-    console.log(exerciceAnswerE.value.length)
     if (exerciceAnswerE.value.length > 0) {
         bannerCheckE.removeAttribute('disabled')
     } else {

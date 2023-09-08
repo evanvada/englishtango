@@ -1,0 +1,33 @@
+
+
+
+.progress-bar {
+    height: 16px;
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-gray);
+
+    &__fill {
+        height: 100%;
+        width: 0%;
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--color-1);
+        transition: width 0.15s ease-in-out;
+
+        &__highlight {
+            height: 4px;
+            margin: 0 8px;
+            margin-top: 4px;
+            border-radius: 8px;
+            background: inherit;
+            filter: brightness(1.4);
+        }
+    }
+}
+
+
+
+
+

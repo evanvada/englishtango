@@ -107,6 +107,71 @@ a {
   user-select: none;
 }
 
+span.pop {
+  animation: popAnimation 0.2s linear;
+}
+
+@keyframes popAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.075);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.response__symbol.pop {
+  animation: popAnimationSymbol 0.2s linear;
+}
+
+@keyframes popAnimationSymbol {
+  0% {
+    transform: scale(0.5);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.arise {
+  animation: ariseAnimation 0.4s ease-out;
+}
+
+@keyframes ariseAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.flicker {
+  animation-name: flickerAnimation;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flickerAnimation {
+  0% {
+    background-size: 44px 48px;
+  }
+  50% {
+    background-size: 48px 44px;
+  }
+  100% {
+    background-size: 48px 48px;
+  }
+}
 .icon {
   background-repeat: no-repeat;
   background-position: center;
@@ -347,72 +412,14 @@ a {
   top: 6px;
 }
 
-span.pop {
-  animation: popAnimation 0.2s linear;
-}
-
-@keyframes popAnimation {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.075);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.response__symbol.pop {
-  animation: popAnimationSymbol 0.2s linear;
-}
-
-@keyframes popAnimationSymbol {
-  0% {
-    transform: scale(0.5);
-  }
-  25% {
-    transform: scale(1.1);
-  }
-  75% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-:root {
-  --width-1: min(100vw, 920px);
-  --width-2: min(100vw, 600px);
-  --lateral-padding: 40px;
-  --top-padding: 50px;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  padding-top: var(--top-padding);
-  padding-bottom: 140px;
-}
-
-.progress {
-  padding: 0 var(--lateral-padding);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: var(--width-1);
-}
-.progress__bar {
+.progress-bar {
   height: 16px;
-  flex: 1 0 0;
+  flex: 1;
   border-radius: 8px;
   overflow: hidden;
   background: var(--color-gray);
 }
-.progress__bar__fill {
+.progress-bar__fill {
   height: 100%;
   width: 0%;
   border-radius: 8px;
@@ -420,67 +427,123 @@ main {
   background: var(--color-1);
   transition: width 0.15s ease-in-out;
 }
-.progress__bar__fill__highlight {
+.progress-bar__fill__highlight {
   height: 4px;
   margin: 0 8px;
   margin-top: 4px;
   border-radius: 8px;
-  background: var(--color-1);
+  background: inherit;
   filter: brightness(1.4);
 }
-.progress .icon {
-  background-size: 20px;
-  min-width: 20px;
-  min-height: 20px;
-  width: 20px;
-  height: 20px;
-}
 
-.exercice {
-  padding: 40px var(--lateral-padding);
-  width: var(--width-2);
-  flex: 1;
+.advancement {
+  min-height: 100px;
   display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid var(--color-gray);
+  border-radius: 14px;
+  padding: 16px;
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1.25rem;
+}
+.advancement h1 {
+  padding-top: 16px;
+}
+.advancement > .icon {
+  background-size: 48px;
+  width: 64px;
+  height: 64px;
+}
+.advancement.locked {
+  background: #f7f7f7;
+  color: var(--color-grayer);
+}
+.advancement__side {
+  height: 100%;
+  flex: 1;
+  gap: 6px;
+  display: flex;
+  align-items: stretch;
   flex-direction: column;
   justify-content: center;
 }
-.exercice h3 {
-  padding-bottom: 40px;
-  font-family: FiraSansBold, sans-serif;
-  font-size: 1.5rem;
-}
-.exercice__display {
-  padding-bottom: 80px;
-  font-size: 1.25rem;
-  line-height: 1.75em;
-}
-.exercice__display .unknown {
-  width: 70px;
-  height: 1.75rem;
-  border-bottom: 2px solid var(--color-grayer);
-  vertical-align: middle;
-  display: inline-block;
-}
-.exercice__answer {
-  border-radius: 8px;
-  padding: 8px;
-  border: 2px solid var(--color-gray);
-  background-color: #F7F7F7;
-  font-size: 1.25rem;
-  height: calc(1.5rem + 16px + 4px);
+.advancement .quest-fire.icon {
   display: flex;
+  justify-content: center;
+  align-items: end;
+  color: white;
+  background-size: 48px 48px;
+  background-position: center bottom 16px;
+}
+.advancement .quest-fire.icon span {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: FiraSansBold, sans-serif;
+  width: 100%;
+  text-align: center;
+  background: #f77e54;
+  -webkit-text-stroke: 8px;
+  -webkit-text-stroke-color: transparent;
+  background-clip: text;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  user-select: none;
+}
+.advancement__days {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(to left, transparent 0px, black 30px, black calc(100% - 30px), transparent 100%);
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  user-select: none;
+}
+.advancement__days .day {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
-  text-align: center;
+  gap: 4px;
 }
-.exercice__answer.wrong {
-  border-color: var(--color-wrong-1);
-  color: var(--color-wrong-1);
+.advancement__days .day span {
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1rem;
+  color: var(--color-grayer);
 }
-.exercice__answer.right {
-  border-color: var(--color-right-1);
-  color: var(--color-right-1);
+.advancement__days .day div {
+  background: var(--color-gray);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.advancement__days .day.checked span {
+  color: var(--color-3B);
+}
+.advancement__days .day.checked div {
+  background-color: var(--color-3B);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  background-image: url(../media/check.svg);
+}
+.advancement__progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+.advancement__progress .progress-bar {
+  border-radius: 8px 0 0 8px;
+}
+.advancement__progress .progress-bar__fill {
+  background: var(--color-3);
 }
 
 .banner {
@@ -551,6 +614,86 @@ main {
   bottom: 0;
 }
 
+:root {
+  --width-1: min(100vw, 920px);
+  --width-2: min(100vw, 600px);
+  --lateral-padding: 40px;
+  --top-padding: 50px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding-top: var(--top-padding);
+  padding-bottom: 140px;
+}
+
+.progress {
+  padding: 0 var(--lateral-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: var(--width-1);
+}
+.progress .icon {
+  background-size: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.exercice {
+  padding: 40px var(--lateral-padding);
+  width: var(--width-2);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.exercice h3 {
+  padding-bottom: 40px;
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1.5rem;
+}
+.exercice__display {
+  padding-bottom: 80px;
+  font-size: 1.25rem;
+  line-height: 1.75em;
+}
+.exercice__display .unknown {
+  width: 70px;
+  height: 1.75rem;
+  border-bottom: 2px solid var(--color-grayer);
+  vertical-align: middle;
+  display: inline-block;
+}
+.exercice__answer {
+  border-radius: 8px;
+  padding: 8px;
+  border: 2px solid var(--color-gray);
+  background-color: #F7F7F7;
+  font-size: 1.25rem;
+  height: calc(1.5rem + 16px + 4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+}
+.exercice__answer.wrong {
+  border-color: var(--color-wrong-1);
+  color: var(--color-wrong-1);
+}
+.exercice__answer.right {
+  border-color: var(--color-right-1);
+  color: var(--color-right-1);
+}
+
 .black-overlay {
   position: fixed;
   height: 100%;
@@ -603,109 +746,11 @@ main {
   background: linear-gradient(to bottom, var(--color-3B), var(--color-3));
   border-radius: 10px;
 }
-.gameover__progress__bar {
-  height: 16px;
-  flex: 1;
+.gameover__progress .progress-bar {
   border-radius: 8px 0 0 8px;
-  overflow: hidden;
-  background: var(--color-gray);
 }
-.gameover__progress__bar__fill {
-  height: 100%;
-  width: 0%;
-  border-radius: 8px;
-  overflow: hidden;
+.gameover__progress .progress-bar__fill {
   background: var(--color-3);
-  transition: width 0.15s ease-in-out;
-}
-.gameover__progress__bar__fill__highlight {
-  height: 4px;
-  margin: 0 8px;
-  margin-top: 4px;
-  border-radius: 8px;
-  background: var(--color-3);
-  filter: brightness(1.4);
-}
-
-.advancement {
-  min-height: 100px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  border: 2px solid var(--color-gray);
-  border-radius: 14px;
-  padding: 16px;
-  font-family: FiraSansBold, sans-serif;
-  font-size: 1.25rem;
-}
-.advancement h1 {
-  padding-top: 16px;
-}
-.advancement > .icon {
-  background-size: 48px;
-  width: 64px;
-  height: 64px;
-}
-.advancement.locked {
-  background: #f7f7f7;
-  color: var(--color-grayer);
-}
-.advancement__side {
-  height: 100%;
-  flex: 1;
-  gap: 6px;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  justify-content: center;
-}
-.advancement .quest-fire.icon {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  color: white;
-  background-size: 48px 48px;
-  background-position: center top;
-}
-.advancement .quest-fire.icon span {
-  font-size: 3rem;
-  line-height: 3rem;
-  font-family: FiraSansBold, sans-serif;
-  width: 100%;
-  text-align: center;
-  background: #f77e54;
-  -webkit-text-stroke: 8px;
-  -webkit-text-stroke-color: transparent;
-  background-clip: text;
-}
-.advancement__progress {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2px;
-}
-.advancement__progress__bar {
-  height: 16px;
-  flex: 1;
-  border-radius: 8px 0 0 8px;
-  overflow: hidden;
-  background: var(--color-gray);
-}
-.advancement__progress__bar__fill {
-  height: 100%;
-  width: 0%;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--color-3);
-  transition: width 0.15s ease-in-out;
-}
-.advancement__progress__bar__fill__highlight {
-  height: 4px;
-  margin: 0 8px;
-  margin-top: 4px;
-  border-radius: 8px;
-  background: var(--color-3);
-  filter: brightness(1.4);
 }
 
 @media (max-width: 640px) {
