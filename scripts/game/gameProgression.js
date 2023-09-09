@@ -28,7 +28,42 @@ class GameProgression {
         if (GameSession.state == "gameover") {
             this.gamesPlayed += 1;
 
-            let continuedStreak = this.updateStreak();
+
+
+            let lastPlay = this.streakHistory[0];
+
+            let today = new Date();
+            today.setUTCHours(0, -UTCShift, 0, 0);
+    
+            let yesterday = new Date();
+            yesterday.setUTCHours(0, -UTCShift, 0, 0);
+            yesterday.setUTCDate(-1);
+    
+            let continuedStreak = false;
+            if (lastPlay != null) {
+                if (lastPlay.getTime() == today.getTime()) {
+                    // already done today
+                } else if (lastPlay.getTime() == yesterday.getTime()) {
+                    // done yesterday
+                    this.streakHistory.unshift(today);
+                    continuedStreak = true;
+                    this.streak += 1;
+                } else {
+                    // not done yesterday nor today
+                    this.streakHistory.unshift(today);
+                    continuedStreak = true;
+                    this.streak = 1;
+                }
+            } else {
+                // first time
+                this.streakHistory.unshift(today);
+                continuedStreak = true;
+                this.streak = 1;
+            }
+
+
+    
+
 
             let experienceGained = GameOptions.selectedBundles.length * 10;
             let streakBonus = continuedStreak ? 10 + Math.floor(Math.sqrt(this.streak-1)*2) : 0;
@@ -63,32 +98,10 @@ class GameProgression {
         let today = new Date();
         today.setUTCHours(0, -UTCShift, 0, 0);
 
-        let yesterday = new Date();
-        yesterday.setUTCHours(0, -UTCShift, 0, 0);
-        yesterday.setUTCDate(-1);
-
-        let continuedStreak = false;
-        if (lastPlay != null) {
-            if (lastPlay.getTime() == today.getTime()) {
-                // already done today
-            } else if (lastPlay.getTime() == yesterday.getTime()) {
-                // done yesterday
-                this.streakHistory.unshift(today);
-                continuedStreak = true;
-                this.streak += 1;
-            } else {
-                // not done yesterday nor today
-                this.streakHistory.unshift(today);
-                continuedStreak = true;
-                this.streak = 1;
-            }
-        } else {
-            // first time
-            this.streakHistory.unshift(today);
-            continuedStreak = true;
-            this.streak = 1;
+        if (lastPlay != null && lastPlay.getTime() != today.getTime() && lastPlay.getTime() != yesterday.getTime()) {
+            // not done yesterday nor today so reset streak
+            this.streak = 0;
         }
-        return continuedStreak;
     }
 
 

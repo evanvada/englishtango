@@ -151,6 +151,7 @@ function showGameOver() {
     console.log(GameSession.advancementsToBeDisplayed)
     generateAdvancementElements()
     GameoverAnimator.run = true
+    // GameoverAnimator.continue()
 
     progressE.classList.add("hidden")
     exerciceE.classList.add("hidden")
@@ -217,6 +218,7 @@ DataInterface.fetchAll().then(() => {
     GameSession.generateQuestions();
     GameSession.continueGame();
 
+    GameProgression.streak = 1;
     showGameOver()
 
 
@@ -244,6 +246,8 @@ function update() {
 
 	updateParticles(glitters)
 	drawParticles(glitters)
+	updateParticles(gems)
+	drawParticles(gems)
 
     if (GameoverAnimator.run) { GameoverAnimator.update() }
 }
@@ -373,11 +377,35 @@ function generateAdvancementElements() {
 
     let child0 = document.createElement('div');
     child0.classList.add("advancement")
+    child0.classList.add("streak")
     child0.innerHTML = `
-    <div class="quest-fire icon flicker"><span>1</span></div>
+    <div class="quest-fire icon"><span>1</span></div>
     <div class="advancement__days">
         <div class="day"><span>L</span><div></div></div>
-        <div class="day checked"><span>M</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>J</span><div></div></div>
+        <div class="day"><span>V</span><div></div></div>
+        <div class="day"><span>S</span><div></div></div>
+        <div class="day"><span>D</span><div></div></div>
+        <div class="day"><span>L</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>J</span><div></div></div>
+        <div class="day"><span>V</span><div></div></div>
+        <div class="day"><span>S</span><div></div></div>
+        <div class="day"><span>D</span><div></div></div>
+
+        <div class="day" id="to-be-checked"><span>L</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>J</span><div></div></div>
+        <div class="day"><span>V</span><div></div></div>
+        <div class="day"><span>S</span><div></div></div>
+        <div class="day"><span>D</span><div></div></div>
+
+        <div class="day"><span>L</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
         <div class="day"><span>M</span><div></div></div>
         <div class="day"><span>J</span><div></div></div>
         <div class="day"><span>V</span><div></div></div>
@@ -399,6 +427,7 @@ function generateAdvancementElements() {
 
     let child1 = document.createElement('div');
     child1.classList.add("advancement")
+    child1.classList.add("quest")
     child1.innerHTML = `
     <div class="quest-exercise icon"></div>
     <div class="advancement__side">
@@ -419,6 +448,7 @@ function generateAdvancementElements() {
 
     let child2 = document.createElement('div');
     child2.classList.add("advancement")
+    child2.classList.add("quest")
     child2.innerHTML = `
     <div class="quest-bolt icon"></div>
     <div class="advancement__side">
@@ -438,14 +468,16 @@ function generateAdvancementElements() {
 
     let child3 = document.createElement('div');
     child3.classList.add("advancement")
+    child3.classList.add("gems")
     child3.innerHTML = `
     <div class="quest-gem icon"></div>
     <div class="advancement__side">
-        <span>+80 gemmes</span>
+        <span></span>
     </div>
     `
     GameoverAnimator.advancements.push({
         type: "gems",
+        gained: 20,
         progress: 1,
         e: child3
     });
@@ -471,8 +503,8 @@ class GameoverAnimator {
     static run = false;
     static advancements = [];
 
-    static startAnimateTimer = 2;
-    static startAnimateDuration = 2;
+    static startAnimateTimer = 0;
+    static startAnimateDuration = 0;
     static startAnimateIndex = 0;
 
     static state = "animate_advancements"
@@ -486,6 +518,20 @@ class GameoverAnimator {
             this.startAnimateTimer = 0;
             if (this.startAnimateIndex < this.advancements.length) {
                 this.animateAdvancement(this.advancements[this.startAnimateIndex])
+                switch (this.advancements[this.startAnimateIndex].type) {
+                    case "streak":
+                        this.startAnimateDuration = 4.5;
+                        break;
+                    case "quest":
+                        this.startAnimateDuration = 3;
+                        break;
+                    case "gems":
+                        this.startAnimateDuration = 5;
+                        break;
+                }
+                if (this.fast) {
+                    this.startAnimateDuration = 0.2;
+                }
                 this.startAnimateIndex += 1;
             }
         }
@@ -495,28 +541,124 @@ class GameoverAnimator {
     static async animateAdvancement(advancement) {
         advancement.e.classList.add("arise")
         gameoverAdvancementsE.appendChild(advancement.e)
-        await new Promise(resolve => setTimeout(resolve, 400));
+
         switch (advancement.type) {
             case "streak":
-                console.log("streak")
+                const day = advancement.e.querySelector('.day#to-be-checked');
+                const icon = advancement.e.querySelector('.icon');
+                const number = advancement.e.querySelector('.icon span');
+                day.parentElement.scrollLeft = day.offsetLeft - day.parentElement.offsetLeft - day.parentElement.offsetWidth;
+                number.textContent = GameProgression.streak - 1;
+                await wait(400);
+                day.parentElement.scrollTo({ left: day.offsetLeft - day.parentElement.offsetLeft - day.parentElement.offsetWidth/2 + day.offsetWidth/2, behavior: 'smooth' });
+                await wait(500);
+                day.classList.add("checked")
+                day.classList.add("pop")
+                await wait(800);
+                number.classList.add("pop")
+                number.textContent = GameProgression.streak;
+                await wait(500);
+                advancement.e.classList.add("checked")
+                icon.classList.add("ignite-fire")
+                await wait(200);
+                icon.classList.remove("ignite-fire")
+                icon.classList.add("flicker-fire")
                 break;
+            
             case "quest":
-                console.log("quest")
-                let bar = advancement.e.querySelector('.progress-bar__fill');
+                await wait(400);
+                const bar = advancement.e.querySelector('.progress-bar__fill');
                 bar.style.width = (advancement.progress*100*1.1)+"%"
+                if (advancement.progress >= 1) {
+                    await wait(600);
+                    advancement.e.querySelector('.chest').style.backgroundImage = "url('media/chest_open.png')"
+                    advancement.e.querySelector('.chest').classList.add("big-heartbeat")
+                }
                 break;
+            
             case "gems":
-                console.log("gems")
+                await wait(400);
+
+                const gspan = advancement.e.querySelector('span');
+                const gicon = advancement.e.querySelector('.icon');
+                const rectDest = gicon.getBoundingClientRect();
+                const dist_x = rectDest.left + rectDest.width / 2;
+                const dist_y = rectDest.top + rectDest.height / 2;
+
+                for (const i in GameoverAnimator.advancements) {
+                    if (GameoverAnimator.advancements[i].type == "quest" && GameoverAnimator.advancements[i].progress >= 1) {
+                        const rect = GameoverAnimator.advancements[i].e.querySelector('.chest').getBoundingClientRect();
+                        const pos_x = rect.left + rect.width / 2;
+                        const pos_y = rect.top + rect.height / 2;
+                        console.log(GameoverAnimator.advancements[i].e.querySelector('.chest'), rect)
+                        for (let i = 0; i < randomInt(10, 15); i++) {
+                            setTimeout(function() {
+                                gems.push(new Gem(pos_x, pos_y, dist_x, dist_y, function() {
+                                    console.log("done")
+
+                                    gicon.classList.remove("heartbeat")
+                                    gicon.offsetWidth
+                                    gicon.classList.add("heartbeat")
+
+                                    gspan.classList.remove("heartbeat")
+                                    gspan.offsetWidth
+                                    gspan.classList.add("heartbeat")
+
+                                    gspan.textContent = "+80 Gemmes"
+
+                                }));
+                            }, randomInt(0, 200))
+                        }
+                    
+                    }
+                }
                 break;
         }
     }
 
     static continue() {
-        // go faster
-        this.startAnimateDuration = 0.2;
         this.fast = true;
     }
 }
+
+
+
+
+
+
+
+const imageUrls = [
+    "../../media/chest_open.png",
+    "../../media/englishtango.png",
+    "../../media/practice.png",
+    "../../media/study.png",
+    "../../media/vocabulary.png",
+    "../../media/quests.png",
+    "../../media/settings.png",
+    "../../media/english.png",
+    "../../media/fire.png",
+    "../../media/bolt.png",
+    "../../media/gem.png",
+    "../../media/chest.png",
+    "../../media/quest_exercise.png",
+    "../../media/quest_locked.png",
+    "../../media/quest_bolt.png",
+    "../../media/quest_fire.png",
+    "../../media/quest_gem.png",
+    "../../media/inf.png",
+    "../../media/ps.png",
+    "../../media/pp.png",
+    "../../media/cross.svg",
+    "../../media/right.svg",
+    "../../media/wrong.svg",
+    "../../media/win.png",
+]
+
+for (let i in imageUrls) {
+    const image = new Image();
+    image.src = imageUrls[i];
+}
+
 
 
 

@@ -107,31 +107,46 @@ a {
   user-select: none;
 }
 
-span.pop {
-  animation: popAnimation 0.2s linear;
+.heartbeat {
+  animation: heartbeatAnimation 0.15s linear;
 }
 
-@keyframes popAnimation {
+@keyframes heartbeatAnimation {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.075);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
   }
 }
-.response__symbol.pop {
-  animation: popAnimationSymbol 0.2s linear;
+.big-heartbeat {
+  animation: heartbeatAnimation 0.2s linear;
 }
 
-@keyframes popAnimationSymbol {
+@keyframes bigHeartbeatAnimation {
   0% {
-    transform: scale(0.5);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.pop {
+  animation: popAnimation 0.2s linear;
+}
+
+@keyframes popAnimation {
+  0% {
+    transform: scale(0);
   }
   25% {
-    transform: scale(1.1);
+    transform: scale(1);
   }
   75% {
     transform: scale(0.95);
@@ -154,11 +169,20 @@ span.pop {
     transform: translateY(0);
   }
 }
-.flicker {
-  animation-name: flickerAnimation;
-  animation-duration: 0.1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+.ignite-fire {
+  animation: igniteAnimation 0.2s linear;
+}
+
+@keyframes igniteAnimation {
+  0% {
+    background-size: 0px 0px;
+  }
+  100% {
+    background-size: 48px 48px;
+  }
+}
+.flicker-fire {
+  animation: flickerAnimation 0.1s linear infinite;
 }
 
 @keyframes flickerAnimation {
@@ -468,7 +492,16 @@ span.pop {
   flex-direction: column;
   justify-content: center;
 }
-.advancement .quest-fire.icon {
+.advancement.streak:not(.checked) .icon {
+  background-image: none;
+}
+.advancement.streak.checked .icon span {
+  background: #f77e54;
+  -webkit-text-stroke: 8px;
+  -webkit-text-stroke-color: transparent;
+  background-clip: text;
+}
+.advancement.streak .icon {
   display: flex;
   justify-content: center;
   align-items: end;
@@ -476,13 +509,13 @@ span.pop {
   background-size: 48px 48px;
   background-position: center bottom 16px;
 }
-.advancement .quest-fire.icon span {
+.advancement.streak .icon span {
   font-size: 3rem;
   line-height: 3rem;
   font-family: FiraSansBold, sans-serif;
   width: 100%;
   text-align: center;
-  background: #f77e54;
+  background: var(--color-grayer);
   -webkit-text-stroke: 8px;
   -webkit-text-stroke-color: transparent;
   background-clip: text;
@@ -491,6 +524,12 @@ span.pop {
   -ms-pointer-events: none;
   pointer-events: none;
   user-select: none;
+}
+.advancement.gems {
+  color: var(--color-2);
+}
+.advancement.gems span {
+  width: fit-content;
 }
 .advancement__days {
   display: flex;
@@ -759,7 +798,7 @@ main {
   gap: 20px;
 }
 .gameover__advancements .progress-bar__fill {
-  transition: width 1s ease-in-out;
+  transition: width 0.8s ease-in-out;
 }
 
 @media (max-width: 640px) {

@@ -110,9 +110,9 @@ function toggleBundle(element, bundle) {
 	}
 
 	GameOptions.saveAllToLocalStorage()
-	questionCountSpansE.forEach(btn => { btn.classList.remove("pop") });
-	void questionCountSpansE.forEach(btn  => {btn.offsetWidth });
-	questionCountSpansE.forEach(btn => { btn.classList.add("pop") });
+	questionCountSpansE.forEach(btn => { btn.classList.remove("heartbeat") });
+	void questionCountSpansE.forEach(btn  => { btn.offsetWidth });
+	questionCountSpansE.forEach(btn => { btn.classList.add("heartbeat") });
 }
 
 

@@ -197,7 +197,7 @@ main {
         align-items: stretch;
         gap: 20px;
         .progress-bar__fill {
-            transition: width 1s ease-in-out;
+            transition: width 0.8s ease-in-out;
         }
     }
 }
