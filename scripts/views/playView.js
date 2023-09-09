@@ -394,8 +394,6 @@ function generateAdvancementElements() {
     `
     GameoverAnimator.advancements.push({
         type: "streak",
-        animState: "waiting",
-        animTimer: 0,
         e: child0
     });
 
@@ -413,8 +411,6 @@ function generateAdvancementElements() {
     `
     GameoverAnimator.advancements.push({
         type: "quest",
-        animState: "waiting",
-        animTimer: 0,
         progress: 1,
         reward: 20,
         e: child1
@@ -435,8 +431,6 @@ function generateAdvancementElements() {
     `
     GameoverAnimator.advancements.push({
         type: "quest",
-        animState: "waiting",
-        animTimer: 0,
         progress: 0.75,
         reward: 40,
         e: child2
@@ -452,8 +446,6 @@ function generateAdvancementElements() {
     `
     GameoverAnimator.advancements.push({
         type: "gems",
-        animState: "waiting",
-        animTimer: 0,
         progress: 1,
         e: child3
     });
@@ -479,8 +471,8 @@ class GameoverAnimator {
     static run = false;
     static advancements = [];
 
-    static startAnimateTimer = 0.5;
-    static startAnimateDuration = 0.5;
+    static startAnimateTimer = 2;
+    static startAnimateDuration = 2;
     static startAnimateIndex = 0;
 
     static state = "animate_advancements"
@@ -493,57 +485,31 @@ class GameoverAnimator {
         if (this.startAnimateTimer > this.startAnimateDuration) {
             this.startAnimateTimer = 0;
             if (this.startAnimateIndex < this.advancements.length) {
-                this.advancements[this.startAnimateIndex].animState = "arise";
+                this.animateAdvancement(this.advancements[this.startAnimateIndex])
                 this.startAnimateIndex += 1;
             }
         }
 
-        // handle each advancement animation individually
-        for (const i in this.advancements) {
-            let advancement = this.advancements[i];
-            advancement.animTimer += deltaTime;
-
-            if (advancement.animState == "arise") {
-                if (!advancement.e.classList.contains("arise")) {
-                    advancement.e.classList.add("arise")
-                    gameoverAdvancementsE.appendChild(advancement.e)
-                }
-                if (this.startAnimateTimer > 0.4) {
-                    this.startAnimateTimer = 0;
-                    advancement.animState = "showoff";
-                }
-            }
-
-            if (advancement.animState == "showoff") {
-
-                switch (advancement.type) {
-                    case "streak":
-                        
-                        break;
-                    case "quest":
-                        
-                        break;
-                    case "gems":
-                        
-                        break;
-                }
-            }
-        }
     }
 
-    
-    // startAnimation() {
-    //     for (const i in this.advancements) {
-    //         setTimeout(function(){
-    //             advancement.classList.add("arise")
-    //         }, i*500);
-    //     }
-    //     for (const i in this.advancements) {
-    //         setTimeout(function(){
-    //             advancement.classList.add("showoff")
-    //         }, i*500 + 500);
-    //     }
-    // }
+    static async animateAdvancement(advancement) {
+        advancement.e.classList.add("arise")
+        gameoverAdvancementsE.appendChild(advancement.e)
+        await new Promise(resolve => setTimeout(resolve, 400));
+        switch (advancement.type) {
+            case "streak":
+                console.log("streak")
+                break;
+            case "quest":
+                console.log("quest")
+                let bar = advancement.e.querySelector('.progress-bar__fill');
+                bar.style.width = (advancement.progress*100*1.1)+"%"
+                break;
+            case "gems":
+                console.log("gems")
+                break;
+        }
+    }
 
     static continue() {
         // go faster

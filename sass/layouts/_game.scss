@@ -184,7 +184,10 @@ main {
 
         .progress-bar {
             border-radius: 8px 0 0 8px;
-            &__fill { background: var(--color-3); }
+            &__fill {
+                background: var(--color-3);
+                transition: width 1s ease-in-out;
+            }
         }
     }
 
@@ -193,6 +196,9 @@ main {
         flex-direction: column;
         align-items: stretch;
         gap: 20px;
+        .progress-bar__fill {
+            transition: width 1s ease-in-out;
+        }
     }
 }
 

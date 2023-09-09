@@ -750,12 +750,16 @@ main {
 }
 .gameover__progress .progress-bar__fill {
   background: var(--color-3);
+  transition: width 1s ease-in-out;
 }
 .gameover__advancements {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 20px;
+}
+.gameover__advancements .progress-bar__fill {
+  transition: width 1s ease-in-out;
 }
 
 @media (max-width: 640px) {
