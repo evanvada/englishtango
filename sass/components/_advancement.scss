@@ -40,32 +40,51 @@
     }
 
 
-    .quest-fire.icon {
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        color: white;
+    &.streak {
+        &:not(.checked) .icon {
+            background-image: none;
+        }
 
-        background-size: 48px 48px;
-        background-position: center bottom 16px;
-
-        span {
-            font-size: 3rem;
-            line-height: 3rem;
-            font-family: FiraSansBold, sans-serif;
-            width: 100%;
-            text-align: center;
-
+        &.checked .icon span {
             background: #f77e54;
             -webkit-text-stroke: 8px;
             -webkit-text-stroke-color: transparent;
             background-clip: text;
-            
-            -webkit-pointer-events: none;
-            -moz-pointer-events: none;
-            -ms-pointer-events: none; 
-            pointer-events: none;
-            user-select: none;
+        }
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            color: white;
+
+            background-size: 48px 48px;
+            background-position: center bottom 16px;
+
+            span {
+                font-size: 3rem;
+                line-height: 3rem;
+                font-family: FiraSansBold, sans-serif;
+                width: 100%;
+                text-align: center;
+
+                background: var(--color-grayer);
+                -webkit-text-stroke: 8px;
+                -webkit-text-stroke-color: transparent;
+                background-clip: text;
+                
+                -webkit-pointer-events: none;
+                -moz-pointer-events: none;
+                -ms-pointer-events: none; 
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+    }
+    
+    &.gems {
+        color: var(--color-2);
+        span {
+            width: fit-content;
         }
     }
 

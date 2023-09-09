@@ -56,3 +56,33 @@ function drawCircle(x, y, r) {
 	ctx.fill();
 }
 
+function wait(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function distance(x1, y1, x2, y2) {
+	d_x = x2-x1
+	d_y = y2-y1
+	d = Math.sqrt(d_x*d_x+d_y*d_y)
+	return d
+}
+
+// normalizes number between 0 and 1
+function normalize01(x) {
+	return Math.min(1, Math.max(0, x));
+}
+
+function easeInQuint(x) {
+	let X = normalize01(x);
+	return X * X * X * X * X;
+}
+
+function easeOutQuint(x) {
+	let X = normalize01(x);
+	return 1 - Math.pow(1 - X, 5);
+}
+
+
+
+
+
