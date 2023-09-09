@@ -6,8 +6,7 @@
 
 class GameProgression {
 
-    // static version = "0.1"
-    static version = "testing 0.1"
+    static version = "0.1";
 
     static gems = 0;
     static streak = 0;
@@ -23,48 +22,20 @@ class GameProgression {
     static dailyQuests = [];
     static weeklyQuests = [];
     static foreverQuests = [];
+    static UTCShift = 0;
 
-    static gameOverProgressUpdate() {
+    static updateOnGameover() {
         if (GameSession.state == "gameover") {
             this.gamesPlayed += 1;
 
-            let lastPlay = this.streakHistory[0];
-
-            let today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            let yesterday = new Date();
-            yesterday.setHours(0, 0, 0, 0);
-            yesterday.setUTCDate(-1);
-
-            let continuedStreak = false;
-            if (lastPlay != null) {
-                if (lastPlay.getTime() > today.getTime()) {
-                    // already done today OR already done in another timezone but it is considered done today
-                    this.streakHistory.unshift(today);
-                } else if (lastPlay.getTime() > yesterday.getTime()) {
-                    // done yesterday OR done in another timezone but it is considered done yesterday
-                    this.streakHistory.unshift(today);
-                    continuedStreak = true;
-                    this.streak += 1;
-                } else {
-                    // not done yesterday nor today
-                    this.streakHistory.unshift(today);
-                    continuedStreak = true;
-                    this.streak = 1;
-                }
-            } else {
-                // first time
-                this.streakHistory.unshift(today);
-                continuedStreak = true;
-                this.streak = 1;
-            }
+            let continuedStreak = this.updateStreak();
 
             let experienceGained = GameOptions.selectedBundles.length * 10;
             let streakBonus = continuedStreak ? 10 + Math.floor(Math.sqrt(this.streak-1)*2) : 0;
             this.experience += experienceGained + streakBonus;
-            
+
             let updatedQuests = this.updateQuests();
+            updatedQuests = updatedQuests.filter(quest => quest.progress > quest.oldProgress);
 
             // return the necessary values so the correct achievements can be displayed on the gameover screen
             return {
@@ -75,6 +46,52 @@ class GameProgression {
             }
         }
     }
+
+    // update after login but also while logged in, regurally
+    static updateOnLogin() {
+        // order is important
+        this.updateStreak();
+        this.generateQuestsIfNecessary();
+        this.updateQuests();
+    }
+
+
+
+    static updateStreak() {
+        let lastPlay = this.streakHistory[0];
+
+        let today = new Date();
+        today.setUTCHours(0, -UTCShift, 0, 0);
+
+        let yesterday = new Date();
+        yesterday.setUTCHours(0, -UTCShift, 0, 0);
+        yesterday.setUTCDate(-1);
+
+        let continuedStreak = false;
+        if (lastPlay != null) {
+            if (lastPlay.getTime() == today.getTime()) {
+                // already done today
+            } else if (lastPlay.getTime() == yesterday.getTime()) {
+                // done yesterday
+                this.streakHistory.unshift(today);
+                continuedStreak = true;
+                this.streak += 1;
+            } else {
+                // not done yesterday nor today
+                this.streakHistory.unshift(today);
+                continuedStreak = true;
+                this.streak = 1;
+            }
+        } else {
+            // first time
+            this.streakHistory.unshift(today);
+            continuedStreak = true;
+            this.streak = 1;
+        }
+        return continuedStreak;
+    }
+
+
 
     static updateQuests() {
         let allQuests = this.dailyQuests.concat(this.weeklyQuests).concat(this.foreverQuests);
@@ -89,24 +106,30 @@ class GameProgression {
             if (itemsTracked == null) {
                 continue;
             }
+            // reward if there's a positive change in progress and the progress >= 1
             allQuests[i].oldProgress = allQuests[i].progress;  
             allQuests[i].progress = ( itemsTracked - allQuests[i].start ) / allQuests[i].goal;
-            if (allQuests[i].progress > allQuests[i].oldProgress) {
+            if (allQuests[i].progress > allQuests[i].oldProgress && allQuests[i].progress >= 1) {
+                this.gems += allQuests[i].reward;
+            }
+            // notify of any changes
+            if (allQuests[i].progress != allQuests[i].oldProgress) {
                 updatedQuests.push(allQuests[i]);
             }
         }
         return updatedQuests;
     }
 
+
+
     static generateQuestsIfNecessary() {
         let today = new Date();
-        today.setHours(0, 0, 0, 0);
+        today.setUTCHours(0, -UTCShift, 0, 0);
 
         let firstWeekDay = new Date();
-        firstWeekDay.setHours(0, 0, 0, 0);
-        firstWeekDay.setDate(firstWeekDay.getDate() - firstWeekDay.getDay() + 1);
+        firstWeekDay.setUTCHours(0, -UTCShift, 0, 0);
+        firstWeekDay.setUTCDate(firstWeekDay.getUTCDate() - firstWeekDay.getUTCDay() + 1);
 
-        // don't care about timezones, it will just reinitialize when moving between timezones
         if (this.dailyQuestsStartTime != today) {
             this.dailyQuestsStartTime = today;
             this.dailyQuests = [];
@@ -118,6 +141,8 @@ class GameProgression {
             this.generateWeeklyQuests();
         }
     }
+
+
 
     static loadAllFromLocalStorage() {
         // const loaded = JSON.parse(localStorage.getItem("progress_" + this.version)) || {}
@@ -131,6 +156,7 @@ class GameProgression {
         this.grammarProficiency = loaded.grammarProficiency || [];
         this.dailyQuestsStartTime = loaded.dailyQuestsStartTime || 0;
         this.weeklyQuestsStartTime = loaded.weeklyQuestsStartTime || 0;
+        this.UTCShift = loaded.UTCShift || (new Date(Date.now())).getTimezoneOffset(); // set one time and unchangable
         this.dailyQuests = loaded.dailyQuests || [];
         this.weeklyQuests = loaded.weeklyQuests || [];
         this.foreverQuests = loaded.foreverQuests || [];
@@ -147,12 +173,15 @@ class GameProgression {
             grammarProficiency: this.grammarProficiency,
             dailyQuestsStartTime: this.dailyQuestsStartTime,
             weeklyQuestsStartTime: this.weeklyQuestsStartTime,
+            UTCShift: this.UTCShift,
             dailyQuests: this.dailyQuests,
             weeklyQuests: this.weeklyQuests,
             foreverQuests: this.foreverQuests,
         }
-        localStorage.setItem("progress_" + this.version, JSON.stringify(loading))
+        // localStorage.setItem("progress_" + this.version, JSON.stringify(loading))
     }
+
+
 
     static generateDailyQuests() {
 

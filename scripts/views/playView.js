@@ -66,11 +66,13 @@ const bannerRightSymbolE = document.querySelector('.banner.right .banner__symbol
 
 const progressBarFillE = document.querySelector('.progress .progress-bar__fill');
 
+const bannerCheckE = document.querySelector('.banner.user-input .color1.flat-button');
+
+const gameoverAdvancementsE = document.querySelector('.gameover__advancements');
+
 const progressE = document.querySelector('.progress');
 const exerciceE = document.querySelector('.exercice');
 const gameoverE = document.querySelector('.gameover');
-
-const bannerCheckE = document.querySelector('.banner__container .color1.flat-button');
 
 
 
@@ -146,7 +148,10 @@ function showUserInput() {
 }
 
 function showGameOver() {
-    console.log(GameSession.advancements)
+    console.log(GameSession.advancementsToBeDisplayed)
+    generateAdvancementElements()
+    GameoverAnimator.run = true
+
     progressE.classList.add("hidden")
     exerciceE.classList.add("hidden")
     bannerE.classList.add("hidden")
@@ -187,6 +192,10 @@ function continueGame() {
     GameSession.continueGame();
 }
 
+function continueGameover() {
+    GameoverAnimator.continue();
+}
+
 
 
 
@@ -208,7 +217,7 @@ DataInterface.fetchAll().then(() => {
     GameSession.generateQuestions();
     GameSession.continueGame();
 
-    // showGameOver()
+    showGameOver()
 
 
     startLoop();
@@ -235,6 +244,8 @@ function update() {
 
 	updateParticles(glitters)
 	drawParticles(glitters)
+
+    if (GameoverAnimator.run) { GameoverAnimator.update() }
 }
 
 
@@ -314,7 +325,7 @@ document.addEventListener('keydown', (event) => {
                     continueGame()
                     break;
                 case "gameover":
-                    quitGame()
+                    continueGameover()
                     break;
                 default:
                     break;
@@ -323,5 +334,224 @@ document.addEventListener('keydown', (event) => {
         wasEnterDown = false;
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function generateAdvancementElements() {
+    GameoverAnimator.advancements = []
+    
+    // TODO : advancements hardcoded, to be changed
+
+    let child0 = document.createElement('div');
+    child0.classList.add("advancement")
+    child0.innerHTML = `
+    <div class="quest-fire icon flicker"><span>1</span></div>
+    <div class="advancement__days">
+        <div class="day"><span>L</span><div></div></div>
+        <div class="day checked"><span>M</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>J</span><div></div></div>
+        <div class="day"><span>V</span><div></div></div>
+        <div class="day"><span>S</span><div></div></div>
+        <div class="day"><span>D</span><div></div></div>
+        <div class="day"><span>L</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>M</span><div></div></div>
+        <div class="day"><span>J</span><div></div></div>
+        <div class="day"><span>V</span><div></div></div>
+        <div class="day"><span>S</span><div></div></div>
+        <div class="day"><span>D</span><div></div></div>
+    </div>
+    `
+    GameoverAnimator.advancements.push({
+        type: "streak",
+        animState: "waiting",
+        animTimer: 0,
+        e: child0
+    });
+
+    let child1 = document.createElement('div');
+    child1.classList.add("advancement")
+    child1.innerHTML = `
+    <div class="quest-exercise icon"></div>
+    <div class="advancement__side">
+        <span>Joue à ton premier exercice</span>
+        <div class="advancement__progress">
+            <div class="progress-bar"><div class="progress-bar__fill"><div class="progress-bar__fill__highlight"></div></div></div>
+            <div class="chest icon"></div>
+        </div>
+    </div>
+    `
+    GameoverAnimator.advancements.push({
+        type: "quest",
+        animState: "waiting",
+        animTimer: 0,
+        progress: 1,
+        reward: 20,
+        e: child1
+    });
+
+
+    let child2 = document.createElement('div');
+    child2.classList.add("advancement")
+    child2.innerHTML = `
+    <div class="quest-bolt icon"></div>
+    <div class="advancement__side">
+        <span>Gagne 400 XP</span>
+        <div class="advancement__progress">
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 50%"><div class="progress-bar__fill__highlight"></div></div></div>
+            <div class="chest icon"></div>
+        </div>
+    </div>
+    `
+    GameoverAnimator.advancements.push({
+        type: "quest",
+        animState: "waiting",
+        animTimer: 0,
+        progress: 0.75,
+        reward: 40,
+        e: child2
+    });
+
+    let child3 = document.createElement('div');
+    child3.classList.add("advancement")
+    child3.innerHTML = `
+    <div class="quest-gem icon"></div>
+    <div class="advancement__side">
+        <span>+80 gemmes</span>
+    </div>
+    `
+    GameoverAnimator.advancements.push({
+        type: "gems",
+        animState: "waiting",
+        animTimer: 0,
+        progress: 1,
+        e: child3
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class GameoverAnimator {
+
+
+    static run = false;
+    static advancements = [];
+
+    static startAnimateTimer = 0.5;
+    static startAnimateDuration = 0.5;
+    static startAnimateIndex = 0;
+
+    static state = "animate_advancements"
+    static fast = false;
+
+    static update() {
+
+        // start animating each advancement one by one
+        this.startAnimateTimer += deltaTime;
+        if (this.startAnimateTimer > this.startAnimateDuration) {
+            this.startAnimateTimer = 0;
+            if (this.startAnimateIndex < this.advancements.length) {
+                this.advancements[this.startAnimateIndex].animState = "arise";
+                this.startAnimateIndex += 1;
+            }
+        }
+
+        // handle each advancement animation individually
+        for (const i in this.advancements) {
+            let advancement = this.advancements[i];
+            advancement.animTimer += deltaTime;
+
+            if (advancement.animState == "arise") {
+                if (!advancement.e.classList.contains("arise")) {
+                    advancement.e.classList.add("arise")
+                    gameoverAdvancementsE.appendChild(advancement.e)
+                }
+                if (this.startAnimateTimer > 0.4) {
+                    this.startAnimateTimer = 0;
+                    advancement.animState = "showoff";
+                }
+            }
+
+            if (advancement.animState == "showoff") {
+
+                switch (advancement.type) {
+                    case "streak":
+                        
+                        break;
+                    case "quest":
+                        
+                        break;
+                    case "gems":
+                        
+                        break;
+                }
+            }
+        }
+    }
+
+    
+    // startAnimation() {
+    //     for (const i in this.advancements) {
+    //         setTimeout(function(){
+    //             advancement.classList.add("arise")
+    //         }, i*500);
+    //     }
+    //     for (const i in this.advancements) {
+    //         setTimeout(function(){
+    //             advancement.classList.add("showoff")
+    //         }, i*500 + 500);
+    //     }
+    // }
+
+    static continue() {
+        // go faster
+        this.startAnimateDuration = 0.2;
+        this.fast = true;
+    }
+}
+
+
 
 

@@ -3,7 +3,7 @@
 class GameSession {
     static questions = [];
     static archivedQuestions = [];
-    static advancements = [];
+    static advancementsToBeDisplayed = [];
     static rights = 0;
     static wrongs = 0;
     static state = "loading";
@@ -42,7 +42,7 @@ class GameSession {
             showUserInput()
         } else if (this.archivedQuestions.length > 0) {
             this.state = "gameover";
-            this.advancements = GameProgression.gameOverProgressUpdate()
+            this.advancementsToBeDisplayed = GameProgression.updateOnGameover()
             showGameOver()
         } else {
             throw new Error("No bundle selected");

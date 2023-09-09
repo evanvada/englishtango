@@ -713,7 +713,7 @@ main {
   flex-direction: column;
   align-items: stretch;
   padding: 0 var(--lateral-padding);
-  gap: 20px;
+  gap: 40px;
 }
 .gameover__header {
   display: flex;
@@ -721,7 +721,6 @@ main {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding-bottom: 20px;
 }
 .gameover__header > span {
   font-family: FiraSansBold, sans-serif;
@@ -751,6 +750,12 @@ main {
 }
 .gameover__progress .progress-bar__fill {
   background: var(--color-3);
+}
+.gameover__advancements {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
 }
 
 @media (max-width: 640px) {
