@@ -64,10 +64,10 @@ class GameProgression {
 
     
 
-
-            let experienceGained = GameOptions.selectedBundles.length * 10;
-            let streakBonus = continuedStreak ? 10 + Math.floor(Math.sqrt(this.streak-1)*2) : 0;
-            this.experience += experienceGained + streakBonus;
+            let oldExperience = this.experience;
+            let gameExpBonus = 1 + Math.floor(GameSession.rights / GameSession.archivedQuestions * 9);
+            let streakExpBonus = continuedStreak ? 10 + Math.floor(Math.sqrt(this.streak-1)*2) : 0;
+            this.experience += gameExpBonus + streakExpBonus;
 
             let updatedQuests = this.updateQuests();
             updatedQuests = updatedQuests.filter(quest => quest.progress > quest.oldProgress);
@@ -75,8 +75,9 @@ class GameProgression {
             // return the necessary values so the correct achievements can be displayed on the gameover screen
             return {
                 continuedStreak: continuedStreak,
-                experienceGained: experienceGained,
-                streakBonus: streakBonus,
+                oldExperience: oldExperience,
+                gameExpBonus: gameExpBonus,
+                streakExpBonus: streakExpBonus,
                 updatedQuests: updatedQuests,
             }
         }
@@ -214,9 +215,9 @@ class GameProgression {
                     this.dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: 0, progress: 0, goal: randomGoal, reward: randomInt(0,3)*5+10 })
                     break;
                 case 2:
-                    if (this.experience%500 > 10 && this.experience%500 < 60) {
-                        randomGoal = this.experience-this.experience%500+500;
-                        this.dailyQuests.unshift({ text: "Ai un total de "+randomGoal+" XP", type: "gain_xp", start: 0, progress: 0, goal: randomGoal, reward: randomInt(0,3)*10+20 })
+                    if (this.experience%100 > 10 && this.experience%100 < 60) {
+                        randomGoal = this.experience-this.experience%100+100;
+                        this.dailyQuests.unshift({ text: "Ai un total de "+randomGoal+" XP", type: "gain_xp", start: this.experience, progress: 0, goal: randomGoal, reward: randomInt(0,3)*10+20 })
                     }
                     break;
             }
@@ -233,8 +234,8 @@ class GameProgression {
                         this.dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: this.experience, progress: 0, goal: randomGoal, reward: randomInt(0,3)*5+10 })
                         break;
                     case 2:
-                        if (this.experience%500 > 10 && this.experience%500 < 60) {
-                            randomGoal = this.experience-this.experience%500+500;
+                        if (this.experience%100 > 10 && this.experience%100 < 60) {
+                            randomGoal = this.experience-this.experience%100+100;
                             this.dailyQuests.unshift({ text: "Ai un total de "+randomGoal+" XP", type: "gain_xp", start: this.experience, progress: 0, goal: randomGoal, reward: randomInt(0,3)*10+20 })
                         }
                         break;

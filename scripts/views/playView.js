@@ -65,6 +65,7 @@ const bannerWrongSymbolE = document.querySelector('.banner.wrong .banner__symbol
 const bannerRightSymbolE = document.querySelector('.banner.right .banner__symbol');
 
 const progressBarFillE = document.querySelector('.progress .progress-bar__fill');
+const gameoverBarE = document.querySelector('.gameover .progress-bar__fill');
 
 const bannerCheckE = document.querySelector('.banner.user-input .color1.flat-button');
 
@@ -74,7 +75,7 @@ const progressE = document.querySelector('.progress');
 const exerciceE = document.querySelector('.exercice');
 const gameoverE = document.querySelector('.gameover');
 
-
+const mainE = document.querySelector('main');
 
 
 
@@ -148,10 +149,9 @@ function showUserInput() {
 }
 
 function showGameOver() {
-    console.log(GameSession.advancementsToBeDisplayed)
+    console.log(GameSession.gameoverInfo)
     generateAdvancementElements()
-    GameoverAnimator.run = true
-    // GameoverAnimator.continue()
+    GameoverAnimator.start()
 
     progressE.classList.add("hidden")
     exerciceE.classList.add("hidden")
@@ -219,12 +219,20 @@ DataInterface.fetchAll().then(() => {
     GameSession.continueGame();
 
     GameProgression.streak = 1;
+    GameProgression.experience = 230;
+    GameSession.gameoverInfo = {
+        continuedStreak: true,
+        oldExperience: 0,
+        gameExpBonus: 0,
+        streakExpBonus: 0,
+        updatedQuests: 0,
+    }
     showGameOver()
 
 
     startLoop();
 
-    document.querySelector('main').classList.remove("hidden");
+    mainE.classList.remove("hidden");
 })
 
 
@@ -441,9 +449,29 @@ function generateAdvancementElements() {
     GameoverAnimator.advancements.push({
         type: "quest",
         progress: 1,
-        reward: 20,
         e: child1
     });
+    
+    // childX = document.createElement('div');
+    // childX.classList.add("advancement")
+    // childX.classList.add("quest")
+    // childX.innerHTML = `<div class="quest-exercise icon"></div><div class="advancement__side"><span>Joue à ton premier exercice</span><div class="advancement__progress"><div class="progress-bar"><div class="progress-bar__fill"><div class="progress-bar__fill__highlight"></div></div></div><div class="chest icon"></div></div></div>`
+    // GameoverAnimator.advancements.push({type: "quest", progress: 1, e: childX});
+    // childX = document.createElement('div');
+    // childX.classList.add("advancement")
+    // childX.classList.add("quest")
+    // childX.innerHTML = `<div class="quest-exercise icon"></div><div class="advancement__side"><span>Joue à ton premier exercice</span><div class="advancement__progress"><div class="progress-bar"><div class="progress-bar__fill"><div class="progress-bar__fill__highlight"></div></div></div><div class="chest icon"></div></div></div>`
+    // GameoverAnimator.advancements.push({type: "quest", progress: 1, e: childX});
+    // childX = document.createElement('div');
+    // childX.classList.add("advancement")
+    // childX.classList.add("quest")
+    // childX.innerHTML = `<div class="quest-exercise icon"></div><div class="advancement__side"><span>Joue à ton premier exercice</span><div class="advancement__progress"><div class="progress-bar"><div class="progress-bar__fill"><div class="progress-bar__fill__highlight"></div></div></div><div class="chest icon"></div></div></div>`
+    // GameoverAnimator.advancements.push({type: "quest", progress: 1, e: childX});
+    // childX = document.createElement('div');
+    // childX.classList.add("advancement")
+    // childX.classList.add("quest")
+    // childX.innerHTML = `<div class="quest-exercise icon"></div><div class="advancement__side"><span>Joue à ton premier exercice</span><div class="advancement__progress"><div class="progress-bar"><div class="progress-bar__fill"><div class="progress-bar__fill__highlight"></div></div></div><div class="chest icon"></div></div></div>`
+    // GameoverAnimator.advancements.push({type: "quest", progress: 1, e: childX});
 
 
     let child2 = document.createElement('div');
@@ -462,7 +490,6 @@ function generateAdvancementElements() {
     GameoverAnimator.advancements.push({
         type: "quest",
         progress: 0.75,
-        reward: 40,
         e: child2
     });
 
@@ -477,7 +504,7 @@ function generateAdvancementElements() {
     `
     GameoverAnimator.advancements.push({
         type: "gems",
-        gained: 20,
+        reward: 30,
         progress: 1,
         e: child3
     });
@@ -499,125 +526,192 @@ function generateAdvancementElements() {
 
 class GameoverAnimator {
 
-
     static run = false;
     static advancements = [];
+    static gameoverInfo = [];
 
     static startAnimateTimer = 0;
     static startAnimateDuration = 0;
     static startAnimateIndex = 0;
 
-    static state = "animate_advancements"
+    static state = "" // animate_header, update_experience, animate_advancements
     static fast = false;
+
+    static updateExperienceTimer = 0;
+    static updateExperienceDuration = 0;
+
+    static lastProgress = 0;
+
+    static start() {
+        this.run = true;
+        this.state = "animate_header"
+        this.animateHeader()
+        // this.fast = true
+    }
+
+
+    static async animateHeader() {
+        let lvl = gameoverE.querySelector('.gameover__progress__level')
+        lvl.textContent = "LVL " + Math.floor(GameSession.gameoverInfo.oldExperience / 100)
+        gameoverE.classList.add("centered")
+        gameoverE.querySelector(".icon").classList.add("pop")
+        gameoverE.querySelector(".icon").classList.remove("invisible")
+        gameoverE.querySelector("h3").classList.add("arise")
+        gameoverE.querySelector("h3").classList.remove("invisible")
+        await wait(500);
+        gameoverE.querySelector(".gameover__progress").classList.add("arise")
+        gameoverE.querySelector(".gameover__progress").classList.remove("invisible")
+        await wait(500);
+        this.updateExperienceDuration = (GameProgression.experience - GameSession.gameoverInfo.oldExperience) * 0.01
+        this.state = "update_experience"
+    }
 
     static update() {
 
-        // start animating each advancement one by one
-        this.startAnimateTimer += deltaTime;
-        if (this.startAnimateTimer > this.startAnimateDuration) {
-            this.startAnimateTimer = 0;
-            if (this.startAnimateIndex < this.advancements.length) {
-                this.animateAdvancement(this.advancements[this.startAnimateIndex])
-                switch (this.advancements[this.startAnimateIndex].type) {
-                    case "streak":
-                        this.startAnimateDuration = 4.5;
-                        break;
-                    case "quest":
-                        this.startAnimateDuration = 3;
-                        break;
-                    case "gems":
-                        this.startAnimateDuration = 5;
-                        break;
-                }
-                if (this.fast) {
-                    this.startAnimateDuration = 0.2;
-                }
-                this.startAnimateIndex += 1;
+        if (this.state == "update_experience") {
+            this.updateExperienceTimer += deltaTime;
+
+            let ease = easeInOutSine(this.updateExperienceTimer/this.updateExperienceDuration)
+            let xpProgress = (GameSession.gameoverInfo.oldExperience + GameProgression.experience*ease)
+            let progress = xpProgress % 100
+            gameoverBarE.style.width = (progress*1.1)+"%"
+            if (progress < this.lastProgress) {
+                let lvl = gameoverE.querySelector('.gameover__progress__level')
+                lvl.classList.remove("big-heartbeat")
+                lvl.offsetWidth
+                lvl.classList.add("big-heartbeat")
+                console.log("lvl up")
+                lvl.textContent = "LVL " + Math.floor(xpProgress / 100)
+            }
+            this.lastProgress = progress
+
+            if (this.updateExperienceTimer > this.updateExperienceDuration) {
+                gameoverE.classList.remove("centered")
+                this.state = "animate_advancements"
             }
         }
 
-    }
-
-    static async animateAdvancement(advancement) {
-        advancement.e.classList.add("arise")
-        gameoverAdvancementsE.appendChild(advancement.e)
-
-        switch (advancement.type) {
-            case "streak":
-                const day = advancement.e.querySelector('.day#to-be-checked');
-                const icon = advancement.e.querySelector('.icon');
-                const number = advancement.e.querySelector('.icon span');
-                day.parentElement.scrollLeft = day.offsetLeft - day.parentElement.offsetLeft - day.parentElement.offsetWidth;
-                number.textContent = GameProgression.streak - 1;
-                await wait(400);
-                day.parentElement.scrollTo({ left: day.offsetLeft - day.parentElement.offsetLeft - day.parentElement.offsetWidth/2 + day.offsetWidth/2, behavior: 'smooth' });
-                await wait(500);
-                day.classList.add("checked")
-                day.classList.add("pop")
-                await wait(800);
-                number.classList.add("pop")
-                number.textContent = GameProgression.streak;
-                await wait(500);
-                advancement.e.classList.add("checked")
-                icon.classList.add("ignite-fire")
-                await wait(200);
-                icon.classList.remove("ignite-fire")
-                icon.classList.add("flicker-fire")
-                break;
-            
-            case "quest":
-                await wait(400);
-                const bar = advancement.e.querySelector('.progress-bar__fill');
-                bar.style.width = (advancement.progress*100*1.1)+"%"
-                if (advancement.progress >= 1) {
-                    await wait(600);
-                    advancement.e.querySelector('.chest').style.backgroundImage = "url('media/chest_open.png')"
-                    advancement.e.querySelector('.chest').classList.add("big-heartbeat")
-                }
-                break;
-            
-            case "gems":
-                await wait(400);
-
-                const gspan = advancement.e.querySelector('span');
-                const gicon = advancement.e.querySelector('.icon');
-                const rectDest = gicon.getBoundingClientRect();
-                const dist_x = rectDest.left + rectDest.width / 2;
-                const dist_y = rectDest.top + rectDest.height / 2;
-
-                for (const i in GameoverAnimator.advancements) {
-                    if (GameoverAnimator.advancements[i].type == "quest" && GameoverAnimator.advancements[i].progress >= 1) {
-                        const rect = GameoverAnimator.advancements[i].e.querySelector('.chest').getBoundingClientRect();
-                        const pos_x = rect.left + rect.width / 2;
-                        const pos_y = rect.top + rect.height / 2;
-                        console.log(GameoverAnimator.advancements[i].e.querySelector('.chest'), rect)
-                        for (let i = 0; i < randomInt(10, 15); i++) {
-                            setTimeout(function() {
-                                gems.push(new Gem(pos_x, pos_y, dist_x, dist_y, function() {
-                                    console.log("done")
-
-                                    gicon.classList.remove("heartbeat")
-                                    gicon.offsetWidth
-                                    gicon.classList.add("heartbeat")
-
-                                    gspan.classList.remove("heartbeat")
-                                    gspan.offsetWidth
-                                    gspan.classList.add("heartbeat")
-
-                                    gspan.textContent = "+80 Gemmes"
-
-                                }));
-                            }, randomInt(0, 200))
-                        }
+        if (this.state == "animate_advancements") {
+            // start animating each advancement one by one
+            this.startAnimateTimer += deltaTime;
+            if (this.startAnimateTimer > this.startAnimateDuration) {
+                this.startAnimateTimer = 0;
+                if (this.startAnimateIndex < this.advancements.length) {
+                    let advancement = this.advancements[this.startAnimateIndex]
+    
+                    gameoverAdvancementsE.appendChild(advancement.e)
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
                     
+                    switch (advancement.type) {
+                        case "streak":
+                            this.startAnimateDuration = this.fast ? 0.2 : 3.5;
+                            this.animateStreakAdvancement(advancement)
+                            break;
+                        case "quest":
+                            this.startAnimateDuration = this.fast ? 0.2 : 2;
+                            this.animateQuestAdvancement(advancement)
+                            break;
+                        case "gems":
+                            this.startAnimateDuration = this.fast ? 0.2 : 3.5;
+                            this.animateGemAdvancement(advancement)
+                            break;
                     }
+                    this.startAnimateIndex += 1;
                 }
-                break;
+            }
         }
     }
 
     static continue() {
         this.fast = true;
+    }
+
+
+
+
+
+
+
+    static async animateStreakAdvancement(advancement) {
+        advancement.e.classList.add("arise")
+        const day = advancement.e.querySelector('.day#to-be-checked');
+        const icon = advancement.e.querySelector('.icon');
+        const number = advancement.e.querySelector('.icon span');
+        day.parentElement.scrollLeft = day.offsetLeft - day.parentElement.offsetLeft - day.parentElement.offsetWidth;
+        number.textContent = GameProgression.streak - 1;
+        await wait(400);
+        day.parentElement.scrollTo({ left: day.offsetLeft - day.parentElement.offsetLeft - day.parentElement.offsetWidth/2 + day.offsetWidth/2, behavior: 'smooth' });
+        await wait(500);
+        day.classList.add("checked")
+        day.classList.add("pop")
+        await wait(800);
+        number.classList.add("pop")
+        number.textContent = GameProgression.streak;
+        await wait(500);
+        advancement.e.classList.add("checked")
+        icon.classList.add("ignite-fire")
+        await wait(200);
+        icon.classList.remove("ignite-fire")
+        icon.classList.add("flicker-fire")
+    }
+
+    static async animateQuestAdvancement(advancement) {
+        advancement.e.classList.add("arise")
+        await wait(400);
+        const bar = advancement.e.querySelector('.progress-bar__fill');
+        bar.style.width = (advancement.progress*100*1.1)+"%"
+        if (advancement.progress >= 1) {
+            await wait(600);
+            advancement.e.querySelector('.chest').style.backgroundImage = "url('media/chest_open.png')"
+            advancement.e.querySelector('.chest').classList.add("big-heartbeat")
+        }
+    }
+
+    static async animateGemAdvancement(advancement) {
+        advancement.e.classList.add("arise")
+        await wait(400);
+
+        let gspan = advancement.e.querySelector('span');
+        let gicon = advancement.e.querySelector('.icon');
+
+        let rectDest = gicon.getBoundingClientRect();
+        let dist_x = rectDest.left + rectDest.width / 2 + window.scrollX;
+        let dist_y = rectDest.top + rectDest.height / 2 + window.scrollY;
+
+        for (let i in GameoverAnimator.advancements) {
+            if (GameoverAnimator.advancements[i].type == "quest" && GameoverAnimator.advancements[i].progress >= 1) {
+                
+                let rect = GameoverAnimator.advancements[i].e.querySelector('.chest').getBoundingClientRect();
+                let pos_x = rect.left + rect.width / 2 + window.scrollX;
+                let pos_y = rect.top + rect.height / 2 + window.scrollY;
+
+                let totalGemParticles = randomInt(10, 15)
+                let gemParticles = 0
+
+                for (let i = 0; i < totalGemParticles; i++) {
+                    new Promise(async () => {
+
+                        // wait before spawning a new gem particle
+                        await wait(randomInt(0, 200))
+
+                        // spawn and wait for the gem particle to die
+                        let lifetime = 2 + randomFloat(0, 0.5)
+                        gems.push(new Gem(pos_x, pos_y, dist_x, dist_y, lifetime))
+                        await wait(lifetime*1000)
+
+                        gicon.classList.remove("heartbeat")
+                        gspan.classList.remove("heartbeat")
+                        gicon.offsetWidth
+                        gicon.classList.add("heartbeat")
+                        gspan.classList.add("heartbeat")
+
+                        gemParticles += 1;
+                        gspan.textContent = "+" + Math.floor(gemParticles/totalGemParticles*advancement.reward) + " Gemmes"
+
+                    })
+                }
+            }
+        }
     }
 }
 
