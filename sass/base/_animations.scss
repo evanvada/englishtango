@@ -3,6 +3,22 @@
 
 
 
+.small-heartbeat {
+    animation: smallHeartbeatAnimation 0.15s linear;
+}
+
+@keyframes smallHeartbeatAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.025);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 .heartbeat {
     animation: heartbeatAnimation 0.15s linear;

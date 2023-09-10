@@ -169,7 +169,7 @@ class GameProgression {
         this.gems = loaded.gems || 0;
         this.streak = loaded.streak || 0;
         this.streakHistory = loaded.streakHistory || [];
-        this.experience = loaded.experience || 90;
+        this.experience = loaded.experience || 0;
         this.gamesPlayed = loaded.gamesPlayed || 0;
         this.lexiconProficiency = loaded.lexiconProficiency || [];
         this.grammarProficiency = loaded.grammarProficiency || [];
