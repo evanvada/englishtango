@@ -87,7 +87,7 @@ class GameIrregularVerbsBundle extends GameBundle {
 
 
 
-
+// var verbs1 = [ "verb_base_do", "verb_base_go" ]
 var verbs1 = [ "verb_base_do", "verb_base_go", "verb_base_buy", "verb_base_think", "verb_base_see", "verb_base_be", "verb_base_write", "verb_base_drive" ]
 var verbs2 = [ "verb_base_seek", "verb_base_catch", "verb_base_eat", "verb_base_beat", "verb_base_freeze", "verb_base_choose", "verb_base_grow", "verb_base_know" ]
 var verbs3 = [ "verb_base_take", "verb_base_shake", "verb_base_say", "verb_base_read", "verb_base_ring", "verb_base_sing", "verb_base_teach", "verb_base_fight" ]

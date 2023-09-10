@@ -28,16 +28,15 @@ class GameProgression {
         if (GameSession.state == "gameover") {
             this.gamesPlayed += 1;
 
-
-
             let lastPlay = this.streakHistory[0];
 
+            // the start of the day is used as anchor point of an entire day
             let today = new Date();
-            today.setUTCHours(0, -UTCShift, 0, 0);
+            today.setUTCHours(0, -this.UTCShift, 0, 0);
     
             let yesterday = new Date();
-            yesterday.setUTCHours(0, -UTCShift, 0, 0);
-            yesterday.setUTCDate(-1);
+            yesterday.setUTCHours(0, -this.UTCShift, 0, 0);
+            yesterday.setUTCDate(yesterday.getUTCDate()-1);
     
             let continuedStreak = false;
             if (lastPlay != null) {
@@ -61,14 +60,12 @@ class GameProgression {
                 this.streak = 1;
             }
 
-
-    
-
             let oldExperience = this.experience;
-            let gameExpBonus = 1 + Math.floor(GameSession.rights / GameSession.archivedQuestions * 9);
+            let gameExpBonus = 1 + Math.floor(GameSession.rights / GameSession.archivedQuestions.length * 9);
             let streakExpBonus = continuedStreak ? 10 + Math.floor(Math.sqrt(this.streak-1)*2) : 0;
             this.experience += gameExpBonus + streakExpBonus;
 
+            let oldGems = this.gems;
             let updatedQuests = this.updateQuests();
             updatedQuests = updatedQuests.filter(quest => quest.progress > quest.oldProgress);
 
@@ -76,6 +73,7 @@ class GameProgression {
             return {
                 continuedStreak: continuedStreak,
                 oldExperience: oldExperience,
+                oldGems: oldGems,
                 gameExpBonus: gameExpBonus,
                 streakExpBonus: streakExpBonus,
                 updatedQuests: updatedQuests,
@@ -96,10 +94,17 @@ class GameProgression {
     static updateStreak() {
         let lastPlay = this.streakHistory[0];
 
+        // the start of the day is used as anchor point of an entire day
         let today = new Date();
-        today.setUTCHours(0, -UTCShift, 0, 0);
+        today.setUTCHours(0, -this.UTCShift, 0, 0);
 
-        if (lastPlay != null && lastPlay.getTime() != today.getTime() && lastPlay.getTime() != yesterday.getTime()) {
+        let yesterday = new Date();
+        yesterday.setUTCHours(0, -this.UTCShift, 0, 0);
+        yesterday.setUTCDate(yesterday.getUTCDate()-1);
+
+        if (lastPlay != null
+         && lastPlay.getTime() != today.getTime()
+         && lastPlay.getTime() != yesterday.getTime()) {
             // not done yesterday nor today so reset streak
             this.streak = 0;
         }
@@ -138,10 +143,10 @@ class GameProgression {
 
     static generateQuestsIfNecessary() {
         let today = new Date();
-        today.setUTCHours(0, -UTCShift, 0, 0);
+        today.setUTCHours(0, -this.UTCShift, 0, 0);
 
         let firstWeekDay = new Date();
-        firstWeekDay.setUTCHours(0, -UTCShift, 0, 0);
+        firstWeekDay.setUTCHours(0, -this.UTCShift, 0, 0);
         firstWeekDay.setUTCDate(firstWeekDay.getUTCDate() - firstWeekDay.getUTCDay() + 1);
 
         if (this.dailyQuestsStartTime != today) {
@@ -164,7 +169,7 @@ class GameProgression {
         this.gems = loaded.gems || 0;
         this.streak = loaded.streak || 0;
         this.streakHistory = loaded.streakHistory || [];
-        this.experience = loaded.experience || 0;
+        this.experience = loaded.experience || 90;
         this.gamesPlayed = loaded.gamesPlayed || 0;
         this.lexiconProficiency = loaded.lexiconProficiency || [];
         this.grammarProficiency = loaded.grammarProficiency || [];
@@ -200,24 +205,22 @@ class GameProgression {
     static generateDailyQuests() {
 
         if (this.gamesPlayed == 0) {
-            this.dailyQuests.unshift({ text: "Joue à ton premier exercice", type: "finish_games", start: 0, progress: 0, goal: 1, reward: 10 })
-            this.dailyQuests.unshift({ text: "Gagne 50 XP", type: "gain_xp", start: 0, progress: 0, goal: 30, reward: 20 })
+            this.dailyQuests.unshift({ text: "Joue à ton premier exercice", type: "finish_games", start: 0, progress: 0, goal: 1, reward: 20, icon: "quest-exercise" })
+            this.dailyQuests.unshift({ text: "Gagne 50 XP", type: "gain_xp", start: this.experience, progress: 0, goal: 30, reward: 40, icon: "quest-bolt" })
         } else {
-            let randomGoal;
-
             switch (randomInt(0, 2)) {
                 case 0:
-                    randomGoal = randomInt(3, 20)*10;
-                    this.dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: 0, progress: 0, goal: randomGoal, reward: randomInt(0,5)*5+15 })
+                    randomGoal = randomInt(3, 40)*40;
+                    this.dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: this.experience, progress: 0, goal: randomGoal, reward: randomInt(0,5)*10+30, icon: "quest-bolt" })
                     break;
                 case 1:
                     randomGoal = randomInt(1, 3);
-                    this.dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: 0, progress: 0, goal: randomGoal, reward: randomInt(0,3)*5+10 })
+                    this.dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: this.gamesPlayed, progress: 0, goal: randomGoal, reward: randomInt(0,3)*10+40, icon: "quest-exercise" })
                     break;
                 case 2:
-                    if (this.experience%100 > 10 && this.experience%100 < 60) {
-                        randomGoal = this.experience-this.experience%100+100;
-                        this.dailyQuests.unshift({ text: "Ai un total de "+randomGoal+" XP", type: "gain_xp", start: this.experience, progress: 0, goal: randomGoal, reward: randomInt(0,3)*10+20 })
+                    if (this.experience%100 >= 0 && this.experience%100 < 60) {
+                        levelStart = this.experience-this.experience%100;
+                        this.dailyQuests.unshift({ text: "Ai un total de "+goal+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: randomInt(0,3)*40+40, icon: "quest-bolt" })
                     }
                     break;
             }
@@ -226,17 +229,17 @@ class GameProgression {
             if (randomInt(0, 1) == 1) {
                 switch (randomInt(0, 2)) {
                     case 0:
-                        randomGoal = randomInt(3, 20)*10;
-                        this.dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: 0, progress: 0, goal: randomGoal, reward: randomInt(0,5)*5+15 })
+                        randomGoal = randomInt(3, 40)*40;
+                        this.dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: this.experience, progress: 0, goal: randomGoal, reward: randomInt(0,5)*10+30, icon: "quest-bolt" })
                         break;
                     case 1:
                         randomGoal = randomInt(1, 3);
-                        this.dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: this.experience, progress: 0, goal: randomGoal, reward: randomInt(0,3)*5+10 })
+                        this.dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: this.gamesPlayed, progress: 0, goal: randomGoal, reward: randomInt(0,3)*10+40, icon: "quest-exercise" })
                         break;
                     case 2:
-                        if (this.experience%100 > 10 && this.experience%100 < 60) {
-                            randomGoal = this.experience-this.experience%100+100;
-                            this.dailyQuests.unshift({ text: "Ai un total de "+randomGoal+" XP", type: "gain_xp", start: this.experience, progress: 0, goal: randomGoal, reward: randomInt(0,3)*10+20 })
+                        if (this.experience%100 >= 0 && this.experience%100 < 60) {
+                            levelStart = this.experience-this.experience%100;
+                            this.dailyQuests.unshift({ text: "Ai un total de "+goal+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: randomInt(0,3)*40+40, icon: "quest-bolt" })
                         }
                         break;
                 }
