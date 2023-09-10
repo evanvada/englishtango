@@ -82,7 +82,10 @@ function easeOutQuint(x) {
 	return 1 - Math.pow(1 - X, 5);
 }
 
-
+function easeInOutSine(x) {
+	let X = normalize01(x);
+	return -(Math.cos(Math.PI * X) - 1) / 2;
+}
 
 
 

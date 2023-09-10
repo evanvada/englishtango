@@ -53,6 +53,10 @@ html {
   display: none !important;
 }
 
+.invisible {
+  opacity: 0 !important;
+}
+
 .canvas-overlay {
   display: block;
   position: fixed;

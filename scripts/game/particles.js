@@ -47,9 +47,18 @@ class Glitter {
 	}
 }
 
+
+
+
+
+
+
+
+
+
 class Gem {
     
-    constructor(start_x, start_y, dest_x, dest_y, updateLast) {
+    constructor(start_x, start_y, dest_x, dest_y, life) {
 		this.start_x = start_x
 		this.start_y = start_y
 		this.dest_x = dest_x
@@ -65,10 +74,8 @@ class Gem {
 		this.scatter_x = Math.cos(r)*s
 		this.scatter_y = Math.sin(r)*s
 
-		this.startLife = 2 + randomFloat(0, 0.5)
+		this.startLife = life
 		this.life = this.startLife
-
-		this.updateLast = updateLast
 	}
 
 	update() {
@@ -91,20 +98,25 @@ class Gem {
 		if (this.life < 0.05) {
 			this.size = normalize01(this.life/0.05)
 		}
-
-		if (this.life <= 0) {
-			this.updateLast()
-		}
 	}
 
 	draw() {
 		ctx.save();
-		ctx.translate(this.x, this.y);
+		ctx.translate(this.x - window.scrollX, this.y - window.scrollY);
 		ctx.rotate(this.r);
 		ctx.drawImage(gemImg, -16*this.size, -16*this.size, 32*this.size, 32*this.size);
 		ctx.restore();
 	}
 }
+
+
+
+
+
+
+
+
+
 
 function updateParticles(array) {
 	for (var i = array.length - 1; i >= 0; i--) {
