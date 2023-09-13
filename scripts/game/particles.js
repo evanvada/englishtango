@@ -1,12 +1,12 @@
+import * as Utils from "/scripts/utils.js";
 
+export let glitters = [];
+export let gems = [];
 
-glitters = [];
-gems = [];
-
-var gemImg = new Image();
+let gemImg = new Image();
 gemImg.src = "../../media/gem.png";
 
-class Glitter {
+export class Glitter {
 
     static colors = [
         [17, 132, 226],
@@ -22,16 +22,16 @@ class Glitter {
     constructor(x, y) {
 		this.x = x
 		this.y = y
-		const r = randomFloat(-Math.PI, Math.PI)
-		const s = randomFloat(0, 1000)
+		const r = Utils.randomFloat(-Math.PI, Math.PI)
+		const s = Utils.randomFloat(0, 1000)
 		this.scatter_x = Math.cos(r)*s
 		this.scatter_y = Math.sin(r)*s
-		this.startLife = 0.2 + randomFloat(0, 0.5)
+		this.startLife = 0.2 + Utils.randomFloat(0, 0.5)
 		this.life = this.startLife
-		this.color = randomItem(Glitter.colors)
+		this.color = Utils.randomItem(Glitter.colors)
 	}
 
-	update() {
+	update(deltaTime) {
 		this.life -= deltaTime;
 		this.scatter_y += 1000 * deltaTime;
         this.scatter_x -= this.scatter_x * 0.95 * deltaTime;
@@ -41,9 +41,9 @@ class Glitter {
 		this.y += this.scatter_y * deltaTime;
 	}
 
-	draw() {
-		ctx.fillStyle = convertArrayRGB(this.color.map(element => element + randomInt(-50, 50)));
-		drawCircle(this.x, this.y, 5);
+	draw(ctx) {
+		ctx.fillStyle = Utils.convertRGBArrayToString(this.color.map(element => element + Utils.randomInt(-50, 50)));
+		Utils.drawCircle(ctx, this.x, this.y, 5);
 	}
 }
 
@@ -56,7 +56,7 @@ class Glitter {
 
 
 
-class Gem {
+export class Gem {
     
     constructor(start_x, start_y, dest_x, dest_y, life) {
 		this.start_x = start_x
@@ -67,10 +67,10 @@ class Gem {
 		this.size = 0
 		this.x = start_x
 		this.y = start_y
-		this.r = randomFloat(-Math.PI, Math.PI)
+		this.r = Utils.randomFloat(-Math.PI, Math.PI)
 
-		const r = randomFloat(-Math.PI, Math.PI)
-		const s = randomFloat(50, 100)
+		const r = Utils.randomFloat(-Math.PI, Math.PI)
+		const s = Utils.randomFloat(50, 100)
 		this.scatter_x = Math.cos(r)*s
 		this.scatter_y = Math.sin(r)*s
 
@@ -78,29 +78,29 @@ class Gem {
 		this.life = this.startLife
 	}
 
-	update() {
+	update(deltaTime) {
 		this.life -= deltaTime;
 
 		this.x = this.start_x
 		this.y = this.start_y
 
 		let scatterProgress = (this.startLife - this.life)*0.8
-		this.x += this.scatter_x*easeOutQuint(scatterProgress)
-		this.y += this.scatter_y*easeOutQuint(scatterProgress)
+		this.x += this.scatter_x*Utils.easeOutQuint(scatterProgress)
+		this.y += this.scatter_y*Utils.easeOutQuint(scatterProgress)
 
 		let magnetizeProgress = (this.startLife - this.life)/this.startLife
-		this.x += (this.dest_x-this.x)*easeInQuint(magnetizeProgress)
-		this.y += (this.dest_y-this.y)*easeInQuint(magnetizeProgress)
+		this.x += (this.dest_x-this.x)*Utils.easeInQuint(magnetizeProgress)
+		this.y += (this.dest_y-this.y)*Utils.easeInQuint(magnetizeProgress)
 
 		if (this.startLife - this.life < 0.1) {
-			this.size = normalize01((this.startLife - this.life)/0.1)
+			this.size = Utils.normalizeBetween01((this.startLife - this.life)/0.1)
 		}
 		if (this.life < 0.05) {
-			this.size = normalize01(this.life/0.05)
+			this.size = Utils.normalizeBetween01(this.life/0.05)
 		}
 	}
 
-	draw() {
+	draw(ctx) {
 		ctx.save();
 		ctx.translate(this.x - window.scrollX, this.y - window.scrollY);
 		ctx.rotate(this.r);
@@ -118,19 +118,19 @@ class Gem {
 
 
 
-function updateParticles(array) {
+export function updateParticles(array, deltaTime) {
 	for (var i = array.length - 1; i >= 0; i--) {
 		if (array[i].life <= 0) {
 			array.splice(i, 1)
 		} else {
-			array[i].update()
+			array[i].update(deltaTime)
 		}
 	}
 }
 
-function drawParticles(array) {
+export function drawParticles(array, ctx) {
 	for (var i = 0; i < array.length; i++) {
-		array[i].draw()
+		array[i].draw(ctx)
 	}
 }
 

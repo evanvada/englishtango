@@ -1,59 +1,61 @@
+import * as GameProgression from "/scripts/game/gameProgression.js";
+import * as GameOptions from "/scripts/game/gameOptions.js";
+import GameBundle from "/scripts/game/gameBundles.js";
 
+import * as Utils from "/scripts/utils.js";
 
-class GameSession {
-    static questions = [];
-    static archivedQuestions = [];
-    static gameoverInfo = [];
-    static rights = 0;
-    static wrongs = 0;
-    static state = "loading";
-    
-    static checkAnswer(input) {
-        if (this.questions[0].addAnswer(input)) {
-            this.rightUpdate()
-        } else {
-            this.wrongUpdate()
-        }
-    }
+export let questions = [];
+export let archivedQuestions = [];
+export let gameoverInfo = [];
+export let rights = 0;
+export let wrongs = 0;
+export let state = "loading";
 
-    static rightUpdate() {
-        this.state = "right";
-        showRightFeedback()
-        // update game : archive the question
-        if (this.questions[0].answers.length == 1) { this.rights += 1; }
-        this.archivedQuestions.push(this.questions.shift());
-    }
-
-    static wrongUpdate() {
-        this.state = "wrong";
-        showWrongFeedback()
-        // update game : repeat wrong question if option is selected
-        this.wrongs += 1
-        if (GameOptions.selectedRepetitionOption == "repeat_question") {
-            this.questions.splice(randomInt(0, this.questions.length-1), 0, this.questions.shift())
-        } else if (GameOptions.selectedRepetitionOption == "one_chance") {
-            this.archivedQuestions.push(this.questions.shift());
-        }
-    }
-
-    static continueGame() {
-        if (this.questions.length > 0) {
-            this.state = "question";
-            showUserInput()
-        } else if (this.archivedQuestions.length > 0) {
-            this.state = "gameover";
-            this.gameoverInfo = GameProgression.updateOnGameover()
-            showGameOver()
-        } else {
-            throw new Error("No bundle selected");
-        }
-    }
-    
-    static generateQuestions() {
-        for (let i in GameOptions.selectedBundles) {
-            GameBundle.getBundleByName(GameOptions.selectedBundles[i]).generateQuestions(this.questions)
-        }
-        shuffleArray(this.questions)
+export function checkAnswer(input, showRight, showWrong) {
+    if (questions[0].addAnswer(input)) {
+        rightUpdate(showRight)
+    } else {
+        wrongUpdate(showWrong)
     }
 }
 
+export function rightUpdate(showRight) {
+    state = "right";
+    showRight()
+    // update game : archive the question
+    if (questions[0].answers.length == 1) { rights += 1; }
+    archivedQuestions.push(questions.shift());
+}
+
+export function wrongUpdate(showWrong) {
+    state = "wrong";
+    showWrong()
+    // update game : repeat wrong question if option is selected
+    wrongs += 1
+    if (GameOptions.selectedRepetitionOption == "repeat_question") {
+        questions.splice(Utils.randomInt(0, questions.length-1), 0, questions.shift())
+    } else if (GameOptions.selectedRepetitionOption == "one_chance") {
+        archivedQuestions.push(questions.shift());
+    }
+}
+
+export function continueGame(showUserInput, showGameover) {
+    if (questions.length > 0) {
+        state = "question";
+        showUserInput()
+    } else if (archivedQuestions.length > 0) {
+        state = "gameover";
+        gameoverInfo = GameProgression.updateOnGameover()
+        showGameover()
+    } else {
+        throw new Error("No bundle selected");
+    }
+}
+
+export function generateQuestions() {
+    for (let i in GameOptions.selectedBundles) {
+        let generatedQuestions = GameBundle.getBundleByName(GameOptions.selectedBundles[i]).generateQuestions()
+        questions = questions.concat(generatedQuestions)
+    }
+    Utils.shuffleArray(questions)
+}

@@ -6,7 +6,7 @@
 
 
 
-class GameQuestion {
+export default class GameQuestion {
     constructor() {
         this.title = "";
         this.prompt = "";

@@ -207,11 +207,11 @@
 			</aside>
 		</main>
 
-		<script src="scripts/utils.js"></script>
-        <script src="scripts/game/gameOptions.js"></script>
-        <script src="scripts/game/gameBudnles.js"></script>
-        <script src="scripts/views/practiceView.js"></script>
-        <script src="scripts/views/statsHeaderView.js"></script>
+        <script type="module">
+            import * as Practice from "/scripts/views/practiceView.js";
+            window.Practice = Practice;
+        </script>
+        <script src="scripts/views/statsHeader.js"></script>
 
 	</body>
 </html>
