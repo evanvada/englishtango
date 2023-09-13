@@ -13,7 +13,7 @@
 
         <main class="hidden">
             <section class="progress">
-                <button href="practice.html" class="cross icon" onclick="showSureQuit()"></button>
+                <button href="practice.html" class="cross icon" onclick="Play.showSureQuit()"></button>
                 <div class="progress-bar"><div class="progress-bar__fill"><div class="progress-bar__fill__highlight"></div></div></div>
             </section>
 
@@ -27,8 +27,8 @@
 
             <section class="banner user-input">
                 <div class="banner__container">
-                    <button class="border gray flat-button" onclick="noAnswer()"><span>Passer</span></button>
-                    <button class="color1 flat-button" onclick="checkAnswer()" disabled><span>Valider</span></button>
+                    <button class="border gray flat-button" onclick="Play.noAnswer()"><span>Passer</span></button>
+                    <button class="color1 flat-button" onclick="Play.checkAnswer()" disabled><span>Valider</span></button>
                 </div>
             </section>
             
@@ -41,7 +41,7 @@
                             <span></span>
                         </div>
                     </div>
-                    <button class="color2 flat-button" onclick="continueGame()"><span>Continuer</span></button>
+                    <button class="color2 flat-button" onclick="Play.continueGame()"><span>Continuer</span></button>
                 </div>
             </section>
 
@@ -54,14 +54,14 @@
                             <span></span>
                         </div>
                     </div>
-                    <button class="color1 flat-button" onclick="continueGame()"><span>Continuer</span></button>
+                    <button class="color1 flat-button" onclick="Play.continueGame()"><span>Continuer</span></button>
                 </div>
             </section>
 
             <section class="banner over hidden">
                 <div class="banner__container">
                     <button class="banner__side"></button>
-                    <button class="border gray flat-button" onclick="continueGameover()"><span>Passer</span></button>
+                    <button class="border gray flat-button" onclick="Play.continueGameover()"><span>Passer</span></button>
                 </div>
             </section>
 
@@ -70,7 +70,7 @@
                     <div class="win icon invisible"></div>
                     <h3 class="invisible">Exercice terminé !</h3>
                     <section class="gameover__progress invisible">
-                        <button class="bolt icon"></button>
+                        <div class="bolt icon"></div>
                         <div class="progress-bar"><div class="progress-bar__fill"><div class="progress-bar__fill__highlight"></div></div></div>
                         <div class="gameover__progress__level">LVL 1</div>
                     </section>
@@ -81,7 +81,7 @@
             </section>
         </main>
 
-        <section class="black-overlay hidden" onclick="hideSureQuit()"></section>
+        <section class="black-overlay hidden" onclick="Play.hideSureQuit()"></section>
         <section class="banner overlay hidden">
             <div class="banner__container">
                 <div class="banner__side">
@@ -91,23 +91,16 @@
                     </div>
                 </div>
                 <div class="banner__side">
-                    <button class="border gray flat-button" onclick="hideSureQuit()"><span>Rester</span></button>
-                    <button class="color1 flat-button" onclick="quitGame()"><span>Quitter</span></button>
+                    <button class="border gray flat-button" onclick="Play.hideSureQuit()"><span>Rester</span></button>
+                    <button class="color1 flat-button" onclick="Play.quitGame()"><span>Quitter</span></button>
                 </div>
             </div>
         </section>
 
-		<script src="scripts/utils.js"></script>
-		<script src="scripts/data/dataInterface.js"></script>
-        
-        <script src="scripts/game/gameProgression.js"></script>
-        <script src="scripts/game/gameOptions.js"></script>
-		<script src="scripts/game/gameBudnles.js"></script>
-        <script src="scripts/game/gameQuestion.js"></script>
-        <script src="scripts/game/gameSession.js"></script>
-        <script src="scripts/game/particles.js"></script>
-
-        <script src="scripts/views/playView.js"></script>
+        <script type="module">
+            import * as Play from "/scripts/views/playView.js";
+            window.Play = Play;
+        </script>
 
 	</body>
 </html>

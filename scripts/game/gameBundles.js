@@ -1,6 +1,7 @@
+import * as DataInterface from "/scripts/data/dataInterface.js";
+import GameQuestion from "/scripts/game/gameQuestion.js";
 
-
-class GameBundle {
+export default class GameBundle {
     static bundles = {}
 
     constructor(name, size) {
@@ -15,7 +16,6 @@ class GameBundle {
         return bundle
     }
 
-    // generate questions into the given array
     generateQuestions(questions) {
         throw new Error("generateQuestions() not implemented")
     }
@@ -36,16 +36,16 @@ class GameBundle {
 
 
 
-class GameIrregularVerbsBundle extends GameBundle {
-    static bundles = []
 
+class GameIrregularVerbsBundle extends GameBundle {
     constructor(name, tenseTag, verbTags) {
         super(name, verbTags.length)
         this.verbTags = verbTags
         this.tenseTag = tenseTag
     }
 
-    generateQuestions(questions) {
+    generateQuestions() {
+        let questions = []
 
         // select lexemes that have the tags: verbTags & tenseTag
         let queries = this.verbTags.map(tag => [this.tenseTag, tag]);
@@ -71,23 +71,27 @@ class GameIrregularVerbsBundle extends GameBundle {
             }
             question.title = "Traduisez ce terme en anglais"
             question.prompt = "Le verbe " + tags[i].fr + " " + tempsFrancais;
-            // add each solution
+            
             for (let j in lexemes[i]) {
                 question.solutions.push(lexemes[i][j].en);
                 // add "to VERB" as a solution for infinitive
-                if (this.tenseTag == "verb_inf") { question.solutions.push("to " + lexemes[i][j].en) }
+                if (this.tenseTag == "verb_inf") {
+                    question.solutions.push("to " + lexemes[i][j].en)
+                }
             }
             question.conceptID = "lexeme " + lexemes[i][0].id
 
             questions.push(question)
         }
+
+        return questions
     }
 }
 
 
 
 
-// var verbs1 = [ "verb_base_do", "verb_base_go" ]
+// var verbs1 = [ "verb_base_do" ]
 var verbs1 = [ "verb_base_do", "verb_base_go", "verb_base_buy", "verb_base_think", "verb_base_see", "verb_base_be", "verb_base_write", "verb_base_drive" ]
 var verbs2 = [ "verb_base_seek", "verb_base_catch", "verb_base_eat", "verb_base_beat", "verb_base_freeze", "verb_base_choose", "verb_base_grow", "verb_base_know" ]
 var verbs3 = [ "verb_base_take", "verb_base_shake", "verb_base_say", "verb_base_read", "verb_base_ring", "verb_base_sing", "verb_base_teach", "verb_base_fight" ]

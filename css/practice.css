@@ -351,6 +351,155 @@ a {
   top: 6px;
 }
 
+.progress-bar {
+  height: 16px;
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-gray);
+}
+.progress-bar__fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-1);
+  transition: width 0.15s ease-in-out;
+}
+.progress-bar__fill__highlight {
+  height: 4px;
+  margin: 0 8px;
+  margin-top: 4px;
+  border-radius: 8px;
+  background: inherit;
+  filter: brightness(1.4);
+}
+
+.advancement {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid var(--color-gray);
+  border-radius: 14px;
+  padding: 16px;
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1.25rem;
+}
+.advancement h1 {
+  padding-top: 16px;
+}
+.advancement > .icon {
+  background-size: 48px;
+  width: 64px;
+  height: 64px;
+}
+.advancement.locked {
+  background: #f7f7f7;
+  color: var(--color-grayer);
+}
+.advancement__side {
+  height: 100%;
+  flex: 1;
+  gap: 6px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
+}
+.advancement.streak:not(.checked) .icon {
+  background-image: none;
+}
+.advancement.streak.checked .icon span {
+  background: #f77e54;
+  -webkit-text-stroke: 8px;
+  -webkit-text-stroke-color: transparent;
+  background-clip: text;
+}
+.advancement.streak .icon {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  color: white;
+  background-size: 48px 48px;
+  background-position: center bottom 16px;
+}
+.advancement.streak .icon span {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: FiraSansBold, sans-serif;
+  width: 100%;
+  text-align: center;
+  background: var(--color-grayer);
+  -webkit-text-stroke: 8px;
+  -webkit-text-stroke-color: transparent;
+  background-clip: text;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  user-select: none;
+}
+.advancement.gems {
+  color: var(--color-2);
+}
+.advancement.gems span {
+  width: fit-content;
+}
+.advancement__days {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(to left, transparent 0px, black 30px, black calc(100% - 30px), transparent 100%);
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  user-select: none;
+}
+.advancement__days .day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.advancement__days .day span {
+  font-family: FiraSansBold, sans-serif;
+  font-size: 1rem;
+  color: var(--color-grayer);
+}
+.advancement__days .day div {
+  background: var(--color-gray);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.advancement__days .day.checked span {
+  color: var(--color-3B);
+}
+.advancement__days .day.checked div {
+  background-color: var(--color-3B);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  background-image: url(../media/check.svg);
+}
+.advancement__progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+.advancement__progress .progress-bar {
+  border-radius: 8px 0 0 8px;
+}
+.advancement__progress .progress-bar__fill {
+  background: var(--color-3);
+}
+
 .small-heartbeat {
   animation: smallHeartbeatAnimation 0.15s linear;
 }
@@ -525,63 +674,16 @@ main {
 .wall__section.quests h1 {
   padding-top: 16px;
 }
-.wall__section.quests .quests__quest {
-  min-height: 100px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  border: 2px solid var(--color-gray);
-  border-radius: 14px;
-  padding: 16px;
+.wall__section.quests .wall__subsection {
   font-family: FiraSansBold, sans-serif;
   font-size: 1.25rem;
+  gap: 8px;
 }
-.wall__section.quests .quests__quest > .icon {
-  background-size: 48px;
-  width: 64px;
-  height: 64px;
+.wall__section.quests .wall__subsection h1 {
+  padding-top: 16px;
 }
-.wall__section.quests .quests__quest.locked {
-  background: #f7f7f7;
-  color: var(--color-grayer);
-}
-.wall__section.quests .quests__side {
-  height: 100%;
-  flex: 1;
-  gap: 6px;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  justify-content: center;
-}
-.wall__section.quests .quests__progress {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2px;
-}
-.wall__section.quests .quests__progress__bar {
-  height: 16px;
-  flex: 1;
-  border-radius: 8px 0 0 8px;
-  overflow: hidden;
-  background: var(--color-gray);
-}
-.wall__section.quests .quests__progress__bar__fill {
-  height: 100%;
-  width: 0%;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--color-3);
-  transition: width 0.15s ease-in-out;
-}
-.wall__section.quests .quests__progress__bar__fill__highlight {
-  height: 4px;
-  margin: 0 8px;
-  margin-top: 4px;
-  border-radius: 8px;
-  background: var(--color-3);
-  filter: brightness(1.4);
+.wall__section.quests .wall__subsection .advancement {
+  margin-top: 20px;
 }
 
 .wall__section.course .course__line {
@@ -609,32 +711,6 @@ main {
   color: var(--color-gray);
 }
 
-@media (max-width: 1280px) {
-  main {
-    padding: 24px;
-    padding-left: 112px;
-  }
-}
-@media (max-width: 960px) {
-  main {
-    padding-top: 82px;
-  }
-}
-@media (max-width: 640px) {
-  main {
-    padding: 0;
-    padding-top: 58px;
-    padding-bottom: 90px;
-  }
-  .wall__title {
-    border-radius: 0;
-  }
-  .wall {
-    width: 100%;
-    max-width: unset;
-    min-width: unset;
-  }
-}
 .infos-aside {
   position: sticky;
   top: 24px;
@@ -681,15 +757,6 @@ main {
   border-radius: 10px;
   gap: 6px;
   font-family: FiraSansBold, sans-serif;
-}
-.stats-aside li.streak {
-  color: var(--color-3B);
-}
-.stats-aside li.exp {
-  color: var(--color-3B);
-}
-.stats-aside li.gems {
-  color: var(--color-2);
 }
 .stats-aside li:hover {
   background: var(--color-gray);
@@ -818,30 +885,6 @@ main {
   width: min(100%, 400px);
 }
 
-@media (max-width: 960px) {
-  .stats-header {
-    display: flex;
-  }
-  .infos-aside {
-    display: none;
-  }
-  .play-footer {
-    display: flex;
-  }
-}
-@media (max-width: 960px) and (min-width: 641px) {
-  .stats-header {
-    padding-left: 88px;
-  }
-  .play-footer {
-    padding-left: 100px;
-  }
-}
-@media (max-width: 640px) {
-  .play-footer {
-    bottom: 90px;
-  }
-}
 .floating-bubble {
   position: absolute;
   z-index: 9;
@@ -880,17 +923,18 @@ main {
   user-select: none;
 }
 
-@keyframes floatingAnimation {
-  0% {
-    top: 6px;
-  }
-  50% {
-    top: -6px;
-  }
-  100% {
-    top: 6px;
-  }
+.stats-aside .experience {
+  color: var(--color-3B);
 }
+
+.stats-aside .streak {
+  color: var(--color-3B);
+}
+
+.stats-aside .gems {
+  color: var(--color-2);
+}
+
 .nav-aside {
   position: fixed;
   height: 100%;
@@ -1029,5 +1073,66 @@ main {
   }
   .nav-footer {
     display: block;
+  }
+}
+@media (max-width: 960px) {
+  .stats-header {
+    display: flex;
+  }
+  .infos-aside {
+    display: none;
+  }
+  .play-footer {
+    display: flex;
+  }
+}
+@media (max-width: 960px) and (min-width: 641px) {
+  .stats-header {
+    padding-left: 88px;
+  }
+  .play-footer {
+    padding-left: 100px;
+  }
+}
+@media (max-width: 640px) {
+  .play-footer {
+    bottom: 90px;
+  }
+}
+@keyframes floatingAnimation {
+  0% {
+    top: 6px;
+  }
+  50% {
+    top: -6px;
+  }
+  100% {
+    top: 6px;
+  }
+}
+@media (max-width: 1280px) {
+  main {
+    padding: 24px;
+    padding-left: 112px;
+  }
+}
+@media (max-width: 960px) {
+  main {
+    padding-top: 82px;
+  }
+}
+@media (max-width: 640px) {
+  main {
+    padding: 0;
+    padding-top: 58px;
+    padding-bottom: 90px;
+  }
+  .wall__title {
+    border-radius: 0;
+  }
+  .wall {
+    width: 100%;
+    max-width: unset;
+    min-width: unset;
   }
 }

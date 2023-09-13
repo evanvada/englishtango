@@ -124,7 +124,7 @@
 								</div><img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
 							</li>
 							<li class="streak">
-								<div class="fire icon"></div><span>1</span>
+								<div class="fire icon"></div><span>0</span>
 								<div class="stats-aside__dropdown">
 									<section>
 										Série
@@ -132,8 +132,8 @@
 								</div>
 								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
 							</li>
-							<li class="exp">
-								<div class="bolt icon"></div><span>350</span>
+							<li class="experience">
+								<div class="bolt icon"></div><span>0</span>
 								<div class="stats-aside__dropdown">
 									<section>
 										Expérience
@@ -142,7 +142,7 @@
 								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
 							</li>
 							<li class="gems">
-								<div class="gem icon"></div><span>50</span>
+								<div class="gem icon"></div><span>0</span>
 								<div class="stats-aside__dropdown">
 									<section>
 										Gemmes
@@ -156,7 +156,10 @@
 			</aside>
 		</main>
 
-        <script src="scripts/views/statsHeaderView.js"></script>
+        <script type="module">
+            import * as StatsUpdate from "/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+        </script>
 
 	</body>
 </html>
