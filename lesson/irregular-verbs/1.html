@@ -63,7 +63,7 @@
 								</div>
 								<img class="stats-aside__dropdown-pointer" src="../../media/arrow.svg">
 							</li>
-							<li class="exp">
+							<li class="experience">
 								<div class="bolt icon"></div><span>350</span>
 								<div class="stats-aside__dropdown">
 									<section>
@@ -87,7 +87,10 @@
 			</aside>
 		</main>
 
-        <script src="../../scripts/views/statsHeaderView.js"></script>
+        <script type="module">
+            import * as StatsUpdate from "/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+        </script>
 		
 	</body>
 </html>

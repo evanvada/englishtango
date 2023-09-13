@@ -108,7 +108,6 @@ export function updateAll() {
 
 
 function updateStreak() {
-    console.log("updateStreak")
     let lastPlay = streakHistory[0];
 
     // the start of the day is used as anchor point of an entire day
@@ -130,7 +129,6 @@ function updateStreak() {
 
 
 function updateQuestsProgression() {
-    console.log("updateQuestsProgression")
     let allQuests = dailyQuests.concat(weeklyQuests).concat(foreverQuests);
     let updatedQuests = [];
     for (let quest of allQuests) {
@@ -143,8 +141,11 @@ function updateQuestsProgression() {
         if (itemsTracked == null) {
             continue;
         }
+        if (quest.progress >= 1) {
+            continue;
+        }
         // reward if there's a positive change in progress
-        quest.oldProgress = quest.progress;  
+        quest.oldProgress = quest.progress;
         quest.progress = ( itemsTracked - quest.start ) / quest.goal;
         if (quest.progress > quest.oldProgress && quest.progress >= 1) {
             gems += quest.reward;
@@ -159,7 +160,6 @@ function updateQuestsProgression() {
 
 
 function generateQuestsIfNecessary() {
-    console.log("generateQuestsIfNecessary")
     let today = new Date();
     today.setUTCHours(0, -UTCShift, 0, 0);
 
@@ -167,13 +167,11 @@ function generateQuestsIfNecessary() {
     firstWeekDay.setUTCHours(0, -UTCShift, 0, 0);
     firstWeekDay.setUTCDate(firstWeekDay.getUTCDate() - firstWeekDay.getUTCDay() + 1);
 
-    console.log(dailyQuestsStartTime, today.getTime())
     if (dailyQuestsStartTime != today.getTime()) {
         dailyQuestsStartTime = today.getTime();
         dailyQuests = [];
         generateDailyQuests();
     }
-    console.log(weeklyQuestsStartTime, firstWeekDay.getTime())
     if (weeklyQuestsStartTime != firstWeekDay.getTime()) {
         weeklyQuestsStartTime = firstWeekDay.getTime();
         weeklyQuests = [];
@@ -184,7 +182,6 @@ function generateQuestsIfNecessary() {
 
 
 export function loadAllFromLocalStorage() {
-    console.log("loadAllFromLocalStorage")
     let loaded = {}
     loaded = JSON.parse(localStorage.getItem("progress_" + version)) || {}
     gems = loaded.gems || 0;
@@ -203,7 +200,6 @@ export function loadAllFromLocalStorage() {
 }
 
 export function saveAllToLocalStorage() {
-    console.log("saveAllToLocalStorage")
     let loading = {
         gems: gems,
         streak: streak,
@@ -225,25 +221,24 @@ export function saveAllToLocalStorage() {
 
 
 function generateDailyQuests() {
-    console.log("generateDailyQuests")
     if (gamesPlayed == 0) {
         dailyQuests.unshift({ text: "Joue à ton premier exercice", type: "finish_games", start: 0, progress: 0, goal: 1, reward: 20, icon: "quest-exercise" })
-        dailyQuests.unshift({ text: "Gagne 50 XP", type: "gain_xp", start: experience, progress: 0, goal: 30, reward: 40, icon: "quest-bolt" })
+        dailyQuests.unshift({ text: "Gagne 50 XP", type: "gain_xp", start: experience, progress: 0, goal: 30, reward: 30, icon: "quest-bolt" })
     } else {
         let randomGoal = 0;
         switch (Utils.randomInt(0, 2)) {
             case 0:
-                randomGoal = Utils.randomInt(3, 40)*40;
-                dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: experience, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*10+30, icon: "quest-bolt" })
+                randomGoal = Utils.randomInt(3, 4)*20;
+                dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: experience, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "quest-bolt" })
                 break;
             case 1:
                 randomGoal = Utils.randomInt(1, 3);
-                dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: gamesPlayed, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,3)*10+40, icon: "quest-exercise" })
+                dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: gamesPlayed, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "quest-exercise" })
                 break;
             case 2:
-                if (experience%100 >= 0 && experience%100 < 60) {
-                    levelStart = experience-experience%100;
-                    dailyQuests.unshift({ text: "Ai un total de "+goal+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: Utils.randomInt(0,3)*40+40, icon: "quest-bolt" })
+                if (experience%100 >= 40 && experience%100 < 50) {
+                    let levelStart = experience-experience%100;
+                    dailyQuests.unshift({ text: "Ai un total de "+(levelStart+100)+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: Utils.randomInt(0,3)*10+30, icon: "quest-bolt" })
                 }
                 break;
         }
@@ -252,17 +247,17 @@ function generateDailyQuests() {
         if (Utils.randomInt(0, 1) == 1) {
             switch (Utils.randomInt(0, 2)) {
                 case 0:
-                    randomGoal = Utils.randomInt(3, 40)*40;
-                    dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: experience, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*10+30, icon: "quest-bolt" })
+                    randomGoal = Utils.randomInt(3, 4)*20;
+                    dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: experience, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "quest-bolt" })
                     break;
                 case 1:
                     randomGoal = Utils.randomInt(1, 3);
-                    dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: gamesPlayed, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,3)*10+40, icon: "quest-exercise" })
+                    dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: gamesPlayed, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "quest-exercise" })
                     break;
                 case 2:
-                    if (experience%100 >= 0 && experience%100 < 60) {
-                        levelStart = experience-experience%100;
-                        dailyQuests.unshift({ text: "Ai un total de "+goal+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: Utils.randomInt(0,3)*40+40, icon: "quest-bolt" })
+                    if (experience%100 >= 40 && experience%100 < 80) {
+                        let levelStart = experience-experience%100;
+                        dailyQuests.unshift({ text: "Ai un total de "+(levelStart+100)+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: Utils.randomInt(0,3)*10+30, icon: "quest-bolt" })
                     }
                     break;
             }
@@ -272,7 +267,6 @@ function generateDailyQuests() {
 }
 
 function generateWeeklyQuests() {
-    console.log("generateWeeklyQuests")
     // TODO : add weekly quests
 }
 

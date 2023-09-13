@@ -93,32 +93,7 @@
 						</div>
 					</div>
 					<section class="wall__subsection">
-						<h1>Quêtes du jour</h1>
-						<div class="quests__quest">
-							<div class="quest-exercise icon"></div>
-							<div class="quests__side">
-								<span>Joue à ton premier exercice</span>
-								<div class="quests__progress">
-									<div class="quests__progress__bar"><div class="quests__progress__bar__fill"><div class="quests__progress__bar__fill__highlight"></div></div></div>
-									<div class="chest icon"></div>
-								</div>
-							</div>
-						</div>
-						<div class="quests__quest">
-							<div class="quest-bolt icon"></div>
-							<div class="quests__side">
-								<span>Gagne 400 XP</span>
-								<div class="quests__progress">
-									<div class="quests__progress__bar"><div class="quests__progress__bar__fill"><div class="quests__progress__bar__fill__highlight"></div></div></div>
-									<div class="chest icon"></div>
-								</div>
-							</div>
-						</div>
-						<h1>Quêtes de la semaine</h1>
-						<div class="locked quests__quest">
-							<div class="quest-locked icon"></div>
-							Nouvelles quêtes bientôt
-						</div>
+
 					</section>
 				</section>
 			</section>
@@ -142,7 +117,7 @@
 								</div>
 								<img class="stats-aside__dropdown-pointer" src="media/arrow.svg">
 							</li>
-							<li class="exp">
+							<li class="experience">
 								<div class="bolt icon"></div><span>350</span>
 								<div class="stats-aside__dropdown">
 									<section>
@@ -166,7 +141,12 @@
 			</aside>
 		</main>
 
-        <script src="scripts/views/statsHeader.js"></script>
+        <script type="module">
+            import * as Quests from "/scripts/views/questsView.js";
+            window.Quests = Quests;
+            import * as StatsUpdate from "/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+        </script>
 		
 	</body>
 </html>

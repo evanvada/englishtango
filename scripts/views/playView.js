@@ -11,33 +11,6 @@ import * as GameoverAnimation from "/scripts/views/gameoverAnimation.js";
 
 
 
-// canvas configuration & update
-const canvas = document.querySelector(".canvas-overlay");
-const ctx = canvas.getContext("2d");
-
-let lastTime = 0;
-let deltaTime = 0;
-function loop() {
-	ctx.canvas.width  = window.innerWidth;
-	ctx.canvas.height = window.innerHeight;
-	ctx.imageSmoothingEnabled = false;
-
-    const currentTime = new Date();
-    deltaTime = (currentTime - lastTime) / 1000;
-    lastTime = currentTime;
-    
-	update();
-	requestAnimationFrame(loop)
-}
-
-function startLoop() {
-    lastTime = new Date();
-    loop();
-}
-
-
-
-
 export let generalVolume = 1;
 
 export let sounds = {};
@@ -95,6 +68,48 @@ export const exerciceE = document.querySelector('.exercice');
 export const gameoverE = document.querySelector('.gameover');
 
 export const mainE = document.querySelector('main');
+
+
+
+
+
+
+
+
+
+// canvas configuration & update
+
+const canvas = document.querySelector(".canvas-overlay");
+const ctx = canvas.getContext("2d");
+
+let lastTime = 0;
+let deltaTime = 0;
+function loop() {
+	ctx.canvas.width  = window.innerWidth;
+	ctx.canvas.height = window.innerHeight;
+	ctx.imageSmoothingEnabled = false;
+
+    const currentTime = new Date();
+    deltaTime = (currentTime - lastTime) / 1000;
+    lastTime = currentTime;
+    
+	update();
+	requestAnimationFrame(loop)
+}
+
+function startLoop() {
+    lastTime = new Date();
+    loop();
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -185,6 +200,38 @@ function showGameover() {
 
 
 
+// beginning
+DataInterface.fetchAll().then(() => {
+
+    GameProgression.loadAllFromLocalStorage();
+    GameOptions.loadAllFromLocalStorage();
+    GameSession.generateQuestions();
+    GameSession.continueGame(showUserInput, showGameover);
+
+    GameProgression.updateAll();
+
+    startLoop();
+
+    mainE.classList.remove("hidden");
+})
+
+
+let shake = 0;
+
+function update() {
+    
+	// screen shake feedback
+	if (shake>0) { shake -= 1 }
+	let deg = Utils.randomFloat(-shake/10*4, shake/10*4)
+	exerciceAnswerWrongE.style.transform = 'rotate('+deg+'deg)';
+
+	Particles.updateParticles(Particles.glitters, deltaTime)
+	Particles.drawParticles(Particles.glitters, ctx)
+	Particles.updateParticles(Particles.gems, deltaTime)
+	Particles.drawParticles(Particles.gems, ctx)
+
+    if (GameoverAnimation.run) { GameoverAnimation.update(deltaTime) }
+}
 
 
 
@@ -218,69 +265,7 @@ export function continueGameover() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-DataInterface.fetchAll().then(() => {
-
-    GameProgression.loadAllFromLocalStorage();
-    GameOptions.loadAllFromLocalStorage();
-    GameSession.generateQuestions();
-    GameSession.continueGame(showUserInput, showGameover);
-
-    GameProgression.updateAll();
-
-    startLoop();
-
-    mainE.classList.remove("hidden");
-})
-
-
-
-
-
-
-
-
-
-let shake = 0;
-
-function update() {
-    
-	// screen shake feedback
-	if (shake>0) { shake -= 1 }
-	let deg = Utils.randomFloat(-shake/10*4, shake/10*4)
-	exerciceAnswerWrongE.style.transform = 'rotate('+deg+'deg)';
-
-	Particles.updateParticles(Particles.glitters, deltaTime)
-	Particles.drawParticles(Particles.glitters, ctx)
-	Particles.updateParticles(Particles.gems, deltaTime)
-	Particles.drawParticles(Particles.gems, ctx)
-
-    if (GameoverAnimation.run) { GameoverAnimation.update(deltaTime) }
-}
-
-
-
-
-
-
-
-
-let blackOverlayE = document.querySelector('.black-overlay');
-let bannerOverlayE = document.querySelector('.banner.overlay');
-
-function showSureQuit() {
+export function showSureQuit() {
     if (GameSession.rights > 0) {
         blackOverlayE.classList.remove("hidden")
         bannerOverlayE.classList.remove("hidden")
@@ -293,13 +278,29 @@ function showSureQuit() {
     }
 }
 
-function hideSureQuit() {
+export function hideSureQuit() {
     blackOverlayE.classList.remove("show-transition")
     bannerOverlayE.classList.remove("show-transition")
 
     setTimeout(function(){blackOverlayE.classList.add("hidden")}, 200);
     setTimeout(function(){bannerOverlayE.classList.add("hidden")}, 200);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let blackOverlayE = document.querySelector('.black-overlay');
+let bannerOverlayE = document.querySelector('.banner.overlay');
 
 function quitGame() {
     window.removeEventListener("beforeunload", beforeUnloadListener);

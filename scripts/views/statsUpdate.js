@@ -1,7 +1,10 @@
+import * as GameProgression from "/scripts/game/gameProgression.js";
+
+GameProgression.updateAll();
 
 const statsHeaderItemsE = document.querySelectorAll('.stats-header nav ul li');
 
-function showStatsHeaderDropdown(element) {
+export function showStatsHeaderDropdown(element) {
 	let clickedItemE = element.parentNode;
 
 	// unselect all statsHeaderItemsE except this one
@@ -34,3 +37,16 @@ document.querySelectorAll('.stats-header__dropdown').forEach((overlay) => {
 		});
 	});
 });
+
+let expkStatE = document.querySelectorAll('.experience > span');
+let streakStatE = document.querySelectorAll('.streak > span');
+let gemsStatE = document.querySelectorAll('.gems > span');
+
+expkStatE.forEach((stat) => {stat.innerHTML = GameProgression.experience; });
+streakStatE.forEach((stat) => {stat.innerHTML = GameProgression.streak; });
+gemsStatE.forEach((stat) => {stat.innerHTML = GameProgression.gems; });
+
+
+
+
+

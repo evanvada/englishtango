@@ -115,7 +115,7 @@ export function update(deltaTime) {
                         animateQuestAdvancement(advancementInfo)
                         break;
                     case "gems":
-                        startAnimateDuration = 0;
+                        startAnimateDuration = 2.5;
                         animateGemAdvancement(advancementInfo)
                         break;
                     case "text":
@@ -127,12 +127,8 @@ export function update(deltaTime) {
             } else {
                 state = "end"
                 run = false;
-
-                new Promise(async () => {
-                    await Utils.wait(2250)
-                    Main.continueGameoverButtonE.querySelector('span').textContent = "Continuer";
-                    Main.continueGameoverButtonE.className = "color1 flat-button small-heartbeat"
-                });
+                Main.continueGameoverButtonE.querySelector('span').textContent = "Continuer";
+                Main.continueGameoverButtonE.className = "color1 flat-button small-heartbeat"
             }
         }
     }
@@ -333,12 +329,9 @@ function generateAdvancementsInfo() {
         advancementsInfo.push({ type: "text", e: element});
     }
 
-    for (let i in GameSession.gameoverInfo.updatedQuests) {
-        let quest = GameSession.gameoverInfo.updatedQuests[i]
-
+    for (let quest of GameSession.gameoverInfo.updatedQuests) {
         let element = document.createElement('div');
         element.classList.add("advancement")
-        element.classList.add("quest")
         element.innerHTML = `
         <div class="`+quest.icon+` icon"></div>
         <div class="advancement__side">
@@ -373,8 +366,7 @@ function generateAdvancementsInfo() {
         `
         advancementsInfo.push({
             type: "gems",
-            reward: 30,
-            progress: GameProgression.gems - GameSession.gameoverInfo.oldGems,
+            reward: GameProgression.gems - GameSession.gameoverInfo.oldGems,
             e: element
         });
     }
