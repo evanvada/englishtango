@@ -1,4 +1,5 @@
 # English Tango: Reintegration of the Duolingo UI
+![Screenshot](desktop.png)
 
 Practice English by selecting an exercice you want to do, and you can even take multiple exercices simultaneously. Every course and exercice is accessible at any time !
 
@@ -7,6 +8,7 @@ However, due to my limited knowledge in creating dynamic applications, all logic
 Information is stored in localStorage, and the "database" is represented as a JSON file, attempting to emulate the structure of MongoDB.
 
 ## Features
+![Screenshot](desktop.png)
 - Desktop and mobile interfaces
 - The ability to select multiple exercises at once
 - Daily quests that require you to complete a certain number of exercises or earn a specific amount of XP
@@ -27,14 +29,12 @@ The JavaScript files are organized into namespaces:
 - JavaScript for interactivity
 
 ## Roadmap
-
 In the near future, I would like to add the following features:
 - Implementation of study pages that display and explain various concepts. First step, being, showing the user a table of irregular verbs.
 - A page where users can view their entire lexicon, showcasing what they've learned and their proficiency in each concept.
 - Multiple types of questions, including multiple-choice, translation from English to French, and conjugation exercises.
-
-Additionally, I hope to learn the following in the future:
-- Being capable of implement a dynamic website, featuring database integration, user authentication, the ability to load and save user progress.
+Additionally, I hope, in the future, I will be able to:
+- Implement a dynamic website, featuring database integration, user authentication and the ability to load and save user progress.
 
 
 
