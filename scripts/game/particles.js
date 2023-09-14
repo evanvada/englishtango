@@ -1,4 +1,4 @@
-import * as Utils from "/scripts/utils.js";
+import * as Utils from "../utils.js";
 
 export let glitters = [];
 export let gems = [];

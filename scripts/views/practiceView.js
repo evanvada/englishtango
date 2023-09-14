@@ -1,6 +1,6 @@
-import * as GameProgression from "/scripts/game/gameProgression.js";
-import * as GameOptions from "/scripts/game/gameOptions.js";
-import GameBundle from "/scripts/game/gameBundles.js";
+import * as GameProgression from "../game/gameProgression.js";
+import * as GameOptions from "../game/gameOptions.js";
+import GameBundle from "../game/gameBundles.js";
 
 GameProgression.updateAll()
 

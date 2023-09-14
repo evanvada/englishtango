@@ -157,7 +157,13 @@
 		</main>
 
         <script type="module">
-            import * as StatsUpdate from "./scripts/views/statsUpdate.js";
+			// this will work on the GitHub hosted version
+            import * as StatsUpdate from "/englishtango/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+        </script>
+
+        <script type="module">
+            import * as StatsUpdate from "/scripts/views/statsUpdate.js";
             window.StatsUpdate = StatsUpdate;
         </script>
 

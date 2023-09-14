@@ -1,13 +1,13 @@
 
-import * as Utils from "/scripts/utils.js";
-import * as DataInterface from "/scripts/data/dataInterface.js";
+import * as Utils from "../utils.js";
+import * as DataInterface from "../data/dataInterface.js";
 
-import * as GameProgression from "/scripts/game/gameProgression.js";
-import * as GameOptions from "/scripts/game/gameOptions.js";
-import * as GameSession from "/scripts/game/gameSession.js";
-import * as Particles from "/scripts/game/particles.js";
+import * as GameProgression from "../game/gameProgression.js";
+import * as GameOptions from "../game/gameOptions.js";
+import * as GameSession from "../game/gameSession.js";
+import * as Particles from "../game/particles.js";
 
-import * as GameoverAnimation from "/scripts/views/gameoverAnimation.js";
+import * as GameoverAnimation from "./gameoverAnimation.js";
 
 
 

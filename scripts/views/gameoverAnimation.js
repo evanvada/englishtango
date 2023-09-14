@@ -1,10 +1,10 @@
-import * as Utils from "/scripts/utils.js";
+import * as Utils from "../utils.js";
 
-import * as GameProgression from "/scripts/game/gameProgression.js";
-import * as GameSession from "/scripts/game/gameSession.js";
-import * as Particles from "/scripts/game/particles.js";
+import * as GameProgression from "../game/gameProgression.js";
+import * as GameSession from "../game/gameSession.js";
+import * as Particles from "../game/particles.js";
 
-import * as Main from "/scripts/views/playView.js";
+import * as Main from "./playView.js";
 
 
 

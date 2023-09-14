@@ -1,4 +1,4 @@
-import * as GameProgression from "/scripts/game/gameProgression.js";
+import * as GameProgression from "../game/gameProgression.js";
 
 GameProgression.updateAll();
 

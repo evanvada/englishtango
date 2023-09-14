@@ -98,7 +98,13 @@
         </section>
 
         <script type="module">
-            import * as Play from "./scripts/views/playView.js";
+			// this will work on the GitHub hosted version
+            import * as Play from "/englishtango/scripts/views/playView.js";
+            window.Play = Play;
+        </script>
+
+        <script type="module">
+            import * as Play from "/scripts/views/playView.js";
             window.Play = Play;
         </script>
 

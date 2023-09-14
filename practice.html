@@ -64,7 +64,7 @@
 		</header>
 		<footer class="play-footer">
 			<span class="question_count">Pas d'exercices selectionnées</span>
-			<button class="color2 flat-button start_match" disabled><span>COMMENCER</span></button>
+			<button class="color2 flat-button start_match"><span>COMMENCER</span></button>
 		</footer>
 		<footer class="nav-footer">
 			<nav>
@@ -110,51 +110,51 @@
 						</div>
 
 						<div class="course__line">
-							<div class="course__bundle"><button class="round flat-button color4" id="irregular_verbs_2_inf" disabled><div class="inf icon"></div></button><span>Infinitif 2</span></div>
+							<div class="course__bundle"><button class="round flat-button color4" id="irregular_verbs_2_inf"><div class="inf icon"></div></button><span>Infinitif 2</span></div>
 							<div></div>
 							<div></div>
 						</div>
 						<div class="course__line">
 							<div></div>
-							<div class="course__bundle"><button class="round flat-button color4" id="irregular_verbs_2_ps" disabled><div class="ps icon"></div></button><span>Prétérit 2</span></div>
+							<div class="course__bundle"><button class="round flat-button color4" id="irregular_verbs_2_ps"><div class="ps icon"></div></button><span>Prétérit 2</span></div>
 							<div></div>
 						</div>
 						<div class="course__line">
 							<div></div>
 							<div></div>
-							<div class="course__bundle"><button class="round flat-button color4" id="irregular_verbs_2_pp" disabled><div class="pp icon"></div></button><span>Participe 2</span></div>
-						</div>
-
-						<div class="course__line">
-							<div class="course__bundle"><button class="round flat-button color3" id="irregular_verbs_3_inf" disabled><div class="inf icon"></div></button><span>Infinitif 3</span></div>
-							<div></div>
-							<div></div>
-						</div>
-						<div class="course__line">
-							<div></div>
-							<div class="course__bundle"><button class="round flat-button color3" id="irregular_verbs_3_ps" disabled><div class="ps icon"></div></button><span>Prétérit 3</span></div>
-							<div></div>
-						</div>
-						<div class="course__line">
-							<div></div>
-							<div></div>
-							<div class="course__bundle"><button class="round flat-button color3" id="irregular_verbs_3_pp" disabled><div class="pp icon"></div></button><span>Participe 3</span></div>
+							<div class="course__bundle"><button class="round flat-button color4" id="irregular_verbs_2_pp"><div class="pp icon"></div></button><span>Participe 2</span></div>
 						</div>
 
 						<div class="course__line">
-							<div class="course__bundle"><button class="round flat-button color2" id="irregular_verbs_4_inf" disabled><div class="inf icon"></div></button><span>Infinitif 4</span></div>
+							<div class="course__bundle"><button class="round flat-button color3" id="irregular_verbs_3_inf"><div class="inf icon"></div></button><span>Infinitif 3</span></div>
 							<div></div>
 							<div></div>
 						</div>
 						<div class="course__line">
 							<div></div>
-							<div class="course__bundle"><button class="round flat-button color2" id="irregular_verbs_4_ps" disabled><div class="ps icon"></div></button><span>Prétérit 4</span></div>
+							<div class="course__bundle"><button class="round flat-button color3" id="irregular_verbs_3_ps"><div class="ps icon"></div></button><span>Prétérit 3</span></div>
 							<div></div>
 						</div>
 						<div class="course__line">
 							<div></div>
 							<div></div>
-							<div class="course__bundle"><button class="round flat-button color2" id="irregular_verbs_4_pp" disabled><div class="pp icon"></div></button><span>Participe 4</span></div>
+							<div class="course__bundle"><button class="round flat-button color3" id="irregular_verbs_3_pp"><div class="pp icon"></div></button><span>Participe 3</span></div>
+						</div>
+
+						<div class="course__line">
+							<div class="course__bundle"><button class="round flat-button color2" id="irregular_verbs_4_inf"><div class="inf icon"></div></button><span>Infinitif 4</span></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div class="course__line">
+							<div></div>
+							<div class="course__bundle"><button class="round flat-button color2" id="irregular_verbs_4_ps"><div class="ps icon"></div></button><span>Prétérit 4</span></div>
+							<div></div>
+						</div>
+						<div class="course__line">
+							<div></div>
+							<div></div>
+							<div class="course__bundle"><button class="round flat-button color2" id="irregular_verbs_4_pp"><div class="pp icon"></div></button><span>Participe 4</span></div>
 						</div>
 					</section>
 				</section>
@@ -202,15 +202,23 @@
 				</div>
 				<div class="infos-aside__submenu">
 					<span class="question_count">Pas d'exercices selectionnées</span>
-					<button class="color2 flat-button start_match" disabled><span>COMMENCER</span></button>
+					<button class="color2 flat-button start_match"><span>COMMENCER</span></button>
 				</div>
 			</aside>
 		</main>
 
         <script type="module">
-            import * as Practice from "./scripts/views/practiceView.js";
+			// this will work on the GitHub hosted version
+            import * as Practice from "/englishtango/scripts/views/practiceView.js";
             window.Practice = Practice;
-            import * as StatsUpdate from "./scripts/views/statsUpdate.js";
+            import * as StatsUpdate from "/englishtango/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+        </script>
+
+        <script type="module">
+            import * as Practice from "/scripts/views/practiceView.js";
+            window.Practice = Practice;
+            import * as StatsUpdate from "/scripts/views/statsUpdate.js";
             window.StatsUpdate = StatsUpdate;
         </script>
 	</body>
