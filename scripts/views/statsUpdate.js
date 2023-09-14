@@ -38,11 +38,11 @@ document.querySelectorAll('.stats-header__dropdown').forEach((overlay) => {
 	});
 });
 
-let expkStatE = document.querySelectorAll('.experience > span');
+let expStatE = document.querySelectorAll('.experience > span');
 let streakStatE = document.querySelectorAll('.streak > span');
 let gemsStatE = document.querySelectorAll('.gems > span');
 
-expkStatE.forEach((stat) => {stat.innerHTML = GameProgression.experience; });
+expStatE.forEach((stat) => {stat.innerHTML = GameProgression.experience; });
 streakStatE.forEach((stat) => {stat.innerHTML = GameProgression.streak; });
 gemsStatE.forEach((stat) => {stat.innerHTML = GameProgression.gems; });
 
