@@ -1,6 +1,6 @@
-import * as GameSession from "/scripts/game/gameSession.js";
+import * as GameSession from "./gameSession.js";
 
-import * as Utils from "/scripts/utils.js";
+import * as Utils from "../utils.js";
 
 
 

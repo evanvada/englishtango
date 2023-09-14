@@ -1,8 +1,8 @@
-import * as GameProgression from "/scripts/game/gameProgression.js";
-import * as GameOptions from "/scripts/game/gameOptions.js";
-import GameBundle from "/scripts/game/gameBundles.js";
+import * as GameProgression from "./gameProgression.js";
+import * as GameOptions from "./gameOptions.js";
+import GameBundle from "./gameBundles.js";
 
-import * as Utils from "/scripts/utils.js";
+import * as Utils from "../utils.js";
 
 export let questions = [];
 export let archivedQuestions = [];

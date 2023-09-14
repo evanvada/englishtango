@@ -1,5 +1,5 @@
-import * as DataInterface from "/scripts/data/dataInterface.js";
-import GameQuestion from "/scripts/game/gameQuestion.js";
+import * as DataInterface from "../data/dataInterface.js";
+import GameQuestion from "./gameQuestion.js";
 
 export default class GameBundle {
     static bundles = {}

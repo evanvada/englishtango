@@ -142,9 +142,17 @@
 		</main>
 
         <script type="module">
-            import * as Quests from "./scripts/views/questsView.js";
+			// this will work on the GitHub hosted version
+            import * as Quests from "/englishtango/scripts/views/questsView.js";
             window.Quests = Quests;
-            import * as StatsUpdate from "./scripts/views/statsUpdate.js";
+            import * as StatsUpdate from "/englishtango/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+        </script>
+
+        <script type="module">
+            import * as Quests from "/scripts/views/questsView.js";
+            window.Quests = Quests;
+            import * as StatsUpdate from "/scripts/views/statsUpdate.js";
             window.StatsUpdate = StatsUpdate;
         </script>
 		
