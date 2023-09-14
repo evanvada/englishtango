@@ -1130,6 +1130,9 @@ main {
   .wall__title {
     border-radius: 0;
   }
+  .wall__subsection {
+    padding: 0 18px;
+  }
   .wall {
     width: 100%;
     max-width: unset;
