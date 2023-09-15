@@ -1,5 +1,5 @@
 # English Tango: Reintegration of the Duolingo UI
-![Screenshot](desktop.png)
+![Screenshot](desktop1.png)
 
 Practice English by selecting an exercice you want to do, and you can even take multiple exercices simultaneously. Every course and exercice is accessible at any time !
 
@@ -8,7 +8,6 @@ However, due to my limited knowledge in creating dynamic applications, all logic
 Information is stored in localStorage, and the "database" is represented as a JSON file, attempting to emulate the structure of MongoDB.
 
 ## Features
-![Screenshot](desktop.png)
 - Desktop and mobile interfaces
 - The ability to select multiple exercises at once
 - Daily quests that require you to complete a certain number of exercises or earn a specific amount of XP
