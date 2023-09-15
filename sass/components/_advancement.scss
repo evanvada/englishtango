@@ -46,10 +46,7 @@
         }
 
         &.checked .icon span {
-            background: #f77e54;
-            -webkit-text-stroke: 8px;
-            -webkit-text-stroke-color: transparent;
-            background-clip: text;
+            text-shadow: -4px -4px 0 #f77e54, 4px -4px 0 #f77e54, -4px 4px 0 #f77e54, 4px 4px 0 #f77e54;
         }
         .icon {
             display: flex;
@@ -67,10 +64,7 @@
                 width: 100%;
                 text-align: center;
 
-                background: var(--color-grayer);
-                -webkit-text-stroke: 8px;
-                -webkit-text-stroke-color: transparent;
-                background-clip: text;
+                text-shadow: -4px -4px 0 var(--color-grayer), 4px -4px 0 var(--color-grayer), -4px 4px 0 var(--color-grayer), 4px 4px 0 var(--color-grayer);
                 
                 -webkit-pointer-events: none;
                 -moz-pointer-events: none;
