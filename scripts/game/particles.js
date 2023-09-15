@@ -4,7 +4,7 @@ export let glitters = [];
 export let gems = [];
 
 let gemImg = new Image();
-gemImg.src = "../../media/gem.png";
+gemImg.src = "./media/gem.png";
 
 export class Glitter {
 
