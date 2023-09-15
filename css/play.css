@@ -515,7 +515,7 @@ a {
   background-image: none;
 }
 .advancement.streak.checked .icon span {
-  text-shadow: -4px -4px 0 #f77e54, 4px -4px 0 #f77e54, -4px 4px 0 #f77e54, 4px 4px 0 #f77e54;
+  text-shadow: -4px -4px 0 #f77e54, 4px -4px 0 #f77e54, -4px 4px 0 #f77e54, 4px 4px 0 #f77e54, -4px 0 0 #f77e54, 4px 0 0 #f77e54, 0 -4px 0 #f77e54, 0 4px 0 #f77e54;
 }
 .advancement.streak .icon {
   display: flex;
@@ -531,7 +531,7 @@ a {
   font-family: FiraSansBold, sans-serif;
   width: 100%;
   text-align: center;
-  text-shadow: -4px -4px 0 var(--color-grayer), 4px -4px 0 var(--color-grayer), -4px 4px 0 var(--color-grayer), 4px 4px 0 var(--color-grayer);
+  text-shadow: -4px -4px 0 var(--color-grayer), 4px -4px 0 var(--color-grayer), -4px 4px 0 var(--color-grayer), 4px 4px 0 var(--color-grayer), -4px 0 0 var(--color-grayer), 4px 0 0 var(--color-grayer), 0 -4px 0 var(--color-grayer), 0 4px 0 var(--color-grayer);
   -webkit-pointer-events: none;
   -moz-pointer-events: none;
   -ms-pointer-events: none;
