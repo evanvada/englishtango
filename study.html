@@ -20,12 +20,11 @@
 				</ul>
 			</nav>
 		</aside>
-
 		<header class="stats-header">
 			<nav>
 				<ul>
-					<li>
-						<button onclick="showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
+					<li class="language">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Vous étudiez l'anglais
@@ -33,8 +32,8 @@
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
-					<li>
-						<button onclick="showStatsHeaderDropdown(this)"><div class="fire icon"></div><span></span></button>
+					<li class="streak">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="fire icon"></div><span></span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Série
@@ -42,8 +41,8 @@
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
-					<li>
-						<button onclick="showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span></span></button>
+					<li class="experience">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span></span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Expérience
@@ -51,8 +50,8 @@
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
-					<li>
-						<button onclick="showStatsHeaderDropdown(this)"><div class="gem icon"></div><span></span></button>
+					<li class="gems">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="gem icon"></div><span></span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Gemmes
@@ -63,7 +62,6 @@
 				</ul>
 			</nav>
 		</header>
-
 		<footer class="nav-footer">
 			<nav>
 				<ul>

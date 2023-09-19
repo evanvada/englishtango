@@ -18,7 +18,7 @@ Information is stored in localStorage, and the "database" is represented as a JS
 ## Technical Design
 I use Sass and the BEM and 7-1 patterns for styling.
 The JavaScript files are organized into namespaces:
-- "view" handles the interaction between the UI and the core logic.
+- "view" handles the interaction between the DOM and the core logic.
 - "game" manages game logic, including saving user progress and game options to localStorage.
 - "data" handles an artificial database (it is not a real database, just a JSON file).
 

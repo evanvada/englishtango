@@ -15,17 +15,58 @@
 			<nav>
 				<ul>
 					<li><a href="../../practice.html"><div class="practice icon"></div><span>Pratiquer</span></a></li>
-					<li><a href="../../study.html"><div class="study icon"></div><span>Étudier</span></a></li>
+					<li><a class="active" href="../../study.html"><div class="study icon"></div><span>Étudier</span></a></li>
 					<li><a href="../../quests.html"><div class="quests icon"></div><span>Quêtes</span></a></li>
 				</ul>
 			</nav>
 		</aside>
-
+		<header class="stats-header">
+			<nav>
+				<ul>
+					<li class="language">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Vous étudiez l'anglais
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li class="streak">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="fire icon"></div><span></span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Série
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li class="experience">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span></span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Expérience
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+					<li class="gems">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="gem icon"></div><span></span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Gemmes
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+					</li>
+				</ul>
+			</nav>
+		</header>
 		<footer class="nav-footer">
 			<nav>
 				<ul>
 					<li><a href="../../practice.html"><div class="practice icon"></div></a></li>
-					<li><a href="../../study.html"><div class="study icon"></div></a></li>
+					<li><a class="active" href="../../study.html"><div class="study icon"></div></a></li>
 					<li><a href="../../quests.html"><div class="quests icon"></div></a></li>
 				</ul>
 			</nav>
@@ -39,9 +80,19 @@
 
 
 
-
 		<main>
 			<section class="wall">
+				<section class="wall__section">
+					<div class="wall__title color1">
+						<div class="wall__title__left">
+							<h2>Guide de l'Unité : Les verbes irréguliers</h2>
+							<span>Les verbes les plus utilisés en anglais</span>
+						</div>
+					</div>
+					<section class="wall__subsection">
+
+					</section>
+				</section>
 			</section>
 			<aside class="infos-aside">
 				<div class="stats-aside">
@@ -86,6 +137,7 @@
 				</div>
 			</aside>
 		</main>
+
 
         <script type="module">
             import * as StatsUpdate from "/scripts/views/statsUpdate.js";

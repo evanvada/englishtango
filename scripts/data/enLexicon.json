@@ -511,10 +511,6 @@
     {"id": "verb_ps_quit", "en": "quit", "tags": ["verb_base_quit", "verb_ps", "verb_irregular"]},
     {"id": "verb_pp_quit", "en": "quit", "tags": ["verb_base_quit", "verb_pp", "verb_irregular"]},
 	
-    {"id": "verb_inf_seek", "en": "seek", "tags": ["verb_base_seek", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_seek", "en": "sought", "tags": ["verb_base_seek", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_seek", "en": "sought", "tags": ["verb_base_seek", "verb_pp", "verb_irregular"]},
-	
     {"id": "verb_inf_bind", "en": "bind", "tags": ["verb_base_bind", "verb_inf", "verb_irregular"]},
     {"id": "verb_ps_bind", "en": "bound", "tags": ["verb_base_bind", "verb_ps", "verb_irregular"]},
     {"id": "verb_pp_bind", "en": "bound", "tags": ["verb_base_bind", "verb_pp", "verb_irregular"]},
