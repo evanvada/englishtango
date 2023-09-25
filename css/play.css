@@ -38,6 +38,10 @@ a {
   text-decoration: none;
 }
 
+b {
+  font-family: FiraSansBold, sans-serif;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -109,6 +113,19 @@ a {
   font-family: FiraSansBold, sans-serif;
   text-transform: uppercase;
   user-select: none;
+}
+
+b {
+  font-family: FiraSansBold, sans-serif;
+}
+
+code {
+  display: inline-block;
+  font-family: FiraSansBold, sans-serif;
+  padding: 0 4px;
+  font-size: 85%;
+  background-color: rgba(127, 127, 127, 0.1);
+  border-radius: 2px;
 }
 
 .small-heartbeat {

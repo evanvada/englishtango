@@ -95,51 +95,15 @@
 						</div>
 					</div>
 					<section class="wall__subsection">
-						
-						<h2>Explication</h2>
-						<div class="study__message left">
-							<img class="study__message-pointer" src="../../media/arrow.svg">
-							Bla bla
-						</div>
-						<div class="study__message right">
-							<img class="study__message-pointer" src="../../media/arrow.svg">
-							Bla bla
-						</div>
 
 						<h2>Liste des verbes</h2>
-						<!-- <button onclick="StudyUnit.playSong('all')"><div class="song icon"></div></button> -->
-
-						<div class="study__message left" style="width: min(400px, 100%);">
+						<div class="study__message left">
 							<img class="study__message-pointer" src="../../media/arrow.svg">
-							<div class="study__grid">
-								<div class="study__grid-bold">
-									<div class="icon"></div>
-									<div>FR</div>
-									<div>INF</div>
-									<div>PRÉT</div>
-									<div>PART</div>
-								</div>
-								<button onclick="StudyUnit.playSong('do')"><div class="audio icon"></div></button>
-								<div>faire</div>
-								<div>do</div>
-								<div class="checked">did</div>
-								<div>done</div>
-								<button onclick="StudyUnit.playSong('be')"><div class="audio icon"></div></button>
-								<div>être</div>
-								<div>be</div>
-								<div>was</div>
-								<div>been</div>
-								<button onclick="StudyUnit.playSong('do')"><div class="audio icon"></div></button>
-								<div>faire</div>
-								<div>do</div>
-								<div>did</div>
-								<div>done</div>
-								<button onclick="StudyUnit.playSong('be')"><div class="audio icon"></div></button>
-								<div>être</div>
-								<div>be</div>
-								<div>was</div>
-								<div>been</div>
-							</div>
+							Tu peux écouter les verbes chantés
+							<br>
+							<audio controls>
+								<source src="../../media/verbs/unit1/segment.wav"></source>
+							</audio>
 						</div>
 
 						<div class="study__message right" style="width: min(400px, 100%);">
@@ -152,28 +116,86 @@
 									<div>PRÉT</div>
 									<div>PART</div>
 								</div>
-								<button onclick="StudyUnit.playSong('do')"><div class="audio icon"></div></button>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit1/do_all.wav'))"><div class="audio icon"></div></button>
 								<div>faire</div>
 								<div>do</div>
 								<div>did</div>
 								<div>done</div>
-								<button onclick="StudyUnit.playSong('be')"><div class="audio icon"></div></button>
-								<div>être</div>
-								<div>be</div>
-								<div>was</div>
-								<div>been</div>
-								<button onclick="StudyUnit.playSong('do')"><div class="audio icon"></div></button>
-								<div>faire</div>
-								<div>do</div>
-								<div>did</div>
-								<div>done</div>
-								<button onclick="StudyUnit.playSong('be')"><div class="audio icon"></div></button>
-								<div>être</div>
-								<div>be</div>
-								<div>was</div>
-								<div>been</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit1/go_all.wav'))"><div class="audio icon"></div></button>
+								<div>aller</div>
+								<div>go</div>
+								<div>went</div>
+								<div>gone</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit1/buy_all.wav'))"><div class="audio icon"></div></button>
+								<div>acheter</div>
+								<div>buy</div>
+								<div>bought</div>
+								<div>bought</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit1/think_all.wav'))"><div class="audio icon"></div></button>
+								<div>penser</div>
+								<div>think</div>
+								<div>thought</div>
+								<div>thought</div>
 							</div>
 						</div>
+
+						<div class="study__message left" style="width: min(400px, 100%);">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							<div class="study__grid">
+								<div class="study__grid-bold">
+									<div class="icon"></div>
+									<div>FR</div>
+									<div>INF</div>
+									<div>PRÉT</div>
+									<div>PART</div>
+								</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit1/see_all.wav'))"><div class="audio icon"></div></button>
+								<div>voir</div>
+								<div>see</div>
+								<div>saw</div>
+								<div>seen</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit1/be_all.wav'))"><div class="audio icon"></div></button>
+								<div>être</div>
+								<div>be</div>
+								<div>was</div>
+								<div>been</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit1/write_all.wav'))"><div class="audio icon"></div></button>
+								<div>écrire</div>
+								<div>write</div>
+								<div>wrote</div>
+								<div>written</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit1/drive_all.wav'))"><div class="audio icon"></div></button>
+								<div>conduire</div>
+								<div>drive</div>
+								<div>drove</div>
+								<div>driven</div>
+							</div>
+						</div>
+						
+						<h2>Explication</h2>
+						<div class="study__message right">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							Pour parler à certains temps, on doit utiliser le verbe à une autre forme
+							<br>
+							• soit la forme <b>prétérite</b>, où on ajoute la terminaison <b>-ed</b>
+							<br>
+							• soit la forme <b>participe</b>, où on ajoute la terminaison <b>-ed</b> ou <b>-ing</b>
+							<br>
+							• soit la forme <b>infinitive</b>
+						</div>
+						<div class="study__message left">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							Mais pour d'autres, c'est <b>irrégulier</b>, il faut les savoir par coeur
+						</div>
+						<div class="study__message right">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							On utilise l'<b>infinitif</b> pour le présent et le futur
+							<br>
+							On utilise le <b>prétérit</b> pour le passé
+							<br>
+							On utilise le <b>participe</b> pour quelque chose en lien avec le sujet
+						</div>
+
 					</section>
 				</section>
 			</section>
@@ -224,17 +246,17 @@
 
         <script type="module">
 			// this will work on the GitHub hosted version
-            import * as StudyUnit from "/englishtango/scripts/views/studyUnitView.js";
-            window.StudyUnit = StudyUnit;
             import * as StatsUpdate from "/englishtango/scripts/views/statsUpdate.js";
             window.StatsUpdate = StatsUpdate;
+            import * as Utils from "/englishtango/scripts/utils.js";
+            window.Utils = Utils;
         </script>
 
         <script type="module">
-            import * as StudyUnit from "/scripts/views/studyUnitView.js";
-            window.StudyUnit = StudyUnit;
             import * as StatsUpdate from "/scripts/views/statsUpdate.js";
             window.StatsUpdate = StatsUpdate;
+            import * as Utils from "/scripts/utils.js";
+            window.Utils = Utils;
         </script>
 		
 	</body>

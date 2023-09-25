@@ -575,6 +575,9 @@
     {"id": "verb_ps_tread", "en": "trod", "tags": ["verb_base_tread", "verb_ps", "verb_irregular"]},
     {"id": "verb_pp_tread", "en": "trodden", "tags": ["verb_base_tread", "verb_pp", "verb_irregular"]},
 
+    {"id": "verb_inf_shrink", "en": "shrink", "tags": ["verb_base_shrink", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_shrink", "en": "shrank", "tags": ["verb_base_shrink", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_shrink", "en": "shrunk", "tags": ["verb_base_shrink", "verb_pp", "verb_irregular"]},
 
 
 

@@ -22,6 +22,9 @@ for (let quest of GameProgression.dailyQuests) {
         </div>
     </div>
     `
+    if (quest.progress >= 1) {
+        element.querySelector('.chest').style.backgroundImage = "url('media/chest_open.png')"
+    }
     questWall.appendChild(element)
 }
 

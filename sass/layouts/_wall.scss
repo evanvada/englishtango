@@ -175,6 +175,7 @@ main {
 
     .wall__subsection {
         h2 {
+            margin-top: 20px;
             margin-bottom: 20px;
         }
     }
@@ -195,21 +196,23 @@ main {
             border: solid 2px var(--color-gray);
             color: var(--color-text);
 
+            max-width: 100%;
+
+            white-space: normal;
+
+            * {
+                vertical-align: middle;
+            }
+
             &.left {
                 margin-left: 8px;
                 align-self: flex-start;
         
                 .study__message-pointer {
                     position: absolute;
-                    
                     top: 24px;
                     left: 0;
                     transform: translateX(-15px) rotate(-90deg);
-                
-                    width: 20px;
-                    height: 10px;
-                    fill: var(--color-bg);
-                    color: var(--color-gray);
                 }
             }
         
@@ -220,17 +223,28 @@ main {
                 
                 .study__message-pointer {
                     position: absolute;
-                    
                     top: 24px;
                     right: 0;
                     transform: translateX(15px) rotate(90deg);
-                
-                    width: 20px;
-                    height: 10px;
-                    fill: var(--color-bg);
-                    color: var(--color-gray);
                 }
             }
+
+            audio {
+                border-radius: 20px;
+                margin-top: 8px;
+                width: min(300px, 100%);
+            }
+        }
+
+        &__message-pointer {
+            width: 20px;
+            height: 10px;
+
+            -webkit-pointer-events: none;
+            -moz-pointer-events: none;
+            -ms-pointer-events: none; 
+            pointer-events: none;
+            user-select: none;
         }
 
         &__grid {

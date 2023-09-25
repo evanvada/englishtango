@@ -38,6 +38,10 @@ a {
   text-decoration: none;
 }
 
+b {
+  font-family: FiraSansBold, sans-serif;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -109,6 +113,19 @@ a {
   font-family: FiraSansBold, sans-serif;
   text-transform: uppercase;
   user-select: none;
+}
+
+b {
+  font-family: FiraSansBold, sans-serif;
+}
+
+code {
+  display: inline-block;
+  font-family: FiraSansBold, sans-serif;
+  padding: 0 4px;
+  font-size: 85%;
+  background-color: rgba(127, 127, 127, 0.1);
+  border-radius: 2px;
 }
 
 .icon {
@@ -721,6 +738,7 @@ main {
   border-bottom: 3px solid var(--color-gray);
 }
 .wall__section.study .wall__subsection h2 {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .wall__section.study .study__message {
@@ -732,6 +750,11 @@ main {
   background-color: var(--color-bg);
   border: solid 2px var(--color-gray);
   color: var(--color-text);
+  max-width: 100%;
+  white-space: normal;
+}
+.wall__section.study .study__message * {
+  vertical-align: middle;
 }
 .wall__section.study .study__message.left {
   margin-left: 8px;
@@ -742,10 +765,6 @@ main {
   top: 24px;
   left: 0;
   transform: translateX(-15px) rotate(-90deg);
-  width: 20px;
-  height: 10px;
-  fill: var(--color-bg);
-  color: var(--color-gray);
 }
 .wall__section.study .study__message.right {
   margin-right: 8px;
@@ -757,10 +776,20 @@ main {
   top: 24px;
   right: 0;
   transform: translateX(15px) rotate(90deg);
+}
+.wall__section.study .study__message audio {
+  border-radius: 20px;
+  margin-top: 8px;
+  width: min(300px, 100%);
+}
+.wall__section.study .study__message-pointer {
   width: 20px;
   height: 10px;
-  fill: var(--color-bg);
-  color: var(--color-gray);
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  user-select: none;
 }
 .wall__section.study .study__grid {
   display: grid;

@@ -127,7 +127,6 @@
 	{"id": "verb_base_leap", "fr": "bondir / sauter"},
 	{"id": "verb_base_mistake", "fr": "se méprendre"},
 	{"id": "verb_base_quit", "fr": "arrêter / quitter"},
-	{"id": "verb_base_seek", "fr": "chercher"},
 	{"id": "verb_base_bind", "fr": "lier"},
 	{"id": "verb_base_sink", "fr": "couler"},
 	{"id": "verb_base_spill", "fr": "renverser"},
@@ -144,6 +143,7 @@
 	{"id": "verb_base_spin", "fr": "tourner (rapidement)"},
 	{"id": "verb_base_sew", "fr": "coudre"},
 	{"id": "verb_base_tread", "fr": "sautiller"},
+	{"id": "verb_base_shrink", "fr": "rétrécir"},
 
 	{"id": "verb", "fr": "verbe"},
 	{"id": "verb_irregular", "fr": "irrégulier"},
