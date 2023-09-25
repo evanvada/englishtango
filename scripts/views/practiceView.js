@@ -16,7 +16,7 @@ startMatchButtonsE.forEach(btn => {btn.addEventListener('click', () => { window.
 
 
 
-let bundleButtonsE = document.querySelectorAll('.course__bundle button');
+let bundleButtonsE = document.querySelectorAll('.bundles__bundle button');
 for (let button of bundleButtonsE) {
 	button.setAttribute("onclick", "Practice.toggleBundle(this, '" + button.id + "')")
 }
@@ -86,7 +86,7 @@ function setBubble(query, text) {
 	}
 }
 
-setBubble('.course__bundle:nth-of-type(1)', "Sélectionnez un exercice")
+setBubble('.bundles__bundle:nth-of-type(1)', "Sélectionnez un exercice")
 
 
 

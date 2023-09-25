@@ -30,7 +30,7 @@
 								Vous étudiez l'anglais
 							</section>
 						</div>
-						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+						<img class="stats-header__dropdown-pointer hidden" src="../../media/arrow.svg">
 					</li>
 					<li class="streak">
 						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="fire icon"></div><span></span></button>
@@ -39,7 +39,7 @@
 								Série
 							</section>
 						</div>
-						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+						<img class="stats-header__dropdown-pointer hidden" src="../../media/arrow.svg">
 					</li>
 					<li class="experience">
 						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span></span></button>
@@ -48,7 +48,7 @@
 								Expérience
 							</section>
 						</div>
-						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+						<img class="stats-header__dropdown-pointer hidden" src="../../media/arrow.svg">
 					</li>
 					<li class="gems">
 						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="gem icon"></div><span></span></button>
@@ -57,7 +57,7 @@
 								Gemmes
 							</section>
 						</div>
-						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
+						<img class="stats-header__dropdown-pointer hidden" src="../../media/arrow.svg">
 					</li>
 				</ul>
 			</nav>
@@ -82,15 +82,98 @@
 
 		<main>
 			<section class="wall">
-				<section class="wall__section">
-					<div class="wall__title color1">
+				<section class="wall__section study">
+
+					<div class="study__goback">
+
+					</div>
+
+					<div class="wall__title">
 						<div class="wall__title__left">
-							<h2>Guide de l'Unité : Les verbes irréguliers</h2>
+							<h2>Guide de l'Unité : Les verbes irréguliers, partie 1</h2>
 							<span>Les verbes les plus utilisés en anglais</span>
 						</div>
 					</div>
 					<section class="wall__subsection">
+						
+						<h2>Explication</h2>
+						<div class="study__message left">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							Bla bla
+						</div>
+						<div class="study__message right">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							Bla bla
+						</div>
 
+						<h2>Liste des verbes</h2>
+						<!-- <button onclick="StudyUnit.playSong('all')"><div class="song icon"></div></button> -->
+
+						<div class="study__message left" style="width: min(400px, 100%);">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							<div class="study__grid">
+								<div class="study__grid-bold">
+									<div class="icon"></div>
+									<div>FR</div>
+									<div>INF</div>
+									<div>PRÉT</div>
+									<div>PART</div>
+								</div>
+								<button onclick="StudyUnit.playSong('do')"><div class="audio icon"></div></button>
+								<div>faire</div>
+								<div>do</div>
+								<div class="checked">did</div>
+								<div>done</div>
+								<button onclick="StudyUnit.playSong('be')"><div class="audio icon"></div></button>
+								<div>être</div>
+								<div>be</div>
+								<div>was</div>
+								<div>been</div>
+								<button onclick="StudyUnit.playSong('do')"><div class="audio icon"></div></button>
+								<div>faire</div>
+								<div>do</div>
+								<div>did</div>
+								<div>done</div>
+								<button onclick="StudyUnit.playSong('be')"><div class="audio icon"></div></button>
+								<div>être</div>
+								<div>be</div>
+								<div>was</div>
+								<div>been</div>
+							</div>
+						</div>
+
+						<div class="study__message right" style="width: min(400px, 100%);">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							<div class="study__grid">
+								<div class="study__grid-bold">
+									<div class="icon"></div>
+									<div>FR</div>
+									<div>INF</div>
+									<div>PRÉT</div>
+									<div>PART</div>
+								</div>
+								<button onclick="StudyUnit.playSong('do')"><div class="audio icon"></div></button>
+								<div>faire</div>
+								<div>do</div>
+								<div>did</div>
+								<div>done</div>
+								<button onclick="StudyUnit.playSong('be')"><div class="audio icon"></div></button>
+								<div>être</div>
+								<div>be</div>
+								<div>was</div>
+								<div>been</div>
+								<button onclick="StudyUnit.playSong('do')"><div class="audio icon"></div></button>
+								<div>faire</div>
+								<div>do</div>
+								<div>did</div>
+								<div>done</div>
+								<button onclick="StudyUnit.playSong('be')"><div class="audio icon"></div></button>
+								<div>être</div>
+								<div>be</div>
+								<div>was</div>
+								<div>been</div>
+							</div>
+						</div>
 					</section>
 				</section>
 			</section>
@@ -140,6 +223,16 @@
 
 
         <script type="module">
+			// this will work on the GitHub hosted version
+            import * as StudyUnit from "/englishtango/scripts/views/studyUnitView.js";
+            window.StudyUnit = StudyUnit;
+            import * as StatsUpdate from "/englishtango/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+        </script>
+
+        <script type="module">
+            import * as StudyUnit from "/scripts/views/studyUnitView.js";
+            window.StudyUnit = StudyUnit;
             import * as StatsUpdate from "/scripts/views/statsUpdate.js";
             window.StatsUpdate = StatsUpdate;
         </script>

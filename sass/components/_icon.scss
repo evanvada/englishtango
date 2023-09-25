@@ -34,13 +34,6 @@
         background-image: url(../media/settings.png);
     }
 
-
-
-
-
-
-
-
     &.english {
         background-image: url(../media/english.png);
     }
@@ -60,28 +53,38 @@
         background-image: url(../media/gem.png);
     }
 
+    &.audio {
+        background-size: 30px;
+        background-image: url(../media/audio.png);
+    }
+
+    &.song {
+        background-size: 30px;
+        background-image: url(../media/song.png);
+    }
+
     &.chest {
         background-image: url(../media/chest.png);
     }
 
-    &.quest-exercise {
-        background-image: url(../media/quest_exercise.png);
+    &.large-exercise {
+        background-image: url(../media/large_exercise.png);
     }
 
-    &.quest-locked {
-        background-image: url(../media/quest_locked.png);
+    &.large-locked {
+        background-image: url(../media/large_locked.png);
     }
 
-    &.quest-bolt {
-        background-image: url(../media/quest_bolt.png);
+    &.large-bolt {
+        background-image: url(../media/large_bolt.png);
     }
 
-    &.quest-fire {
-        background-image: url(../media/quest_fire.png);
+    &.large-fire {
+        background-image: url(../media/large_fire.png);
     }
 
-    &.quest-gem {
-        background-image: url(../media/quest_gem.png);
+    &.large-gem {
+        background-image: url(../media/large_gem.png);
     }
 
 

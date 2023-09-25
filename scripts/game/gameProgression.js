@@ -222,23 +222,23 @@ export function saveAllToLocalStorage() {
 
 function generateDailyQuests() {
     if (gamesPlayed == 0) {
-        dailyQuests.unshift({ text: "Joue à ton premier exercice", type: "finish_games", start: 0, progress: 0, goal: 1, reward: 20, icon: "quest-exercise" })
-        dailyQuests.unshift({ text: "Gagne 50 XP", type: "gain_xp", start: experience, progress: 0, goal: 30, reward: 30, icon: "quest-bolt" })
+        dailyQuests.unshift({ text: "Joue à ton premier exercice", type: "finish_games", start: 0, progress: 0, goal: 1, reward: 20, icon: "large-exercise" })
+        dailyQuests.unshift({ text: "Gagne 50 XP", type: "gain_xp", start: experience, progress: 0, goal: 30, reward: 30, icon: "large-bolt" })
     } else {
         let randomGoal = 0;
         switch (Utils.randomInt(0, 2)) {
             case 0:
                 randomGoal = Utils.randomInt(3, 4)*20;
-                dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: experience, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "quest-bolt" })
+                dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: experience, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "large-bolt" })
                 break;
             case 1:
                 randomGoal = Utils.randomInt(1, 3);
-                dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: gamesPlayed, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "quest-exercise" })
+                dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: gamesPlayed, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "large-exercise" })
                 break;
             case 2:
                 if (experience%100 >= 40 && experience%100 < 50) {
                     let levelStart = experience-experience%100;
-                    dailyQuests.unshift({ text: "Ai un total de "+(levelStart+100)+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: Utils.randomInt(0,3)*10+30, icon: "quest-bolt" })
+                    dailyQuests.unshift({ text: "Ai un total de "+(levelStart+100)+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: Utils.randomInt(0,3)*10+30, icon: "large-bolt" })
                 }
                 break;
         }
@@ -248,16 +248,16 @@ function generateDailyQuests() {
             switch (Utils.randomInt(0, 2)) {
                 case 0:
                     randomGoal = Utils.randomInt(3, 4)*20;
-                    dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: experience, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "quest-bolt" })
+                    dailyQuests.unshift({ text: "Gagne "+randomGoal+" XP", type: "gain_xp", start: experience, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "large-bolt" })
                     break;
                 case 1:
                     randomGoal = Utils.randomInt(1, 3);
-                    dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: gamesPlayed, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "quest-exercise" })
+                    dailyQuests.unshift({ text: "Joue à "+randomGoal+" exercices", type: "finish_games", start: gamesPlayed, progress: 0, goal: randomGoal, reward: Utils.randomInt(0,5)*5+10, icon: "large-exercise" })
                     break;
                 case 2:
                     if (experience%100 >= 40 && experience%100 < 80) {
                         let levelStart = experience-experience%100;
-                        dailyQuests.unshift({ text: "Ai un total de "+(levelStart+100)+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: Utils.randomInt(0,3)*10+30, icon: "quest-bolt" })
+                        dailyQuests.unshift({ text: "Ai un total de "+(levelStart+100)+" XP", type: "gain_xp", start: levelStart, progress: 0, goal: levelStart+100, reward: Utils.randomInt(0,3)*10+30, icon: "large-bolt" })
                     }
                     break;
             }

@@ -297,7 +297,7 @@ function generateAdvancementsInfo() {
         advancementsInfo.push({ type: "text", e: element });
 
         // create list of 10 days before and after today
-        let innerHTML = '<div class="quest-fire icon"><span>1</span></div><div class="advancement__days">'
+        let innerHTML = '<div class="large-fire icon"><span>1</span></div><div class="advancement__days">'
         for (let i = 0; i < 21; i++) {
 
             let day = new Date();
@@ -359,7 +359,7 @@ function generateAdvancementsInfo() {
         element.classList.add("advancement")
         element.classList.add("gems")
         element.innerHTML = `
-        <div class="quest-gem icon"></div>
+        <div class="large-gem icon"></div>
         <div class="advancement__side">
             <span></span>
         </div>

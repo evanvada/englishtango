@@ -4,7 +4,7 @@ GameProgression.updateAll();
 
 const questWall = document.querySelector(".wall__subsection");
 
-let title = document.createElement('h1');
+let title = document.createElement('h2');
 title.innerHTML = "Quêtes du jour"
 questWall.appendChild(title)
 
@@ -26,7 +26,7 @@ for (let quest of GameProgression.dailyQuests) {
 }
 
 
-let title2 = document.createElement('h1');
+let title2 = document.createElement('h2');
 title2.innerHTML = "Quêtes de la semaine"
 questWall.appendChild(title2)
 
@@ -35,7 +35,7 @@ let element = document.createElement('div');
 element.classList.add("locked")
 element.classList.add("advancement")
 element.innerHTML = `
-<div class="quest-locked icon"></div>
+<div class="large-locked icon"></div>
     Nouvelles quêtes bientôt
 </div>
 `

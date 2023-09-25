@@ -255,23 +255,31 @@ a {
   background-size: 30px;
   background-image: url(../media/gem.png);
 }
+.icon.audio {
+  background-size: 30px;
+  background-image: url(../media/audio.png);
+}
+.icon.song {
+  background-size: 30px;
+  background-image: url(../media/song.png);
+}
 .icon.chest {
   background-image: url(../media/chest.png);
 }
-.icon.quest-exercise {
-  background-image: url(../media/quest_exercise.png);
+.icon.large-exercise {
+  background-image: url(../media/large_exercise.png);
 }
-.icon.quest-locked {
-  background-image: url(../media/quest_locked.png);
+.icon.large-locked {
+  background-image: url(../media/large_locked.png);
 }
-.icon.quest-bolt {
-  background-image: url(../media/quest_bolt.png);
+.icon.large-bolt {
+  background-image: url(../media/large_bolt.png);
 }
-.icon.quest-fire {
-  background-image: url(../media/quest_fire.png);
+.icon.large-fire {
+  background-image: url(../media/large_fire.png);
 }
-.icon.quest-gem {
-  background-image: url(../media/quest_gem.png);
+.icon.large-gem {
+  background-image: url(../media/large_gem.png);
 }
 .icon.inf {
   background-image: url(../media/inf.png);
