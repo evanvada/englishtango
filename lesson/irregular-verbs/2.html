@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../../favicon.png" type="image/png">
+		<link rel="stylesheet" href="../../css/practice.css">
+		<title>English Tango</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	</head>
+	<body>
+
+		<aside class="nav-aside">
+			<a href="../../index.html" class="logo"><h1>English Tango</h1></a>
+			<a href="../../index.html" class="logo-small"><h1>EnTa</h1></a>
+			<nav>
+				<ul>
+					<li><a href="../../practice.html"><div class="practice icon"></div><span>Pratiquer</span></a></li>
+					<li><a class="active" href="../../study.html"><div class="study icon"></div><span>Étudier</span></a></li>
+					<li><a href="../../quests.html"><div class="quests icon"></div><span>Quêtes</span></a></li>
+				</ul>
+			</nav>
+		</aside>
+		<header class="stats-header">
+			<nav>
+				<ul>
+					<li class="language">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Vous étudiez l'anglais
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="../../media/arrow.svg">
+					</li>
+					<li class="streak">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="fire icon"></div><span></span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Série
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="../../media/arrow.svg">
+					</li>
+					<li class="experience">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span></span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Expérience
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="../../media/arrow.svg">
+					</li>
+					<li class="gems">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="gem icon"></div><span></span></button>
+						<div class="stats-header__dropdown hidden">
+							<section>
+								Gemmes
+							</section>
+						</div>
+						<img class="stats-header__dropdown-pointer hidden" src="../../media/arrow.svg">
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<footer class="nav-footer">
+			<nav>
+				<ul>
+					<li><a href="../../practice.html"><div class="practice icon"></div></a></li>
+					<li><a class="active" href="../../study.html"><div class="study icon"></div></a></li>
+					<li><a href="../../quests.html"><div class="quests icon"></div></a></li>
+				</ul>
+			</nav>
+		</footer>
+
+
+
+
+
+
+
+
+
+		<main>
+			<section class="wall">
+				<section class="wall__section study">
+
+					<div class="study__goback">
+
+					</div>
+
+					<div class="wall__title">
+						<div class="wall__title__left">
+							<h2>Guide de l'Unité : Les verbes irréguliers, partie 1</h2>
+							<span>Les verbes les plus utilisés en anglais</span>
+						</div>
+					</div>
+					<section class="wall__subsection">
+
+						<h2>Liste des verbes</h2>
+						<div class="study__message left">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							Tu peux écouter les verbes chantés
+							<br>
+							<audio controls>
+								<source src="../../media/verbs/unit2/segment.wav"></source>
+							</audio>
+						</div>
+
+						<div class="study__message right" style="width: min(400px, 100%);">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							<div class="study__grid">
+								<div class="study__grid-bold">
+									<div class="icon"></div>
+									<div>FR</div>
+									<div>INF</div>
+									<div>PRÉT</div>
+									<div>PART</div>
+								</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit2/seek_all.wav'))"><div class="audio icon"></div></button>
+								<div>chercher</div>
+								<div>seek</div>
+								<div>sought</div>
+								<div>sought</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit2/catch_all.wav'))"><div class="audio icon"></div></button>
+								<div>attrapper</div>
+								<div>catch</div>
+								<div>caught</div>
+								<div>caught</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit2/eat_all.wav'))"><div class="audio icon"></div></button>
+								<div>manger</div>
+								<div>eat</div>
+								<div>ate</div>
+								<div>eaten</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit2/beat_all.wav'))"><div class="audio icon"></div></button>
+								<div>battre</div>
+								<div>beat</div>
+								<div>beat</div>
+								<div>beaten</div>
+							</div>
+						</div>
+
+						<div class="study__message left" style="width: min(400px, 100%);">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							<div class="study__grid">
+								<div class="study__grid-bold">
+									<div class="icon"></div>
+									<div>FR</div>
+									<div>INF</div>
+									<div>PRÉT</div>
+									<div>PART</div>
+								</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit2/freeze_all.wav'))"><div class="audio icon"></div></button>
+								<div>geler</div>
+								<div>freeze</div>
+								<div>froze</div>
+								<div>frozen</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit2/choose_all.wav'))"><div class="audio icon"></div></button>
+								<div>choisir</div>
+								<div>choose</div>
+								<div>chose</div>
+								<div>chosen</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit2/grow_all.wav'))"><div class="audio icon"></div></button>
+								<div>grandir / pousser</div>
+								<div>grow</div>
+								<div>grew</div>
+								<div>grown</div>
+								<button onclick="Utils.playSound(new Audio('../../media/verbs/unit2/know_all.wav'))"><div class="audio icon"></div></button>
+								<div>savoir</div>
+								<div>know</div>
+								<div>knew</div>
+								<div>known</div>
+							</div>
+						</div>
+						
+						<h2>Explication</h2>
+						<div class="study__message right">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							Pour parler à certains temps, on doit utiliser le verbe à une autre forme
+							<br>
+							• soit la forme <b>prétérite</b>, où on ajoute la terminaison <b>-ed</b>
+							<br>
+							• soit la forme <b>participe</b>, où on ajoute la terminaison <b>-ed</b> ou <b>-ing</b>
+							<br>
+							• soit la forme <b>infinitive</b>
+						</div>
+						<div class="study__message left">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							Mais pour d'autres, c'est <b>irrégulier</b>, il faut les savoir par coeur
+						</div>
+						<div class="study__message right">
+							<img class="study__message-pointer" src="../../media/arrow.svg">
+							On utilise l'<b>infinitif</b> pour le présent et le futur
+							<br>
+							On utilise le <b>prétérit</b> pour le passé
+							<br>
+							On utilise le <b>participe</b> pour quelque chose en lien avec le sujet
+						</div>
+
+					</section>
+				</section>
+			</section>
+			<aside class="infos-aside">
+				<div class="stats-aside">
+					<nav>
+						<ul>
+							<li class="language">
+								<div class="english icon"></div><div class="stats-aside__dropdown">
+									<section>
+										Vous étudiez l'anglais
+									</section>
+								</div><img class="stats-aside__dropdown-pointer" src="../../media/arrow.svg">
+							</li>
+							<li class="streak">
+								<div class="fire icon"></div><span>1</span>
+								<div class="stats-aside__dropdown">
+									<section>
+										Série
+									</section>
+								</div>
+								<img class="stats-aside__dropdown-pointer" src="../../media/arrow.svg">
+							</li>
+							<li class="experience">
+								<div class="bolt icon"></div><span>350</span>
+								<div class="stats-aside__dropdown">
+									<section>
+										Expérience
+									</section>
+								</div>
+								<img class="stats-aside__dropdown-pointer" src="../../media/arrow.svg">
+							</li>
+							<li class="gems">
+								<div class="gem icon"></div><span>50</span>
+								<div class="stats-aside__dropdown">
+									<section>
+										Gemmes
+									</section>
+								</div>
+								<img class="stats-aside__dropdown-pointer" src="../../media/arrow.svg">
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</aside>
+		</main>
+
+
+        <script type="module">
+			// this will work on the GitHub hosted version
+            import * as StatsUpdate from "/englishtango/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+            import * as Utils from "/englishtango/scripts/utils.js";
+            window.Utils = Utils;
+        </script>
+
+        <script type="module">
+            import * as StatsUpdate from "/scripts/views/statsUpdate.js";
+            window.StatsUpdate = StatsUpdate;
+            import * as Utils from "/scripts/utils.js";
+            window.Utils = Utils;
+        </script>
+		
+	</body>
+</html>

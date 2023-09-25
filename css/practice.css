@@ -38,6 +38,10 @@ a {
   text-decoration: none;
 }
 
+b {
+  font-family: FiraSansBold, sans-serif;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -111,6 +115,19 @@ a {
   user-select: none;
 }
 
+b {
+  font-family: FiraSansBold, sans-serif;
+}
+
+code {
+  display: inline-block;
+  font-family: FiraSansBold, sans-serif;
+  padding: 0 4px;
+  font-size: 85%;
+  background-color: rgba(127, 127, 127, 0.1);
+  border-radius: 2px;
+}
+
 .icon {
   background-repeat: no-repeat;
   background-position: center;
@@ -151,23 +168,31 @@ a {
   background-size: 30px;
   background-image: url(../media/gem.png);
 }
+.icon.audio {
+  background-size: 30px;
+  background-image: url(../media/audio.png);
+}
+.icon.song {
+  background-size: 30px;
+  background-image: url(../media/song.png);
+}
 .icon.chest {
   background-image: url(../media/chest.png);
 }
-.icon.quest-exercise {
-  background-image: url(../media/quest_exercise.png);
+.icon.large-exercise {
+  background-image: url(../media/large_exercise.png);
 }
-.icon.quest-locked {
-  background-image: url(../media/quest_locked.png);
+.icon.large-locked {
+  background-image: url(../media/large_locked.png);
 }
-.icon.quest-bolt {
-  background-image: url(../media/quest_bolt.png);
+.icon.large-bolt {
+  background-image: url(../media/large_bolt.png);
 }
-.icon.quest-fire {
-  background-image: url(../media/quest_fire.png);
+.icon.large-fire {
+  background-image: url(../media/large_fire.png);
 }
-.icon.quest-gem {
-  background-image: url(../media/quest_gem.png);
+.icon.large-gem {
+  background-image: url(../media/large_gem.png);
 }
 .icon.inf {
   background-image: url(../media/inf.png);
@@ -621,7 +646,8 @@ main {
   width: 100%;
   padding: 30px 18px;
   border-radius: 14px;
-  color: white;
+  color: var(--color-light);
+  margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -637,16 +663,15 @@ main {
   height: 54px;
 }
 .wall__section {
-  gap: 24px;
   display: flex;
   align-items: stretch;
   flex-direction: column;
 }
 .wall__subsection {
-  gap: 16px;
   display: flex;
   align-items: stretch;
   flex-direction: column;
+  gap: 0;
 }
 
 .color1.wall__title {
@@ -665,27 +690,26 @@ main {
   background: var(--color-4);
 }
 
-.wall__section.quests h1 {
-  padding-top: 16px;
-}
 .wall__section.quests .wall__subsection {
   font-family: FiraSansBold, sans-serif;
   font-size: 1.25rem;
-  gap: 8px;
 }
-.wall__section.quests .wall__subsection h1 {
-  padding-top: 16px;
+.wall__section.quests .wall__subsection h2 {
+  margin-bottom: 20px;
 }
 .wall__section.quests .wall__subsection .advancement {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.wall__section.course .course__line {
+.wall__section.bundles .wall__subsection {
+  gap: 24px;
+}
+.wall__section.bundles .bundles__line {
   gap: 50px;
   display: flex;
   justify-content: center;
 }
-.wall__section.course .course__bundle {
+.wall__section.bundles .bundles__bundle {
   position: relative;
   width: 64px;
   display: flex;
@@ -693,16 +717,104 @@ main {
   flex-direction: column;
   gap: 6px;
 }
-.wall__section.course .course__bundle span {
+.wall__section.bundles .bundles__bundle span {
   font-family: FiraSansBold, sans-serif;
   white-space: nowrap;
   text-align: center;
 }
-.wall__section.course .course__bundle .icon {
+.wall__section.bundles .bundles__bundle .icon {
   background-size: 24px;
 }
-.wall__section.course .course__bundle button:disabled ~ span {
+.wall__section.bundles .bundles__bundle button:disabled ~ span {
   color: var(--color-gray);
+}
+
+.wall__section.study .wall__title {
+  background: none;
+  padding: 30px 0;
+  border-radius: 0;
+  color: var(--color-dark);
+  border-top: 3px solid var(--color-gray);
+  border-bottom: 3px solid var(--color-gray);
+}
+.wall__section.study .wall__subsection h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.wall__section.study .study__message {
+  position: relative;
+  border-radius: 12px;
+  white-space: nowrap;
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: var(--color-bg);
+  border: solid 2px var(--color-gray);
+  color: var(--color-text);
+  max-width: 100%;
+  white-space: normal;
+}
+.wall__section.study .study__message * {
+  vertical-align: middle;
+}
+.wall__section.study .study__message.left {
+  margin-left: 8px;
+  align-self: flex-start;
+}
+.wall__section.study .study__message.left .study__message-pointer {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  transform: translateX(-15px) rotate(-90deg);
+}
+.wall__section.study .study__message.right {
+  margin-right: 8px;
+  align-self: flex-end;
+  background: #F7F7F7;
+}
+.wall__section.study .study__message.right .study__message-pointer {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  transform: translateX(15px) rotate(90deg);
+}
+.wall__section.study .study__message audio {
+  border-radius: 20px;
+  margin-top: 8px;
+  width: min(300px, 100%);
+}
+.wall__section.study .study__message-pointer {
+  width: 20px;
+  height: 10px;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  user-select: none;
+}
+.wall__section.study .study__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0 6px;
+}
+.wall__section.study .study__grid * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wall__section.study .study__grid .icon {
+  background-size: 26px;
+}
+.wall__section.study .study__grid > *:nth-child(5n+3) {
+  color: #777777;
+}
+.wall__section.study .study__grid .checked {
+  background-color: rgba(0, 151, 211, 0.15);
+  border-radius: 12px;
+}
+.wall__section.study .study__grid-bold {
+  display: contents;
+  font-family: FiraSansBold, sans-serif;
+  text-transform: uppercase;
 }
 
 .infos-aside {

@@ -20,12 +20,11 @@
 				</ul>
 			</nav>
 		</aside>
-
 		<header class="stats-header">
 			<nav>
 				<ul>
-					<li>
-						<button onclick="showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
+					<li class="language">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="english icon"></div></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Vous étudiez l'anglais
@@ -33,8 +32,8 @@
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
-					<li>
-						<button onclick="showStatsHeaderDropdown(this)"><div class="fire icon"></div><span></span></button>
+					<li class="streak">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="fire icon"></div><span></span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Série
@@ -42,8 +41,8 @@
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
-					<li>
-						<button onclick="showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span></span></button>
+					<li class="experience">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="bolt icon"></div><span></span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Expérience
@@ -51,8 +50,8 @@
 						</div>
 						<img class="stats-header__dropdown-pointer hidden" src="media/arrow.svg">
 					</li>
-					<li>
-						<button onclick="showStatsHeaderDropdown(this)"><div class="gem icon"></div><span></span></button>
+					<li class="gems">
+						<button onclick="StatsUpdate.showStatsHeaderDropdown(this)"><div class="gem icon"></div><span></span></button>
 						<div class="stats-header__dropdown hidden">
 							<section>
 								Gemmes
@@ -63,7 +62,6 @@
 				</ul>
 			</nav>
 		</header>
-
 		<footer class="nav-footer">
 			<nav>
 				<ul>
@@ -85,7 +83,7 @@
 
 		<main>
 			<section class="wall">
-				<section class="wall__section course">
+				<section class="wall__section bundles">
 					<div class="wall__title color1">
 						<div class="wall__title__left">
 							<h2>Les verbes irréguliers</h2>
@@ -94,20 +92,25 @@
 						<a href="practice.html" class="border flat-button color1"><span>EXERCICES</span></a>
 					</div>
 					<section class="wall__subsection">
-						<div class="course__line">
-							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/1.html'" class="square flat-button color1"><div>1</div></button><span>Verbes n°1</span></div>
-							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/2.html'" class="square flat-button color1" disabled><div>2</div></button><span>Verbes n°2</span></div>
+						<div class="bundles__line">
+							<div class="bundles__bundle"><button onclick="window.location.href='lesson/irregular-verbs/1.html'" class="square flat-button color1"><div>1</div></button><span>Verbes 1</span></div>
+							<div class="bundles__bundle"><button onclick="window.location.href='lesson/irregular-verbs/2.html'" class="square flat-button color1"><div>2</div></button><span>Verbes 2</span></div>
+							<div></div>
 						</div>
-						<div class="course__line">
-							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/3.html'" class="square flat-button color3" disabled><div>3</div></button><span>Verbes n°3</span></div>
-							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/4.html'" class="square flat-button color3" disabled><div>4</div></button><span>Verbes n°4</span></div>
-							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/5.html'" class="square flat-button color3" disabled><div>5</div></button><span>Verbes n°5</span></div>
+						<div class="bundles__line">
+							<div></div>
+							<div class="bundles__bundle"><button onclick="window.location.href='lesson/irregular-verbs/3.html'" class="square flat-button color4"><div>3</div></button><span>Verbes 3</span></div>
+							<div class="bundles__bundle"><button onclick="window.location.href='lesson/irregular-verbs/4.html'" class="square flat-button color4"><div>4</div></button><span>Verbes 4</span></div>
 						</div>
-						<div class="course__line">
-							<div class="half-flex"></div>
-							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/6.html'" class="square flat-button color2" disabled><div>6</div></button><span>Verbes n°6</span></div>
-							<div class="course__bundle"><button onclick="window.location.href='lesson/irregular-verbs/7.html'" class="square flat-button color2" disabled><div>7</div></button><span>Verbes n°7</span></div>
-							<div class="half-flex"></div>
+						<div class="bundles__line">
+							<div class="bundles__bundle"><button onclick="window.location.href='lesson/irregular-verbs/5.html'" class="square flat-button color3" disabled><div>5</div></button><span>Verbes 5</span></div>
+							<div class="bundles__bundle"><button onclick="window.location.href='lesson/irregular-verbs/6.html'" class="square flat-button color2" disabled><div>6</div></button><span>Verbes 6</span></div>
+							<div></div>
+						</div>
+						<div class="bundles__line">
+							<div></div>
+							<div class="bundles__bundle"><button onclick="window.location.href='lesson/irregular-verbs/7.html'" class="square flat-button color2" disabled><div>7</div></button><span>Verbes 7</span></div>
+							<div class="bundles__bundle"><button onclick="window.location.href='lesson/irregular-verbs/8.html'" class="square flat-button color2" disabled><div>8</div></button><span>Verbes 8</span></div>
 						</div>
 					</section>
 				</section>

@@ -42,5 +42,18 @@ a {
 	user-select: none;
 }
 
+b {
+	font-family: FiraSansBold, sans-serif;
+}
+
+code {
+	display: inline-block;
+	font-family: FiraSansBold, sans-serif;
+
+	padding: 0 4px;
+	font-size: 85%;
+	background-color: rgba(127, 127, 127, 0.1);
+	border-radius: 2px;
+}
 
 

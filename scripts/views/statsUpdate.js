@@ -17,8 +17,8 @@ export function showStatsHeaderDropdown(element) {
     });
 
 	// swich state of item
-	dropdownE = clickedItemE.querySelector('.stats-header__dropdown');
-	dropdownPointerE = clickedItemE.querySelector('.stats-header__dropdown-pointer');
+	let dropdownE = clickedItemE.querySelector('.stats-header__dropdown');
+	let dropdownPointerE = clickedItemE.querySelector('.stats-header__dropdown-pointer');
 	if (dropdownE.classList.contains('hidden')) {
 		dropdownE.classList.remove('hidden');
 		dropdownPointerE.classList.remove('hidden');
@@ -38,14 +38,21 @@ document.querySelectorAll('.stats-header__dropdown').forEach((overlay) => {
 	});
 });
 
-let expStatE = document.querySelectorAll('.experience > span');
-let streakStatE = document.querySelectorAll('.streak > span');
-let gemsStatE = document.querySelectorAll('.gems > span');
+let expStatE = document.querySelector('.experience > span');
+let streakStatE = document.querySelector('.streak > span');
+let gemsStatE = document.querySelector('.gems > span');
 
-expStatE.forEach((stat) => {stat.innerHTML = GameProgression.experience; });
-streakStatE.forEach((stat) => {stat.innerHTML = GameProgression.streak; });
-gemsStatE.forEach((stat) => {stat.innerHTML = GameProgression.gems; });
+expStatE.innerHTML = GameProgression.experience;
+streakStatE.innerHTML = GameProgression.streak;
+gemsStatE.innerHTML = GameProgression.gems;
 
+expStatE = document.querySelector('.experience > button > span');
+streakStatE = document.querySelector('.streak > button > span');
+gemsStatE = document.querySelector('.gems > button > span');
+
+expStatE.innerHTML = GameProgression.experience;
+streakStatE.innerHTML = GameProgression.streak;
+gemsStatE.innerHTML = GameProgression.gems;
 
 
 
