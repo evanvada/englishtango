@@ -57,3 +57,44 @@ gemsStatE.innerHTML = GameProgression.gems;
 
 
 
+let questDisplay = document.querySelector('.infos-aside__submenu.quest')
+if (questDisplay != null && GameProgression.dailyQuests.length > 0) {
+	let quest = GameProgression.dailyQuests[0];
+
+    let element = document.createElement('div');
+    element.classList.add("advancement")
+	element.style.border = "none";
+	element.style.borderRadius = "0";
+	element.style.padding = "0";
+	element.style.minHeight = "80px";
+    element.innerHTML = `
+    <div class="`+quest.icon+` icon"></div>
+    <div class="advancement__side">
+        <span>`+quest.text+`</span>
+        <div class="advancement__progress">
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: `+(quest.progress*100*1.05)+`%"><div class="progress-bar__fill__highlight"></div></div></div>
+            <div class="chest icon"></div>
+        </div>
+    </div>
+    `
+    if (quest.progress >= 1) {
+        element.querySelector('.chest').style.backgroundImage = "url('media/chest_open.png')"
+    }
+    questDisplay.appendChild(element)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,14 +14,6 @@
     flex-direction: column;
     gap: 12px;
     
-    h3 {
-        font-family: FiraSansBold, sans-serif;
-        text-transform: uppercase;
-        font-size: 1.25rem;
-        text-align: center;
-        width: fit-content;
-    }
-    
     &__submenu {
         border: solid 2px var(--color-gray);
         border-radius: 14px;
@@ -31,6 +23,18 @@
         flex-direction: column;
         align-items: start;
         gap: 10px;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 0.8rem;
+        color: var(--color-grayer);
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 20px;
+        padding-top: 12px;
     }
 }
 
@@ -247,57 +251,6 @@
 
 
 
-
-
-
-
-.floating-bubble {
-    position: absolute;
-    z-index: 9;
-
-    left: 50%;
-    transform: translateX(-50%) translateY(-100%) translateY(-8px);
-
-    border-radius: 12px;
-    padding: 12px;
-    white-space: nowrap;
-
-    background-color: var(--color-bg);
-    border: solid 2px var(--color-gray);
-
-    font-family: FiraSansBold, sans-serif;
-    text-transform: uppercase;
-    color: var(--color-1);
-    text-align: center;
-
-    -webkit-pointer-events: none;
-    -moz-pointer-events: none;
-    -ms-pointer-events: none; 
-    pointer-events: none;
-    user-select: none;
-
-    animation: floatingAnimation 1.5s ease-in-out infinite;
-
-    &-pointer {
-        position: absolute;
-        z-index: 9;
-
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%) translateY(100%) rotate(180deg);
-    
-        width: 20px;
-        height: 10px;
-        fill: var(--color-bg);
-        color: var(--color-gray);
-
-        -webkit-pointer-events: none;
-        -moz-pointer-events: none;
-        -ms-pointer-events: none; 
-        pointer-events: none;
-        user-select: none;
-    }
-}
 
 
 

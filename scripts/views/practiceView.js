@@ -12,7 +12,7 @@ const questionCountSpansE = document.querySelectorAll('.question_count');
 const startMatchButtonsE = document.querySelectorAll('.start_match');
 
 startMatchButtonsE.forEach(btn => { btn.disabled = true });
-startMatchButtonsE.forEach(btn => {btn.addEventListener('click', () => { window.location.href = 'play.html'; })});
+startMatchButtonsE.forEach(btn => { btn.addEventListener('click', () => { window.location.href = 'play.html'; }) });
 
 
 
