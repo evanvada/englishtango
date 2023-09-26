@@ -7,12 +7,15 @@
 
     min-height: 100px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
 
     border: 2px solid var(--color-gray);
     border-radius: 14px;
     padding: 16px;
+
+    align-self: stretch;
 
     > .icon {
         background-size: 48px;
@@ -21,7 +24,7 @@
     }
 
     font-family: FiraSansBold, sans-serif;
-    font-size: 1.25rem;
+    font-size: 1rem;
 
     &.locked {
         background: #f7f7f7;
@@ -76,6 +79,7 @@
     }
     
     &.gems {
+        font-size: 1.25rem;
         color: var(--color-2);
         span {
             width: fit-content;
