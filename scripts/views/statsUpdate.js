@@ -81,12 +81,13 @@ if (questDisplay != null && GameProgression.dailyQuests.length > 0) {
         element.querySelector('.chest').style.backgroundImage = "url('media/chest_open.png')"
     }
     questDisplay.appendChild(element)
-
 }
 
 
 
-
+document.querySelectorAll('.unloaded').forEach((element) => {
+	element.classList.remove('unloaded');
+});
 
 
 

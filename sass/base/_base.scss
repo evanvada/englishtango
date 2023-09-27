@@ -34,6 +34,10 @@ html {
     overflow-y: scroll;
 }
 
+.unloaded {
+	display: none !important;
+}
+
 .hidden {
     display: none !important;
 }
