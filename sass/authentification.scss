@@ -99,10 +99,43 @@
             padding-left: 16px;
         }
     }
+
+    &__centered-message {
+        position: absolute;
+
+        width: min(100vw, 400px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+
+        border-radius: 12px;
+        padding: 32px 24px;
+    
+        background-color: var(--color-bg);
+        border: solid 2px var(--color-gray);
+    }
 }
 
 
 
 
+
+.black-overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.4);
+    transition: opacity 0.1s linear;
+    opacity: 0;
+    &.show-transition {
+        opacity: 1;
+    }
+}
 
 
