@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="favicon.png" type="image/png">
+		<link rel="stylesheet" href="css/authentification.css">
+		<title>English Tango</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	</head>
+	<body>
+        <main class="authentification">
+            <section class="authentification__top">
+                <a href="javascript:history.back()" class="cross icon"></a>
+                <button onclick="location.replace('signup.html'); return false;" class="border gray flat-button"><span>Connexion</span></button>
+            </section>
+            <section class="authentification__body">
+                <form class="authentification__form">
+                    <h1>Connexion</h1>
+                    <input class="flat-input" id="emailusername" name="emailusername" type="text" placeholder="E-mail ou nom d'utilisateur" required>
+                    <input class="flat-input" id="password" name="password" type="password" placeholder="Mot de passe" required>
+                    <button class="color1 flat-button" type="submit"><span>Se connecter</span></button>
+                </form>
+                <section class="authentification__conditions">
+                    En te connectant à English Tango, tu acceptes nos <a href="">Conditions d'utilisation</a> et notre <a href="">Politique de confidentialité</a>.
+                </section>
+            </section>
+        </main>
+	</body>
+</html>

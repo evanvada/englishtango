@@ -205,6 +205,12 @@ code {
 }
 .icon.cross {
   background-image: url(../media/cross.svg);
+  background-size: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 .icon.right {
   background-image: url(../media/right.svg);
