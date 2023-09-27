@@ -671,6 +671,11 @@ code {
   align-items: center;
   font-size: 1.25rem;
 }
+.banner__side span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .banner .flat-button {
   font-size: 1rem;
 }

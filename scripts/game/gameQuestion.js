@@ -12,7 +12,7 @@ export default class GameQuestion {
         this.prompt = "";
         this.solutions = [];
         this.answers = [];
-
+        this.audio = null;
         this.conceptID = "";
     }
 

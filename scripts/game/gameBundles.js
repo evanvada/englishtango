@@ -81,6 +81,8 @@ class GameIrregularVerbsBundle extends GameBundle {
             }
             question.conceptID = "lexeme " + lexemes[i][0].id
 
+            question.audio = lexemes[i][0].audio
+            
             questions.push(question)
         }
 

@@ -21,12 +21,53 @@
                     <input class="flat-input" id="email" name="email" type="email" placeholder="E-mail" required>
                     <input class="flat-input" id="password1" name="password1" type="password" placeholder="Mot de passe" required>
                     <input class="flat-input" id="password2" name="password2" type="password" placeholder="Mot de passe" required>
-                    <button class="color1 flat-button" type="submit"><span>Créer mon compte</span></button>
+                    <button class="color1 flat-button" type="submit" onclick="showCenteredMessage(); return false;"><span>Créer mon compte</span></button>
                 </form>
                 <section class="authentification__conditions">
                     En te connectant à English Tango, tu acceptes nos <a href="">Conditions d'utilisation</a> et notre <a href="">Politique de confidentialité</a>.
                 </section>
             </section>
         </main>
+        <section class="black-overlay hidden" onclick="hideCenteredMessage()"></section>
+        <section class="authentification__centered-message hidden">
+            <p>
+                Bip Bop ! Les données du formulaires sont envoyés au serveur...
+            </p>
+            <p>
+                Si seulement je savais faire ça !
+            </p>
+            <p>
+                Mais je pourrais apprendre ça... je sais pas
+                <br>
+                Peut-être, avec un contrat d'apprentissage ?
+            </p>
+            <p style="color: var(--color-grayer);">
+                (de plus, GitHub n'héberge que des sites statiques, il n'y a pas de communication avec le serveur)
+            </p>
+            <p></p>
+            <button class="color1 flat-button" onclick="hideCenteredMessage()"><span>D'accord</span></button>
+        </section>
+
+        <script>
+            let blackOverlayE = document.querySelector('.black-overlay');
+            let centeredMessageE = document.querySelector('.authentification__centered-message');
+
+            function showCenteredMessage() {
+                blackOverlayE.classList.remove("hidden")
+                centeredMessageE.classList.remove("hidden")
+                void blackOverlayE.offsetWidth;
+                void centeredMessageE.offsetWidth;
+                blackOverlayE.classList.add("show-transition")
+                centeredMessageE.classList.add("show-transition")
+            }
+            
+            function hideCenteredMessage() {
+                blackOverlayE.classList.remove("show-transition")
+                centeredMessageE.classList.remove("show-transition")
+            
+                setTimeout(function(){blackOverlayE.classList.add("hidden")}, 100);
+                setTimeout(function(){centeredMessageE.classList.add("hidden")}, 100);
+            }
+        </script>
 	</body>
 </html>

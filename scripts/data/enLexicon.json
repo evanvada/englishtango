@@ -1,583 +1,583 @@
 [
-	{"id": "verb_inf_be", "en": "be", "tags": ["verb_base_be", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_be", "en": "was", "tags": ["verb_base_be", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_be", "en": "been", "tags": ["verb_base_be", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_buy", "en": "buy", "tags": ["verb_base_buy", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_buy", "en": "bought", "tags": ["verb_base_buy", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_buy", "en": "bought", "tags": ["verb_base_buy", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_do", "en": "do", "tags": ["verb_base_do", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_do", "en": "did", "tags": ["verb_base_do", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_do", "en": "done", "tags": ["verb_base_do", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_drink", "en": "drink", "tags": ["verb_base_drink", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_drink", "en": "drank", "tags": ["verb_base_drink", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_drink", "en": "drunk", "tags": ["verb_base_drink", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_eat", "en": "eat", "tags": ["verb_base_eat", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_eat", "en": "ate", "tags": ["verb_base_eat", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_eat", "en": "eaten", "tags": ["verb_base_eat", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_find", "en": "find", "tags": ["verb_base_find", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_find", "en": "found", "tags": ["verb_base_find", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_find", "en": "found", "tags": ["verb_base_find", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_give", "en": "give", "tags": ["verb_base_give", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_give", "en": "gave", "tags": ["verb_base_give", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_give", "en": "given", "tags": ["verb_base_give", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_go", "en": "go", "tags": ["verb_base_go", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_go", "en": "went", "tags": ["verb_base_go", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_go", "en": "gone", "tags": ["verb_base_go", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_have", "en": "have", "tags": ["verb_base_have", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_have", "en": "had", "tags": ["verb_base_have", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_have", "en": "had", "tags": ["verb_base_have", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_make", "en": "make", "tags": ["verb_base_make", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_make", "en": "made", "tags": ["verb_base_make", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_make", "en": "made", "tags": ["verb_base_make", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_read", "en": "read", "tags": ["verb_base_read", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_read", "en": "read", "tags": ["verb_base_read", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_read", "en": "read", "tags": ["verb_base_read", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_see", "en": "see", "tags": ["verb_base_see", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_see", "en": "saw", "tags": ["verb_base_see", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_see", "en": "seen", "tags": ["verb_base_see", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_sleep", "en": "sleep", "tags": ["verb_base_sleep", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_sleep", "en": "slept", "tags": ["verb_base_sleep", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_sleep", "en": "slept", "tags": ["verb_base_sleep", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_speak", "en": "speak", "tags": ["verb_base_speak", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_speak", "en": "spoke", "tags": ["verb_base_speak", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_speak", "en": "spoken", "tags": ["verb_base_speak", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_take", "en": "take", "tags": ["verb_base_take", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_take", "en": "took", "tags": ["verb_base_take", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_take", "en": "taken", "tags": ["verb_base_take", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_wear", "en": "wear", "tags": ["verb_base_wear", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_wear", "en": "wore", "tags": ["verb_base_wear", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_wear", "en": "worn", "tags": ["verb_base_wear", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_write", "en": "write", "tags": ["verb_base_write", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_write", "en": "wrote", "tags": ["verb_base_write", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_write", "en": "written", "tags": ["verb_base_write", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_become", "en": "become", "tags": ["verb_base_become", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_become", "en": "became", "tags": ["verb_base_become", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_become", "en": "become", "tags": ["verb_base_become", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_begin", "en": "begin", "tags": ["verb_base_begin", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_begin", "en": "began", "tags": ["verb_base_begin", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_begin", "en": "begun", "tags": ["verb_base_begin", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_hold", "en": "hold", "tags": ["verb_base_hold", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_hold", "en": "held", "tags": ["verb_base_hold", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_hold", "en": "held", "tags": ["verb_base_hold", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_come", "en": "come", "tags": ["verb_base_come", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_come", "en": "came", "tags": ["verb_base_come", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_come", "en": "come", "tags": ["verb_base_come", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_draw", "en": "draw", "tags": ["verb_base_draw", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_draw", "en": "drew", "tags": ["verb_base_draw", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_draw", "en": "drawn", "tags": ["verb_base_draw", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_burn", "en": "burn", "tags": ["verb_base_burn", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_burn", "en": "burnt", "tags": ["verb_base_burn", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_burn", "en": "burnt", "tags": ["verb_base_burn", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_build", "en": "build", "tags": ["verb_base_build", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_build", "en": "built", "tags": ["verb_base_build", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_build", "en": "built", "tags": ["verb_base_build", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_break", "en": "break", "tags": ["verb_base_break", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_break", "en": "broke", "tags": ["verb_base_break", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_break", "en": "broken", "tags": ["verb_base_break", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_choose", "en": "choose", "tags": ["verb_base_choose", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_choose", "en": "chose", "tags": ["verb_base_choose", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_choose", "en": "chosen", "tags": ["verb_base_choose", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_fall", "en": "fall", "tags": ["verb_base_fall", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_fall", "en": "fell", "tags": ["verb_base_fall", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_fall", "en": "fallen", "tags": ["verb_base_fall", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_feel", "en": "feel", "tags": ["verb_base_feel", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_feel", "en": "felt", "tags": ["verb_base_feel", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_feel", "en": "felt", "tags": ["verb_base_feel", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_forget", "en": "forget", "tags": ["verb_base_forget", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_forget", "en": "forgot", "tags": ["verb_base_forget", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_forget", "en": "forgotten", "tags": ["verb_base_forget", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_hear", "en": "hear", "tags": ["verb_base_hear", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_hear", "en": "heard", "tags": ["verb_base_hear", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_hear", "en": "heard", "tags": ["verb_base_hear", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_cut", "en": "cut", "tags": ["verb_base_cut", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_cut", "en": "cut", "tags": ["verb_base_cut", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_cut", "en": "cut", "tags": ["verb_base_cut", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_drive", "en": "drive", "tags": ["verb_base_drive", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_drive", "en": "drove", "tags": ["verb_base_drive", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_drive", "en": "driven", "tags": ["verb_base_drive", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_keep", "en": "keep", "tags": ["verb_base_keep", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_keep", "en": "kept", "tags": ["verb_base_keep", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_keep", "en": "kept", "tags": ["verb_base_keep", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_dream", "en": "dream", "tags": ["verb_base_dream", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_dream", "en": "dreamt", "tags": ["verb_base_dream", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_dream", "en": "dreamt", "tags": ["verb_base_dream", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_know", "en": "know", "tags": ["verb_base_know", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_know", "en": "knew", "tags": ["verb_base_know", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_know", "en": "known", "tags": ["verb_base_know", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_learn", "en": "learn", "tags": ["verb_base_learn", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_learn", "en": "learnt", "tags": ["verb_base_learn", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_learn", "en": "learnt", "tags": ["verb_base_learn", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_light", "en": "light", "tags": ["verb_base_light", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_light", "en": "lit", "tags": ["verb_base_light", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_light", "en": "lit", "tags": ["verb_base_light", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_meet", "en": "meet", "tags": ["verb_base_meet", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_meet", "en": "met", "tags": ["verb_base_meet", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_meet", "en": "met", "tags": ["verb_base_meet", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_pay", "en": "pay", "tags": ["verb_base_pay", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_pay", "en": "paid", "tags": ["verb_base_pay", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_pay", "en": "paid", "tags": ["verb_base_pay", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_ride", "en": "ride", "tags": ["verb_base_ride", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_ride", "en": "rode", "tags": ["verb_base_ride", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_ride", "en": "ridden", "tags": ["verb_base_ride", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_ring", "en": "ring", "tags": ["verb_base_ring", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_ring", "en": "rang", "tags": ["verb_base_ring", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_ring", "en": "rung", "tags": ["verb_base_ring", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_run", "en": "run", "tags": ["verb_base_run", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_run", "en": "ran", "tags": ["verb_base_run", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_run", "en": "run", "tags": ["verb_base_run", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_sell", "en": "sell", "tags": ["verb_base_sell", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_sell", "en": "sold", "tags": ["verb_base_sell", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_sell", "en": "sold", "tags": ["verb_base_sell", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_shut", "en": "shut", "tags": ["verb_base_shut", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_shut", "en": "shut", "tags": ["verb_base_shut", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_shut", "en": "shut", "tags": ["verb_base_shut", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_sing", "en": "sing", "tags": ["verb_base_sing", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_sing", "en": "sang", "tags": ["verb_base_sing", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_sing", "en": "sung", "tags": ["verb_base_sing", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_spell", "en": "spell", "tags": ["verb_base_spell", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spell", "en": "spelt", "tags": ["verb_base_spell", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spell", "en": "spelt", "tags": ["verb_base_spell", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_swim", "en": "swim", "tags": ["verb_base_swim", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_swim", "en": "swam", "tags": ["verb_base_swim", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_swim", "en": "swum", "tags": ["verb_base_swim", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_teach", "en": "teach", "tags": ["verb_base_teach", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_teach", "en": "taught", "tags": ["verb_base_teach", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_teach", "en": "taught", "tags": ["verb_base_teach", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_tell", "en": "tell", "tags": ["verb_base_tell", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_tell", "en": "told", "tags": ["verb_base_tell", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_tell", "en": "told", "tags": ["verb_base_tell", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_think", "en": "think", "tags": ["verb_base_think", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_think", "en": "thought", "tags": ["verb_base_think", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_think", "en": "thought", "tags": ["verb_base_think", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_understand", "en": "understand", "tags": ["verb_base_understand", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_understand", "en": "understood", "tags": ["verb_base_understand", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_understand", "en": "understood", "tags": ["verb_base_understand", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_shine", "en": "shine", "tags": ["verb_base_shine", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_shine", "en": "shone", "tags": ["verb_base_shine", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_shine", "en": "shone", "tags": ["verb_base_shine", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_blow", "en": "blow", "tags": ["verb_base_blow", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_blow", "en": "blew", "tags": ["verb_base_blow", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_blow", "en": "blown", "tags": ["verb_base_blow", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_bring", "en": "bring", "tags": ["verb_base_bring", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_bring", "en": "brought", "tags": ["verb_base_bring", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_bring", "en": "brought", "tags": ["verb_base_bring", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_catch", "en": "catch", "tags": ["verb_base_catch", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_catch", "en": "caught", "tags": ["verb_base_catch", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_catch", "en": "caught", "tags": ["verb_base_catch", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_cost", "en": "cost", "tags": ["verb_base_cost", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_cost", "en": "cost", "tags": ["verb_base_cost", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_cost", "en": "cost", "tags": ["verb_base_cost", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_beat", "en": "beat", "tags": ["verb_base_beat", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_beat", "en": "beat", "tags": ["verb_base_beat", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_beat", "en": "beaten", "tags": ["verb_base_beat", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_bite", "en": "bite", "tags": ["verb_base_bite", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_bite", "en": "bit", "tags": ["verb_base_bite", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_bite", "en": "bitten", "tags": ["verb_base_bite", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_bleed", "en": "bleed", "tags": ["verb_base_bleed", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_bleed", "en": "bled", "tags": ["verb_base_bleed", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_bleed", "en": "bled", "tags": ["verb_base_bleed", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_fight", "en": "fight", "tags": ["verb_base_fight", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_fight", "en": "fought", "tags": ["verb_base_fight", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_fight", "en": "fought", "tags": ["verb_base_fight", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_deal", "en": "deal", "tags": ["verb_base_deal", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_deal", "en": "dealt", "tags": ["verb_base_deal", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_deal", "en": "dealt", "tags": ["verb_base_deal", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_dig", "en": "dig", "tags": ["verb_base_dig", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_dig", "en": "dug", "tags": ["verb_base_dig", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_dig", "en": "dug", "tags": ["verb_base_dig", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_fly", "en": "fly", "tags": ["verb_base_fly", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_fly", "en": "flew", "tags": ["verb_base_fly", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_fly", "en": "flown", "tags": ["verb_base_fly", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_forbid", "en": "forbid", "tags": ["verb_base_forbid", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_forbid", "en": "forbade", "tags": ["verb_base_forbid", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_forbid", "en": "forbidden", "tags": ["verb_base_forbid", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_freeze", "en": "freeze", "tags": ["verb_base_freeze", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_freeze", "en": "froze", "tags": ["verb_base_freeze", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_freeze", "en": "frozen", "tags": ["verb_base_freeze", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_get", "en": "get", "tags": ["verb_base_get", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_get", "en": "got", "tags": ["verb_base_get", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_get", "en": "got", "tags": ["verb_base_get", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_grow", "en": "grow", "tags": ["verb_base_grow", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_grow", "en": "grew", "tags": ["verb_base_grow", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_grow", "en": "grown", "tags": ["verb_base_grow", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_hide", "en": "hide", "tags": ["verb_base_hide", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_hide", "en": "hid", "tags": ["verb_base_hide", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_hide", "en": "hidden", "tags": ["verb_base_hide", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_let", "en": "let", "tags": ["verb_base_let", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_let", "en": "let", "tags": ["verb_base_let", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_let", "en": "let", "tags": ["verb_base_let", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_hit", "en": "hit", "tags": ["verb_base_hit", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_hit", "en": "hit", "tags": ["verb_base_hit", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_hit", "en": "hit", "tags": ["verb_base_hit", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_lie", "en": "lie", "tags": ["verb_base_lie", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_lie", "en": "lay", "tags": ["verb_base_lie", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_lie", "en": "lain", "tags": ["verb_base_lie", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_lose", "en": "lose", "tags": ["verb_base_lose", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_lose", "en": "lost", "tags": ["verb_base_lose", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_lose", "en": "lost", "tags": ["verb_base_lose", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_mean", "en": "mean", "tags": ["verb_base_mean", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_mean", "en": "meant", "tags": ["verb_base_mean", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_mean", "en": "meant", "tags": ["verb_base_mean", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_leave", "en": "leave", "tags": ["verb_base_leave", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_leave", "en": "left", "tags": ["verb_base_leave", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_leave", "en": "left", "tags": ["verb_base_leave", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_wake", "en": "wake", "tags": ["verb_base_wake", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_wake", "en": "woke", "tags": ["verb_base_wake", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_wake", "en": "woken", "tags": ["verb_base_wake", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_send", "en": "send", "tags": ["verb_base_send", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_send", "en": "sent", "tags": ["verb_base_send", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_send", "en": "sent", "tags": ["verb_base_send", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_say", "en": "say", "tags": ["verb_base_say", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_say", "en": "said", "tags": ["verb_base_say", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_say", "en": "said", "tags": ["verb_base_say", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_put", "en": "put", "tags": ["verb_base_put", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_put", "en": "put", "tags": ["verb_base_put", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_put", "en": "put", "tags": ["verb_base_put", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_set", "en": "set", "tags": ["verb_base_set", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_set", "en": "set", "tags": ["verb_base_set", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_set", "en": "set", "tags": ["verb_base_set", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_shake", "en": "shake", "tags": ["verb_base_shake", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_shake", "en": "shook", "tags": ["verb_base_shake", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_shake", "en": "shaken", "tags": ["verb_base_shake", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_show", "en": "show", "tags": ["verb_base_show", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_show", "en": "showed", "tags": ["verb_base_show", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_show", "en": "shown", "tags": ["verb_base_show", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_sit", "en": "sit", "tags": ["verb_base_sit", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_sit", "en": "sat", "tags": ["verb_base_sit", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_sit", "en": "sat", "tags": ["verb_base_sit", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_spend", "en": "spend", "tags": ["verb_base_spend", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spend", "en": "spent", "tags": ["verb_base_spend", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spend", "en": "spent", "tags": ["verb_base_spend", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_spread", "en": "spread", "tags": ["verb_base_spread", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spread", "en": "spread", "tags": ["verb_base_spread", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spread", "en": "spread", "tags": ["verb_base_spread", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_stand", "en": "stand", "tags": ["verb_base_stand", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_stand", "en": "stood", "tags": ["verb_base_stand", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_stand", "en": "stood", "tags": ["verb_base_stand", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_hurt", "en": "hurt", "tags": ["verb_base_hurt", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_hurt", "en": "hurt", "tags": ["verb_base_hurt", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_hurt", "en": "hurt", "tags": ["verb_base_hurt", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_lend", "en": "lend", "tags": ["verb_base_lend", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_lend", "en": "lent", "tags": ["verb_base_lend", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_lend", "en": "lent", "tags": ["verb_base_lend", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_steal", "en": "steal", "tags": ["verb_base_steal", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_steal", "en": "stole", "tags": ["verb_base_steal", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_steal", "en": "stolen", "tags": ["verb_base_steal", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_strike", "en": "strike", "tags": ["verb_base_strike", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_strike", "en": "struck", "tags": ["verb_base_strike", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_strike", "en": "struck", "tags": ["verb_base_strike", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_swear", "en": "swear", "tags": ["verb_base_swear", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_swear", "en": "swore", "tags": ["verb_base_swear", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_swear", "en": "sworn", "tags": ["verb_base_swear", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_sweep", "en": "sweep", "tags": ["verb_base_sweep", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_sweep", "en": "swept", "tags": ["verb_base_sweep", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_sweep", "en": "swept", "tags": ["verb_base_sweep", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_throw", "en": "throw", "tags": ["verb_base_throw", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_throw", "en": "threw", "tags": ["verb_base_throw", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_throw", "en": "thrown", "tags": ["verb_base_throw", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_weep", "en": "weep", "tags": ["verb_base_weep", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_weep", "en": "wept", "tags": ["verb_base_weep", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_weep", "en": "wept", "tags": ["verb_base_weep", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_win", "en": "win", "tags": ["verb_base_win", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_win", "en": "won", "tags": ["verb_base_win", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_win", "en": "won", "tags": ["verb_base_win", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_awake", "en": "awake", "tags": ["verb_base_awake", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_awake", "en": "awoke", "tags": ["verb_base_awake", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_awake", "en": "awaken", "tags": ["verb_base_awake", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_bend", "en": "bend", "tags": ["verb_base_bend", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_bend", "en": "bent", "tags": ["verb_base_bend", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_bend", "en": "bent", "tags": ["verb_base_bend", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_bet", "en": "bet", "tags": ["verb_base_bet", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_bet", "en": "bet", "tags": ["verb_base_bet", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_bet", "en": "bet", "tags": ["verb_base_bet", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_breed", "en": "breed", "tags": ["verb_base_breed", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_breed", "en": "bred", "tags": ["verb_base_breed", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_breed", "en": "bred", "tags": ["verb_base_breed", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_burst", "en": "burst", "tags": ["verb_base_burst", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_burst", "en": "burst", "tags": ["verb_base_burst", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_burst", "en": "burst", "tags": ["verb_base_burst", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_cast", "en": "cast", "tags": ["verb_base_cast", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_cast", "en": "cast", "tags": ["verb_base_cast", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_cast", "en": "cast", "tags": ["verb_base_cast", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_feed", "en": "feed", "tags": ["verb_base_feed", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_feed", "en": "fed", "tags": ["verb_base_feed", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_feed", "en": "fed", "tags": ["verb_base_feed", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_forgive", "en": "forgive", "tags": ["verb_base_forgive", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_forgive", "en": "forgave", "tags": ["verb_base_forgive", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_forgive", "en": "forgiven", "tags": ["verb_base_forgive", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_hang", "en": "hang", "tags": ["verb_base_hang", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_hang", "en": "hung", "tags": ["verb_base_hang", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_hang", "en": "hung", "tags": ["verb_base_hang", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_kneel", "en": "kneel", "tags": ["verb_base_kneel", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_kneel", "en": "knelt", "tags": ["verb_base_kneel", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_kneel", "en": "knelt", "tags": ["verb_base_kneel", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_lay", "en": "lay", "tags": ["verb_base_lay", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_lay", "en": "laid", "tags": ["verb_base_lay", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_lay", "en": "laid", "tags": ["verb_base_lay", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_lead", "en": "lead", "tags": ["verb_base_lead", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_lead", "en": "led", "tags": ["verb_base_lead", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_lead", "en": "led", "tags": ["verb_base_lead", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_shoot", "en": "shoot", "tags": ["verb_base_shoot", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_shoot", "en": "shot", "tags": ["verb_base_shoot", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_shoot", "en": "shot", "tags": ["verb_base_shoot", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_smell", "en": "smell", "tags": ["verb_base_smell", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_smell", "en": "smelt", "tags": ["verb_base_smell", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_smell", "en": "smelt", "tags": ["verb_base_smell", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_spill", "en": "spill", "tags": ["verb_base_spill", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spill", "en": "spilt", "tags": ["verb_base_spill", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spill", "en": "spilt", "tags": ["verb_base_spill", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_spoil", "en": "spoil", "tags": ["verb_base_spoil", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spoil", "en": "spoilt", "tags": ["verb_base_spoil", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spoil", "en": "spoilt", "tags": ["verb_base_spoil", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_stick", "en": "stick", "tags": ["verb_base_stick", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_stick", "en": "stuck", "tags": ["verb_base_stick", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_stick", "en": "stuck", "tags": ["verb_base_stick", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_sting", "en": "sting", "tags": ["verb_base_sting", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_sting", "en": "stung", "tags": ["verb_base_sting", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_sting", "en": "stung", "tags": ["verb_base_sting", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_upset", "en": "upset", "tags": ["verb_base_upset", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_upset", "en": "upset", "tags": ["verb_base_upset", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_upset", "en": "upset", "tags": ["verb_base_upset", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_withdraw", "en": "withdraw", "tags": ["verb_base_withdraw", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_withdraw", "en": "withdrew", "tags": ["verb_base_withdraw", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_withdraw", "en": "withdrawn", "tags": ["verb_base_withdraw", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_seek", "en": "seek", "tags": ["verb_base_seek", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_seek", "en": "sought", "tags": ["verb_base_seek", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_seek", "en": "sought", "tags": ["verb_base_seek", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_rise", "en": "rise", "tags": ["verb_base_rise", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_rise", "en": "rose", "tags": ["verb_base_rise", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_rise", "en": "risen", "tags": ["verb_base_rise", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_arise", "en": "arise", "tags": ["verb_base_arise", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_arise", "en": "arose", "tags": ["verb_base_arise", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_arise", "en": "arisen", "tags": ["verb_base_arise", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_broadcast", "en": "broadcast", "tags": ["verb_base_broadcast", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_broadcast", "en": "broadcast", "tags": ["verb_base_broadcast", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_broadcast", "en": "broadcast", "tags": ["verb_base_broadcast", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_cling", "en": "cling", "tags": ["verb_base_cling", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_cling", "en": "clung", "tags": ["verb_base_cling", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_cling", "en": "clung", "tags": ["verb_base_cling", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_creep", "en": "creep", "tags": ["verb_base_creep", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_creep", "en": "crept", "tags": ["verb_base_creep", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_creep", "en": "crept", "tags": ["verb_base_creep", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_flee", "en": "flee", "tags": ["verb_base_flee", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_flee", "en": "fled", "tags": ["verb_base_flee", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_flee", "en": "fled", "tags": ["verb_base_flee", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_forecast", "en": "forecast", "tags": ["verb_base_forecast", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_forecast", "en": "forecast", "tags": ["verb_base_forecast", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_forecast", "en": "forecast", "tags": ["verb_base_forecast", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_foresee", "en": "foresee", "tags": ["verb_base_foresee", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_foresee", "en": "foresaw", "tags": ["verb_base_foresee", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_foresee", "en": "foreseen", "tags": ["verb_base_foresee", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_freeze", "en": "freeze", "tags": ["verb_base_freeze", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_freeze", "en": "froze", "tags": ["verb_base_freeze", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_freeze", "en": "frozen", "tags": ["verb_base_freeze", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_grind", "en": "grind", "tags": ["verb_base_grind", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_grind", "en": "ground", "tags": ["verb_base_grind", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_grind", "en": "ground", "tags": ["verb_base_grind", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_leap", "en": "leap", "tags": ["verb_base_leap", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_leap", "en": "leapt", "tags": ["verb_base_leap", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_leap", "en": "leapt", "tags": ["verb_base_leap", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_mistake", "en": "mistake", "tags": ["verb_base_mistake", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_mistake", "en": "mistook", "tags": ["verb_base_mistake", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_mistake", "en": "mistaken", "tags": ["verb_base_mistake", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_quit", "en": "quit", "tags": ["verb_base_quit", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_quit", "en": "quit", "tags": ["verb_base_quit", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_quit", "en": "quit", "tags": ["verb_base_quit", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_bind", "en": "bind", "tags": ["verb_base_bind", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_bind", "en": "bound", "tags": ["verb_base_bind", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_bind", "en": "bound", "tags": ["verb_base_bind", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_sink", "en": "sink", "tags": ["verb_base_sink", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_sink", "en": "sank", "tags": ["verb_base_sink", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_sink", "en": "sunk", "tags": ["verb_base_sink", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_spill", "en": "spill", "tags": ["verb_base_spill", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spill", "en": "spilt", "tags": ["verb_base_spill", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spill", "en": "spilt", "tags": ["verb_base_spill", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_spit", "en": "spit", "tags": ["verb_base_spit", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spit", "en": "spat", "tags": ["verb_base_spit", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spit", "en": "spat", "tags": ["verb_base_spit", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_split", "en": "split", "tags": ["verb_base_split", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_split", "en": "split", "tags": ["verb_base_split", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_split", "en": "split", "tags": ["verb_base_split", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_spring", "en": "spring", "tags": ["verb_base_spring", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spring", "en": "sprang", "tags": ["verb_base_spring", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spring", "en": "sprung", "tags": ["verb_base_spring", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_stink", "en": "stink", "tags": ["verb_base_stink", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_stink", "en": "stunk", "tags": ["verb_base_stink", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_stink", "en": "stunk", "tags": ["verb_base_stink", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_swell", "en": "swell", "tags": ["verb_base_swell", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_swell", "en": "swelled", "tags": ["verb_base_swell", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_swell", "en": "swollen", "tags": ["verb_base_swell", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_tear", "en": "tear", "tags": ["verb_base_tear", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_tear", "en": "tore", "tags": ["verb_base_tear", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_tear", "en": "torn", "tags": ["verb_base_tear", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_undergo", "en": "undergo", "tags": ["verb_base_undergo", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_undergo", "en": "underwent", "tags": ["verb_base_undergo", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_undergo", "en": "undergone", "tags": ["verb_base_undergo", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_undertake", "en": "undertake", "tags": ["verb_base_undertake", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_undertake", "en": "undertook", "tags": ["verb_base_undertake", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_undertake", "en": "undertaken", "tags": ["verb_base_undertake", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_swing", "en": "swing", "tags": ["verb_base_swing", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_swing", "en": "swung", "tags": ["verb_base_swing", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_swing", "en": "swung", "tags": ["verb_base_swing", "verb_pp", "verb_irregular"]},
-	
-    {"id": "verb_inf_overcome", "en": "overcome", "tags": ["verb_base_overcome", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_overcome", "en": "overcame", "tags": ["verb_base_overcome", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_overcome", "en": "overcome", "tags": ["verb_base_overcome", "verb_pp", "verb_irregular"]},
+	{"id": "verb_inf_be", "en": "be", "audio": "verbs/unit1/be_inf", "tags": ["verb_base_be", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_be", "en": "was", "audio": "verbs/unit1/be_ps", "tags": ["verb_base_be", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_be", "en": "been", "audio": "verbs/unit1/be_pp", "tags": ["verb_base_be", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_buy", "en": "buy", "audio": "verbs/unit1/buy_inf", "tags": ["verb_base_buy", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_buy", "en": "bought", "audio": "verbs/unit1/buy_ps", "tags": ["verb_base_buy", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_buy", "en": "bought", "audio": "verbs/unit1/buy_pp", "tags": ["verb_base_buy", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_do", "en": "do", "audio": "verbs/unit1/do_inf", "tags": ["verb_base_do", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_do", "en": "did", "audio": "verbs/unit1/do_ps", "tags": ["verb_base_do", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_do", "en": "done", "audio": "verbs/unit1/do_pp", "tags": ["verb_base_do", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_drink", "en": "drink", "audio": "verbs/unit4/drink_inf", "tags": ["verb_base_drink", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_drink", "en": "drank", "audio": "verbs/unit4/drink_ps", "tags": ["verb_base_drink", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_drink", "en": "drunk", "audio": "verbs/unit4/drink_pp", "tags": ["verb_base_drink", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_eat", "en": "eat", "audio": "verbs/unit2/eat_inf", "tags": ["verb_base_eat", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_eat", "en": "ate", "audio": "verbs/unit2/eat_ps", "tags": ["verb_base_eat", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_eat", "en": "eaten", "audio": "verbs/unit2/eat_pp", "tags": ["verb_base_eat", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_find", "en": "find", "audio": "verbs/find_inf", "tags": ["verb_base_find", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_find", "en": "found", "audio": "verbs/find_ps", "tags": ["verb_base_find", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_find", "en": "found", "audio": "verbs/find_pp", "tags": ["verb_base_find", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_give", "en": "give", "audio": "verbs/unit4/give_inf", "tags": ["verb_base_give", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_give", "en": "gave", "audio": "verbs/unit4/give_ps", "tags": ["verb_base_give", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_give", "en": "given", "audio": "verbs/unit4/give_pp", "tags": ["verb_base_give", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_go", "en": "go", "audio": "verbs/unit1/go_inf", "tags": ["verb_base_go", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_go", "en": "went", "audio": "verbs/unit1/go_ps", "tags": ["verb_base_go", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_go", "en": "gone", "audio": "verbs/unit1/go_pp", "tags": ["verb_base_go", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_have", "en": "have", "audio": "verbs/have_inf", "tags": ["verb_base_have", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_have", "en": "had", "audio": "verbs/have_ps", "tags": ["verb_base_have", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_have", "en": "had", "audio": "verbs/have_pp", "tags": ["verb_base_have", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_make", "en": "make", "audio": "verbs/make_inf", "tags": ["verb_base_make", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_make", "en": "made", "audio": "verbs/make_ps", "tags": ["verb_base_make", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_make", "en": "made", "audio": "verbs/make_pp", "tags": ["verb_base_make", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_read", "en": "read", "audio": "verbs/unit3/read_inf", "tags": ["verb_base_read", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_read", "en": "read", "audio": "verbs/unit3/read_ps", "tags": ["verb_base_read", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_read", "en": "read", "audio": "verbs/unit3/read_pp", "tags": ["verb_base_read", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_see", "en": "see", "audio": "verbs/unit1/see_inf", "tags": ["verb_base_see", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_see", "en": "saw", "audio": "verbs/unit1/see_ps", "tags": ["verb_base_see", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_see", "en": "seen", "audio": "verbs/unit1/see_pp", "tags": ["verb_base_see", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_sleep", "en": "sleep", "audio": "verbs/sleep_inf", "tags": ["verb_base_sleep", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sleep", "en": "slept", "audio": "verbs/sleep_ps", "tags": ["verb_base_sleep", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sleep", "en": "slept", "audio": "verbs/sleep_pp", "tags": ["verb_base_sleep", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_speak", "en": "speak", "audio": "verbs/unit4/speak_inf", "tags": ["verb_base_speak", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_speak", "en": "spoke", "audio": "verbs/unit4/speak_ps", "tags": ["verb_base_speak", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_speak", "en": "spoken", "audio": "verbs/unit4/speak_pp", "tags": ["verb_base_speak", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_take", "en": "take", "audio": "verbs/unit3/take_inf", "tags": ["verb_base_take", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_take", "en": "took", "audio": "verbs/unit3/take_ps", "tags": ["verb_base_take", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_take", "en": "taken", "audio": "verbs/unit3/take_pp", "tags": ["verb_base_take", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_wear", "en": "wear", "audio": "verbs/wear_inf", "tags": ["verb_base_wear", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_wear", "en": "wore", "audio": "verbs/wear_ps", "tags": ["verb_base_wear", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_wear", "en": "worn", "audio": "verbs/wear_pp", "tags": ["verb_base_wear", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_write", "en": "write", "audio": "verbs/unit1/write_inf", "tags": ["verb_base_write", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_write", "en": "wrote", "audio": "verbs/unit1/write_ps", "tags": ["verb_base_write", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_write", "en": "written", "audio": "verbs/unit1/write_pp", "tags": ["verb_base_write", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_become", "en": "become", "audio": "verbs/unit4/become_inf", "tags": ["verb_base_become", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_become", "en": "became", "audio": "verbs/unit4/become_ps", "tags": ["verb_base_become", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_become", "en": "become", "audio": "verbs/unit4/become_pp", "tags": ["verb_base_become", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_begin", "en": "begin", "audio": "verbs/begin_inf", "tags": ["verb_base_begin", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_begin", "en": "began", "audio": "verbs/begin_ps", "tags": ["verb_base_begin", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_begin", "en": "begun", "audio": "verbs/begin_pp", "tags": ["verb_base_begin", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_hold", "en": "hold", "audio": "verbs/hold_inf", "tags": ["verb_base_hold", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_hold", "en": "held", "audio": "verbs/hold_ps", "tags": ["verb_base_hold", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_hold", "en": "held", "audio": "verbs/hold_pp", "tags": ["verb_base_hold", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_come", "en": "come", "audio": "verbs/come_inf", "tags": ["verb_base_come", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_come", "en": "came", "audio": "verbs/come_ps", "tags": ["verb_base_come", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_come", "en": "come", "audio": "verbs/come_pp", "tags": ["verb_base_come", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_draw", "en": "draw", "audio": "verbs/draw_inf", "tags": ["verb_base_draw", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_draw", "en": "drew", "audio": "verbs/draw_ps", "tags": ["verb_base_draw", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_draw", "en": "drawn", "audio": "verbs/draw_pp", "tags": ["verb_base_draw", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_burn", "en": "burn", "audio": "verbs/burn_inf", "tags": ["verb_base_burn", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_burn", "en": "burnt", "audio": "verbs/burn_ps", "tags": ["verb_base_burn", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_burn", "en": "burnt", "audio": "verbs/burn_pp", "tags": ["verb_base_burn", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_build", "en": "build", "audio": "verbs/build_inf", "tags": ["verb_base_build", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_build", "en": "built", "audio": "verbs/build_ps", "tags": ["verb_base_build", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_build", "en": "built", "audio": "verbs/build_pp", "tags": ["verb_base_build", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_break", "en": "break", "audio": "verbs/break_inf", "tags": ["verb_base_break", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_break", "en": "broke", "audio": "verbs/break_ps", "tags": ["verb_base_break", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_break", "en": "broken", "audio": "verbs/break_pp", "tags": ["verb_base_break", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_choose", "en": "choose", "audio": "verbs/unit2/choose_inf", "tags": ["verb_base_choose", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_choose", "en": "chose", "audio": "verbs/unit2/choose_ps", "tags": ["verb_base_choose", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_choose", "en": "chosen", "audio": "verbs/unit2/choose_pp", "tags": ["verb_base_choose", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_fall", "en": "fall", "audio": "verbs/fall_inf", "tags": ["verb_base_fall", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_fall", "en": "fell", "audio": "verbs/fall_ps", "tags": ["verb_base_fall", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_fall", "en": "fallen", "audio": "verbs/fall_pp", "tags": ["verb_base_fall", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_feel", "en": "feel", "audio": "verbs/feel_inf", "tags": ["verb_base_feel", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_feel", "en": "felt", "audio": "verbs/feel_ps", "tags": ["verb_base_feel", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_feel", "en": "felt", "audio": "verbs/feel_pp", "tags": ["verb_base_feel", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_forget", "en": "forget", "audio": "verbs/forget_inf", "tags": ["verb_base_forget", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_forget", "en": "forgot", "audio": "verbs/forget_ps", "tags": ["verb_base_forget", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_forget", "en": "forgotten", "audio": "verbs/forget_pp", "tags": ["verb_base_forget", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_hear", "en": "hear", "audio": "verbs/hear_inf", "tags": ["verb_base_hear", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_hear", "en": "heard", "audio": "verbs/hear_ps", "tags": ["verb_base_hear", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_hear", "en": "heard", "audio": "verbs/hear_pp", "tags": ["verb_base_hear", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_cut", "en": "cut", "audio": "verbs/cut_inf", "tags": ["verb_base_cut", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_cut", "en": "cut", "audio": "verbs/cut_ps", "tags": ["verb_base_cut", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_cut", "en": "cut", "audio": "verbs/cut_pp", "tags": ["verb_base_cut", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_drive", "en": "drive", "audio": "verbs/unit1/drive_inf", "tags": ["verb_base_drive", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_drive", "en": "drove", "audio": "verbs/unit1/drive_ps", "tags": ["verb_base_drive", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_drive", "en": "driven", "audio": "verbs/unit1/drive_pp", "tags": ["verb_base_drive", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_keep", "en": "keep", "audio": "verbs/keep_inf", "tags": ["verb_base_keep", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_keep", "en": "kept", "audio": "verbs/keep_ps", "tags": ["verb_base_keep", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_keep", "en": "kept", "audio": "verbs/keep_pp", "tags": ["verb_base_keep", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_dream", "en": "dream", "audio": "verbs/dream_inf", "tags": ["verb_base_dream", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_dream", "en": "dreamt", "audio": "verbs/dream_ps", "tags": ["verb_base_dream", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_dream", "en": "dreamt", "audio": "verbs/dream_pp", "tags": ["verb_base_dream", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_know", "en": "know", "audio": "verbs/unit2/know_inf", "tags": ["verb_base_know", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_know", "en": "knew", "audio": "verbs/unit2/know_ps", "tags": ["verb_base_know", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_know", "en": "known", "audio": "verbs/unit2/know_pp", "tags": ["verb_base_know", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_learn", "en": "learn", "audio": "verbs/learn_inf", "tags": ["verb_base_learn", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_learn", "en": "learnt", "audio": "verbs/learn_ps", "tags": ["verb_base_learn", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_learn", "en": "learnt", "audio": "verbs/learn_pp", "tags": ["verb_base_learn", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_light", "en": "light", "audio": "verbs/light_inf", "tags": ["verb_base_light", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_light", "en": "lit", "audio": "verbs/light_ps", "tags": ["verb_base_light", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_light", "en": "lit", "audio": "verbs/light_pp", "tags": ["verb_base_light", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_meet", "en": "meet", "audio": "verbs/meet_inf", "tags": ["verb_base_meet", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_meet", "en": "met", "audio": "verbs/meet_ps", "tags": ["verb_base_meet", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_meet", "en": "met", "audio": "verbs/meet_pp", "tags": ["verb_base_meet", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_pay", "en": "pay", "audio": "verbs/pay_inf", "tags": ["verb_base_pay", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_pay", "en": "paid", "audio": "verbs/pay_ps", "tags": ["verb_base_pay", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_pay", "en": "paid", "audio": "verbs/pay_pp", "tags": ["verb_base_pay", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_ride", "en": "ride", "audio": "verbs/unit4/ride_inf", "tags": ["verb_base_ride", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_ride", "en": "rode", "audio": "verbs/unit4/ride_ps", "tags": ["verb_base_ride", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_ride", "en": "ridden", "audio": "verbs/unit4/ride_pp", "tags": ["verb_base_ride", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_ring", "en": "ring", "audio": "verbs/unit3/ring_inf", "tags": ["verb_base_ring", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_ring", "en": "rang", "audio": "verbs/unit3/ring_ps", "tags": ["verb_base_ring", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_ring", "en": "rung", "audio": "verbs/unit3/ring_pp", "tags": ["verb_base_ring", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_run", "en": "run", "audio": "verbs/run_inf", "tags": ["verb_base_run", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_run", "en": "ran", "audio": "verbs/run_ps", "tags": ["verb_base_run", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_run", "en": "run", "audio": "verbs/run_pp", "tags": ["verb_base_run", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_sell", "en": "sell", "audio": "verbs/sell_inf", "tags": ["verb_base_sell", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sell", "en": "sold", "audio": "verbs/sell_ps", "tags": ["verb_base_sell", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sell", "en": "sold", "audio": "verbs/sell_pp", "tags": ["verb_base_sell", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_shut", "en": "shut", "audio": "verbs/shut_inf", "tags": ["verb_base_shut", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_shut", "en": "shut", "audio": "verbs/shut_ps", "tags": ["verb_base_shut", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_shut", "en": "shut", "audio": "verbs/shut_pp", "tags": ["verb_base_shut", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_sing", "en": "sing", "audio": "verbs/unit3/sing_inf", "tags": ["verb_base_sing", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sing", "en": "sang", "audio": "verbs/unit3/sing_ps", "tags": ["verb_base_sing", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sing", "en": "sung", "audio": "verbs/unit3/sing_pp", "tags": ["verb_base_sing", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_spell", "en": "spell", "audio": "verbs/spell_inf", "tags": ["verb_base_spell", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spell", "en": "spelt", "audio": "verbs/spell_ps", "tags": ["verb_base_spell", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spell", "en": "spelt", "audio": "verbs/spell_pp", "tags": ["verb_base_spell", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_swim", "en": "swim", "audio": "verbs/swim_inf", "tags": ["verb_base_swim", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_swim", "en": "swam", "audio": "verbs/swim_ps", "tags": ["verb_base_swim", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_swim", "en": "swum", "audio": "verbs/swim_pp", "tags": ["verb_base_swim", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_teach", "en": "teach", "audio": "verbs/unit3/teach_inf", "tags": ["verb_base_teach", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_teach", "en": "taught", "audio": "verbs/unit3/teach_ps", "tags": ["verb_base_teach", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_teach", "en": "taught", "audio": "verbs/unit3/teach_pp", "tags": ["verb_base_teach", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_tell", "en": "tell", "audio": "verbs/tell_inf", "tags": ["verb_base_tell", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_tell", "en": "told", "audio": "verbs/tell_ps", "tags": ["verb_base_tell", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_tell", "en": "told", "audio": "verbs/tell_pp", "tags": ["verb_base_tell", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_think", "en": "think", "audio": "verbs/unit1/think_inf", "tags": ["verb_base_think", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_think", "en": "thought", "audio": "verbs/unit1/think_ps", "tags": ["verb_base_think", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_think", "en": "thought", "audio": "verbs/unit1/think_pp", "tags": ["verb_base_think", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_understand", "en": "understand", "audio": "verbs/understand_inf", "tags": ["verb_base_understand", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_understand", "en": "understood", "audio": "verbs/understand_ps", "tags": ["verb_base_understand", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_understand", "en": "understood", "audio": "verbs/understand_pp", "tags": ["verb_base_understand", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_shine", "en": "shine", "audio": "verbs/shine_inf", "tags": ["verb_base_shine", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_shine", "en": "shone", "audio": "verbs/shine_ps", "tags": ["verb_base_shine", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_shine", "en": "shone", "audio": "verbs/shine_pp", "tags": ["verb_base_shine", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_blow", "en": "blow", "audio": "verbs/blow_inf", "tags": ["verb_base_blow", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_blow", "en": "blew", "audio": "verbs/blow_ps", "tags": ["verb_base_blow", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_blow", "en": "blown", "audio": "verbs/blow_pp", "tags": ["verb_base_blow", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_bring", "en": "bring", "audio": "verbs/bring_inf", "tags": ["verb_base_bring", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_bring", "en": "brought", "audio": "verbs/bring_ps", "tags": ["verb_base_bring", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_bring", "en": "brought", "audio": "verbs/bring_pp", "tags": ["verb_base_bring", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_catch", "en": "catch", "audio": "verbs/unit2/catch_inf", "tags": ["verb_base_catch", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_catch", "en": "caught", "audio": "verbs/unit2/catch_ps", "tags": ["verb_base_catch", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_catch", "en": "caught", "audio": "verbs/unit2/catch_pp", "tags": ["verb_base_catch", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_cost", "en": "cost", "audio": "verbs/cost_inf", "tags": ["verb_base_cost", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_cost", "en": "cost", "audio": "verbs/cost_ps", "tags": ["verb_base_cost", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_cost", "en": "cost", "audio": "verbs/cost_pp", "tags": ["verb_base_cost", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_beat", "en": "beat", "audio": "verbs/unit2/beat_inf", "tags": ["verb_base_beat", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_beat", "en": "beat", "audio": "verbs/unit2/beat_ps", "tags": ["verb_base_beat", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_beat", "en": "beaten", "audio": "verbs/unit2/beat_pp", "tags": ["verb_base_beat", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_bite", "en": "bite", "audio": "verbs/bite_inf", "tags": ["verb_base_bite", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_bite", "en": "bit", "audio": "verbs/bite_ps", "tags": ["verb_base_bite", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_bite", "en": "bitten", "audio": "verbs/bite_pp", "tags": ["verb_base_bite", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_bleed", "en": "bleed", "audio": "verbs/bleed_inf", "tags": ["verb_base_bleed", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_bleed", "en": "bled", "audio": "verbs/bleed_ps", "tags": ["verb_base_bleed", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_bleed", "en": "bled", "audio": "verbs/bleed_pp", "tags": ["verb_base_bleed", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_fight", "en": "fight", "audio": "verbs/unit3/fight_inf", "tags": ["verb_base_fight", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_fight", "en": "fought", "audio": "verbs/unit3/fight_ps", "tags": ["verb_base_fight", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_fight", "en": "fought", "audio": "verbs/unit3/fight_pp", "tags": ["verb_base_fight", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_deal", "en": "deal", "audio": "verbs/deal_inf", "tags": ["verb_base_deal", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_deal", "en": "dealt", "audio": "verbs/deal_ps", "tags": ["verb_base_deal", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_deal", "en": "dealt", "audio": "verbs/deal_pp", "tags": ["verb_base_deal", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_dig", "en": "dig", "audio": "verbs/dig_inf", "tags": ["verb_base_dig", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_dig", "en": "dug", "audio": "verbs/dig_ps", "tags": ["verb_base_dig", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_dig", "en": "dug", "audio": "verbs/dig_pp", "tags": ["verb_base_dig", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_fly", "en": "fly", "audio": "verbs/fly_inf", "tags": ["verb_base_fly", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_fly", "en": "flew", "audio": "verbs/fly_ps", "tags": ["verb_base_fly", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_fly", "en": "flown", "audio": "verbs/fly_pp", "tags": ["verb_base_fly", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_forbid", "en": "forbid", "audio": "verbs/forbid_inf", "tags": ["verb_base_forbid", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_forbid", "en": "forbade", "audio": "verbs/forbid_ps", "tags": ["verb_base_forbid", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_forbid", "en": "forbidden", "audio": "verbs/forbid_pp", "tags": ["verb_base_forbid", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_freeze", "en": "freeze", "audio": "verbs/unit2/freeze_inf", "tags": ["verb_base_freeze", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_freeze", "en": "froze", "audio": "verbs/unit2/freeze_ps", "tags": ["verb_base_freeze", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_freeze", "en": "frozen", "audio": "verbs/unit2/freeze_pp", "tags": ["verb_base_freeze", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_get", "en": "get", "audio": "verbs/get_inf", "tags": ["verb_base_get", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_get", "en": "got", "audio": "verbs/get_ps", "tags": ["verb_base_get", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_get", "en": "got", "audio": "verbs/get_pp", "tags": ["verb_base_get", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_grow", "en": "grow", "audio": "verbs/unit2/grow_inf", "tags": ["verb_base_grow", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_grow", "en": "grew", "audio": "verbs/unit2/grow_ps", "tags": ["verb_base_grow", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_grow", "en": "grown", "audio": "verbs/unit2/grow_pp", "tags": ["verb_base_grow", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_hide", "en": "hide", "audio": "verbs/hide_inf", "tags": ["verb_base_hide", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_hide", "en": "hid", "audio": "verbs/hide_ps", "tags": ["verb_base_hide", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_hide", "en": "hidden", "audio": "verbs/hide_pp", "tags": ["verb_base_hide", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_let", "en": "let", "audio": "verbs/let_inf", "tags": ["verb_base_let", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_let", "en": "let", "audio": "verbs/let_ps", "tags": ["verb_base_let", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_let", "en": "let", "audio": "verbs/let_pp", "tags": ["verb_base_let", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_hit", "en": "hit", "audio": "verbs/hit_inf", "tags": ["verb_base_hit", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_hit", "en": "hit", "audio": "verbs/hit_ps", "tags": ["verb_base_hit", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_hit", "en": "hit", "audio": "verbs/hit_pp", "tags": ["verb_base_hit", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_lie", "en": "lie", "audio": "verbs/lie_inf", "tags": ["verb_base_lie", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_lie", "en": "lay", "audio": "verbs/lie_ps", "tags": ["verb_base_lie", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_lie", "en": "lain", "audio": "verbs/lie_pp", "tags": ["verb_base_lie", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_lose", "en": "lose", "audio": "verbs/lose_inf", "tags": ["verb_base_lose", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_lose", "en": "lost", "audio": "verbs/lose_ps", "tags": ["verb_base_lose", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_lose", "en": "lost", "audio": "verbs/lose_pp", "tags": ["verb_base_lose", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_mean", "en": "mean", "audio": "verbs/mean_inf", "tags": ["verb_base_mean", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_mean", "en": "meant", "audio": "verbs/mean_ps", "tags": ["verb_base_mean", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_mean", "en": "meant", "audio": "verbs/mean_pp", "tags": ["verb_base_mean", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_leave", "en": "leave", "audio": "verbs/leave_inf", "tags": ["verb_base_leave", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_leave", "en": "left", "audio": "verbs/leave_ps", "tags": ["verb_base_leave", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_leave", "en": "left", "audio": "verbs/leave_pp", "tags": ["verb_base_leave", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_wake", "en": "wake", "audio": "verbs/unit4/wake_inf", "tags": ["verb_base_wake", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_wake", "en": "woke", "audio": "verbs/unit4/wake_ps", "tags": ["verb_base_wake", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_wake", "en": "woken", "audio": "verbs/unit4/wake_pp", "tags": ["verb_base_wake", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_send", "en": "send", "audio": "verbs/send_inf", "tags": ["verb_base_send", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_send", "en": "sent", "audio": "verbs/send_ps", "tags": ["verb_base_send", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_send", "en": "sent", "audio": "verbs/send_pp", "tags": ["verb_base_send", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_say", "en": "say", "audio": "verbs/unit3/say_inf", "tags": ["verb_base_say", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_say", "en": "said", "audio": "verbs/unit3/say_ps", "tags": ["verb_base_say", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_say", "en": "said", "audio": "verbs/unit3/say_pp", "tags": ["verb_base_say", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_put", "en": "put", "audio": "verbs/put_inf", "tags": ["verb_base_put", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_put", "en": "put", "audio": "verbs/put_ps", "tags": ["verb_base_put", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_put", "en": "put", "audio": "verbs/put_pp", "tags": ["verb_base_put", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_set", "en": "set", "audio": "verbs/set_inf", "tags": ["verb_base_set", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_set", "en": "set", "audio": "verbs/set_ps", "tags": ["verb_base_set", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_set", "en": "set", "audio": "verbs/set_pp", "tags": ["verb_base_set", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_shake", "en": "shake", "audio": "verbs/unit3/shake_inf", "tags": ["verb_base_shake", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_shake", "en": "shook", "audio": "verbs/unit3/shake_ps", "tags": ["verb_base_shake", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_shake", "en": "shaken", "audio": "verbs/unit3/shake_pp", "tags": ["verb_base_shake", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_show", "en": "show", "audio": "verbs/show_inf", "tags": ["verb_base_show", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_show", "en": "showed", "audio": "verbs/show_ps", "tags": ["verb_base_show", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_show", "en": "shown", "audio": "verbs/show_pp", "tags": ["verb_base_show", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_sit", "en": "sit", "audio": "verbs/sit_inf", "tags": ["verb_base_sit", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sit", "en": "sat", "audio": "verbs/sit_ps", "tags": ["verb_base_sit", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sit", "en": "sat", "audio": "verbs/sit_pp", "tags": ["verb_base_sit", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_spend", "en": "spend", "audio": "verbs/spend_inf", "tags": ["verb_base_spend", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spend", "en": "spent", "audio": "verbs/spend_ps", "tags": ["verb_base_spend", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spend", "en": "spent", "audio": "verbs/spend_pp", "tags": ["verb_base_spend", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_spread", "en": "spread", "audio": "verbs/spread_inf", "tags": ["verb_base_spread", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spread", "en": "spread", "audio": "verbs/spread_ps", "tags": ["verb_base_spread", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spread", "en": "spread", "audio": "verbs/spread_pp", "tags": ["verb_base_spread", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_stand", "en": "stand", "audio": "verbs/stand_inf", "tags": ["verb_base_stand", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_stand", "en": "stood", "audio": "verbs/stand_ps", "tags": ["verb_base_stand", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_stand", "en": "stood", "audio": "verbs/stand_pp", "tags": ["verb_base_stand", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_hurt", "en": "hurt", "audio": "verbs/hurt_inf", "tags": ["verb_base_hurt", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_hurt", "en": "hurt", "audio": "verbs/hurt_ps", "tags": ["verb_base_hurt", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_hurt", "en": "hurt", "audio": "verbs/hurt_pp", "tags": ["verb_base_hurt", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_lend", "en": "lend", "audio": "verbs/lend_inf", "tags": ["verb_base_lend", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_lend", "en": "lent", "audio": "verbs/lend_ps", "tags": ["verb_base_lend", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_lend", "en": "lent", "audio": "verbs/lend_pp", "tags": ["verb_base_lend", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_steal", "en": "steal", "audio": "verbs/steal_inf", "tags": ["verb_base_steal", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_steal", "en": "stole", "audio": "verbs/steal_ps", "tags": ["verb_base_steal", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_steal", "en": "stolen", "audio": "verbs/steal_pp", "tags": ["verb_base_steal", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_strike", "en": "strike", "audio": "verbs/strike_inf", "tags": ["verb_base_strike", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_strike", "en": "struck", "audio": "verbs/strike_ps", "tags": ["verb_base_strike", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_strike", "en": "struck", "audio": "verbs/strike_pp", "tags": ["verb_base_strike", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_swear", "en": "swear", "audio": "verbs/swear_inf", "tags": ["verb_base_swear", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_swear", "en": "swore", "audio": "verbs/swear_ps", "tags": ["verb_base_swear", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_swear", "en": "sworn", "audio": "verbs/swear_pp", "tags": ["verb_base_swear", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_sweep", "en": "sweep", "audio": "verbs/sweep_inf", "tags": ["verb_base_sweep", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sweep", "en": "swept", "audio": "verbs/sweep_ps", "tags": ["verb_base_sweep", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sweep", "en": "swept", "audio": "verbs/sweep_pp", "tags": ["verb_base_sweep", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_throw", "en": "throw", "audio": "verbs/throw_inf", "tags": ["verb_base_throw", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_throw", "en": "threw", "audio": "verbs/throw_ps", "tags": ["verb_base_throw", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_throw", "en": "thrown", "audio": "verbs/throw_pp", "tags": ["verb_base_throw", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_weep", "en": "weep", "audio": "verbs/weep_inf", "tags": ["verb_base_weep", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_weep", "en": "wept", "audio": "verbs/weep_ps", "tags": ["verb_base_weep", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_weep", "en": "wept", "audio": "verbs/weep_pp", "tags": ["verb_base_weep", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_win", "en": "win", "audio": "verbs/unit4/win_inf", "tags": ["verb_base_win", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_win", "en": "won", "audio": "verbs/unit4/win_ps", "tags": ["verb_base_win", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_win", "en": "won", "audio": "verbs/unit4/win_pp", "tags": ["verb_base_win", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_awake", "en": "awake", "audio": "verbs/awake_inf", "tags": ["verb_base_awake", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_awake", "en": "awoke", "audio": "verbs/awake_ps", "tags": ["verb_base_awake", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_awake", "en": "awaken", "audio": "verbs/awake_pp", "tags": ["verb_base_awake", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_bend", "en": "bend", "audio": "verbs/bend_inf", "tags": ["verb_base_bend", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_bend", "en": "bent", "audio": "verbs/bend_ps", "tags": ["verb_base_bend", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_bend", "en": "bent", "audio": "verbs/bend_pp", "tags": ["verb_base_bend", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_bet", "en": "bet", "audio": "verbs/bet_inf", "tags": ["verb_base_bet", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_bet", "en": "bet", "audio": "verbs/bet_ps", "tags": ["verb_base_bet", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_bet", "en": "bet", "audio": "verbs/bet_pp", "tags": ["verb_base_bet", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_breed", "en": "breed", "audio": "verbs/breed_inf", "tags": ["verb_base_breed", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_breed", "en": "bred", "audio": "verbs/breed_ps", "tags": ["verb_base_breed", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_breed", "en": "bred", "audio": "verbs/breed_pp", "tags": ["verb_base_breed", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_burst", "en": "burst", "audio": "verbs/burst_inf", "tags": ["verb_base_burst", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_burst", "en": "burst", "audio": "verbs/burst_ps", "tags": ["verb_base_burst", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_burst", "en": "burst", "audio": "verbs/burst_pp", "tags": ["verb_base_burst", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_cast", "en": "cast", "audio": "verbs/cast_inf", "tags": ["verb_base_cast", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_cast", "en": "cast", "audio": "verbs/cast_ps", "tags": ["verb_base_cast", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_cast", "en": "cast", "audio": "verbs/cast_pp", "tags": ["verb_base_cast", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_feed", "en": "feed", "audio": "verbs/feed_inf", "tags": ["verb_base_feed", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_feed", "en": "fed", "audio": "verbs/feed_ps", "tags": ["verb_base_feed", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_feed", "en": "fed", "audio": "verbs/feed_pp", "tags": ["verb_base_feed", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_forgive", "en": "forgive", "audio": "verbs/forgive_inf", "tags": ["verb_base_forgive", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_forgive", "en": "forgave", "audio": "verbs/forgive_ps", "tags": ["verb_base_forgive", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_forgive", "en": "forgiven", "audio": "verbs/forgive_pp", "tags": ["verb_base_forgive", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_hang", "en": "hang", "audio": "verbs/hang_inf", "tags": ["verb_base_hang", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_hang", "en": "hung", "audio": "verbs/hang_ps", "tags": ["verb_base_hang", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_hang", "en": "hung", "audio": "verbs/hang_pp", "tags": ["verb_base_hang", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_kneel", "en": "kneel", "audio": "verbs/kneel_inf", "tags": ["verb_base_kneel", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_kneel", "en": "knelt", "audio": "verbs/kneel_ps", "tags": ["verb_base_kneel", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_kneel", "en": "knelt", "audio": "verbs/kneel_pp", "tags": ["verb_base_kneel", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_lay", "en": "lay", "audio": "verbs/lay_inf", "tags": ["verb_base_lay", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_lay", "en": "laid", "audio": "verbs/lay_ps", "tags": ["verb_base_lay", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_lay", "en": "laid", "audio": "verbs/lay_pp", "tags": ["verb_base_lay", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_lead", "en": "lead", "audio": "verbs/lead_inf", "tags": ["verb_base_lead", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_lead", "en": "led", "audio": "verbs/lead_ps", "tags": ["verb_base_lead", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_lead", "en": "led", "audio": "verbs/lead_pp", "tags": ["verb_base_lead", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_shoot", "en": "shoot", "audio": "verbs/shoot_inf", "tags": ["verb_base_shoot", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_shoot", "en": "shot", "audio": "verbs/shoot_ps", "tags": ["verb_base_shoot", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_shoot", "en": "shot", "audio": "verbs/shoot_pp", "tags": ["verb_base_shoot", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_smell", "en": "smell", "audio": "verbs/smell_inf", "tags": ["verb_base_smell", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_smell", "en": "smelt", "audio": "verbs/smell_ps", "tags": ["verb_base_smell", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_smell", "en": "smelt", "audio": "verbs/smell_pp", "tags": ["verb_base_smell", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_spill", "en": "spill", "audio": "verbs/spill_inf", "tags": ["verb_base_spill", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spill", "en": "spilt", "audio": "verbs/spill_ps", "tags": ["verb_base_spill", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spill", "en": "spilt", "audio": "verbs/spill_pp", "tags": ["verb_base_spill", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_spoil", "en": "spoil", "audio": "verbs/spoil_inf", "tags": ["verb_base_spoil", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spoil", "en": "spoilt", "audio": "verbs/spoil_ps", "tags": ["verb_base_spoil", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spoil", "en": "spoilt", "audio": "verbs/spoil_pp", "tags": ["verb_base_spoil", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_stick", "en": "stick", "audio": "verbs/stick_inf", "tags": ["verb_base_stick", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_stick", "en": "stuck", "audio": "verbs/stick_ps", "tags": ["verb_base_stick", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_stick", "en": "stuck", "audio": "verbs/stick_pp", "tags": ["verb_base_stick", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_sting", "en": "sting", "audio": "verbs/sting_inf", "tags": ["verb_base_sting", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sting", "en": "stung", "audio": "verbs/sting_ps", "tags": ["verb_base_sting", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sting", "en": "stung", "audio": "verbs/sting_pp", "tags": ["verb_base_sting", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_upset", "en": "upset", "audio": "verbs/upset_inf", "tags": ["verb_base_upset", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_upset", "en": "upset", "audio": "verbs/upset_ps", "tags": ["verb_base_upset", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_upset", "en": "upset", "audio": "verbs/upset_pp", "tags": ["verb_base_upset", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_withdraw", "en": "withdraw", "audio": "verbs/withdraw_inf", "tags": ["verb_base_withdraw", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_withdraw", "en": "withdrew", "audio": "verbs/withdraw_ps", "tags": ["verb_base_withdraw", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_withdraw", "en": "withdrawn", "audio": "verbs/withdraw_pp", "tags": ["verb_base_withdraw", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_seek", "en": "seek", "audio": "verbs/unit2/seek_inf", "tags": ["verb_base_seek", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_seek", "en": "sought", "audio": "verbs/unit2/seek_ps", "tags": ["verb_base_seek", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_seek", "en": "sought", "audio": "verbs/unit2/seek_pp", "tags": ["verb_base_seek", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_rise", "en": "rise", "audio": "verbs/rise_inf", "tags": ["verb_base_rise", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_rise", "en": "rose", "audio": "verbs/rise_ps", "tags": ["verb_base_rise", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_rise", "en": "risen", "audio": "verbs/rise_pp", "tags": ["verb_base_rise", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_arise", "en": "arise", "audio": "verbs/arise_inf", "tags": ["verb_base_arise", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_arise", "en": "arose", "audio": "verbs/arise_ps", "tags": ["verb_base_arise", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_arise", "en": "arisen", "audio": "verbs/arise_pp", "tags": ["verb_base_arise", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_broadcast", "en": "broadcast", "audio": "verbs/broadcast_inf", "tags": ["verb_base_broadcast", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_broadcast", "en": "broadcast", "audio": "verbs/broadcast_ps", "tags": ["verb_base_broadcast", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_broadcast", "en": "broadcast", "audio": "verbs/broadcast_pp", "tags": ["verb_base_broadcast", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_cling", "en": "cling", "audio": "verbs/cling_inf", "tags": ["verb_base_cling", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_cling", "en": "clung", "audio": "verbs/cling_ps", "tags": ["verb_base_cling", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_cling", "en": "clung", "audio": "verbs/cling_pp", "tags": ["verb_base_cling", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_creep", "en": "creep", "audio": "verbs/creep_inf", "tags": ["verb_base_creep", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_creep", "en": "crept", "audio": "verbs/creep_ps", "tags": ["verb_base_creep", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_creep", "en": "crept", "audio": "verbs/creep_pp", "tags": ["verb_base_creep", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_flee", "en": "flee", "audio": "verbs/flee_inf", "tags": ["verb_base_flee", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_flee", "en": "fled", "audio": "verbs/flee_ps", "tags": ["verb_base_flee", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_flee", "en": "fled", "audio": "verbs/flee_pp", "tags": ["verb_base_flee", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_forecast", "en": "forecast", "audio": "verbs/forecast_inf", "tags": ["verb_base_forecast", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_forecast", "en": "forecast", "audio": "verbs/forecast_ps", "tags": ["verb_base_forecast", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_forecast", "en": "forecast", "audio": "verbs/forecast_pp", "tags": ["verb_base_forecast", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_foresee", "en": "foresee", "audio": "verbs/foresee_inf", "tags": ["verb_base_foresee", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_foresee", "en": "foresaw", "audio": "verbs/foresee_ps", "tags": ["verb_base_foresee", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_foresee", "en": "foreseen", "audio": "verbs/foresee_pp", "tags": ["verb_base_foresee", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_freeze", "en": "freeze", "audio": "verbs/freeze_inf", "tags": ["verb_base_freeze", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_freeze", "en": "froze", "audio": "verbs/freeze_ps", "tags": ["verb_base_freeze", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_freeze", "en": "frozen", "audio": "verbs/freeze_pp", "tags": ["verb_base_freeze", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_grind", "en": "grind", "audio": "verbs/grind_inf", "tags": ["verb_base_grind", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_grind", "en": "ground", "audio": "verbs/grind_ps", "tags": ["verb_base_grind", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_grind", "en": "ground", "audio": "verbs/grind_pp", "tags": ["verb_base_grind", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_leap", "en": "leap", "audio": "verbs/leap_inf", "tags": ["verb_base_leap", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_leap", "en": "leapt", "audio": "verbs/leap_ps", "tags": ["verb_base_leap", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_leap", "en": "leapt", "audio": "verbs/leap_pp", "tags": ["verb_base_leap", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_mistake", "en": "mistake", "audio": "verbs/mistake_inf", "tags": ["verb_base_mistake", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_mistake", "en": "mistook", "audio": "verbs/mistake_ps", "tags": ["verb_base_mistake", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_mistake", "en": "mistaken", "audio": "verbs/mistake_pp", "tags": ["verb_base_mistake", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_quit", "en": "quit", "audio": "verbs/quit_inf", "tags": ["verb_base_quit", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_quit", "en": "quit", "audio": "verbs/quit_ps", "tags": ["verb_base_quit", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_quit", "en": "quit", "audio": "verbs/quit_pp", "tags": ["verb_base_quit", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_bind", "en": "bind", "audio": "verbs/bind_inf", "tags": ["verb_base_bind", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_bind", "en": "bound", "audio": "verbs/bind_ps", "tags": ["verb_base_bind", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_bind", "en": "bound", "audio": "verbs/bind_pp", "tags": ["verb_base_bind", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_sink", "en": "sink", "audio": "verbs/sink_inf", "tags": ["verb_base_sink", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sink", "en": "sank", "audio": "verbs/sink_ps", "tags": ["verb_base_sink", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sink", "en": "sunk", "audio": "verbs/sink_pp", "tags": ["verb_base_sink", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_spill", "en": "spill", "audio": "verbs/spill_inf", "tags": ["verb_base_spill", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spill", "en": "spilt", "audio": "verbs/spill_ps", "tags": ["verb_base_spill", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spill", "en": "spilt", "audio": "verbs/spill_pp", "tags": ["verb_base_spill", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_spit", "en": "spit", "audio": "verbs/spit_inf", "tags": ["verb_base_spit", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spit", "en": "spat", "audio": "verbs/spit_ps", "tags": ["verb_base_spit", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spit", "en": "spat", "audio": "verbs/spit_pp", "tags": ["verb_base_spit", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_split", "en": "split", "audio": "verbs/split_inf", "tags": ["verb_base_split", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_split", "en": "split", "audio": "verbs/split_ps", "tags": ["verb_base_split", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_split", "en": "split", "audio": "verbs/split_pp", "tags": ["verb_base_split", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_spring", "en": "spring", "audio": "verbs/spring_inf", "tags": ["verb_base_spring", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spring", "en": "sprang", "audio": "verbs/spring_ps", "tags": ["verb_base_spring", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spring", "en": "sprung", "audio": "verbs/spring_pp", "tags": ["verb_base_spring", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_stink", "en": "stink", "audio": "verbs/stink_inf", "tags": ["verb_base_stink", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_stink", "en": "stunk", "audio": "verbs/stink_ps", "tags": ["verb_base_stink", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_stink", "en": "stunk", "audio": "verbs/stink_pp", "tags": ["verb_base_stink", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_swell", "en": "swell", "audio": "verbs/swell_inf", "tags": ["verb_base_swell", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_swell", "en": "swelled", "audio": "verbs/swell_ps", "tags": ["verb_base_swell", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_swell", "en": "swollen", "audio": "verbs/swell_pp", "tags": ["verb_base_swell", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_tear", "en": "tear", "audio": "verbs/tear_inf", "tags": ["verb_base_tear", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_tear", "en": "tore", "audio": "verbs/tear_ps", "tags": ["verb_base_tear", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_tear", "en": "torn", "audio": "verbs/tear_pp", "tags": ["verb_base_tear", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_undergo", "en": "undergo", "audio": "verbs/undergo_inf", "tags": ["verb_base_undergo", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_undergo", "en": "underwent", "audio": "verbs/undergo_ps", "tags": ["verb_base_undergo", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_undergo", "en": "undergone", "audio": "verbs/undergo_pp", "tags": ["verb_base_undergo", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_undertake", "en": "undertake", "audio": "verbs/undertake_inf", "tags": ["verb_base_undertake", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_undertake", "en": "undertook", "audio": "verbs/undertake_ps", "tags": ["verb_base_undertake", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_undertake", "en": "undertaken", "audio": "verbs/undertake_pp", "tags": ["verb_base_undertake", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_swing", "en": "swing", "audio": "verbs/swing_inf", "tags": ["verb_base_swing", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_swing", "en": "swung", "audio": "verbs/swing_ps", "tags": ["verb_base_swing", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_swing", "en": "swung", "audio": "verbs/swing_pp", "tags": ["verb_base_swing", "verb_pp", "verb_irregular"]},
+	
+    {"id": "verb_inf_overcome", "en": "overcome", "audio": "verbs/overcome_inf", "tags": ["verb_base_overcome", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_overcome", "en": "overcame", "audio": "verbs/overcome_ps", "tags": ["verb_base_overcome", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_overcome", "en": "overcome", "audio": "verbs/overcome_pp", "tags": ["verb_base_overcome", "verb_pp", "verb_irregular"]},
 
-    {"id": "verb_inf_spin", "en": "spin", "tags": ["verb_base_spin", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_spin", "en": "span", "tags": ["verb_base_spin", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_spin", "en": "spun", "tags": ["verb_base_spin", "verb_pp", "verb_irregular"]},
+    {"id": "verb_inf_spin", "en": "spin", "audio": "verbs/spin_inf", "tags": ["verb_base_spin", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_spin", "en": "span", "audio": "verbs/spin_ps", "tags": ["verb_base_spin", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_spin", "en": "spun", "audio": "verbs/spin_pp", "tags": ["verb_base_spin", "verb_pp", "verb_irregular"]},
 
-    {"id": "verb_inf_sew", "en": "sew", "tags": ["verb_base_sew", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_sew", "en": "sewed", "tags": ["verb_base_sew", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_sew", "en": "sewn", "tags": ["verb_base_sew", "verb_pp", "verb_irregular"]},
+    {"id": "verb_inf_sew", "en": "sew", "audio": "verbs/sew_inf", "tags": ["verb_base_sew", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_sew", "en": "sewed", "audio": "verbs/sew_ps", "tags": ["verb_base_sew", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_sew", "en": "sewn", "audio": "verbs/sew_pp", "tags": ["verb_base_sew", "verb_pp", "verb_irregular"]},
 
-    {"id": "verb_inf_tread", "en": "tread", "tags": ["verb_base_tread", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_tread", "en": "trod", "tags": ["verb_base_tread", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_tread", "en": "trodden", "tags": ["verb_base_tread", "verb_pp", "verb_irregular"]},
+    {"id": "verb_inf_tread", "en": "tread", "audio": "verbs/tread_inf", "tags": ["verb_base_tread", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_tread", "en": "trod", "audio": "verbs/tread_ps", "tags": ["verb_base_tread", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_tread", "en": "trodden", "audio": "verbs/tread_pp", "tags": ["verb_base_tread", "verb_pp", "verb_irregular"]},
 
-    {"id": "verb_inf_shrink", "en": "shrink", "tags": ["verb_base_shrink", "verb_inf", "verb_irregular"]},
-    {"id": "verb_ps_shrink", "en": "shrank", "tags": ["verb_base_shrink", "verb_ps", "verb_irregular"]},
-    {"id": "verb_pp_shrink", "en": "shrunk", "tags": ["verb_base_shrink", "verb_pp", "verb_irregular"]},
+    {"id": "verb_inf_shrink", "en": "shrink", "audio": "verbs/unit4/shrink_inf", "tags": ["verb_base_shrink", "verb_inf", "verb_irregular"]},
+    {"id": "verb_ps_shrink", "en": "shrank", "audio": "verbs/unit4/shrink_ps", "tags": ["verb_base_shrink", "verb_ps", "verb_irregular"]},
+    {"id": "verb_pp_shrink", "en": "shrunk", "audio": "verbs/unit4/shrink_pp", "tags": ["verb_base_shrink", "verb_pp", "verb_irregular"]},
 
 
 
