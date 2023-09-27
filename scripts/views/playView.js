@@ -120,6 +120,9 @@ function showRightFeedback() {
 
     exerciceAnswerRightE.innerHTML = GameSession.questions[0].answers[0].input
     bannerRightCorrectionSpanE.innerHTML = GameSession.questions[0].answers[0].solution
+    if (GameSession.questions[0].audio != null) {
+        bannerRightCorrectionSpanE.innerHTML += `<button onclick='Play.pronounceTerm(new Audio("media/` + GameSession.questions[0].audio + `.wav"))'><div class='audio icon'></div></button>`
+    }
     
     exerciceAnswerE.classList.add("hidden")
     exerciceAnswerWrongE.classList.add("hidden")
@@ -150,6 +153,9 @@ function showWrongFeedback() {
 
     exerciceAnswerWrongE.innerHTML = GameSession.questions[0].answers[0].input
     bannerWrongCorrectionSpanE.innerHTML = GameSession.questions[0].answers[0].solution
+    if (GameSession.questions[0].audio != null) {
+        bannerWrongCorrectionSpanE.innerHTML += `<button onclick='Play.pronounceTerm(new Audio("media/` + GameSession.questions[0].audio + `.wav"))'><div class='audio icon'></div></button>`
+    }
 
     exerciceAnswerE.classList.add("hidden")
     exerciceAnswerWrongE.classList.remove("hidden")
@@ -177,6 +183,8 @@ function showUserInput() {
     bannerE.classList.remove("hidden")
     bannerWrongE.classList.add("hidden")
     bannerRightE.classList.add("hidden")
+
+    
 
     exerciceAnswerE.value = ""
     exerciceAnswerE.focus()
@@ -243,6 +251,10 @@ function update() {
 
 
 // onclick functions
+
+export function pronounceTerm(term) {
+    Utils.playSound(term, generalVolume)
+}
 
 export function noAnswer() {
     exerciceAnswerE.value = "";
