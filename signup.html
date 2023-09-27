@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="favicon.png" type="image/png">
+		<link rel="stylesheet" href="css/authentification.css">
+		<title>English Tango</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	</head>
+	<body>
+        <main class="authentification">
+            <section class="authentification__top">
+                <a href="javascript:history.back()" class="cross icon"></a>
+                <button onclick="location.replace('login.html'); return false;" class="border gray flat-button"><span>Connexion</span></button>
+            </section>
+            <section class="authentification__body">
+                <form class="authentification__form">
+                    <h1>Crée ton profil</h1>
+                    <input class="flat-input" id="age" name="age" type="text" placeholder="Âge" required>
+                    <input class="flat-input" id="username" name="username" type="text" placeholder="Pseudonyme" required>
+                    <input class="flat-input" id="email" name="email" type="email" placeholder="E-mail" required>
+                    <input class="flat-input" id="password1" name="password1" type="password" placeholder="Mot de passe" required>
+                    <input class="flat-input" id="password2" name="password2" type="password" placeholder="Mot de passe" required>
+                    <button class="color1 flat-button" type="submit"><span>Créer mon compte</span></button>
+                </form>
+                <section class="authentification__conditions">
+                    En te connectant à English Tango, tu acceptes nos <a href="">Conditions d'utilisation</a> et notre <a href="">Politique de confidentialité</a>.
+                </section>
+            </section>
+        </main>
+	</body>
+</html>
